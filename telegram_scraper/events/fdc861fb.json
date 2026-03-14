@@ -1,0 +1,70 @@
+{
+  "event_id": "fdc861fb",
+  "headline": "Iran Launches Ballistic Missile Attack Toward Israel",
+  "timestamp": "2026-03-10T23:06:00Z",
+  "location": "Tel Aviv",
+  "event_type": "Attack and Miss",
+  "involved": [
+    "Iran",
+    "Israel"
+  ],
+  "summary": "The IDF detected an incoming Iranian ballistic missile attack launched toward Israel as of 23:06 UTC on March 10, 2026. Air raid sirens were expected to activate across Israeli territory imminently. No confirmed impact or interception details are available at this time — event_type defaulted to 'Attack and Miss' pending damage confirmation, as IDF detection typically precedes active air defense engagement.",
+  "primary_markets": [
+    "defense",
+    "oil",
+    "gold"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Israeli defense contractor supplying missile defense and precision systems benefits from escalation and accelerated procurement cycles."
+    },
+    {
+      "name": "Rafael Advanced Defense Systems",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Manufacturer of Iron Dome and David's Sling interceptors faces surge demand during active Iranian missile attack scenarios."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Supplier of THAAD and Patriot components to Israel and regional allies; escalation drives accelerated US defense package approvals."
+    },
+    {
+      "name": "Brent Crude Oil",
+      "ticker": "BZ=F",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Direct Iran-Israel military exchange raises immediate risk premium on Persian Gulf and regional crude supply disruption."
+    },
+    {
+      "name": "Gold",
+      "ticker": "GC=F",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Classic safe-haven surge triggered by direct state-on-state ballistic missile attack in a nuclear-adjacent theater."
+    }
+  ],
+  "trade_position": "The highest-conviction hidden opportunity is long CBOE Volatility Index futures (VX) or short-dated S&P 500 put spreads — a confirmed Iranian ballistic missile strike on Israel risks rapid US involvement, triggering a global risk-off episode far beyond what regional defense equities price in. Oil call options (front-month Brent) offer asymmetric upside if Strait of Hormuz rhetoric escalates within 24 hours of this event.",
+  "confidence": "low",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-10T23:06:00+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🚨ALERT: The IDF has detected an incoming Iranian ballistic missile attack launched toward Israel. Sirens are expected to sound shortly.",
+        "text_orig": "🚨ALERT: The IDF has detected an incoming Iranian ballistic missile attack launched toward Israel. Sirens are expected to sound shortly."
+      }
+    ],
+    "media_urls": []
+  }
+}

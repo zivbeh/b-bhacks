@@ -1,0 +1,98 @@
+{
+  "event_id": "9c7c86dd",
+  "headline": "Iranian Strikes Damage U.S. Radar, Reducing Israel Missile Warning Time",
+  "timestamp": "2026-03-12T14:49:01Z",
+  "location": "Israel",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "United States",
+    "Iran",
+    "Israel"
+  ],
+  "summary": "Iranian strikes have damaged U.S.-operated radar systems in the region, compromising missile detection capabilities and shortening warning times for Israel. This confirmed damage to radar infrastructure raises significant concerns about Israel's air defense readiness. No casualty figures reported, but the operational impact on air defense networks is confirmed by the source.",
+  "primary_markets": [
+    "defense",
+    "cyber security"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Raytheon Technologies (RTX)",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Raytheon manufactures key radar and air defense systems including Patriot; demand for replacement/upgraded radar systems will increase following confirmed damage."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Lockheed supplies THAAD and other missile defense systems to both U.S. and Israel; degraded radar coverage accelerates procurement urgency."
+    },
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Israel's largest domestic defense electronics firm; directly benefits from emergency upgrades to Israeli air defense and early-warning systems."
+    },
+    {
+      "name": "Rafael Advanced Defense Systems",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Rafael co-produces Iron Dome and David's Sling; radar degradation increases demand for layered air defense upgrades."
+    },
+    {
+      "name": "L3Harris Technologies",
+      "ticker": "LHX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Major U.S. supplier of radar, ISR, and electronic warfare systems; stands to benefit from emergency replacement contracts following radar damage."
+    }
+  ],
+  "trade_position": "Long LMT and RTX as the U.S. will need to rapidly replace or supplement damaged radar infrastructure under emergency defense procurement timelines. The secondary catalyst is Congressional supplemental defense appropriations likely triggered by confirmed damage to U.S. military assets.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-12T14:49:01+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA #Israel #Iran \n\nShorter warning times for missile attacks in Israel are due to damage inflicted on U.S. radar systems by Iranian strikes, which has compromised missile detection capabilities in the region. This situation raises concerns about Israel's air defense readiness against potential threats.",
+        "text_orig": "#USA #Israel #Iran \n\nShorter warning times for missile attacks in Israel are due to damage inflicted on U.S. radar systems by Iranian strikes, which has compromised missile detection capabilities in the region. This situation raises concerns about Israel's air defense readiness against potential threats."
+      },
+      {
+        "timestamp": "2026-03-12T15:12:22+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA #Israel #Iran \n\nIran has threatened to disrupt oil flows through the Strait of Hormuz if attacks by the U.S. and Israel continue, which could significantly impact global oil supplies and prices. This threat complicates President Trump's war strategy, as rising oil prices become a major concern alongside military outcomes.",
+        "text_orig": "#USA #Israel #Iran \n\nIran has threatened to disrupt oil flows through the Strait of Hormuz if attacks by the U.S. and Israel continue, which could significantly impact global oil supplies and prices. This threat complicates President Trump's war strategy, as rising oil prices become a major concern alongside military outcomes."
+      },
+      {
+        "timestamp": "2026-03-12T15:14:07+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Lebanon \n\nThe IDF has issued an urgent warning for residents of southern Lebanon to evacuate north of the Litani River due to ongoing fighting with Hezbollah. This evacuation order aims to protect civilians from potential military actions targeting Hezbollah positions.",
+        "text_orig": "#Lebanon \n\nThe IDF has issued an urgent warning for residents of southern Lebanon to evacuate north of the Litani River due to ongoing fighting with Hezbollah. This evacuation order aims to protect civilians from potential military actions targeting Hezbollah positions."
+      },
+      {
+        "timestamp": "2026-03-12T15:15:09+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#ME\n\nTrump emphasizes that while the U.S. benefits economically from being the largest oil producer when prices rise, his primary concern as President is preventing Iran from acquiring nuclear weapons, which he views as a significant threat to global security. He believes stopping Iran is crucial for the stability of the Middle East and the world.",
+        "text_orig": "#ME\n\nTrump emphasizes that while the U.S. benefits economically from being the largest oil producer when prices rise, his primary concern as President is preventing Iran from acquiring nuclear weapons, which he views as a significant threat to global security. He believes stopping Iran is crucial for the stability of the Middle East and the world."
+      },
+      {
+        "timestamp": "2026-03-12T15:16:20+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran\n\nIran's Supreme Leader emphasizes that national unity is crucial, especially during challenging times, and it can be maintained by focusing on common goals rather than disagreements. This unity is seen as a defense against external threats and divisions.",
+        "text_orig": "#Iran\n\nIran's Supreme Leader emphasizes that national unity is crucial, especially during challenging times, and it can be maintained by focusing on common goals rather than disagreements. This unity is seen as a defense against external threats and divisions."
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-12/photos/151222_17984.jpg",
+      "data/OSINTdefender/2026-03-12/photos/151509_17986.jpg",
+      "data/OSINTdefender/2026-03-12/photos/151620_17987.jpg"
+    ]
+  }
+}

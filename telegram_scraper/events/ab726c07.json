@@ -1,0 +1,89 @@
+{
+  "event_id": "ab726c07",
+  "headline": "Pakistan Airstrikes Hit Fuel Depot Near Kandahar Airport; Taliban Vows Retaliation",
+  "timestamp": "2026-03-13T14:03:01Z",
+  "location": "Kandahar",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Pakistan",
+    "Afghanistan"
+  ],
+  "summary": "Pakistani airstrikes targeted a fuel depot near Kandahar Airport in Afghanistan, which Islamabad claims was being used for militant logistical support. The Taliban government condemned the strike as a violation of Afghan sovereignty and issued an explicit threat of retaliation. Casualties and extent of damage to the fuel depot have not yet been confirmed.",
+  "primary_markets": [
+    "oil",
+    "defense"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Pakistan Petroleum Limited",
+      "ticker": "PPL.KAR",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Escalating Pakistan-Afghanistan tensions raise operational and security risk for domestic energy infrastructure and cross-border logistics."
+    },
+    {
+      "name": "Pakistan State Oil",
+      "ticker": "PSO.KAR",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Cross-border conflict disrupts fuel supply chains in the region, increasing costs and risks for Pakistan's dominant fuel distributor."
+    },
+    {
+      "name": "Defense sector ETF (Emerging Markets)",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Pakistan military escalation will drive increased domestic defense procurement budgets in response to Taliban retaliation threats."
+    },
+    {
+      "name": "Jet Fuel / Aviation Kerosene",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Destruction of a fuel depot near Kandahar Airport directly reduces regional aviation fuel availability, tightening local supply."
+    },
+    {
+      "name": "Diesel Fuel",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Militant logistics depots typically hold diesel; destruction and supply interdiction in the region create localized price pressure."
+    }
+  ],
+  "trade_position": "Monitor Pakistan International Airlines (PIA, unlisted) and regional aviation fuel suppliers for supply disruptions near Kandahar — the strike on airport-adjacent fuel infrastructure is a direct operational risk to air corridor logistics serving Central Asia. A tactical long on diesel futures with a regional Central Asia lens captures the localized fuel supply shock from continued Pakistani interdiction strikes.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-13T13:48:46+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#France #Italy #Iran\n\nFrance and Italy are engaging in discussions with Iran to establish safe passage through the Strait of Hormuz, which has been blocked due to ongoing conflict. This effort aims to facilitate the flow of oil and gas from the region once hostilities decrease.",
+        "text_orig": "#France #Italy #Iran\n\nFrance and Italy are engaging in discussions with Iran to establish safe passage through the Strait of Hormuz, which has been blocked due to ongoing conflict. This effort aims to facilitate the flow of oil and gas from the region once hostilities decrease."
+      },
+      {
+        "timestamp": "2026-03-13T13:57:47+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Israel #Iran \n\nNetanyahu implied that he believes both Mojtaba Khamenei and Naim Qassem are in significant danger, suggesting that their positions may lead to their downfall. This statement reflects the ongoing tensions and conflicts involving Iran and its leadership.",
+        "text_orig": "#Israel #Iran \n\nNetanyahu implied that he believes both Mojtaba Khamenei and Naim Qassem are in significant danger, suggesting that their positions may lead to their downfall. This statement reflects the ongoing tensions and conflicts involving Iran and its leadership."
+      },
+      {
+        "timestamp": "2026-03-13T14:03:01+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Pakistan #Afghanistan\n\nPakistan's airstrikes near Kandahar Airport targeted a fuel depot allegedly used for militant logistics, which Islamabad claims justified the action. The Taliban condemned the strike as a violation of sovereignty and promised to retaliate.",
+        "text_orig": "#Pakistan #Afghanistan\n\nPakistan's airstrikes near Kandahar Airport targeted a fuel depot allegedly used for militant logistics, which Islamabad claims justified the action. The Taliban condemned the strike as a violation of sovereignty and promised to retaliate."
+      },
+      {
+        "timestamp": "2026-03-13T14:07:18+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA #Iran \n\nSenator Lindsey Graham warns that if Iran acquires nuclear weapons, it could significantly impact global oil prices, particularly by threatening the Strait of Hormuz, a crucial shipping route for oil. This could lead to sustained high gas prices as Iran would have increased leverage over oil supply.",
+        "text_orig": "#USA #Iran \n\nSenator Lindsey Graham warns that if Iran acquires nuclear weapons, it could significantly impact global oil prices, particularly by threatening the Strait of Hormuz, a crucial shipping route for oil. This could lead to sustained high gas prices as Iran would have increased leverage over oil supply."
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-13/photos/134846_18016.jpg"
+    ]
+  }
+}

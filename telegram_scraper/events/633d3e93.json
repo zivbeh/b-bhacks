@@ -1,0 +1,71 @@
+{
+  "event_id": "633d3e93",
+  "headline": "US KC-135 Tanker Lost Over Iraq During Operation Epic Fury",
+  "timestamp": "2026-03-13T09:08:47+00:00",
+  "location": "Baghdad",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "United States",
+    "Iraq"
+  ],
+  "summary": "A US Air Force KC-135 Stratotanker aerial refueling aircraft was reported lost during Operation Epic Fury over Iraqi airspace. The cause of the loss — whether combat, surface-to-air missile, or mechanical — is not confirmed in the available report. Iraqi airspace is described as under significant tension due to ongoing military operations, suggesting a hostile environment was a contributing factor.",
+  "primary_markets": [
+    "defense",
+    "airlines"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Boeing",
+      "ticker": "BA",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Boeing manufactures the KC-135 platform; loss highlights aging fleet vulnerabilities and may accelerate costly replacement procurement debates, weighing on near-term sentiment."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Escalating US military operations in Iraq historically drive defense procurement cycles, benefiting prime contractors like Lockheed Martin."
+    },
+    {
+      "name": "RTX Corporation",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "RTX produces air defense and missile systems; escalation over Iraqi airspace raises demand signals for SHORAD and electronic warfare solutions."
+    },
+    {
+      "name": "L3Harris Technologies",
+      "ticker": "LHX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "L3Harris supplies avionics, ISR, and electronic warfare systems critical to contested airspace operations like those described in Operation Epic Fury."
+    },
+    {
+      "name": "Crude Oil (WTI)",
+      "ticker": "CL=F",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Military escalation over Iraq, a top-five global oil producer, introduces supply disruption risk premium into crude prices."
+    }
+  ],
+  "trade_position": "The most actionable hidden opportunity is a long position in WTI crude futures (CL=F) or the USO ETF: a downed US military aircraft over Iraq signals a material escalation in Operation Epic Fury that markets have not yet priced in as an Iraqi supply disruption risk, with a catalyst trigger if further strikes on Iraqi oil infrastructure follow. Simultaneously, a long on RTX or LHX captures the defense escalation cycle with lower headline risk than Boeing.",
+  "confidence": "low",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-13T09:08:47+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iraq \n\nA U.S. KC-135 refueling aircraft was lost during Operation Epic Fury in Iraq. Iraq's airspace is currently under significant tension due to ongoing military operations and strikes, making it a complex and potentially dangerous environment.",
+        "text_orig": "#Iraq \n\nA U.S. KC-135 refueling aircraft was lost during Operation Epic Fury in Iraq. Iraq's airspace is currently under significant tension due to ongoing military operations and strikes, making it a complex and potentially dangerous environment."
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-13/photos/090847_18008.jpg"
+    ]
+  }
+}

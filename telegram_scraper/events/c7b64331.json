@@ -1,0 +1,70 @@
+{
+  "event_id": "c7b64331",
+  "headline": "Iran Launches Ballistic Missile Attack Toward Israel",
+  "timestamp": "2026-03-08T23:11:26Z",
+  "location": "Tehran",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "Iran",
+    "Israel"
+  ],
+  "summary": "The IDF detected an incoming ballistic missile attack launched from Iran toward Israel as of 23:11 UTC on March 8, 2026. Air raid sirens were expected to sound across Israel imminently. No confirmed impact or interception data is available from this single report alone — the event is classified as Diplomatic Event pending confirmation of hit or miss.",
+  "primary_markets": [
+    "defense",
+    "oil",
+    "gold"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Israeli defense contractor directly benefits from escalation requiring missile defense systems and replenishment."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Supplier of Arrow and THAAD components; escalation drives U.S. defense procurement urgency."
+    },
+    {
+      "name": "Raytheon Technologies",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Manufactures Patriot missile systems deployed in Israeli and regional defense networks."
+    },
+    {
+      "name": "Crude Oil (Brent)",
+      "ticker": "BZ=F",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Iran-Israel direct conflict raises immediate Persian Gulf supply disruption fears and risk premium."
+    },
+    {
+      "name": "Gold",
+      "ticker": "GC=F",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Safe-haven demand spikes sharply on direct Iran-Israel ballistic missile exchange news."
+    }
+  ],
+  "trade_position": "Buy near-term call options on Brent crude (BZ=F) as the hidden leverage play — a direct Iran-Israel ballistic exchange is the single scenario most likely to trigger Strait of Hormuz closure fears, producing an outsized oil spike disproportionate to the equity defense move. The catalyst is any follow-on report of Israeli retaliation targeting Iranian energy infrastructure.",
+  "confidence": "low",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-08T23:11:26+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🚨The IDF has detected an incoming ballistic missile attack launched from Iran toward Israel. Sirens are expected to sound shortly.",
+        "text_orig": "🚨The IDF has detected an incoming ballistic missile attack launched from Iran toward Israel. Sirens are expected to sound shortly."
+      }
+    ],
+    "media_urls": []
+  }
+}

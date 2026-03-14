@@ -1,0 +1,77 @@
+{
+  "event_id": "965b3e4b",
+  "headline": "French Soldier Killed in Drone Strike on Peshmerga Base in Erbil",
+  "timestamp": "2026-03-13T10:52:06Z",
+  "location": "Erbil",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "France",
+    "Iraq"
+  ],
+  "summary": "French President Emmanuel Macron confirmed that Chief Warrant Officer Arnaud Frion was killed in a drone attack targeting a Peshmerga base in Erbil, Iraq. Several additional French soldiers sustained wounds in the attack. Macron condemned the strike as unacceptable and expressed solidarity with affected soldiers and families. No group has been formally attributed in the provided reports, though drone attacks in Iraq have historically been linked to Iran-aligned PMF factions.",
+  "primary_markets": [
+    "defense",
+    "insurance"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Thales Group",
+      "ticker": "HO.PA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Thales is a primary supplier of counter-drone and air defense systems to the French military, and this attack will accelerate procurement demand."
+    },
+    {
+      "name": "Safran SA",
+      "ticker": "SAF.PA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Safran supplies French military equipment including UAV-related systems; heightened French military posture in Iraq boosts maintenance and logistics contracts."
+    },
+    {
+      "name": "Dassault Aviation",
+      "ticker": "AM.PA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "French military escalation or redeployment in Iraq could drive increased air power utilization and sustainment contracts for Dassault platforms."
+    },
+    {
+      "name": "AXA SA",
+      "ticker": "CS.PA",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "As a major European insurer with war-risk exposure, escalating attacks on NATO-member personnel in Iraq increases conflict-zone liability."
+    },
+    {
+      "name": "Crude Oil (Brent)",
+      "ticker": "BZ=F",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "A drone attack on a base in the Kurdistan Region of Iraq raises geopolitical risk premium on Iraqi and regional crude supply."
+    }
+  ],
+  "trade_position": "Go long French defense sector via Thales (HO.PA) as France will face domestic political pressure to upgrade force protection and counter-drone capabilities for its overseas deployments. The attack on a NATO-member soldier by what is likely an Iran-aligned actor creates a durable procurement catalyst beyond any immediate retaliation.",
+  "confidence": "high",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-13T10:52:06+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iraq #France \n\nFrench President Emmanuel Macron confirmed that Chief Warrant Officer Arnaud Frion was killed in a drone attack on a Peshmerga base in Erbil, Iraq, and several other French soldiers were wounded. Macron expressed solidarity with the soldiers and their families, condemning the attack as unacceptable.",
+        "text_orig": "#Iraq #France \n\nFrench President Emmanuel Macron confirmed that Chief Warrant Officer Arnaud Frion was killed in a drone attack on a Peshmerga base in Erbil, Iraq, and several other French soldiers were wounded. Macron expressed solidarity with the soldiers and their families, condemning the attack as unacceptable."
+      },
+      {
+        "timestamp": "2026-03-13T10:59:47+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Israel\n\nIsraeli Prime Minister Benjamin Netanyahu has stated that many world leaders are impressed by Israel's strength and are eager to strengthen their relationships with the country. This reflects a broader diplomatic effort to enhance Israel's global standing amidst ongoing conflicts.",
+        "text_orig": "#Israel\n\nIsraeli Prime Minister Benjamin Netanyahu has stated that many world leaders are impressed by Israel's strength and are eager to strengthen their relationships with the country. This reflects a broader diplomatic effort to enhance Israel's global standing amidst ongoing conflicts."
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-13/photos/105206_18012.jpg"
+    ]
+  }
+}

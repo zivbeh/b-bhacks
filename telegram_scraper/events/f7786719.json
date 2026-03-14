@@ -1,0 +1,133 @@
+{
+  "event_id": "f7786719",
+  "headline": "US Launches Major Combat Operations Against Iran, War Begins",
+  "timestamp": "2026-03-01T05:42:26Z",
+  "location": "Tehran",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "United States",
+    "Israel",
+    "Iran"
+  ],
+  "summary": "President Trump announced the U.S. has begun major combat operations against Iran, citing Iranian aggression and nuclear ambitions. Israeli Prime Minister Netanyahu and Saudi Crown Prince MBS reportedly lobbied Trump to initiate the strikes, representing a dramatic shift in U.S. foreign policy. Iranian Parliament Speaker Ghalibaf's reference to post-Khamenei succession planning strongly implies Supreme Leader Khamenei has been killed or incapacitated during the strikes.",
+  "primary_markets": [
+    "oil",
+    "defense",
+    "shipping routes"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "As the largest U.S. defense contractor supplying precision munitions, aircraft, and missile defense systems, a full-scale war with Iran drives immediate procurement demand."
+    },
+    {
+      "name": "RTX Corporation",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "RTX supplies Patriot missile defense systems and Tomahawk cruise missiles central to any U.S. strike campaign against Iran, driving contract acceleration."
+    },
+    {
+      "name": "Brent Crude Oil",
+      "ticker": "BZ=F",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "U.S.-Iran war creates immediate risk of Strait of Hormuz closure, through which roughly 20% of global oil supply transits, triggering a severe supply shock premium."
+    },
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Israeli defense electronics and UAV manufacturer directly benefits from Israeli co-participation in strikes and heightened regional threat requiring sustained Israeli military operations."
+    },
+    {
+      "name": "Northrop Grumman",
+      "ticker": "NOC",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Northrop supplies B-2 stealth bombers and strategic strike systems used in deep-penetration missions against hardened Iranian nuclear and military targets."
+    }
+  ],
+  "trade_position": "Long December 2026 Brent Crude futures (BZ=F) as the asymmetric play: even partial Strait of Hormuz interdiction removes 18-20 million barrels/day from global supply, a price shock no SPR release can offset at war scale. The secondary hidden trade is long RTX — Patriot battery depletion from Iranian missile barrages creates a guaranteed multi-billion replenishment cycle regardless of war duration.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-01T05:42:26+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA #Israel \n\nPresident Trump announced that the U.S. has begun major combat operations in Iran, aiming to eliminate threats from the Iranian regime, which he described as a significant danger to the U.S. and its allies. He emphasized that the military actions are a response to Iran's continued aggression and nuclear ambitions.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA #Israel \n\nPresident Trump announced that the U.S. has begun major combat operations in Iran, aiming to eliminate threats from the Iranian regime, which he described as a significant danger to the U.S. and its allies. He emphasized that the military actions are a response to Iran's continued aggression and nuclear ambitions.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-01T05:47:13+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA #Israel \n\nThe Islamic Revolutionary Guard Corps (IRGC) has announced that it will conduct a series of retaliatory attacks in response to recent military actions against Iran, indicating a commitment to escalate their response significantly. This suggests that Iran is preparing for a prolonged conflict following the recent strikes by the U.S. and Israel.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA #Israel \n\nThe Islamic Revolutionary Guard Corps (IRGC) has announced that it will conduct a series of retaliatory attacks in response to recent military actions against Iran, indicating a commitment to escalate their response significantly. This suggests that Iran is preparing for a prolonged conflict following the recent strikes by the U.S. and Israel.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-01T05:48:11+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran\n\nIranian Parliament Speaker Mohammad Bagher Ghalibaf has stated that Iran is prepared for various scenarios, including plans for the period following the martyrdom of Imam Khamenei. This indicates a focus on maintaining stability and continuity in leadership amid potential changes.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran\n\nIranian Parliament Speaker Mohammad Bagher Ghalibaf has stated that Iran is prepared for various scenarios, including plans for the period following the martyrdom of Imam Khamenei. This indicates a focus on maintaining stability and continuity in leadership amid potential changes.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-01T05:49:16+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA #Israel \n\nIsrael's Defense Minister Israel Katz has stated that the Iranian regime and its proxies have been significantly weakened, indicating a shift in power dynamics in the region. \n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA #Israel \n\nIsrael's Defense Minister Israel Katz has stated that the Iranian regime and its proxies have been significantly weakened, indicating a shift in power dynamics in the region. \n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-01T05:50:40+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA #Iraq\n\nExplosions and smoke have been reported near Erbil Airport in Iraq, where U.S. troops are stationed, as part of Iran's escalating retaliation following the death of Supreme Leader Ali Khamenei. The situation remains tense, with ongoing threats of intensified Iranian attacks on U.S. bases in the region.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA #Iraq\n\nExplosions and smoke have been reported near Erbil Airport in Iraq, where U.S. troops are stationed, as part of Iran's escalating retaliation following the death of Supreme Leader Ali Khamenei. The situation remains tense, with ongoing threats of intensified Iranian attacks on U.S. bases in the region.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-01T05:52:41+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nThe U.S. military used Anthropic's Claude AI system in strikes against Iran, even after President Trump ordered federal agencies to stop using the technology just hours before the operation. This situation highlights the ongoing tensions between the Pentagon and Anthropic regarding the use of AI in military operations.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nThe U.S. military used Anthropic's Claude AI system in strikes against Iran, even after President Trump ordered federal agencies to stop using the technology just hours before the operation. This situation highlights the ongoing tensions between the Pentagon and Anthropic regarding the use of AI in military operations.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-01T05:53:59+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#KSA #USA #Israel \n\nReports indicate that Israeli Prime Minister Benjamin Netanyahu and Saudi Crown Prince Mohammed bin Salman played significant roles in persuading President Trump to initiate military strikes against Iran, despite previous diplomatic efforts. Their lobbying efforts led to a dramatic shift in U.S. foreign policy, culminating in a coordinated attack on Iranian targets.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#KSA #USA #Israel \n\nReports indicate that Israeli Prime Minister Benjamin Netanyahu and Saudi Crown Prince Mohammed bin Salman played significant roles in persuading President Trump to initiate military strikes against Iran, despite previous diplomatic efforts. Their lobbying efforts led to a dramatic shift in U.S. foreign policy, culminating in a coordinated attack on Iranian targets.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-01T05:56:17+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran \n\nAli Larijani, the Secretary of Iran's National Security Council, stated that despite suffering many casualties in previous conflicts, the recent military operations resulted in fewer martyrs due to the armed forces' improved control and experience. This suggests a focus on enhancing military readiness and strategy in response to ongoing threats.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran \n\nAli Larijani, the Secretary of Iran's National Security Council, stated that despite suffering many casualties in previous conflicts, the recent military operations resulted in fewer martyrs due to the armed forces' improved control and experience. This suggests a focus on enhancing military readiness and strategy in response to ongoing threats.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-01T06:28:59+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#NK\n\nNorth Korea is indeed the only country confirmed to have conducted nuclear weapons tests in the 21st century, while Iran has faced significant international pressure and sanctions to deter its nuclear ambitions. However, recent evidence suggests that Iran is attempting to advance its nuclear program, raising concerns about its potential to develop nuclear weapons.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#NK\n\nNorth Korea is indeed the only country confirmed to have conducted nuclear weapons tests in the 21st century, while Iran has faced significant international pressure and sanctions to deter its nuclear ambitions. However, recent evidence suggests that Iran is attempting to advance its nuclear program, raising concerns about its potential to develop nuclear weapons.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-01T06:46:08+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "The ongoing conflict in the Middle East has resulted in significant human suffering, with many civilians facing dire conditions, including loss of life, displacement, and lack of basic necessities. The long-term implications include potential health crises, economic instability, and ongoing humanitarian needs that will require sustained international attention and support.",
+        "text_orig": "The ongoing conflict in the Middle East has resulted in significant human suffering, with many civilians facing dire conditions, including loss of life, displacement, and lack of basic necessities. The long-term implications include potential health crises, economic instability, and ongoing humanitarian needs that will require sustained international attention and support."
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-01/photos/054226_17532.jpg",
+      "data/OSINTdefender/2026-03-01/photos/054811_17534.jpg",
+      "data/OSINTdefender/2026-03-01/photos/054916_17535.jpg",
+      "data/OSINTdefender/2026-03-01/photos/055040_17536.jpg",
+      "data/OSINTdefender/2026-03-01/photos/055241_17537.jpg",
+      "data/OSINTdefender/2026-03-01/photos/055359_17538.jpg",
+      "data/OSINTdefender/2026-03-01/photos/062859_17540.jpg"
+    ]
+  }
+}

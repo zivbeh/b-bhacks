@@ -1,0 +1,102 @@
+{
+  "event_id": "0b357409",
+  "headline": "U.S. F-15 Fighter Jet Crashes in Kuwait Amid Regional Escalation",
+  "timestamp": "2026-03-02T05:34:32Z",
+  "location": "Kuwait City",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Iran",
+    "United States"
+  ],
+  "summary": "Footage emerged showing the crash of a U.S. F-15 fighter jet in Kuwait, coinciding with Iranian retaliatory operations across the Gulf region. The cause of the crash — whether combat loss, missile strike, or mechanical failure — has not been officially confirmed. The incident occurs amid an active Iranian retaliatory campaign following the killing of Supreme Leader Khamenei.",
+  "primary_markets": [
+    "defense",
+    "oil",
+    "airlines"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Boeing Defense",
+      "ticker": "BA",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Combat or operational loss of an F-15 — Boeing's premier fighter platform — raises scrutiny over aircraft survivability and may affect pending F-15EX export orders."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "F-15 loss reinforces procurement arguments for the F-35 stealth platform, benefiting Lockheed Martin's order pipeline from Gulf states and NATO allies."
+    },
+    {
+      "name": "L3Harris Technologies",
+      "ticker": "LHX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Electronic warfare and countermeasure systems demand surges when U.S. aircraft are lost in active combat zones, directly benefiting L3Harris's EW portfolio."
+    },
+    {
+      "name": "Kuwait Oil Company crude (Arab Light)",
+      "ticker": "null",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Military engagement on Kuwaiti soil elevates threat premium on Kuwaiti crude exports, tightening Gulf supply and lifting regional benchmark prices."
+    },
+    {
+      "name": "Northrop Grumman",
+      "ticker": "NOC",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Active Gulf combat operations accelerate demand for Northrop's ISR platforms, radar systems, and next-generation airborne capabilities."
+    }
+  ],
+  "trade_position": "Long LMT vs. short BA as a pair trade — the F-15 loss in a live combat environment directly undermines Boeing's defense credibility while simultaneously strengthening Lockheed's F-35 sales narrative across the entire Gulf Cooperation Council. This spread trade isolates the platform-substitution thesis with minimal broad-market beta.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-02T05:28:32+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nLoud explosions were reported in Doha, Qatar, as part of a series of attacks that included missile interceptions targeting the Gulf state. The explosions are linked to escalating tensions in the region following Iranian retaliatory strikes.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nLoud explosions were reported in Doha, Qatar, as part of a series of attacks that included missile interceptions targeting the Gulf state. The explosions are linked to escalating tensions in the region following Iranian retaliatory strikes.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:34:32+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nFootage has emerged showing the crash of a U.S. F-15 jet in Kuwait.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nFootage has emerged showing the crash of a U.S. F-15 jet in Kuwait.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:35:03+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Lebanon \n\nIsrael has warned that it will increase its military strikes on Lebanon, particularly targeting Hezbollah positions, in response to the group's involvement in the ongoing conflict with Iran. This escalation follows recent rocket attacks from Hezbollah into Israel.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Lebanon \n\nIsrael has warned that it will increase its military strikes on Lebanon, particularly targeting Hezbollah positions, in response to the group's involvement in the ongoing conflict with Iran. This escalation follows recent rocket attacks from Hezbollah into Israel.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:35:52+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nAli Larijani, the Secretary of Iran's Supreme National Security Council, criticized former President Trump for causing instability in the region due to what he described as \"delusional ambitions.\" He accused Trump of attempting to weaken Iran and sow discord among its people.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nAli Larijani, the Secretary of Iran's Supreme National Security Council, criticized former President Trump for causing instability in the region due to what he described as \"delusional ambitions.\" He accused Trump of attempting to weaken Iran and sow discord among its people.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:37:13+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nAli Larijani is indeed pushing to resume nuclear talks with the U.S. through Omani mediators while managing Iran's security and military response following the death of Supreme Leader Khamenei. Although he is a key figure in Iran's security hierarchy, he is not officially part of the interim ruling council.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nAli Larijani is indeed pushing to resume nuclear talks with the U.S. through Omani mediators while managing Iran's security and military response following the death of Supreme Leader Khamenei. Although he is a key figure in Iran's security hierarchy, he is not officially part of the interim ruling council.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:37:43+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nPresident Trump claimed that he preemptively struck Iran's Supreme Leader Ayatollah Khamenei, stating, \"I got him before he got me,\" referring to alleged Iranian plots against him. This statement was made following a successful U.S.-Israeli operation that resulted in Khamenei's death.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nPresident Trump claimed that he preemptively struck Iran's Supreme Leader Ayatollah Khamenei, stating, \"I got him before he got me,\" referring to alleged Iranian plots against him. This statement was made following a successful U.S.-Israeli operation that resulted in Khamenei's death.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-02/videos/053432_17579.mp4"
+    ]
+  }
+}

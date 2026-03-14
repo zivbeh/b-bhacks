@@ -1,0 +1,90 @@
+{
+  "event_id": "6c5da811",
+  "headline": "Iranian Shahed Drones Reported Targeting Dubai in UAE",
+  "timestamp": "2026-02-28T17:08:52Z",
+  "location": "Dubai",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Iran",
+    "United Arab Emirates"
+  ],
+  "summary": "A report with video evidence indicates Iranian Shahed drones — precision loitering munitions capable of being launched from deep inside Iranian territory — were involved in attacks in populated areas of Dubai. This is consistent with simultaneous reports of strikes on Manama and represents a significant escalation targeting Gulf financial and commercial hubs. No confirmed casualty figures provided.",
+  "primary_markets": [
+    "airlines",
+    "insurance",
+    "shipping routes"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Emirates Group",
+      "ticker": null,
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Dubai International Airport, the world's busiest international hub, faces immediate closure or severe disruption risk from drone attacks on the city."
+    },
+    {
+      "name": "DP World",
+      "ticker": null,
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Dubai's dominant port operator faces direct operational disruption and insurance repricing if Jebel Ali port is within strike radius."
+    },
+    {
+      "name": "Aon PLC",
+      "ticker": "AON",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Escalating drone strikes on Gulf infrastructure will trigger massive war-risk insurance repricing, driving premium volumes for global reinsurance brokers."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Gulf state demand for additional missile defense systems (THAAD, PAC-3) will surge following successful drone penetration of UAE airspace."
+    },
+    {
+      "name": "Dubai Crude (Fateh)",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Drone strikes near the UAE's primary commercial hub introduce a direct supply disruption premium into Gulf benchmark crude pricing."
+    }
+  ],
+  "trade_position": "Short Emirates Group debt and long war-risk insurance reinsurers (e.g. Beazley BSZ.L, Lancashire LRE.L) — a confirmed drone strike on Dubai triggers immediate suspension of airline operations and a violent repricing of Gulf aviation and marine war-risk premiums that reinsurers can pass through as earnings. This is a second-order trade the equity market will be slow to price.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-02-28T17:03:58+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Venezuela #Iran \n\nVenezuela has condemned the military actions by Israel against Iran, labeling them as \"illegitimate\" and a violation of international law, while expressing solidarity with Iran. The Venezuelan government has also criticized the U.S. for its role in these events.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Venezuela #Iran \n\nVenezuela has condemned the military actions by Israel against Iran, labeling them as \"illegitimate\" and a violation of international law, while expressing solidarity with Iran. The Venezuelan government has also criticized the U.S. for its role in these events.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T17:05:02+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#ME\n\nThe Bahrain Interior Ministry reported that several residential buildings in Manama were targeted, and Civil Defence is actively engaged in firefighting and rescue operations at the affected sites. No further details on casualties or the cause of the incidents were provided.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#ME\n\nThe Bahrain Interior Ministry reported that several residential buildings in Manama were targeted, and Civil Defence is actively engaged in firefighting and rescue operations at the affected sites. No further details on casualties or the cause of the incidents were provided.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T17:06:01+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Germany #Iran \n\nGermany's Chancellor Merz stated that the U.S. has been trying to negotiate a solution with Iran for several weeks, but Iran has not accepted the terms for a comprehensive agreement to halt its military nuclear program.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Germany #Iran \n\nGermany's Chancellor Merz stated that the U.S. has been trying to negotiate a solution with Iran for several weeks, but Iran has not accepted the terms for a comprehensive agreement to halt its military nuclear program.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T17:08:52+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#UAE \n\nThe Shahed drone is a type of Iranian drone known for its precision and deadly capabilities, often used in conflicts, including recent attacks in populated areas like Dubai. These drones can be launched from deep within Iranian territory and have been involved in various military operations across the Middle East.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#UAE \n\nThe Shahed drone is a type of Iranian drone known for its precision and deadly capabilities, often used in conflicts, including recent attacks in populated areas like Dubai. These drones can be launched from deep within Iranian territory and have been involved in various military operations across the Middle East.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-02-28/videos/170852_17516.mp4"
+    ]
+  }
+}

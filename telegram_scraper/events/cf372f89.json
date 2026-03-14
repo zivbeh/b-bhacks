@@ -1,0 +1,79 @@
+{
+  "event_id": "cf372f89",
+  "headline": "Iran Missile and Drone Capability Collapses 92% Under US-Israeli Strikes",
+  "timestamp": "2026-03-13T12:58:47Z",
+  "location": "Tehran",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Iran",
+    "United States",
+    "Israel"
+  ],
+  "summary": "Reports indicate Iran's ballistic missile and drone operational launch rate has collapsed by approximately 92% since the onset of the conflict, attributed to sustained US and Israeli strikes on missile launchers, production infrastructure, and logistics. While Iran retains a domestic missile industry, its near-term offensive capacity has been severely degraded. This represents a major strategic shift, forcing Iran toward asymmetric and proxy-based alternatives such as the modified Shahed-136 platform.",
+  "primary_markets": [
+    "defense",
+    "oil"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Sustained US strike operations consuming JASSM, LRASM, and Paveway munitions drives replenishment orders for Lockheed's precision-strike portfolio."
+    },
+    {
+      "name": "RTX Corporation",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Tomahawk cruise missiles and Patriot interceptors used in operations against Iran require rapid restocking, directly benefiting RTX revenue."
+    },
+    {
+      "name": "Brent Crude Oil",
+      "ticker": "BZ=F",
+      "type": "commodity",
+      "signal": "bearish",
+      "reason": "A severely degraded Iranian strike capability reduces the probability of Strait of Hormuz interdiction, easing geopolitical risk premium on oil."
+    },
+    {
+      "name": "IAI (Israel Aerospace Industries)",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Israeli precision strike campaigns validate IAI's Harop and Barak systems, boosting export demand from US-aligned partners monitoring the conflict."
+    },
+    {
+      "name": "General Dynamics",
+      "ticker": "GD",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Ammunition and ordnance depletion from high-tempo strike operations against Iranian infrastructure accelerates US Army and Air Force restocking contracts."
+    }
+  ],
+  "trade_position": "Short Brent Crude (BZ=F) on a tactical basis: a 92% reduction in Iranian offensive launch capability materially reduces the tail risk of a Strait of Hormuz closure or Gulf energy infrastructure strike, which has historically been the largest single geopolitical premium baked into oil prices. The position is reinforced if subsequent reporting confirms Iranian naval assets have also been degraded, removing the last credible Hormuz interdiction vector.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-13T12:44:47+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran\n\nIran is reportedly using Shahed drones, specifically the Shahed-136 variant, which have been modified to carry R-60 air-to-air missiles. This configuration allows them to target Ukrainian helicopters and light aircraft, enhancing their combat capabilities in the ongoing conflict.",
+        "text_orig": "#Iran\n\nIran is reportedly using Shahed drones, specifically the Shahed-136 variant, which have been modified to carry R-60 air-to-air missiles. This configuration allows them to target Ukrainian helicopters and light aircraft, enhancing their combat capabilities in the ongoing conflict."
+      },
+      {
+        "timestamp": "2026-03-13T12:58:47+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA #Iran \n\nIran's missile launch rate has significantly decreased, with reports indicating a collapse of about 92% in their ballistic missile and drone operations since the start of the conflict. While they still possess a large domestic missile industry, the ongoing US and Israeli strikes have effectively targeted and neutralized many of their missile launchers and capabilities, leading to a strategic shift in their operations.",
+        "text_orig": "#USA #Iran \n\nIran's missile launch rate has significantly decreased, with reports indicating a collapse of about 92% in their ballistic missile and drone operations since the start of the conflict. While they still possess a large domestic missile industry, the ongoing US and Israeli strikes have effectively targeted and neutralized many of their missile launchers and capabilities, leading to a strategic shift in their operations."
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-13/photos/124447_18014.jpg",
+      "data/OSINTdefender/2026-03-13/photos/125847_18015.jpg"
+    ]
+  }
+}

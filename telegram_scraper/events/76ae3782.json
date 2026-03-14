@@ -1,0 +1,70 @@
+{
+  "event_id": "76ae3782",
+  "headline": "Russia Develops Su-30SM and S-70 Okhotnik Manned-Unmanned Teaming System",
+  "timestamp": "2026-02-28T06:22:52Z",
+  "location": "Moscow",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "Russia",
+    "China"
+  ],
+  "summary": "Russia is developing an integrated manned-unmanned teaming (MUM-T) system pairing Su-30SM fighter jets with S-70 Okhotnik stealth combat drones to enhance air operation coordination and effectiveness. The system is designed to improve strike and reconnaissance capabilities through AI-assisted cooperation between crewed and uncrewed platforms. No kinetic event has occurred; this is a defense technology development announcement.",
+  "primary_markets": [
+    "defense"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Rostec / United Aircraft Corporation",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "UAC and Rostec are the primary developers of both the Su-30SM and S-70 Okhotnik, meaning increased state defense contracts and R&D funding flow to these entities."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Russian MUM-T advances accelerate NATO and US DoD urgency to fund competing loyal wingman and CCA programs, benefiting Lockheed's NGAD and drone teaming portfolios."
+    },
+    {
+      "name": "General Atomics",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "As a leading developer of combat drone systems, Russian MUM-T advancement increases Western demand for comparable unmanned combat air vehicle programs."
+    },
+    {
+      "name": "Kratos Defense & Security Solutions",
+      "ticker": "KTOS",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Kratos specializes in affordable unmanned combat air vehicles and loyal wingman drones; competitive pressure from Russia's MUM-T program boosts US procurement urgency."
+    },
+    {
+      "name": "AVIC (Aviation Industry Corporation of China)",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "The China tag suggests potential technology-sharing or parallel development, positioning AVIC to benefit from collaborative or independently mirrored MUM-T programs."
+    }
+  ],
+  "trade_position": "Go long KTOS (Kratos Defense) as the most direct US-listed pure-play on affordable unmanned combat aircraft; the Russia-China MUM-T development announcement will accelerate US Air Force Collaborative Combat Aircraft (CCA) budget allocations in the next defense appropriations cycle, serving as the near-term catalyst.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-02-28T06:22:52+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Russia #China \n\nRussia is developing a system where Su-30SM fighter jets will work alongside S-70 Okhotnik drones, enhancing their operational capabilities through manned-unmanned teaming. This approach aims to improve coordination and effectiveness in air operations.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Russia #China \n\nRussia is developing a system where Su-30SM fighter jets will work alongside S-70 Okhotnik drones, enhancing their operational capabilities through manned-unmanned teaming. This approach aims to improve coordination and effectiveness in air operations.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-02-28/photos/062252_17471.jpg"
+    ]
+  }
+}

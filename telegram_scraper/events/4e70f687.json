@@ -1,0 +1,79 @@
+{
+  "event_id": "4e70f687",
+  "headline": "IDF Strikes Hezbollah Aerial Command HQ in Beirut",
+  "timestamp": "2026-03-05T05:48:44Z",
+  "location": "Beirut",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Israel",
+    "Hezbollah",
+    "Iran"
+  ],
+  "summary": "The IDF launched a new wave of strikes on Beirut targeting Hezbollah command centers, including the headquarters of Hezbollah's aerial unit responsible for planning attacks against Israeli forces and civilians. Israel stated it used advance warnings, precision munitions, and aerial surveillance to minimize civilian casualties. Israel declared it will continue strikes as long as Hezbollah remains an active belligerent under Iranian sponsorship.",
+  "primary_markets": [
+    "defense",
+    "insurance",
+    "tourism & hotels"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Sustained IDF strike operations in Beirut increase consumption of Israeli precision-guided munitions requiring rapid replenishment."
+    },
+    {
+      "name": "Rafael Advanced Defense Systems",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Rafael supplies Iron Dome and Spike missile systems central to Israel's precision strike and defense operations in Lebanon."
+    },
+    {
+      "name": "Airlines — Middle East Routes",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bearish",
+      "reason": "Ongoing Beirut strikes expand no-fly risk zones, forcing carriers to suspend or reroute Beirut and regional routes."
+    },
+    {
+      "name": "Lebanese Pound / EM Sovereign Risk",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bearish",
+      "reason": "Continued strikes on Beirut infrastructure deepen Lebanon's economic collapse and sovereign credit stress."
+    },
+    {
+      "name": "Zurich Insurance / Lloyd's of London",
+      "ticker": "ZURN.DE",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "War-risk insurance premiums for Beirut and Eastern Mediterranean corridors spike on confirmed command-center strikes."
+    }
+  ],
+  "trade_position": "Short Beirut-exposed European hotel and airline names (e.g. Air France-KLM, AFKL.PA) as Hezbollah aerial unit HQ strikes signal expanded drone/missile threat perimeters that force immediate route suspensions and cancel tourism bookings across the Eastern Mediterranean. The hidden edge is that war-risk reinsurance rates reset quarterly — long Lancashire Holdings (LRE.L) captures the premium expansion before the next renewal cycle.",
+  "confidence": "medium",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-05T05:47:59+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🔥 **BREAKING:** The IDF says it has launched another major wave of strikes in Tehran, targeting infrastructure of the Iranian terror regime across the capital.",
+        "text_orig": "🔥 **BREAKING:** The IDF says it has launched another major wave of strikes in Tehran, targeting infrastructure of the Iranian terror regime across the capital."
+      },
+      {
+        "timestamp": "2026-03-05T05:48:44+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "**NEW**: The IDF confirms a new wave of strikes in Beirut, targeting additional Hezbollah terror command centers.\n\nAmong the targets: a headquarters used by Hezbollah’s aerial unit, involved in planning and executing attacks against Israeli forces and civilians.\n\nAdvance warnings, precision munitions, and aerial surveillance were used to minimize civilian harm.\n\nIsrael says it will continue striking Hezbollah after the terror group chose to join the war under the sponsorship of Iran’s terror regime.",
+        "text_orig": "**NEW**: The IDF confirms a new wave of strikes in Beirut, targeting additional Hezbollah terror command centers.\n\nAmong the targets: a headquarters used by Hezbollah’s aerial unit, involved in planning and executing attacks against Israeli forces and civilians.\n\nAdvance warnings, precision munitions, and aerial surveillance were used to minimize civilian harm.\n\nIsrael says it will continue striking Hezbollah after the terror group chose to join the war under the sponsorship of Iran’s terror regime."
+      }
+    ],
+    "media_urls": [
+      "data/IsraelWarRoom/2026-03-05/videos/054844_79.MP4"
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "event_id": "d7e1a28a",
+  "headline": "Hezbollah Artillery Strikes Syrian Army Positions Near Serghaya",
+  "timestamp": "2026-03-13T08:03:47Z",
+  "location": "Serghaya",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Hezbollah",
+    "Syria"
+  ],
+  "summary": "Hezbollah forces fired artillery shells from Lebanese territory across the border into Syria, striking Syrian Arab Army positions near the town of Serghaya in the Qalamoun region. The Syrian army has publicly condemned the attack and warned it will not tolerate further aggression, signaling potential retaliation. This represents an unusual Hezbollah-Syria confrontation, distinct from historical alliance patterns, suggesting a significant realignment of forces in the Levant.",
+  "primary_markets": [
+    "defense",
+    "food commodities",
+    "agriculture"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Brent Crude",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Hezbollah-Syria clashes risk widening Levant instability and add to the regional geopolitical risk premium on oil."
+    },
+    {
+      "name": "Wheat",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Serghaya region sits in agriculturally productive Syrian border zone; sustained shelling disrupts planting and supply chains."
+    },
+    {
+      "name": "Israel Aerospace Industries",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Hezbollah redeployment of artillery toward Syria temporarily reduces direct threat to Israel, but overall Lebanese instability boosts Israeli defense procurement urgency."
+    },
+    {
+      "name": "Euronav",
+      "ticker": "EURN",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Escalating multi-front Levant conflict raises the probability of Eastern Mediterranean shipping disruption, increasing operating costs."
+    },
+    {
+      "name": "Gold",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "A new intra-Levant conflict front between Hezbollah and Syria deepens regional safe-haven demand for gold."
+    }
+  ],
+  "trade_position": "Long wheat futures (CBOT:ZW) as the Serghaya corridor is a key agricultural transit zone between Lebanon and Syria, and sustained Hezbollah-Syria artillery exchanges will disrupt both local production and regional grain distribution networks that are already stressed. This agricultural disruption angle is underreported relative to the military headlines.",
+  "confidence": "low",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-13T06:56:46+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Israel #Iran \n\nIsraeli Prime Minister Benjamin Netanyahu has stated that efforts are being made to help the Iranian people create the conditions necessary to remove their oppressive regime. He emphasizes that while support is being provided, the ultimate responsibility for change lies with the Iranian people themselves.",
+        "text_orig": "#Israel #Iran \n\nIsraeli Prime Minister Benjamin Netanyahu has stated that efforts are being made to help the Iranian people create the conditions necessary to remove their oppressive regime. He emphasizes that while support is being provided, the ultimate responsibility for change lies with the Iranian people themselves."
+      },
+      {
+        "timestamp": "2026-03-13T07:01:48+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Russia #ME #USA\n\nRussia is providing Iran with intelligence to assist in targeting U.S. military forces in the Middle East, including the locations of American warships and aircraft. This cooperation enhances Iran's ability to conduct more precise attacks against U.S. assets amid ongoing conflicts.",
+        "text_orig": "#Russia #ME #USA\n\nRussia is providing Iran with intelligence to assist in targeting U.S. military forces in the Middle East, including the locations of American warships and aircraft. This cooperation enhances Iran's ability to conduct more precise attacks against U.S. assets amid ongoing conflicts."
+      },
+      {
+        "timestamp": "2026-03-13T07:11:45+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Israel #Iran\n\nNetanyahu believes that Israel's military achievements against Iran are elevating its status as a superpower, allowing it to effectively manage threats and secure its future. He emphasizes that as Israel strengthens its power, it can better protect itself and influence the region.",
+        "text_orig": "#Israel #Iran\n\nNetanyahu believes that Israel's military achievements against Iran are elevating its status as a superpower, allowing it to effectively manage threats and secure its future. He emphasizes that as Israel strengthens its power, it can better protect itself and influence the region."
+      },
+      {
+        "timestamp": "2026-03-13T07:41:49+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Turkey #Iran\n\nTurkey has recently reported that NATO air defenses intercepted Iranian ballistic missiles targeting its airspace, including near the Incirlik Air Base. The situation remains tense as Turkey warns Iran against further attacks, emphasizing the need for regional stability.",
+        "text_orig": "#Turkey #Iran\n\nTurkey has recently reported that NATO air defenses intercepted Iranian ballistic missiles targeting its airspace, including near the Incirlik Air Base. The situation remains tense as Turkey warns Iran against further attacks, emphasizing the need for regional stability."
+      },
+      {
+        "timestamp": "2026-03-13T08:03:47+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Lebanon #Syria \n\nHezbollah has been accused of firing artillery shells from Lebanon into Syria, targeting Syrian army positions near the town of Serghaya, as tensions escalate in the region. The Syrian army has stated it will not tolerate such aggression.",
+        "text_orig": "#Lebanon #Syria \n\nHezbollah has been accused of firing artillery shells from Lebanon into Syria, targeting Syrian army positions near the town of Serghaya, as tensions escalate in the region. The Syrian army has stated it will not tolerate such aggression."
+      }
+    ],
+    "media_urls": []
+  }
+}

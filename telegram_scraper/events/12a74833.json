@@ -1,0 +1,72 @@
+{
+  "event_id": "12a74833",
+  "headline": "US Designates Sudan Muslim Brotherhood as Terror Group",
+  "timestamp": "2026-03-09T15:04:17+00:00",
+  "location": "Washington D.C.",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "United States",
+    "Iran",
+    "Sudan"
+  ],
+  "summary": "The US State Department has designated Sudan's Muslim Brotherhood chapter as a terrorist organization, citing training and material support from Iran's IRGC. This action signals a broadening of US counter-terrorism pressure linking Sudanese Islamist networks to Tehran. The designation carries financial sanctions, asset freezes, and prohibitions on US entities engaging with the group.",
+  "primary_markets": [
+    "defense",
+    "oil"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Sudan crude oil",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bearish",
+      "reason": "Terror designation and heightened US-Sudan-Iran tensions risk further isolating Sudan's oil sector from Western financing and buyers."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Broader IRGC-linked terror designations typically drive increased US defense procurement and regional security spending."
+    },
+    {
+      "name": "RTX Corporation",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Escalating Iran proxy network designations support sustained demand for US air defense and counter-terrorism systems in the Middle East."
+    },
+    {
+      "name": "L3Harris Technologies",
+      "ticker": "LHX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Expanded US terror designations targeting IRGC-linked groups increase demand for surveillance and intelligence systems in East Africa and the Gulf."
+    },
+    {
+      "name": "Palantir Technologies",
+      "ticker": "PLTR",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Counter-terrorism financial intelligence and network analysis contracts tend to expand following new State Department terror designations."
+    }
+  ],
+  "trade_position": "The hidden opportunity lies in East Africa-focused political risk insurance and compliance technology firms — as US sanctions expand into Sudan's Islamist networks, multinational companies operating in the region face heightened compliance burdens, making PLTR and cyber/compliance platform providers strong medium-term longs. Additionally, any residual Sudanese sovereign debt or frontier market exposure becomes more toxic, making short positions on Sudan-linked frontier EM instruments worth monitoring.",
+  "confidence": "medium",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-09T15:04:17+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "⚡ BREAKING: US designates Sudan’s Muslim Brotherhood chapter as a terror group.\n\nSudanese Muslim Brotherhood terrorists receive training and other support from the Iranian Islamist Terror Regime’s IRGC, according to the State Department.",
+        "text_orig": "⚡ BREAKING: US designates Sudan’s Muslim Brotherhood chapter as a terror group.\n\nSudanese Muslim Brotherhood terrorists receive training and other support from the Iranian Islamist Terror Regime’s IRGC, according to the State Department."
+      }
+    ],
+    "media_urls": [
+      "data/IsraelWarRoom/2026-03-09/photos/150417_97.jpg"
+    ]
+  }
+}

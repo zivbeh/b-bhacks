@@ -1,0 +1,79 @@
+{
+  "event_id": "d6f0f2d0",
+  "headline": "19 Commercial Ships Damaged in Persian Gulf and Strait of Hormuz",
+  "timestamp": "2026-03-13T00:13:47Z",
+  "location": "Strait of Hormuz",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Iran"
+  ],
+  "summary": "At least 19 commercial vessels have sustained damage in the Persian Gulf and Strait of Hormuz as Iran escalates attacks on shipping and regional energy infrastructure. The sustained campaign represents a significant and ongoing threat to one of the world's most critical maritime chokepoints, through which approximately 20% of global oil trade transits. No specific casualty figures are provided, but maritime security concerns for the region are described as significantly elevated.",
+  "primary_markets": [
+    "shipping routes",
+    "oil",
+    "natural gas",
+    "insurance"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Frontline PLC",
+      "ticker": "FRO",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Major tanker operator rerouting vessels away from Hormuz faces higher day-rates as available tonnage tightens and war-risk premiums spike."
+    },
+    {
+      "name": "Maersk Tankers",
+      "ticker": "MAERSK-B.CO",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Direct exposure to Persian Gulf routes means vessel damage risk and cargo insurance costs erode margins significantly."
+    },
+    {
+      "name": "Brent Crude Oil",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Disruption to Hormuz transit threatens ~20% of global seaborne oil supply, driving a structural supply-risk premium into crude prices."
+    },
+    {
+      "name": "Hapag-Lloyd",
+      "ticker": "HLAG.DE",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Container shipping giant benefits from rate spikes as carriers avoid the Persian Gulf and reroute around Africa, tightening global capacity."
+    },
+    {
+      "name": "War Risk Insurance (Lloyd's of London)",
+      "ticker": "LLOY.L",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Sustained vessel damage campaign in Hormuz forces dramatic repricing of war-risk marine insurance premiums, boosting specialty underwriters."
+    }
+  ],
+  "trade_position": "Long Brent crude futures (LCOc1) is the highest-conviction position: 19 confirmed vessel strikes in Hormuz represent a sustained interdiction campaign rather than a one-off event, and any escalation closing or significantly restricting the strait would trigger an immediate multi-dollar supply shock. As a hedge and second-order play, buy Frontline (FRO) equity, which captures both the tanker rate spike from rerouting demand and the reduced competing supply of Gulf-routed vessels.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-12T23:55:19+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🚨Sirens sounding across northern Israel, as the Iranian terror regime attacks civilians once again.",
+        "text_orig": "🚨Sirens sounding across northern Israel, as the Iranian terror regime attacks civilians once again."
+      },
+      {
+        "timestamp": "2026-03-13T00:13:47+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#ME #USA\n\nAt least 19 commercial ships have been damaged in the Persian Gulf and Strait of Hormuz since the conflict began, as Iran has ramped up attacks on vessels and regional energy infrastructure. This escalation has raised significant maritime security concerns for shipping in the area.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#ME #USA\n\nAt least 19 commercial ships have been damaged in the Persian Gulf and Strait of Hormuz since the conflict began, as Iran has ramped up attacks on vessels and regional energy infrastructure. This escalation has raised significant maritime security concerns for shipping in the area.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": [
+      "data/IsraelWarRoom/2026-03-12/photos/235519_109.jpg",
+      "data/OSINTdefender/2026-03-13/photos/001347_17996.jpg"
+    ]
+  }
+}

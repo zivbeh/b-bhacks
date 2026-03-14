@@ -1,0 +1,120 @@
+{
+  "event_id": "65d35f0a",
+  "headline": "Trump Seeks Russia-Ukraine Peace to Restore Trade Relations",
+  "timestamp": "2026-03-14T09:59:47Z",
+  "location": "Washington",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "United States",
+    "Russia",
+    "Ukraine"
+  ],
+  "summary": "Vice President JD Vance stated that President Trump is actively seeking to end the Russia-Ukraine conflict with the goal of restoring trade relations and halting civilian casualties. The statement signals a U.S. foreign policy pivot toward commerce-driven diplomacy over sustained military support for Ukraine. A negotiated settlement, if achieved, would have significant implications for European energy markets and reconstruction investment flows.",
+  "primary_markets": [
+    "natural gas",
+    "steel & metals",
+    "food commodities"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Wheat",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bearish",
+      "reason": "Peace deal restoring Ukrainian grain exports would increase global wheat supply and suppress prices."
+    },
+    {
+      "name": "ArcelorMittal",
+      "ticker": "MT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Ukraine reconstruction demand for steel would benefit major European steel producers post-ceasefire."
+    },
+    {
+      "name": "Natural Gas (TTF Europe)",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bearish",
+      "reason": "Restored Russia-Europe trade relations could ease European natural gas supply constraints and reduce TTF prices."
+    },
+    {
+      "name": "Bunge Global SA",
+      "ticker": "BG",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Resumption of Ukrainian agricultural exports would pressure global grain commodity margins for agri-trading companies."
+    },
+    {
+      "name": "Ferrexpo PLC",
+      "ticker": "FXPO.L",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Ukrainian iron ore pellet producer directly benefits from ceasefire enabling resumed mining and export operations."
+    }
+  ],
+  "trade_position": "Buy Ferrexpo (FXPO.L) as a peace deal would unlock Ukrainian iron ore export resumption, with the stock heavily discounted on war risk; a credible ceasefire signal would trigger a sharp re-rating. Additionally, consider shorting TTF natural gas futures on the prospect of restored Russian pipeline diplomacy reducing European supply anxiety.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-14T09:04:47+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Germany #Iran \n\nGerman Chancellor Friedrich Merz expressed concern over the ongoing Iran war, emphasizing the need for a clear and effective plan to end it, as the situation escalates and raises more questions. He stated that there is no interest in a prolonged conflict.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Germany #Iran \n\nGerman Chancellor Friedrich Merz expressed concern over the ongoing Iran war, emphasizing the need for a clear and effective plan to end it, as the situation escalates and raises more questions. He stated that there is no interest in a prolonged conflict.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-14T09:37:03+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#ME\n\nIran has effectively utilized low-cost Shahed drones and missiles to target Gulf states and Israel, demonstrating a strategy that maximizes impact while minimizing costs. U.S. officials have acknowledged that Iran's operational resilience and retaliatory capabilities exceeded their expectations.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#ME\n\nIran has effectively utilized low-cost Shahed drones and missiles to target Gulf states and Israel, demonstrating a strategy that maximizes impact while minimizing costs. U.S. officials have acknowledged that Iran's operational resilience and retaliatory capabilities exceeded their expectations.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-14T09:57:47+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#ME\n\nHezbollah leader Naim Qassem has stated that the group is prepared for a long confrontation with Israel, describing the conflict as an existential battle. He emphasized their readiness and confidence in facing the Israeli forces on the battlefield.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#ME\n\nHezbollah leader Naim Qassem has stated that the group is prepared for a long confrontation with Israel, describing the conflict as an existential battle. He emphasized their readiness and confidence in facing the Israeli forces on the battlefield.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-14T09:57:47+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#ME\n\nHezbollah leader Naim Qassem has stated that the group is prepared for a long confrontation with Israel, describing the conflict as an existential battle. He emphasized their readiness and confidence in facing the Israeli forces on the battlefield.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#ME\n\nHezbollah leader Naim Qassem has stated that the group is prepared for a long confrontation with Israel, describing the conflict as an existential battle. He emphasized their readiness and confidence in facing the Israeli forces on the battlefield.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-14T09:59:47+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#EU #USA #Ukraine #Russia \n\nPresident Trump aims to end the conflict between Russia and Ukraine to restore trade relations and stop the loss of innocent lives, as stated by Vice President JD Vance. This reflects a desire for a shift in U.S. foreign policy towards a more commerce-focused approach once peace is achieved.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#EU #USA #Ukraine #Russia \n\nPresident Trump aims to end the conflict between Russia and Ukraine to restore trade relations and stop the loss of innocent lives, as stated by Vice President JD Vance. This reflects a desire for a shift in U.S. foreign policy towards a more commerce-focused approach once peace is achieved.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-14T09:59:47+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#EU #USA #Ukraine #Russia \n\nPresident Trump aims to end the conflict between Russia and Ukraine to restore trade relations and stop the loss of innocent lives, as stated by Vice President JD Vance. This reflects a desire for a shift in U.S. foreign policy towards a more commerce-focused approach once peace is achieved.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#EU #USA #Ukraine #Russia \n\nPresident Trump aims to end the conflict between Russia and Ukraine to restore trade relations and stop the loss of innocent lives, as stated by Vice President JD Vance. This reflects a desire for a shift in U.S. foreign policy towards a more commerce-focused approach once peace is achieved.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-14T10:09:07+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA #ME\n\nThe USS Tripoli and the 31st Marine Expeditionary Unit are indeed heading to the Middle East, but the operation they are involved in is related to the ongoing conflict involving Iran, not specifically named \"Operation Epstein's Fury.\" They were spotted transiting the Luzon Strait at high speed as part of their deployment.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#USA #ME\n\nThe USS Tripoli and the 31st Marine Expeditionary Unit are indeed heading to the Middle East, but the operation they are involved in is related to the ongoing conflict involving Iran, not specifically named \"Operation Epstein's Fury.\" They were spotted transiting the Luzon Strait at high speed as part of their deployment.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-14T10:09:07+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA #ME\n\nThe USS Tripoli and the 31st Marine Expeditionary Unit are indeed heading to the Middle East, but the operation they are involved in is related to the ongoing conflict involving Iran, not specifically named \"Operation Epstein's Fury.\" They were spotted transiting the Luzon Strait at high speed as part of their deployment.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#USA #ME\n\nThe USS Tripoli and the 31st Marine Expeditionary Unit are indeed heading to the Middle East, but the operation they are involved in is related to the ongoing conflict involving Iran, not specifically named \"Operation Epstein's Fury.\" They were spotted transiting the Luzon Strait at high speed as part of their deployment.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-14/photos/090447_18035.jpg",
+      "data/OSINTdefender/2026-03-14/photos/093703_18036.jpg",
+      "data/OSINTdefender/2026-03-14/photos/095747_18038.jpg",
+      "data/OSINTdefender/2026-03-14/photos/095747_18038.jpg",
+      "data/OSINTdefender/2026-03-14/photos/100907_18041.jpg",
+      "data/OSINTdefender/2026-03-14/photos/100907_18041.jpg"
+    ]
+  }
+}

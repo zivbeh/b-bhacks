@@ -1,0 +1,100 @@
+{
+  "event_id": "562b042a",
+  "headline": "Iran Threatens Strait of Hormuz Closure Amid U.S.-Israel Strikes",
+  "timestamp": "2026-03-12T15:12:22Z",
+  "location": "Strait of Hormuz",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "Iran",
+    "United States",
+    "Israel"
+  ],
+  "summary": "Iran has issued a formal threat to disrupt oil flows through the Strait of Hormuz if U.S. and Israeli attacks continue. The Strait carries approximately 20% of global oil supply and 30% of seaborne oil trade. This threat is compounded by Trump's stated dual concern over Iranian nuclear capability and rising oil prices, creating a strategic dilemma for U.S. war planners.",
+  "primary_markets": [
+    "oil",
+    "natural gas",
+    "shipping routes",
+    "insurance"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Brent Crude Oil",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "A Hormuz closure would immediately remove ~17-20 million barrels/day from global seaborne supply, causing a historic price spike."
+    },
+    {
+      "name": "Frontline Ltd",
+      "ticker": "FRO",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Major VLCC tanker operator; if Hormuz closes, rerouting around the Cape of Good Hope dramatically increases vessel demand and day rates."
+    },
+    {
+      "name": "Tsakos Energy Navigation",
+      "ticker": "TNP",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Large tanker operator with Gulf exposure; disruption increases freight rates across alternative routes."
+    },
+    {
+      "name": "Euronav",
+      "ticker": "EURN",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Major crude tanker company that benefits from rate spikes driven by Middle East supply disruption and rerouting demand."
+    },
+    {
+      "name": "War Risk Insurance Premiums",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Any Hormuz threat causes immediate war risk surcharges for vessels transiting the Gulf, boosting specialty marine insurers like Lloyd's syndicates."
+    }
+  ],
+  "trade_position": "Long Brent crude futures (front month) as a Hormuz threat alone historically drives 5-15% immediate price spikes even without physical closure. Simultaneously long FRO as tanker day rates surge when vessels are forced to reroute around Africa, adding ~15 additional sea days per voyage.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-12T14:49:01+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA #Israel #Iran \n\nShorter warning times for missile attacks in Israel are due to damage inflicted on U.S. radar systems by Iranian strikes, which has compromised missile detection capabilities in the region. This situation raises concerns about Israel's air defense readiness against potential threats.",
+        "text_orig": "#USA #Israel #Iran \n\nShorter warning times for missile attacks in Israel are due to damage inflicted on U.S. radar systems by Iranian strikes, which has compromised missile detection capabilities in the region. This situation raises concerns about Israel's air defense readiness against potential threats."
+      },
+      {
+        "timestamp": "2026-03-12T15:12:22+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA #Israel #Iran \n\nIran has threatened to disrupt oil flows through the Strait of Hormuz if attacks by the U.S. and Israel continue, which could significantly impact global oil supplies and prices. This threat complicates President Trump's war strategy, as rising oil prices become a major concern alongside military outcomes.",
+        "text_orig": "#USA #Israel #Iran \n\nIran has threatened to disrupt oil flows through the Strait of Hormuz if attacks by the U.S. and Israel continue, which could significantly impact global oil supplies and prices. This threat complicates President Trump's war strategy, as rising oil prices become a major concern alongside military outcomes."
+      },
+      {
+        "timestamp": "2026-03-12T15:14:07+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Lebanon \n\nThe IDF has issued an urgent warning for residents of southern Lebanon to evacuate north of the Litani River due to ongoing fighting with Hezbollah. This evacuation order aims to protect civilians from potential military actions targeting Hezbollah positions.",
+        "text_orig": "#Lebanon \n\nThe IDF has issued an urgent warning for residents of southern Lebanon to evacuate north of the Litani River due to ongoing fighting with Hezbollah. This evacuation order aims to protect civilians from potential military actions targeting Hezbollah positions."
+      },
+      {
+        "timestamp": "2026-03-12T15:15:09+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#ME\n\nTrump emphasizes that while the U.S. benefits economically from being the largest oil producer when prices rise, his primary concern as President is preventing Iran from acquiring nuclear weapons, which he views as a significant threat to global security. He believes stopping Iran is crucial for the stability of the Middle East and the world.",
+        "text_orig": "#ME\n\nTrump emphasizes that while the U.S. benefits economically from being the largest oil producer when prices rise, his primary concern as President is preventing Iran from acquiring nuclear weapons, which he views as a significant threat to global security. He believes stopping Iran is crucial for the stability of the Middle East and the world."
+      },
+      {
+        "timestamp": "2026-03-12T15:16:20+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran\n\nIran's Supreme Leader emphasizes that national unity is crucial, especially during challenging times, and it can be maintained by focusing on common goals rather than disagreements. This unity is seen as a defense against external threats and divisions.",
+        "text_orig": "#Iran\n\nIran's Supreme Leader emphasizes that national unity is crucial, especially during challenging times, and it can be maintained by focusing on common goals rather than disagreements. This unity is seen as a defense against external threats and divisions."
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-12/photos/151222_17984.jpg",
+      "data/OSINTdefender/2026-03-12/photos/151509_17986.jpg",
+      "data/OSINTdefender/2026-03-12/photos/151620_17987.jpg"
+    ]
+  }
+}

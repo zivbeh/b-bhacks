@@ -1,0 +1,98 @@
+{
+  "event_id": "f3c87273",
+  "headline": "Senator Graham Calls for Escalated US Military Action Against Iran",
+  "timestamp": "2026-03-13T06:06:35Z",
+  "location": "Washington",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "United States",
+    "Iran"
+  ],
+  "summary": "Senator Lindsey Graham publicly endorsed escalated US military operations against Iran, framing confrontation as necessary to protect American interests, US troops, and the Iranian people. Graham's statement signals growing Congressional political support for sustained or expanded military action beyond current strike operations. This increases the probability of formal Congressional authorization or supplemental defense appropriations for the Iran campaign.",
+  "primary_markets": [
+    "defense",
+    "oil"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Congressional support for sustained Iran operations increases likelihood of supplemental defense appropriations for precision strike munitions manufactured by Lockheed Martin."
+    },
+    {
+      "name": "General Dynamics",
+      "ticker": "GD",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Escalation narrative from senior senators supports long-cycle defense budget expansion, benefiting General Dynamics' combat systems and naval divisions."
+    },
+    {
+      "name": "Crude Oil (Brent)",
+      "ticker": "BZ=F",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Graham's escalation advocacy increases probability of prolonged US-Iran military conflict, sustaining supply disruption risk premium in crude oil prices."
+    },
+    {
+      "name": "Huntington Ingalls Industries",
+      "ticker": "HII",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Naval escort operations in Hormuz combined with Congressional escalation calls support increased US naval procurement from HII, the sole builder of US aircraft carriers."
+    },
+    {
+      "name": "L3Harris Technologies",
+      "ticker": "LHX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Sustained Iran campaign requires electronic warfare, ISR, and communications systems from L3Harris, with Congressional authorization unlocking multi-year funding streams."
+    }
+  ],
+  "trade_position": "Go long a basket of US defense primes (LMT, GD, HII) as Graham's statement represents leading Congressional sentiment that will translate into supplemental appropriations within 60–90 days if the Iran conflict persists. The specific catalyst is any Senate Armed Services Committee vote on an Iran Authorization for Use of Military Force (AUMF).",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-13T04:42:36+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Israel #Lebanon #Gaza\n\nIsraeli Prime Minister Benjamin Netanyahu has warned that Hezbollah will face severe consequences for any aggression against Israel, emphasizing that they fear Israel's military strength. He stated that those who attack Israel will pay a \"very high price\" for their actions.",
+        "text_orig": "#Israel #Lebanon #Gaza\n\nIsraeli Prime Minister Benjamin Netanyahu has warned that Hezbollah will face severe consequences for any aggression against Israel, emphasizing that they fear Israel's military strength. He stated that those who attack Israel will pay a \"very high price\" for their actions."
+      },
+      {
+        "timestamp": "2026-03-13T05:04:04+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA #Iran \n\nU.S. Treasury Secretary Scott Bessent stated that the U.S. Navy, potentially with an international coalition, plans to escort oil tankers through the Strait of Hormuz as soon as it is militarily feasible. Some tankers, including Iranian and Chinese-flagged vessels, are already navigating the strait, indicating it has not been mined.",
+        "text_orig": "#USA #Iran \n\nU.S. Treasury Secretary Scott Bessent stated that the U.S. Navy, potentially with an international coalition, plans to escort oil tankers through the Strait of Hormuz as soon as it is militarily feasible. Some tankers, including Iranian and Chinese-flagged vessels, are already navigating the strait, indicating it has not been mined."
+      },
+      {
+        "timestamp": "2026-03-13T05:27:27+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran\n\nThe AGM-158B JASSM-ER is a stealthy, air-launched cruise missile designed for long-range precision strikes, featuring a WDU-42/B warhead and a Williams F107 turbofan engine. It was recently loaded onto B-1B bombers at RAF Fairford for missions against Iran, and debris from a shot-down missile was found near Ilam.",
+        "text_orig": "#Iran\n\nThe AGM-158B JASSM-ER is a stealthy, air-launched cruise missile designed for long-range precision strikes, featuring a WDU-42/B warhead and a Williams F107 turbofan engine. It was recently loaded onto B-1B bombers at RAF Fairford for missions against Iran, and debris from a shot-down missile was found near Ilam."
+      },
+      {
+        "timestamp": "2026-03-13T05:54:47+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Russia \n\nRussia has benefited financially from the Gulf crisis, with estimates of additional oil tax revenue ranging from $1.3 billion to $1.9 billion due to rising global oil prices. This boost is part of a broader trend where higher energy prices have positively impacted Russia's economy. The U.S. has granted a 30-day waiver for countries to purchase Russian oil stranded at sea to help stabilize energy markets affected by the ongoing conflict in Iran and disruptions in shipping routes. This decision is part of efforts to lower rising oil prices amid regional tensions.",
+        "text_orig": "#Russia \n\nRussia has benefited financially from the Gulf crisis, with estimates of additional oil tax revenue ranging from $1.3 billion to $1.9 billion due to rising global oil prices. This boost is part of a broader trend where higher energy prices have positively impacted Russia's economy. The U.S. has granted a 30-day waiver for countries to purchase Russian oil stranded at sea to help stabilize energy markets affected by the ongoing conflict in Iran and disruptions in shipping routes. This decision is part of efforts to lower rising oil prices amid regional tensions."
+      },
+      {
+        "timestamp": "2026-03-13T06:06:35+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA #Iran \n\nSenator Lindsey Graham has expressed strong support for military action in Iran, emphasizing that the U.S. must confront the Iranian regime to protect both American interests and the Iranian people. He believes that supporting military operations is essential for ensuring the safety and freedom of those involved, including U.S. troops.",
+        "text_orig": "#USA #Iran \n\nSenator Lindsey Graham has expressed strong support for military action in Iran, emphasizing that the U.S. must confront the Iranian regime to protect both American interests and the Iranian people. He believes that supporting military operations is essential for ensuring the safety and freedom of those involved, including U.S. troops."
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-13/photos/044236_17997.jpg",
+      "data/OSINTdefender/2026-03-13/photos/052727_17999.jpg",
+      "data/OSINTdefender/2026-03-13/photos/055447_18001.jpg",
+      "data/OSINTdefender/2026-03-13/photos/060635_18002.jpg"
+    ]
+  }
+}

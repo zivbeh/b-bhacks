@@ -1,0 +1,77 @@
+{
+  "event_id": "f558e484",
+  "headline": "Iran Deploys Shahed-136 Drones Armed With Air-to-Air Missiles",
+  "timestamp": "2026-03-13T12:44:47Z",
+  "location": "Tehran",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "Iran",
+    "Ukraine"
+  ],
+  "summary": "Iran has reportedly modified Shahed-136 loitering munitions to carry R-60 air-to-air missiles, enabling them to target Ukrainian helicopters and light aircraft. This represents a significant tactical evolution of the Shahed platform beyond its traditional ground-attack role. No confirmed engagement or hit has been reported at this time.",
+  "primary_markets": [
+    "defense"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Increased threat to rotary-wing aircraft drives demand for Israeli counter-drone and electronic warfare systems supplied to Ukraine and NATO allies."
+    },
+    {
+      "name": "Rafael Advanced Defense Systems",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Rafael's Drone Dome and Iron Beam systems face rising demand as drone-launched AAM threats require new counter-UAS solutions."
+    },
+    {
+      "name": "Rheinmetall AG",
+      "ticker": "RHM.DE",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "European defense spending escalation and demand for short-range air defense to counter evolving drone threats benefits Rheinmetall directly."
+    },
+    {
+      "name": "Leonardo S.p.A.",
+      "ticker": "LDO.MI",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Helicopter manufacturer with exposure to Ukrainian and NATO rotary-wing fleets faces procurement urgency for upgraded survivability systems."
+    },
+    {
+      "name": "Kratos Defense & Security Solutions",
+      "ticker": "KTOS",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Specialist in counter-UAS and unmanned aerial systems; escalating drone AAM threat accelerates US DoD and allied procurement cycles."
+    }
+  ],
+  "trade_position": "Go long Rheinmetall (RHM.DE) as the primary European short-range air defense beneficiary — the AAM-armed drone configuration creates an entirely new threat tier that existing MANPADS cannot easily counter, forcing NATO members to accelerate SHORAD procurement contracts already in Rheinmetall's pipeline. The catalyst is any NATO or Ukrainian official statement acknowledging the new threat, which would trigger an immediate re-rating of air defense budgets.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-13T12:44:47+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran\n\nIran is reportedly using Shahed drones, specifically the Shahed-136 variant, which have been modified to carry R-60 air-to-air missiles. This configuration allows them to target Ukrainian helicopters and light aircraft, enhancing their combat capabilities in the ongoing conflict.",
+        "text_orig": "#Iran\n\nIran is reportedly using Shahed drones, specifically the Shahed-136 variant, which have been modified to carry R-60 air-to-air missiles. This configuration allows them to target Ukrainian helicopters and light aircraft, enhancing their combat capabilities in the ongoing conflict."
+      },
+      {
+        "timestamp": "2026-03-13T12:58:47+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA #Iran \n\nIran's missile launch rate has significantly decreased, with reports indicating a collapse of about 92% in their ballistic missile and drone operations since the start of the conflict. While they still possess a large domestic missile industry, the ongoing US and Israeli strikes have effectively targeted and neutralized many of their missile launchers and capabilities, leading to a strategic shift in their operations.",
+        "text_orig": "#USA #Iran \n\nIran's missile launch rate has significantly decreased, with reports indicating a collapse of about 92% in their ballistic missile and drone operations since the start of the conflict. While they still possess a large domestic missile industry, the ongoing US and Israeli strikes have effectively targeted and neutralized many of their missile launchers and capabilities, leading to a strategic shift in their operations."
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-13/photos/124447_18014.jpg",
+      "data/OSINTdefender/2026-03-13/photos/125847_18015.jpg"
+    ]
+  }
+}

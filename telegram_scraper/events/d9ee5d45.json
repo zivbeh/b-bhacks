@@ -1,0 +1,73 @@
+{
+  "event_id": "d9ee5d45",
+  "headline": "U.S. Intel: Iran Regime Stable Despite Ongoing U.S.-Israeli Strikes",
+  "timestamp": "2026-03-12T09:41:57Z",
+  "location": "Tehran",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "United States",
+    "Iran",
+    "Israel"
+  ],
+  "summary": "U.S. intelligence assesses that Iran's government remains stable and in firm control despite sustained U.S. and Israeli strikes and the elimination of key leadership figures. Iranian Kurdish militias are deemed incapable of mounting an effective challenge due to critical shortages of manpower and weapons. The assessment effectively rules out near-term regime collapse as a market-moving scenario.",
+  "primary_markets": [
+    "oil",
+    "gold",
+    "defense"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Brent Crude Oil",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Prolonged conflict with a stable Iranian regime sustains a persistent geopolitical risk premium in crude oil prices rather than a swift resolution repricing."
+    },
+    {
+      "name": "Gold",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "A protracted, unresolved Iran conflict extends safe-haven demand for gold as regime collapse — and a swift peace — is taken off the table."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "A stable but hostile Iran requiring continued U.S. and Israeli strike operations sustains elevated defense procurement cycles for precision munitions and air defense systems."
+    },
+    {
+      "name": "RTX Corporation",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Ongoing U.S. and Israeli air operations against Iran drive sustained demand for RTX's Patriot and air defense missile systems."
+    },
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Continued Israeli strike operations against a durable Iranian state extend the operational tempo requiring Israeli defense suppliers like Elbit to maintain high output."
+    }
+  ],
+  "trade_position": "The ruling-out of imminent Iranian regime collapse removes the 'war-ends-quickly' tail risk, locking in a prolonged conflict premium — go long USO (U.S. Oil ETF) or Brent crude futures as the protracted engagement narrative prevents any peace-driven crude selloff. Simultaneously, long LMT or RTX captures the sustained munitions and air-defense replenishment cycle that a durable, hostile Iranian regime guarantees.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-12T09:41:57+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA #Iran \n\nU.S. intelligence indicates that Iran's government remains stable and in control, showing no signs of imminent collapse despite ongoing U.S. and Israeli strikes and the death of key leaders. Additionally, Iranian Kurdish militias are reportedly unable to effectively challenge the regime due to a lack of manpower and weapons.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#USA #Iran \n\nU.S. intelligence indicates that Iran's government remains stable and in control, showing no signs of imminent collapse despite ongoing U.S. and Israeli strikes and the death of key leaders. Additionally, Iranian Kurdish militias are reportedly unable to effectively challenge the regime due to a lack of manpower and weapons.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-12/photos/094157_17977.jpg"
+    ]
+  }
+}

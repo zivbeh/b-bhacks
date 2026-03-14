@@ -1,0 +1,91 @@
+{
+  "event_id": "8029bb1b",
+  "headline": "Iran Launches Missile Strike on Haifa, Casualties Reported",
+  "timestamp": "2026-03-01T19:09:09Z",
+  "location": "Haifa",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Iran",
+    "Israel"
+  ],
+  "summary": "Iran launched a missile attack on Haifa, Israel, with the IDF confirming that at least one missile struck a public square in the city. The strike caused injuries to several people and damage to residential areas. This represents a direct Iranian ballistic strike on Israeli civilian infrastructure.",
+  "primary_markets": [
+    "defense",
+    "insurance",
+    "shipping routes"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Direct Iranian missile strikes on Israeli soil will accelerate Israeli defense procurement and Elbit's missile defense and systems contracts."
+    },
+    {
+      "name": "Rafael Advanced Defense Systems",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Rafael, developer of Iron Dome and David's Sling, will see accelerated demand as confirmed missile hits demonstrate interception gaps."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "US-Israel defense cooperation intensifies demand for Lockheed systems including THAAD and F-35 resupply amid active conflict."
+    },
+    {
+      "name": "ZIM Integrated Shipping",
+      "ticker": "ZIM",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "ZIM operates heavily out of Haifa port; confirmed strikes near port city will disrupt Israeli maritime trade and raise insurance premiums."
+    },
+    {
+      "name": "War Risk Insurance Premiums (Lloyd's)",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Confirmed Iranian ballistic missile strikes on Israeli port city will cause immediate war-risk premium spikes for Eastern Mediterranean shipping."
+    }
+  ],
+  "trade_position": "Go long on Elbit Systems (ESLT.TA) as confirmed Iranian strikes on Israeli soil guarantee emergency defense budget acceleration and Iron Dome replenishment contracts. The second-order play is shorting ZIM (ZIM) as Haifa port disruption and war-risk insurance surges will choke Israeli maritime throughput.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-01T19:09:09+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #Israel \n\nIran has launched missile attacks on Haifa, resulting in injuries and damage to residential areas. The Israel Defense Forces confirmed that a missile hit a public square in the city, causing injuries to several people.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #Israel \n\nIran has launched missile attacks on Haifa, resulting in injuries and damage to residential areas. The Israel Defense Forces confirmed that a missile hit a public square in the city, causing injuries to several people.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-01T19:10:38+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA #UAE\n\nPresident Trump has been in communication with the leaders of Israel, Bahrain, and the UAE to discuss the ongoing situation in the Middle East, particularly in light of recent military actions involving Iran. These discussions likely focus on regional security and cooperation amid escalating tensions.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#USA #UAE\n\nPresident Trump has been in communication with the leaders of Israel, Bahrain, and the UAE to discuss the ongoing situation in the Middle East, particularly in light of recent military actions involving Iran. These discussions likely focus on regional security and cooperation amid escalating tensions.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-01T19:11:33+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#France #Iran \n\nFrench President Macron confirmed that a hangar at a French base near the Emirati base was damaged in a drone attack targeting the port of Abu Dhabi, but emphasized that the damage was limited and purely material. This incident highlights the ongoing tensions in the region amid escalating hostilities.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#France #Iran \n\nFrench President Macron confirmed that a hangar at a French base near the Emirati base was damaged in a drone attack targeting the port of Abu Dhabi, but emphasized that the damage was limited and purely material. This incident highlights the ongoing tensions in the region amid escalating hostilities.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-01T19:13:42+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#UAE\n\nThe UAE has closed its embassy in Tehran and withdrawn its ambassador in response to Iranian missile attacks that targeted UAE territory, which the UAE condemned as violations of national sovereignty and international law. This decision reflects the UAE's firm stance against aggression affecting its security.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#UAE\n\nThe UAE has closed its embassy in Tehran and withdrawn its ambassador in response to Iranian missile attacks that targeted UAE territory, which the UAE condemned as violations of national sovereignty and international law. This decision reflects the UAE's firm stance against aggression affecting its security.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-01/photos/191038_17572.jpg",
+      "data/OSINTdefender/2026-03-01/photos/191342_17574.jpg"
+    ]
+  }
+}

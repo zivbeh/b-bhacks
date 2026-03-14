@@ -1,0 +1,75 @@
+{
+  "event_id": "b07759ec",
+  "headline": "Israeli Air Force Strikes Iranian F-14s at Isfahan Airport",
+  "timestamp": "2026-03-08T05:30:00Z",
+  "location": "Isfahan",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Israel",
+    "Iran"
+  ],
+  "summary": "Israeli Air Force jets struck Iranian F-14 fighter aircraft at an airport in Isfahan, also targeting radar and air-defense systems. The operation follows a prior Israeli strike destroying 16 IRGC Quds Force aircraft at Tehran's Mehrabad Airport days earlier. Israel describes the campaign as a systematic effort to dismantle Iranian air capabilities and expand Israeli air superiority over Iran.",
+  "primary_markets": [
+    "defense",
+    "oil"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Escalating Israel-Iran air warfare increases demand for advanced fighter jets, air defense systems, and munitions supplied by Lockheed Martin."
+    },
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Israeli precision strike campaigns rely heavily on Elbit targeting and electronic warfare systems, driving near-term revenue expectations higher."
+    },
+    {
+      "name": "Rafael Advanced Defense Systems",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "As Israel's primary missile and munitions developer, Rafael directly benefits from the sustained air campaign against Iranian military assets."
+    },
+    {
+      "name": "Brent Crude Oil",
+      "ticker": "BZ=F",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Sustained Israeli strikes on Iranian military infrastructure raise fears of Iranian retaliation targeting Gulf oil flows and the Strait of Hormuz."
+    },
+    {
+      "name": "RTX Corporation",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "RTX's Patriot and air-defense systems are in high demand as regional air warfare escalates and Gulf allies seek upgraded protection."
+    }
+  ],
+  "trade_position": "The most actionable hidden opportunity is long RTX or ESLT.TA via options ahead of anticipated Israeli and Gulf ally defense procurement announcements — the systematic destruction of Iranian air assets signals a prolonged campaign requiring sustained resupply of precision munitions and air-defense interceptors. A secondary catalyst is an Israeli government supplemental defense budget announcement, which would directly accelerate orders.",
+  "confidence": "medium",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-08T06:04:05+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🔥**BREAKING**: The IDF says Israeli Air Force jets struck Iranian F-14 fighter aircraft at an airport in Isfahan during a major strike directed by Israeli intelligence.\n\nAccording to the IDF, the operation also targeted radar and air-defense systems that threatened Israeli aircraft.\n\nThe strike follows the destruction of 16 additional aircraft used by Iran’s IRGC Quds Force at Tehran’s Mehrabad Airport just days earlier.\n\nIsrael says the campaign is systematically dismantling the Iranian terror regime’s air capabilities and expanding Israeli air superiority over Iran.",
+        "text_orig": "🔥**BREAKING**: The IDF says Israeli Air Force jets struck Iranian F-14 fighter aircraft at an airport in Isfahan during a major strike directed by Israeli intelligence.\n\nAccording to the IDF, the operation also targeted radar and air-defense systems that threatened Israeli aircraft.\n\nThe strike follows the destruction of 16 additional aircraft used by Iran’s IRGC Quds Force at Tehran’s Mehrabad Airport just days earlier.\n\nIsrael says the campaign is systematically dismantling the Iranian terror regime’s air capabilities and expanding Israeli air superiority over Iran."
+      },
+      {
+        "timestamp": "2026-03-08T06:27:56+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🚨**BREAKING**: U.S. ally Bahrain reports that an Iranian attack damaged a major desalination facility, according to the country’s Interior Ministry.\n\nThe strike targets critical civilian infrastructure in the Gulf, threatening water supply and further exposing Tehran’s widening campaign of aggression against regional partners.",
+        "text_orig": "🚨**BREAKING**: U.S. ally Bahrain reports that an Iranian attack damaged a major desalination facility, according to the country’s Interior Ministry.\n\nThe strike targets critical civilian infrastructure in the Gulf, threatening water supply and further exposing Tehran’s widening campaign of aggression against regional partners."
+      }
+    ],
+    "media_urls": []
+  }
+}

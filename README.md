@@ -1,22 +1,22 @@
-# ⚡ STRATA
+# STRATA
 
 **Real-time conflict intelligence → market signals → automated trading**
 
-Scrapes social media, Telegram, and news channels to detect Middle East conflict events *faster than humans can react* — maps them through supply networks to tradable instruments and executes on [Polymarket](https://polymarket.com) via API.
+Scrapes Telegram conflict channels, extracts structured events with Claude AI, maps them to Polymarket prediction markets, and executes positions automatically — all visible in a live terminal dashboard.
 
 ---
 
 ## The Thesis
 
-When a missile hits near a Gulf port, markets take minutes to hours to price in the cascading effects. This system aims to close that gap:
+When a missile hits near a Gulf port, markets take minutes to hours to price in the cascading effects. STRATA closes that gap:
 
 ```
 "Strike near a major Gulf port"
- → identify the port / nearby logistics node
- → infer shipping disruption, insurance costs, rerouting risk
- → infer oil flow, tanker rates, refinery throughput, defense risk premium
- → map to tradable instruments and prediction markets
- → execute with explanation and source evidence
+ → detect from live Telegram feeds
+ → extract: location, event type, involved parties, confidence
+ → map to active Polymarket questions
+ → rank trades by urgency and expected edge
+ → execute via Polymarket CLOB API
 ```
 
 **Speed matters.** By the time a journalist writes the headline, the position is already placed.
@@ -26,235 +26,352 @@ When a missile hits near a Gulf port, markets take minutes to hours to price in 
 ## Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                        DATA INGESTION                           │
-│                                                                 │
-│  Telegram Channels ──┐                                          │
-│  News APIs ──────────┼──▶  scraper.py  ──▶  data/*.jsonl        │
-│  Social Media ───────┘     (live + backfill)   (text + media)   │
-└────────────────────────────────┬────────────────────────────────┘
-                                 │
-                                 ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                     AI EVENT ANALYSIS                           │
-│                                                                 │
-│  analyzer.py                                                    │
-│  ├─ Claude Opus + web search verification                       │
-│  ├─ Structured event extraction (location, weapons, parties)    │
-│  ├─ Casualty & damage assessment                                │
-│  ├─ Supply chain impact mapping                                 │
-│  ├─ Polymarket market identification                            │
-│  └─ Trading signal generation (sector, direction, tickers)      │
-│                                                                 │
-│  Output: events.json                                            │
-└────────────────────────────────┬────────────────────────────────┘
-                                 │
-                                 ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                    TRADING EXECUTION                            │
-│                                                                 │
-│  Polymarket API  ──▶  Automated position entry                  │
-│  Supply Graph    ──▶  Cascade analysis (oil, defense, shipping) │
-│  Risk Engine     ──▶  Position sizing & confidence scoring      │
-└─────────────────────────────────────────────────────────────────┘
+Telegram Channels
+      │
+      ▼
+ scraper.py ──────────────────▶  data/<channel>/<date>/messages.jsonl
+      │                                      │
+      │                          (queue.jsonl for live mode)
+      │                                      │
+      ▼                                      ▼
+ run.py / resume.py ──────────▶  analyzer.py (Claude Sonnet)
+      │                                      │
+      │                          events/<event_id>.json
+      │                                      │
+      ▼                                      ▼
+ trade_executor.py ───────────▶  Polymarket CLOB API
+      │
+      ▼
+ portfolio.json  /  trades_log.json
+
+      ↕ HTTP (port 3001)
+ strata.js — live terminal TUI (map + feed + trades)
 ```
 
 ---
 
-## Pipeline Detail
+## All Runnable Commands
 
-### 1. 📡 Ingestion — `scraper.py`
+### `node strata.js` — Live Terminal Dashboard
 
-Real-time Telegram scraper watching 10 conflict-focused channels:
+The visual layer. Launches automatically via other scripts unless `--no-strata` is passed.
+Start it manually for a standalone view:
 
-| Channel | Focus |
-|---------|-------|
-| `@OSINTdefender` | OSINT aggregator — strikes, explosions, live updates |
-| `@GeoConfirmed` | Geolocated conflict events with maps |
-| `@MiddleEastSpectator` | ME news aggregator (English) |
-| `@iranintl` | Iran/Israel/region coverage |
-| `@IsraelWarRoom` | IDF operations, Gaza, Lebanon |
-| `@AlJazeera` | Al Jazeera breaking news |
-| `@warmonitor3` | Multi-front military coverage |
-| `@Conflicts` | Conflict news aggregator |
-| `@IntelSlava` | Intel/military ops tracker |
-| `@menaconflict` | MENA conflict reporting |
+```bash
+node strata.js
+```
 
-**Features:**
-- Keyword filtering (missiles, strikes, drones, etc.)
-- Auto-translation to English (Arabic, Hebrew, Farsi, Russian → EN)
-- Media download (photos, videos, documents)
-- Backfill history on first run
-- Live listener for new messages as they arrive
+Shows:
+- Left panel: incident feed (collapsible AI events + live Telegram messages)
+- Center: ASCII world map with red dots at event locations, click for detail popup
+- Bottom: AI trade signals with urgency + market
+- Right: Intel stats + trades execution log
 
-### 2. 🧠 Analysis — `analyzer.py`
+---
 
-Uses **Claude Opus** with web search to process raw intelligence into structured events:
+### `scraper.py` — Telegram Ingestion
+
+Connects to Telegram via MTProto and saves messages to `data/`.
+
+```bash
+# Live mode — watch 3 default channels, backfill 100 msgs on start
+python scraper.py
+
+# Live mode with more history on first run
+python scraper.py --backfill 500
+
+# Fetch a specific date range then exit (no live watch)
+python scraper.py --fetch-range 2026-02-27 2026-03-14
+
+# All 10 channels
+python scraper.py --fetch-range 2026-02-27 2026-03-14 --channels all
+
+# Specific channels
+python scraper.py --fetch-range 2026-02-27 2026-03-14 --channels OSINTdefender IsraelWarRoom
+```
+
+**Default channels (3):** `OSINTdefender`, `IsraelWarRoom`, `AmitSegal`
+
+**All channels (10):** + `MiddleEastSpectator`, `IranIntl_En`, `AJEnglish`, `warmonitor3`, `IntelSlava`, `Aurora_Intel`, `elizrael`
+
+Messages are keyword-filtered, auto-translated to English, and saved as JSONL. Photos and videos are downloaded alongside.
+
+---
+
+### `run.py` — Event Analysis Pipeline
+
+Processes scraped messages with Claude → extracts conflict events → ranks Polymarket trades.
+
+```bash
+# Process all scraped data (fastest, no web search)
+python run.py
+
+# Process from a start date
+python run.py --since 2026-02-27
+
+# Process a specific date range
+python run.py --since 2026-02-27 --until 2026-03-14
+
+# Real-time watch mode (reads queue.jsonl as scraper writes it)
+python run.py --watch
+
+# Enable web search for real-time event verification (slower but richer)
+python run.py --since 2026-02-27 --search
+
+# Control parallel workers (default: 5)
+python run.py --since 2026-02-27 --workers 10
+
+# Combine flags
+python run.py --since 2026-02-27 --search --workers 3
+```
+
+**How it works:**
+1. Groups messages into 45-minute time windows
+2. Sends each window to Claude Sonnet in parallel (5 workers default)
+3. Claude extracts structured events: type, location, parties, confidence, secondary market impacts
+4. For each new event, ranks top Polymarket trades by urgency
+5. Saves to `events/<event_id>.json` and streams to Strata TUI
+
+**Speed:** With 5 workers and no web search, processes ~70 windows in ~7 minutes. Add `--search` for richer analysis at ~3x the time.
+
+---
+
+### `resume.py` — Smart Resume (Skip Completed Work)
+
+Like `run.py` but skips steps already done — safe to re-run after interruption.
+
+```bash
+# Resume from a date, skip already-analyzed windows
+python resume.py --since 2026-03-01
+
+# With end date
+python resume.py --since 2026-03-01 --until 2026-03-14
+
+# Execute real Polymarket trades (default is dry-run)
+python resume.py --since 2026-03-01 --live
+
+# Headless (no Strata TUI)
+python resume.py --since 2026-03-01 --no-strata
+```
+
+**What it skips:**
+- Message windows already turned into events (by fingerprint match)
+- Events that already have `polymarket_trades` ranked
+- Events that already have `executions` recorded
+
+---
+
+### `main.py` — Full Orchestrator
+
+Runs scraper + analyzer + trade executor all in parallel subprocesses.
+
+```bash
+# Live mode, dry-run trades
+python main.py
+
+# Live mode, execute real trades
+python main.py --live
+
+# Batch from date, dry-run
+python main.py --since 2026-03-01
+
+# Batch + real trades
+python main.py --since 2026-03-01 --live
+
+# All 10 channels
+python main.py --channels all
+
+# Skip trade executor
+python main.py --no-trade
+
+# Headless (no Strata TUI launched)
+python main.py --no-strata
+
+# Backfill messages on startup before going live
+python main.py --backfill 500
+```
+
+---
+
+### `trade_executor.py` — Polymarket Order Placement
+
+Places orders on Polymarket via the CLOB API.
+
+```bash
+# Preview trades for one event (dry-run)
+python trade_executor.py events/abc12345.json
+
+# Execute real trades for one event
+python trade_executor.py events/abc12345.json --live
+
+# Watch events/ directory and auto-execute new events as they arrive
+python trade_executor.py --watch
+
+# Watch + real trades
+python trade_executor.py --watch --live
+
+# Only primary or secondary signals
+python trade_executor.py events/abc12345.json --section primary
+python trade_executor.py events/abc12345.json --section secondary
+```
+
+Requires `POLY_PRIVATE_KEY` in `.env`. Defaults: `POLY_ORDER_SIZE=10` USDC per trade, `POLY_MIN_URGENCY=immediate`.
+
+---
+
+### `review.py` — Portfolio Review Agent
+
+Loads current portfolio, fetches live Polymarket prices, shows P&L, and asks Claude to decide HOLD / ADD / SELL on each open position.
+
+```bash
+# Review + dry-run decisions
+python review.py
+
+# Execute real trades based on Claude's decisions
+python review.py --live
+
+# Headless output
+python review.py --no-strata
+
+# Also consider new events from this date
+python review.py --since 2026-03-01
+```
+
+---
+
+### `search.py` — Search Saved Intelligence
+
+Query the scraped message database.
+
+```bash
+python search.py missile
+python search.py strike --date 2026-03-12
+python search.py explosion --channel OSINTdefender
+python search.py drone --videos-only
+```
+
+---
+
+## Recommended Workflows
+
+### Demo / Replay historical data
+
+```bash
+# Terminal 1: launch the TUI
+node strata.js
+
+# Terminal 2: run the pipeline (fast, parallel, no web search)
+cd telegram_scraper
+python resume.py --since 2026-02-27
+```
+
+### Live monitoring
+
+```bash
+# Terminal 1: TUI
+node strata.js
+
+# Terminal 2: scrape live
+cd telegram_scraper
+python scraper.py --backfill 200
+
+# Terminal 3: analyze in real-time as messages come in
+cd telegram_scraper
+python run.py --watch
+```
+
+### Full auto (one command)
+
+```bash
+cd telegram_scraper
+python main.py --backfill 200        # dry-run trades
+python main.py --backfill 200 --live # real trades
+```
+
+---
+
+## Setup
+
+### Prerequisites
+
+- Python 3.10+
+- Node.js 18+
+- [Telegram API credentials](https://my.telegram.org) → API development tools
+- [Anthropic API key](https://console.anthropic.com)
+- Polymarket wallet private key (only for live trading)
+
+### Install
+
+```bash
+# Node dependencies (for TUI)
+npm install
+
+# Python dependencies
+cd telegram_scraper
+pip install -r requirements.txt
+
+# Configure credentials
+cp .env.example .env
+# Fill in: TELEGRAM_API_ID, TELEGRAM_API_HASH, TELEGRAM_PHONE, ANTHROPIC_API_KEY
+# Optional for trading: POLY_PRIVATE_KEY, POLY_ORDER_SIZE, POLY_MIN_URGENCY
+```
+
+First run of `scraper.py` will prompt for a Telegram login code sent to your phone.
+
+---
+
+## Data Layout
+
+```
+telegram_scraper/
+  data/
+    <CHANNEL>/
+      <YYYY-MM-DD>/
+        messages.jsonl     ← scraped messages (text, translation, timestamps)
+        photos/            ← downloaded images
+        videos/            ← downloaded video clips
+    queue.jsonl            ← live message queue (scraper → analyzer)
+
+  events/
+    <event_id>.json        ← one file per extracted event
+                           ← contains: headline, location, event_type, involved,
+                              primary/secondary markets, polymarket_trades, executions
+
+  portfolio.json           ← open/closed positions, cash balance
+  trades_log.json          ← full execution history
+```
+
+### Event JSON structure
 
 ```json
 {
   "event_id": "a1b2c3d4",
-  "timestamp": "2026-03-12T14:30:00+00:00",
-  "confirmed": true,
-  "event_type": "airstrike",
-  "summary": "IDF airstrike targets Hezbollah weapons depot near Baalbek, Lebanon",
-  "location": {
-    "name": "Baalbek industrial zone",
-    "country": "Lebanon",
-    "facility_type": "military_base",
-    "precision": "high"
+  "headline": "IDF Kills Hezbollah Intelligence Chief in Beirut",
+  "timestamp": "2026-03-02T01:00:00+00:00",
+  "location": "Beirut",
+  "event_type": "Attack and Hit",
+  "involved": ["Israel", "Hezbollah"],
+  "summary": "2-3 sentence description of what happened.",
+  "primary_markets": ["defense", "insurance"],
+  "secondary_markets": [
+    { "name": "Elbit Systems", "ticker": "ESLT.TA", "signal": "bullish", "reason": "..." }
+  ],
+  "trade_position": "Specific actionable position in 1-2 sentences.",
+  "confidence": "high",
+  "sources": ["OSINTdefender", "IsraelWarRoom"],
+  "polymarket_trades": {
+    "primary": [
+      { "rank": 1, "market": "Will Israel attack Iran by March 31?",
+        "trade": "BUY NO", "current_price": 0.14, "urgency": "immediate",
+        "url": "https://polymarket.com/..." }
+    ],
+    "secondary": [...]
   },
-  "groups_involved": [...],
-  "weapons_used": ["F-35"],
-  "casualties": {"killed": 3, "injured": 12, "confidence": "estimated"},
-  "suppliers": [
-    {"company": "Lockheed Martin", "country": "US", "product": "F-35", "relevance": "direct"}
-  ],
-  "polymarket_markets": [
-    {
-      "market": "Israel-Lebanon ceasefire by April 2026",
-      "direction": "no",
-      "impact": "high",
-      "reasoning": "Continued strikes indicate escalation, not de-escalation"
-    }
-  ],
-  "trading_signals": [
-    {
-      "sector": "defense",
-      "signal": "bullish",
-      "magnitude": "medium",
-      "tickers": ["LMT", "RTX", "ELBIT"],
-      "reasoning": "Confirmed use of advanced munitions increases procurement outlook"
-    },
-    {
-      "sector": "oil_gas",
-      "signal": "bullish",
-      "magnitude": "low",
-      "tickers": ["XOM", "CVX"],
-      "reasoning": "Regional escalation adds risk premium to oil futures"
-    }
+  "executions": [
+    { "timestamp": "...", "status": "DRY_RUN", "size": 10, "price": 0.14 }
   ]
 }
 ```
-
-**Modes:**
-- **Batch:** Process historical data — `python3 analyzer.py --since 2026-02-27`
-- **Real-time:** Watch for new messages — `python3 analyzer.py --watch`
-
-### 3. 🔍 Search — `search.py`
-
-Query saved intelligence by keyword, date, channel, or media type:
-
-```bash
-python3 search.py missile
-python3 search.py strike --date 2026-03-12
-python3 search.py explosion --channel OSINTdefender
-python3 search.py drone --videos-only
-```
-
-### 4. 🏗️ Supply Network Graph *(in progress)*
-
-Maps conflict events to economic ripple effects:
-
-```
-Missile strike on port
- └─▶ Shipping disruption
-      ├─▶ Tanker rates ↑  (ZIM, INSW)
-      ├─▶ Insurance costs ↑  (shipping insurers)
-      └─▶ Rerouting via longer routes
-           ├─▶ Oil delivery delays → spot price ↑  (XOM, CVX, CL futures)
-           └─▶ Refinery throughput ↓
-                └─▶ Gasoline/petrochemical supply ↓
-```
-
-### 5. 💰 Polymarket Execution *(in progress)*
-
-Automated trading on prediction markets:
-- Match detected events to active Polymarket questions
-- Score confidence based on source count, confirmation status, and historical accuracy
-- Execute positions via Polymarket API with position sizing based on signal magnitude
-
----
-
-## Demo
-
-**Replay February 28th → present:**
-
-- 📺 Live terminal tracking of all events (100s of incidents)
-- 🖱️ Click to view the video/source itself
-- 📊 Real-time trading signal dashboard
-- ⚡ Polymarket execution log
-
----
-
-## Quick Start
-
-### Prerequisites
-- Python 3.9+
-- [Telegram API credentials](https://my.telegram.org) (API development tools)
-- [Anthropic API key](https://console.anthropic.com) (for Claude-powered analysis)
-
-### Setup
-
-```bash
-cd telegram_scraper
-
-# Configure credentials
-cp .env.example .env
-# Edit .env with your TELEGRAM_API_ID, TELEGRAM_API_HASH, TELEGRAM_PHONE, ANTHROPIC_API_KEY
-
-# Install dependencies
-pip3 install -r requirements.txt
-pip3 install anthropic
-
-# Run the scraper (first run will prompt for Telegram login code)
-python3 scraper.py                    # backfill 100 msgs + live watch
-python3 scraper.py --backfill 500     # backfill more history on first run
-
-# Run the analyzer
-python3 analyzer.py --since 2026-02-27              # batch process from date
-python3 analyzer.py --since 2026-02-27 --until 2026-03-14  # specific range
-python3 analyzer.py --watch                          # real-time mode
-
-# Search saved intelligence
-python3 search.py missile
-python3 search.py strike --date 2026-03-12 --videos-only
-```
-
-### Data Layout
-
-```
-data/
-  OSINTdefender/
-    2026-03-12/
-      messages.jsonl          ← structured message records
-      videos/
-        143000_12345.mp4      ← downloaded media
-      photos/
-        143001_12346.jpg
-  IsraelWarRoom/
-    ...
-events.json                   ← AI-extracted structured events with trading signals
-```
-
----
-
-## Roadmap
-
-- [x] Telegram multi-channel scraper with keyword filtering
-- [x] Auto-translation (AR/HE/FA/RU → EN)
-- [x] Media download (photos + videos)
-- [x] Claude-powered event analysis with web search verification
-- [x] Structured event extraction (location, weapons, parties, casualties)
-- [x] Trading signal generation (sector, direction, magnitude, tickers)
-- [x] Polymarket market matching
-- [x] Batch + real-time analysis modes
-- [ ] Supply network graph visualization
-- [ ] Polymarket API integration (automated execution)
-- [ ] Live terminal dashboard with event replay
-- [ ] WhatsApp / X (Twitter) / news RSS ingestion
-- [ ] Confidence scoring & backtesting framework
-- [ ] Multi-market execution (Polymarket + traditional brokers)
 
 ---
 
@@ -262,13 +379,13 @@ events.json                   ← AI-extracted structured events with trading si
 
 | Component | Technology |
 |-----------|-----------|
-| Scraping | [Telethon](https://github.com/LonamiWebs/Telethon) (Telegram MTProto) |
-| Translation | [deep-translator](https://github.com/nidhaloff/deep-translator) (Google Translate) |
-| Language Detection | [langdetect](https://github.com/Mimino666/langdetect) |
-| AI Analysis | [Claude Opus](https://anthropic.com) + web search |
-| Trading | Polymarket API *(in progress)* |
-| Runtime | Python 3.9+ |
+| Terminal UI | Node.js + MapSCII + raw ANSI |
+| Scraping | [Telethon](https://github.com/LonamiWebs/Telethon) — Telegram MTProto |
+| Translation | [deep-translator](https://github.com/nidhaloff/deep-translator) |
+| AI Analysis | Claude Sonnet (parallel workers) |
+| Trading | [Polymarket CLOB API](https://docs.polymarket.com) + py-clob-client |
+| Runtime | Python 3.10+, Node.js 18+ |
 
 ---
 
-*Built at B&B Hacks 2026* 🏴‍☠️
+*Built at B&B Hacks 2026*

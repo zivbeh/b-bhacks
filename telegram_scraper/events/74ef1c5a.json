@@ -1,0 +1,118 @@
+{
+  "event_id": "74ef1c5a",
+  "headline": "Iranian Drones Target US Embassy and Oil Facilities in Riyadh",
+  "timestamp": "2026-03-12T06:47:40Z",
+  "location": "Riyadh",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Iran",
+    "United States",
+    "Saudi Arabia"
+  ],
+  "summary": "Reports indicate Iranian drone strikes have targeted the US Embassy compound in Riyadh and oil infrastructure within Saudi Arabia, representing a dramatic geographic expansion of Iranian offensive operations. If confirmed, this would mark the first direct Iranian strike on Saudi territory and a US diplomatic facility simultaneously. The event is currently unconfirmed and sourced from a single channel.",
+  "primary_markets": [
+    "oil",
+    "defense",
+    "insurance"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Saudi Aramco",
+      "ticker": "2222.SR",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Direct strikes on Saudi oil facilities threaten Aramco's production infrastructure and trigger force majeure supply disruptions."
+    },
+    {
+      "name": "Brent Crude Oil",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Iranian strikes on Saudi oil facilities would remove millions of barrels per day from global supply, causing immediate price spikes."
+    },
+    {
+      "name": "WTI Crude Oil",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Saudi production disruption combined with ongoing Iran war would create the tightest oil supply environment since 2022."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "US Embassy attack triggers immediate force protection upgrades and Saudi PAC-3 Patriot battery activations under Lockheed contracts."
+    },
+    {
+      "name": "Vaalco Energy / Upstream Gulf Producers",
+      "ticker": "EGY",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Smaller Gulf-exposed upstream producers benefit from price spikes when Saudi Arabian supply is disrupted."
+    }
+  ],
+  "trade_position": "Go long Brent crude futures (front-month) immediately — Iranian strikes on Saudi Aramco infrastructure combined with the ongoing US-Iran war creates a dual supply shock that could push Brent above $120/bbl within 48-72 hours. The hidden opportunity is long out-of-the-money call options on USO (US Oil ETF) which will deliver asymmetric returns if the Saudi facility damage is confirmed and significant.",
+  "confidence": "low",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-12T06:26:13+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Oman\n\nA major fire has erupted at Salalah Port in Oman due to drone strikes that targeted oil storage facilities, with reports indicating that the situation is worsening. Shipping operations have been suspended by Maersk as a precautionary measure amid the ongoing incident.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Oman\n\nA major fire has erupted at Salalah Port in Oman due to drone strikes that targeted oil storage facilities, with reports indicating that the situation is worsening. Shipping operations have been suspended by Maersk as a precautionary measure amid the ongoing incident.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-12T06:28:31+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Yemen\n\nIsrael is planning to establish a military base in Somaliland to enhance its security and counter threats from the Houthi forces in Yemen. This base would allow Israel to monitor the region and protect maritime routes in the Gulf of Aden.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Yemen\n\nIsrael is planning to establish a military base in Somaliland to enhance its security and counter threats from the Houthi forces in Yemen. This base would allow Israel to monitor the region and protect maritime routes in the Gulf of Aden.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-12T06:30:03+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA #Iran \n\nThe Pentagon reported that the first six days of the Iran war cost over $11.3 billion, and this figure is expected to increase as additional operational costs are assessed.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#USA #Iran \n\nThe Pentagon reported that the first six days of the Iran war cost over $11.3 billion, and this figure is expected to increase as additional operational costs are assessed.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-12T06:40:56+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Israel \n\nThe Iranian Revolutionary Guard Corps (IRGC) and Hezbollah have claimed to conduct coordinated attacks on Israel to breach its air defenses, while Israel's military is restricting information about these events. This situation highlights the ongoing tensions and complexities in the region.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Israel \n\nThe Iranian Revolutionary Guard Corps (IRGC) and Hezbollah have claimed to conduct coordinated attacks on Israel to breach its air defenses, while Israel's military is restricting information about these events. This situation highlights the ongoing tensions and complexities in the region.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-12T06:47:40+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🚨BREAKING: Reports indicate Iranian drone attacks targeting the U.S. Embassy in Riyadh and oil facilities in Saudi Arabia.\n\nIf confirmed, the strikes would mark another escalation by the Iran terror regime — expanding its attacks to even more U.S. and Arab targets across the region.",
+        "text_orig": "🚨BREAKING: Reports indicate Iranian drone attacks targeting the U.S. Embassy in Riyadh and oil facilities in Saudi Arabia.\n\nIf confirmed, the strikes would mark another escalation by the Iran terror regime — expanding its attacks to even more U.S. and Arab targets across the region."
+      },
+      {
+        "timestamp": "2026-03-12T06:55:55+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🔥**NEW**: As the Iran terror regime and Hezbollah continue joint attacks on Israeli civilians, IDF troops operating in the Mount Dov area of southern Lebanon have uncovered and destroyed a Hezbollah launch position and weapons depots.\n\nAccording to the IDF, forces from the 810th Mountains Brigade located Hezbollah firing positions, staging sites, and weapons caches including mortar bombs during operations in the area. All weapons discovered were destroyed on site.\n\nIsrael says the cross-border operations are aimed at strengthening the defensive line protecting northern Israeli communities and eliminating threats before they can be used in attacks.\n\nHezbollah has long embedded weapons and launch sites near the border, including rocket launchers and depots uncovered by Israeli forces in the Mount Dov area.",
+        "text_orig": "🔥**NEW**: As the Iran terror regime and Hezbollah continue joint attacks on Israeli civilians, IDF troops operating in the Mount Dov area of southern Lebanon have uncovered and destroyed a Hezbollah launch position and weapons depots.\n\nAccording to the IDF, forces from the 810th Mountains Brigade located Hezbollah firing positions, staging sites, and weapons caches including mortar bombs during operations in the area. All weapons discovered were destroyed on site.\n\nIsrael says the cross-border operations are aimed at strengthening the defensive line protecting northern Israeli communities and eliminating threats before they can be used in attacks.\n\nHezbollah has long embedded weapons and launch sites near the border, including rocket launchers and depots uncovered by Israeli forces in the Mount Dov area."
+      },
+      {
+        "timestamp": "2026-03-12T07:33:14+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🚨🚨 Another ballistic missile launch from Iran detected. Sirens sounded in central Israel and in the Jerusalem area.",
+        "text_orig": "🚨🚨 Another ballistic missile launch from Iran detected. Sirens sounded in central Israel and in the Jerusalem area."
+      },
+      {
+        "timestamp": "2026-03-12T07:33:59+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🚨BREAKING: The IDF issues an urgent warning to civilians in the Lebanese village of Qasr Nabba, urging residents near a Hezbollah site to evacuate immediately.\n\nIsrael says it will soon strike Hezbollah military infrastructure in the area and calls on people in the marked building — and nearby structures — to move at least 300 meters away for their safety.\n\nThe IDF warns that remaining near Hezbollah facilities puts civilians at risk, as the terror group continues operating from within populated areas.",
+        "text_orig": "🚨BREAKING: The IDF issues an urgent warning to civilians in the Lebanese village of Qasr Nabba, urging residents near a Hezbollah site to evacuate immediately.\n\nIsrael says it will soon strike Hezbollah military infrastructure in the area and calls on people in the marked building — and nearby structures — to move at least 300 meters away for their safety.\n\nThe IDF warns that remaining near Hezbollah facilities puts civilians at risk, as the terror group continues operating from within populated areas."
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-12/photos/063003_17974.jpg",
+      "data/IsraelWarRoom/2026-03-12/photos/065555_102.jpg",
+      "data/IsraelWarRoom/2026-03-12/photos/073314_106.jpg",
+      "data/IsraelWarRoom/2026-03-12/photos/073359_108.jpg"
+    ]
+  }
+}

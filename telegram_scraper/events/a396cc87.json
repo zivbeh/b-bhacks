@@ -1,0 +1,103 @@
+{
+  "event_id": "a396cc87",
+  "headline": "Trump Confirms Khamenei Killed in Joint U.S.-Israeli Operation",
+  "timestamp": "2026-03-02T05:37:43Z",
+  "location": "Tehran",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "United States",
+    "Israel",
+    "Iran"
+  ],
+  "summary": "President Trump publicly confirmed a successful U.S.-Israeli operation that resulted in the death of Iranian Supreme Leader Ali Khamenei, stating 'I got him before he got me' in reference to alleged Iranian assassination plots. The operation represents the most significant targeted killing in modern geopolitical history, triggering Iran's ongoing retaliatory campaign across the Gulf. Khamenei's death has created a leadership vacuum in Tehran with an interim ruling council now managing the state.",
+  "primary_markets": [
+    "oil",
+    "defense",
+    "gold"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Brent Crude Oil",
+      "ticker": "null",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Killing of Iran's Supreme Leader is the single largest geopolitical risk event for Gulf oil supply in decades, driving maximum fear premium into crude."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Confirmed U.S.-Israeli precision strike operation validates advanced targeting and stealth capabilities, boosting Lockheed's F-35 and precision munitions order outlook."
+    },
+    {
+      "name": "Raytheon Technologies",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Multi-theater Iranian retaliation across Qatar and Kuwait drives emergency procurement of Raytheon's Patriot and NASAMS air defense batteries across all GCC states."
+    },
+    {
+      "name": "Gold (XAU/USD)",
+      "ticker": "null",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Assassination of a sitting head of state and theocratic leader of a nuclear-threshold power is a maximum safe-haven trigger event for gold markets."
+    },
+    {
+      "name": "Strait of Hormuz shipping (VLCC tankers)",
+      "ticker": "null",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Iranian retaliation risk to Hormuz passage drives tanker day-rates to crisis levels as shippers price in route closure or military interdiction."
+    }
+  ],
+  "trade_position": "Long Frontline Ltd (FRO) and Nordic American Tankers (NAT) as the highest-beta pure-play instruments on a Strait of Hormuz crisis — if Iran's retaliatory campaign extends to Hormuz interdiction, VLCC spot rates will spike 300-500% within days as 20% of global oil supply faces disruption. The hidden catalyst is that tanker companies benefit from BOTH the crisis (rate spike) AND the eventual resolution (massive restocking voyages), making long tanker equities the asymmetric trade with the widest payoff window.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-02T05:28:32+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nLoud explosions were reported in Doha, Qatar, as part of a series of attacks that included missile interceptions targeting the Gulf state. The explosions are linked to escalating tensions in the region following Iranian retaliatory strikes.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nLoud explosions were reported in Doha, Qatar, as part of a series of attacks that included missile interceptions targeting the Gulf state. The explosions are linked to escalating tensions in the region following Iranian retaliatory strikes.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:34:32+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nFootage has emerged showing the crash of a U.S. F-15 jet in Kuwait.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nFootage has emerged showing the crash of a U.S. F-15 jet in Kuwait.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:35:03+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Lebanon \n\nIsrael has warned that it will increase its military strikes on Lebanon, particularly targeting Hezbollah positions, in response to the group's involvement in the ongoing conflict with Iran. This escalation follows recent rocket attacks from Hezbollah into Israel.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Lebanon \n\nIsrael has warned that it will increase its military strikes on Lebanon, particularly targeting Hezbollah positions, in response to the group's involvement in the ongoing conflict with Iran. This escalation follows recent rocket attacks from Hezbollah into Israel.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:35:52+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nAli Larijani, the Secretary of Iran's Supreme National Security Council, criticized former President Trump for causing instability in the region due to what he described as \"delusional ambitions.\" He accused Trump of attempting to weaken Iran and sow discord among its people.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nAli Larijani, the Secretary of Iran's Supreme National Security Council, criticized former President Trump for causing instability in the region due to what he described as \"delusional ambitions.\" He accused Trump of attempting to weaken Iran and sow discord among its people.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:37:13+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nAli Larijani is indeed pushing to resume nuclear talks with the U.S. through Omani mediators while managing Iran's security and military response following the death of Supreme Leader Khamenei. Although he is a key figure in Iran's security hierarchy, he is not officially part of the interim ruling council.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nAli Larijani is indeed pushing to resume nuclear talks with the U.S. through Omani mediators while managing Iran's security and military response following the death of Supreme Leader Khamenei. Although he is a key figure in Iran's security hierarchy, he is not officially part of the interim ruling council.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:37:43+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nPresident Trump claimed that he preemptively struck Iran's Supreme Leader Ayatollah Khamenei, stating, \"I got him before he got me,\" referring to alleged Iranian plots against him. This statement was made following a successful U.S.-Israeli operation that resulted in Khamenei's death.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nPresident Trump claimed that he preemptively struck Iran's Supreme Leader Ayatollah Khamenei, stating, \"I got him before he got me,\" referring to alleged Iranian plots against him. This statement was made following a successful U.S.-Israeli operation that resulted in Khamenei's death.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-02/videos/053432_17579.mp4"
+    ]
+  }
+}

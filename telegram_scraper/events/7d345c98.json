@@ -1,0 +1,103 @@
+{
+  "event_id": "7d345c98",
+  "headline": "Iranian Drone Strikes Kuwait International Airport, Flights Suspended",
+  "timestamp": "2026-02-28T15:35:19Z",
+  "location": "Kuwait City",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Iran",
+    "Kuwait"
+  ],
+  "summary": "An Iranian drone struck Kuwait International Airport, causing minor injuries to several airport staff and limited material damage to airport infrastructure. All flights have been suspended as a precautionary measure following the strike. This represents a significant escalation as Iran directly targeted the civilian infrastructure of a Gulf Cooperation Council member state.",
+  "primary_markets": [
+    "airlines",
+    "oil",
+    "shipping routes"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Kuwait Airways",
+      "ticker": null,
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Direct hit on Kuwait International Airport forces full flight suspension, halting all Kuwait Airways operations indefinitely."
+    },
+    {
+      "name": "flydubai",
+      "ticker": null,
+      "type": "company",
+      "signal": "bearish",
+      "reason": "flydubai operates multiple daily routes through Kuwait; suspension cascades into schedule disruptions and revenue loss."
+    },
+    {
+      "name": "Gulf Insurance Group",
+      "ticker": "KINS.KW",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Aviation war-risk insurance claims from the airport strike will pressure Gulf insurance underwriters operating in Kuwait."
+    },
+    {
+      "name": "Jet Fuel (Kerosene)",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bearish",
+      "reason": "Regional flight suspensions reduce near-term jet fuel demand across Gulf hub airports."
+    },
+    {
+      "name": "Kuwait Petroleum Corporation",
+      "ticker": null,
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Airport closure disrupts logistics and personnel movement critical to Kuwait's oil export operations and refinery staffing."
+    }
+  ],
+  "trade_position": "Short global aviation insurers with heavy Gulf exposure — war-risk premiums will spike across all Gulf airports as underwriters reprice Iranian drone strike probability; simultaneously, the airport closure creates a re-routing windfall for Dubai (DXB) and Doha (DOH) hubs, making Emirates Group and Qatar Airways indirect beneficiaries of diverted traffic.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-02-28T15:33:26+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#France #ME\n\nFrance has called for a United Nations Security Council meeting to discuss the situation in Iran and the broader Middle East, emphasizing the need for diplomatic solutions and de-escalation in the region. This meeting reflects France's commitment to addressing security concerns and promoting stability.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#France #ME\n\nFrance has called for a United Nations Security Council meeting to discuss the situation in Iran and the broader Middle East, emphasizing the need for diplomatic solutions and de-escalation in the region. This meeting reflects France's commitment to addressing security concerns and promoting stability.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T15:35:19+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Kuwait \n\nKuwait International Airport was targeted by an Iranian drone, resulting in minor injuries to several airport staff and limited material damage. All flights have been suspended as a precautionary measure.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Kuwait \n\nKuwait International Airport was targeted by an Iranian drone, resulting in minor injuries to several airport staff and limited material damage. All flights have been suspended as a precautionary measure.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T15:37:14+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran \n\nIran's Foreign Minister Abbas Araghchi stated that there is currently no communication with the United States, but he indicated that the U.S. knows how to reach Iran if they wish to engage in talks. He emphasized Iran's interest in de-escalation despite the ongoing conflict.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran \n\nIran's Foreign Minister Abbas Araghchi stated that there is currently no communication with the United States, but he indicated that the U.S. knows how to reach Iran if they wish to engage in talks. He emphasized Iran's interest in de-escalation despite the ongoing conflict.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T15:37:40+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #UK\n\nKeir Starmer has called on Iran to stop its military strikes, abandon its weapons programs, and end the violence against its own citizens. He emphasizes the need for peace and a return to diplomatic negotiations.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #UK\n\nKeir Starmer has called on Iran to stop its military strikes, abandon its weapons programs, and end the violence against its own citizens. He emphasizes the need for peace and a return to diplomatic negotiations.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T15:38:31+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #Israel \n\nIran's Foreign Minister Abbas Araghchi stated that Iran is capable of defending itself without relying on any external support or proxies. He emphasized the country's self-sufficiency in defense matters.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #Israel \n\nIran's Foreign Minister Abbas Araghchi stated that Iran is capable of defending itself without relying on any external support or proxies. He emphasized the country's self-sufficiency in defense matters.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T15:41:24+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran \n\nIran's Islamic Revolutionary Guard Corps (IRGC) has showcased its missile capabilities by releasing videos of missile launches targeting enemy bases, emphasizing their military strength and readiness. This display is part of ongoing tensions in the region, particularly with Israel and the U.S.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran \n\nIran's Islamic Revolutionary Guard Corps (IRGC) has showcased its missile capabilities by releasing videos of missile launches targeting enemy bases, emphasizing their military strength and readiness. This display is part of ongoing tensions in the region, particularly with Israel and the U.S.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-02-28/photos/153714_17509.jpg",
+      "data/OSINTdefender/2026-02-28/videos/154124_17512.mp4"
+    ]
+  }
+}

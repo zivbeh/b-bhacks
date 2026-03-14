@@ -1,0 +1,78 @@
+{
+  "event_id": "9bf67eab",
+  "headline": "IDF Strikes Armed Hamas Terrorists in Rafah, Citing Ceasefire Breach",
+  "timestamp": "2026-02-27T10:58:12Z",
+  "location": "Rafah",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Israel",
+    "Hamas"
+  ],
+  "summary": "The IDF conducted a targeted strike overnight in eastern Rafah, killing armed Hamas operatives who had emerged from underground tunnel infrastructure, which Israel characterized as a ceasefire violation. The IDF stated the strike was a direct defensive response to an imminent threat and that forces remain in compliance with the broader ceasefire framework. No Israeli casualties were reported; Hamas casualties confirmed but number unspecified.",
+  "primary_markets": [
+    "defense",
+    "insurance",
+    "tourism & hotels"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Resumed IDF strike operations in Rafah signal continued high operational tempo, sustaining demand for Elbit's precision munitions and surveillance systems used in Gaza operations."
+    },
+    {
+      "name": "Rafael Advanced Defense Systems",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Ongoing IDF engagement in Rafah drives continued consumption of Rafael-produced guided munitions and Iron Dome interceptors if Hamas retaliates with rockets."
+    },
+    {
+      "name": "Israel Aerospace Industries",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Sustained IDF operations require continuous ISR drone and loitering munition deployment, core IAI products used in Gaza."
+    },
+    {
+      "name": "RTX Corporation (Raytheon)",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Any Hamas rocket retaliation would activate Iron Dome batteries using Raytheon-co-developed interceptors, increasing US resupply orders."
+    },
+    {
+      "name": "Israeli Tourism Sector (ETF proxy: ISRA.L)",
+      "ticker": "ISRA.L",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Ceasefire breakdown signals in Gaza undermine investor and traveler confidence in Israeli regional stability, weighing on hotels and inbound tourism."
+    }
+  ],
+  "trade_position": "Go long Elbit Systems (ESLT.TA) as a ceasefire violation triggering IDF strikes is a direct catalyst for accelerated munitions replenishment orders; the stock tends to rally sharply on renewed operational activity news given its role as the primary Israeli defense electronics and precision systems supplier. A secondary hedge would be buying ILS put options (USD/ILS) to capture potential shekel weakness if the conflict re-escalates materially.",
+  "confidence": "medium",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-02-27T10:57:17+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🚨🇨🇳🇮🇷 China’s Ministry of Foreign Affairs is advising its citizens not to travel to Iran and urging those currently in the country to leave as soon as possible.\n\nAnother signal of rising concern over regional security conditions.",
+        "text_orig": "🚨🇨🇳🇮🇷 China’s Ministry of Foreign Affairs is advising its citizens not to travel to Iran and urging those currently in the country to leave as soon as possible.\n\nAnother signal of rising concern over regional security conditions."
+      },
+      {
+        "timestamp": "2026-02-27T10:58:12+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🎯 In response to a ceasefire violation, the IDF precisely struck armed Hamas terrorists in Rafah overnight.\n\nYesterday, IDF troops identified armed terrorists emerging from underground infrastructure in eastern Rafah, a clear breach of the agreement.\n\nThe terrorists were eliminated to remove the immediate threat.\n\nIDF forces remain deployed in accordance with the ceasefire and will act against any attempt to carry out attacks.",
+        "text_orig": "🎯 In response to a ceasefire violation, the IDF precisely struck armed Hamas terrorists in Rafah overnight.\n\nYesterday, IDF troops identified armed terrorists emerging from underground infrastructure in eastern Rafah, a clear breach of the agreement.\n\nThe terrorists were eliminated to remove the immediate threat.\n\nIDF forces remain deployed in accordance with the ceasefire and will act against any attempt to carry out attacks."
+      }
+    ],
+    "media_urls": [
+      "data/IsraelWarRoom/2026-02-27/videos/105812_68.MP4"
+    ]
+  }
+}

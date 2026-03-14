@@ -1,0 +1,85 @@
+{
+  "event_id": "2d0c16ba",
+  "headline": "UAE Considers Freezing Billions in Iranian Assets Held Domestically",
+  "timestamp": "2026-03-06T08:37:12Z",
+  "location": "Dubai",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "United Arab Emirates",
+    "Iran",
+    "IRGC"
+  ],
+  "summary": "The UAE is reportedly considering freezing billions of dollars in Iranian assets held within the country, according to the Wall Street Journal. Measures under consideration include targeting IRGC-linked accounts, front companies, currency exchanges, and Iran's shadow oil fleet operating through Emirati ports. If implemented, this would represent one of the most significant financial pressure points placed on Iran from within the Gulf region.",
+  "primary_markets": [
+    "oil",
+    "shipping routes",
+    "insurance"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Crude Oil (Brent)",
+      "ticker": "BZ=F",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Restricting Iran's shadow oil sales through Dubai would reduce discounted Iranian crude supply reaching Asian markets, tightening global supply."
+    },
+    {
+      "name": "DP World",
+      "ticker": null,
+      "type": "company",
+      "signal": "bearish",
+      "reason": "DP World operates major UAE port infrastructure and could face disruption or reputational risk if Iranian-linked shipping activity is sanctioned through Emirati ports."
+    },
+    {
+      "name": "Emirates NBD",
+      "ticker": "EMIRATESNBD.DFM",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "As the UAE's largest bank, Emirates NBD faces potential compliance costs and asset freezes related to Iranian-linked accounts and front companies."
+    },
+    {
+      "name": "First Abu Dhabi Bank",
+      "ticker": "FAB.AD",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Exposure to Iranian trade finance and shadow banking networks through UAE financial system creates compliance and write-down risk."
+    },
+    {
+      "name": "ADNOC Distribution",
+      "ticker": "ADNOCDIST.AD",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Crackdown on Iranian shadow oil fleet reduces illicit competition in regional fuel markets, benefiting legitimate UAE energy operators."
+    }
+  ],
+  "trade_position": "Go long Brent crude futures (BZ=F): the removal of Iranian shadow oil supply routed through Dubai — estimated at hundreds of thousands of barrels per day — would create a meaningful supply gap not immediately replaceable by OPEC+. A secondary play is shorting Emirates NBD as compliance costs and asset freeze proceedings could impair earnings in Q2 2026.",
+  "confidence": "medium",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-06T08:37:12+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "⚠️🇮🇷🇦🇪The UAE is reportedly considering freezing billions of dollars in Iranian assets held in the country.\n\nAccording to reporting by the Wall Street Journal, the move could significantly restrict Tehran’s access to foreign currency and global trade networks.\n\nDubai has long served as a key hub for Iranian businesses and sanctions-evasion networks used to sell oil and move funds internationally.\n\nOfficials are also exploring measures targeting IRGC-linked accounts, front companies, currency exchanges, and parts of Iran’s shadow oil fleet operating through Emirati ports.\n\nIf implemented, it would mark one of the most significant financial pressure points placed on Iran from within the Gulf.",
+        "text_orig": "⚠️🇮🇷🇦🇪The UAE is reportedly considering freezing billions of dollars in Iranian assets held in the country.\n\nAccording to reporting by the Wall Street Journal, the move could significantly restrict Tehran’s access to foreign currency and global trade networks.\n\nDubai has long served as a key hub for Iranian businesses and sanctions-evasion networks used to sell oil and move funds internationally.\n\nOfficials are also exploring measures targeting IRGC-linked accounts, front companies, currency exchanges, and parts of Iran’s shadow oil fleet operating through Emirati ports.\n\nIf implemented, it would mark one of the most significant financial pressure points placed on Iran from within the Gulf."
+      },
+      {
+        "timestamp": "2026-03-06T08:41:33+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🎯Before missiles were launched toward Israel, the Air Force destroyed six Iranian ballistic missile launchers overnight on Wednesday (March 4), just minutes before they were set to fire.\n\nDuring the same operation, three advanced Iranian air defense systems were also destroyed.\n\nAccording to the IDF, efforts to degrade the Iranian regime’s missile launch and air defense capabilities have been ongoing since the start of Operation Roaring Lion 🦁",
+        "text_orig": "🎯Before missiles were launched toward Israel, the Air Force destroyed six Iranian ballistic missile launchers overnight on Wednesday (March 4), just minutes before they were set to fire.\n\nDuring the same operation, three advanced Iranian air defense systems were also destroyed.\n\nAccording to the IDF, efforts to degrade the Iranian regime’s missile launch and air defense capabilities have been ongoing since the start of Operation Roaring Lion 🦁"
+      },
+      {
+        "timestamp": "2026-03-06T09:08:15+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🎯The IDF has launched another wave of strikes in Dahiya, Beirut. -IDF",
+        "text_orig": "🎯The IDF has launched another wave of strikes in Dahiya, Beirut. -IDF"
+      }
+    ],
+    "media_urls": [
+      "data/IsraelWarRoom/2026-03-06/videos/084133_85.MP4"
+    ]
+  }
+}

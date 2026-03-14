@@ -1,0 +1,95 @@
+{
+  "event_id": "0635a41c",
+  "headline": "Iran Ballistic Missiles Intercepted Near Turkey's Incirlik Base",
+  "timestamp": "2026-03-13T07:41:49Z",
+  "location": "Adana",
+  "event_type": "Attack and Miss",
+  "involved": [
+    "Iran",
+    "Turkey",
+    "United States"
+  ],
+  "summary": "NATO air defense systems intercepted Iranian ballistic missiles targeting Turkish airspace, with at least one trajectory passing near Incirlik Air Base, a critical NATO installation hosting US nuclear weapons and aircraft. Turkey has issued a formal warning to Iran against further attacks and invoked the need for regional stability. The interception marks a significant escalation as Iran has directly targeted NATO territory, potentially triggering Article 5 consultations.",
+  "primary_markets": [
+    "defense",
+    "airlines",
+    "insurance"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Raytheon Technologies",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Successful NATO Patriot/SAMP-T intercepts near Incirlik validate and drive urgent reorder demand for Raytheon's air defense systems."
+    },
+    {
+      "name": "Turkish Airlines",
+      "ticker": "THYAO.IS",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Ballistic missile activity in Turkish airspace forces flight path alterations and deters bookings, hitting revenues."
+    },
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Iran's demonstrated willingness to strike NATO airspace accelerates allied procurement of missile defense technologies."
+    },
+    {
+      "name": "MBDA Missile Systems",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "SAMP-T system operated by European NATO allies involved in intercept drives restocking and upgrade orders for MBDA."
+    },
+    {
+      "name": "Global War Risk Insurance",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Iran striking NATO territory triggers immediate reassessment and repricing of war risk across the entire Eastern Mediterranean."
+    }
+  ],
+  "trade_position": "Short Turkish Airlines (THYAO.IS) as Iranian ballistic missile strikes on Turkish airspace will trigger immediate insurance surcharges, rerouting mandates, and passenger demand destruction on routes transiting Turkish airspace. This is a direct, fast-moving bearish catalyst the market may not have priced yet given the novelty of Iran-NATO direct confrontation.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-13T06:56:46+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Israel #Iran \n\nIsraeli Prime Minister Benjamin Netanyahu has stated that efforts are being made to help the Iranian people create the conditions necessary to remove their oppressive regime. He emphasizes that while support is being provided, the ultimate responsibility for change lies with the Iranian people themselves.",
+        "text_orig": "#Israel #Iran \n\nIsraeli Prime Minister Benjamin Netanyahu has stated that efforts are being made to help the Iranian people create the conditions necessary to remove their oppressive regime. He emphasizes that while support is being provided, the ultimate responsibility for change lies with the Iranian people themselves."
+      },
+      {
+        "timestamp": "2026-03-13T07:01:48+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Russia #ME #USA\n\nRussia is providing Iran with intelligence to assist in targeting U.S. military forces in the Middle East, including the locations of American warships and aircraft. This cooperation enhances Iran's ability to conduct more precise attacks against U.S. assets amid ongoing conflicts.",
+        "text_orig": "#Russia #ME #USA\n\nRussia is providing Iran with intelligence to assist in targeting U.S. military forces in the Middle East, including the locations of American warships and aircraft. This cooperation enhances Iran's ability to conduct more precise attacks against U.S. assets amid ongoing conflicts."
+      },
+      {
+        "timestamp": "2026-03-13T07:11:45+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Israel #Iran\n\nNetanyahu believes that Israel's military achievements against Iran are elevating its status as a superpower, allowing it to effectively manage threats and secure its future. He emphasizes that as Israel strengthens its power, it can better protect itself and influence the region.",
+        "text_orig": "#Israel #Iran\n\nNetanyahu believes that Israel's military achievements against Iran are elevating its status as a superpower, allowing it to effectively manage threats and secure its future. He emphasizes that as Israel strengthens its power, it can better protect itself and influence the region."
+      },
+      {
+        "timestamp": "2026-03-13T07:41:49+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Turkey #Iran\n\nTurkey has recently reported that NATO air defenses intercepted Iranian ballistic missiles targeting its airspace, including near the Incirlik Air Base. The situation remains tense as Turkey warns Iran against further attacks, emphasizing the need for regional stability.",
+        "text_orig": "#Turkey #Iran\n\nTurkey has recently reported that NATO air defenses intercepted Iranian ballistic missiles targeting its airspace, including near the Incirlik Air Base. The situation remains tense as Turkey warns Iran against further attacks, emphasizing the need for regional stability."
+      },
+      {
+        "timestamp": "2026-03-13T08:03:47+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Lebanon #Syria \n\nHezbollah has been accused of firing artillery shells from Lebanon into Syria, targeting Syrian army positions near the town of Serghaya, as tensions escalate in the region. The Syrian army has stated it will not tolerate such aggression.",
+        "text_orig": "#Lebanon #Syria \n\nHezbollah has been accused of firing artillery shells from Lebanon into Syria, targeting Syrian army positions near the town of Serghaya, as tensions escalate in the region. The Syrian army has stated it will not tolerate such aggression."
+      }
+    ],
+    "media_urls": []
+  }
+}

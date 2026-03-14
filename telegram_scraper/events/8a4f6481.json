@@ -1,0 +1,103 @@
+{
+  "event_id": "8a4f6481",
+  "headline": "Explosions and Missile Interceptions Reported Over Doha, Qatar",
+  "timestamp": "2026-03-02T05:28:32Z",
+  "location": "Doha",
+  "event_type": "Attack and Miss",
+  "involved": [
+    "Iran",
+    "United States",
+    "Qatar"
+  ],
+  "summary": "Loud explosions were reported across Doha, Qatar, with multiple missile interceptions confirmed over the Gulf state. The attacks are linked to Iranian retaliatory strikes following the U.S.-Israeli operation that killed Supreme Leader Khamenei. No confirmed ground impact or casualties reported at time of filing.",
+  "primary_markets": [
+    "defense",
+    "oil",
+    "shipping routes"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Raytheon Technologies (RTX) — Patriot PAC-3 missile defense operator",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Confirmed missile interceptions over Qatar validate demand for Raytheon's Patriot and NASAMS air defense systems across Gulf states."
+    },
+    {
+      "name": "Qatar Airways",
+      "ticker": "null",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Missile activity over Doha forces airspace closures and flight diversions, directly disrupting Qatar Airways operations and bookings."
+    },
+    {
+      "name": "LNG (Liquefied Natural Gas)",
+      "ticker": "null",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Qatar is the world's largest LNG exporter; any threat to Doha infrastructure triggers immediate supply-risk premium in global LNG spot markets."
+    },
+    {
+      "name": "QatarEnergy",
+      "ticker": "null",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Direct operational risk to the world's largest LNG producer as missile strikes approach critical energy infrastructure near Doha."
+    },
+    {
+      "name": "Brent Crude Oil",
+      "ticker": "null",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Kinetic attacks within Qatar's capital signal broader Gulf conflict escalation, driving immediate risk premium into global crude prices."
+    }
+  ],
+  "trade_position": "Long Henry Hub and TTF natural gas futures immediately — Qatar supplies roughly 20% of global LNG and any disruption to Ras Laffan export terminals would cause a supply shock dwarfing typical price swings. The hidden opportunity is that European TTF contracts are more exposed than Henry Hub given EU's Qatar LNG dependency, making TTF the higher-beta instrument.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-02T05:28:32+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nLoud explosions were reported in Doha, Qatar, as part of a series of attacks that included missile interceptions targeting the Gulf state. The explosions are linked to escalating tensions in the region following Iranian retaliatory strikes.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nLoud explosions were reported in Doha, Qatar, as part of a series of attacks that included missile interceptions targeting the Gulf state. The explosions are linked to escalating tensions in the region following Iranian retaliatory strikes.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:34:32+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nFootage has emerged showing the crash of a U.S. F-15 jet in Kuwait.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nFootage has emerged showing the crash of a U.S. F-15 jet in Kuwait.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:35:03+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Lebanon \n\nIsrael has warned that it will increase its military strikes on Lebanon, particularly targeting Hezbollah positions, in response to the group's involvement in the ongoing conflict with Iran. This escalation follows recent rocket attacks from Hezbollah into Israel.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Lebanon \n\nIsrael has warned that it will increase its military strikes on Lebanon, particularly targeting Hezbollah positions, in response to the group's involvement in the ongoing conflict with Iran. This escalation follows recent rocket attacks from Hezbollah into Israel.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:35:52+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nAli Larijani, the Secretary of Iran's Supreme National Security Council, criticized former President Trump for causing instability in the region due to what he described as \"delusional ambitions.\" He accused Trump of attempting to weaken Iran and sow discord among its people.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nAli Larijani, the Secretary of Iran's Supreme National Security Council, criticized former President Trump for causing instability in the region due to what he described as \"delusional ambitions.\" He accused Trump of attempting to weaken Iran and sow discord among its people.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:37:13+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nAli Larijani is indeed pushing to resume nuclear talks with the U.S. through Omani mediators while managing Iran's security and military response following the death of Supreme Leader Khamenei. Although he is a key figure in Iran's security hierarchy, he is not officially part of the interim ruling council.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nAli Larijani is indeed pushing to resume nuclear talks with the U.S. through Omani mediators while managing Iran's security and military response following the death of Supreme Leader Khamenei. Although he is a key figure in Iran's security hierarchy, he is not officially part of the interim ruling council.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:37:43+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nPresident Trump claimed that he preemptively struck Iran's Supreme Leader Ayatollah Khamenei, stating, \"I got him before he got me,\" referring to alleged Iranian plots against him. This statement was made following a successful U.S.-Israeli operation that resulted in Khamenei's death.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nPresident Trump claimed that he preemptively struck Iran's Supreme Leader Ayatollah Khamenei, stating, \"I got him before he got me,\" referring to alleged Iranian plots against him. This statement was made following a successful U.S.-Israeli operation that resulted in Khamenei's death.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-02/videos/053432_17579.mp4"
+    ]
+  }
+}

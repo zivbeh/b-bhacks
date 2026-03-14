@@ -1,0 +1,71 @@
+{
+  "event_id": "0ef87628",
+  "headline": "China Sends Five Aircraft Into Taiwan Air Defense Zone",
+  "timestamp": "2026-03-12T10:48:20+00:00",
+  "location": "Taiwan",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "China",
+    "Taiwan"
+  ],
+  "summary": "China has increased military activity near Taiwan, with five People's Liberation Army Air Force aircraft entering Taiwan's Air Defense Identification Zone (ADIZ) and three aircraft crossing the median line of the Taiwan Strait, an unofficial boundary separating the two sides. This escalation follows a period of reduced PLA flight activity and signals a deliberate ratcheting of pressure. No shots were fired and no interceptions resulting in engagement were reported, making this a coercive signaling action rather than a kinetic event.",
+  "primary_markets": [
+    "defense",
+    "airlines"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "As primary supplier of F-16s and advanced weapons systems to Taiwan, any escalation in cross-strait tensions increases the likelihood of accelerated Taiwanese defense procurement."
+    },
+    {
+      "name": "Raytheon Technologies",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Raytheon supplies Taiwan with Patriot missile defense systems and ammunition; heightened PLA activity raises demand for air defense replenishment."
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Any sustained escalation in the Taiwan Strait raises investor risk premium on TSMC, the world's largest advanced semiconductor manufacturer based in Taiwan."
+    },
+    {
+      "name": "China Airlines",
+      "ticker": "2610.TW",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Cross-strait military activity increases operational risk and potential airspace rerouting costs for Taiwan-based carriers."
+    },
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Elbit supplies Taiwan with drone and electronic warfare systems; escalation accelerates procurement timelines and signals further orders."
+    }
+  ],
+  "trade_position": "The highest-conviction hidden opportunity is a bearish position on TSMC (TSM) via near-term put options, as semiconductor supply chain risk is systematically underpriced relative to the frequency of PLA incursions — each escalation cycle compresses the geopolitical risk premium window before institutional hedging occurs. Pair with a long position in LMT as a direct hedge, given Taiwan's legally mandated arms purchases under the Taiwan Relations Act will accelerate if median-line crossings become routine.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-12T10:48:20+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#China #Taiwan\n\nThe Japan Times report - China has recently increased its military activity near Taiwan, with five aircraft entering Taiwan's air defense zone and three crossing the median line, which is an unofficial boundary. This escalation follows a period of reduced flights, indicating heightened tensions in the region.",
+        "text_orig": "#China #Taiwan\n\nThe Japan Times report - China has recently increased its military activity near Taiwan, with five aircraft entering Taiwan's air defense zone and three crossing the median line, which is an unofficial boundary. This escalation follows a period of reduced flights, indicating heightened tensions in the region."
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-12/photos/104820_17978.jpg"
+    ]
+  }
+}

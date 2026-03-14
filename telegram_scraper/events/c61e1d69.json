@@ -1,0 +1,102 @@
+{
+  "event_id": "c61e1d69",
+  "headline": "France Calls UN Security Council Meeting Over Iran Crisis",
+  "timestamp": "2026-02-28T15:33:26Z",
+  "location": "Paris",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "France",
+    "Iran"
+  ],
+  "summary": "France has formally requested a United Nations Security Council meeting to address the escalating situation in Iran and the broader Middle East. The move signals growing Western multilateral pressure on Iran and a push for diplomatic de-escalation. No military action is involved at this stage.",
+  "primary_markets": [
+    "defense",
+    "oil"
+  ],
+  "secondary_markets": [
+    {
+      "name": "TotalEnergies SE",
+      "ticker": "TTE",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "French diplomatic escalation at the UN raises uncertainty over TotalEnergies' Middle East energy assets and Iran-adjacent operations."
+    },
+    {
+      "name": "Thales SA",
+      "ticker": "HO.PA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "French defense sector benefits from heightened security discourse and potential regional defense contract expansion."
+    },
+    {
+      "name": "Brent Crude Oil",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "UN-level diplomatic engagement signals deep regional instability, supporting elevated crude prices."
+    },
+    {
+      "name": "Dassault Aviation",
+      "ticker": "AM.PA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Elevated regional tensions and French diplomatic leadership historically drive defense procurement discussions benefiting Dassault."
+    },
+    {
+      "name": "Gold",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "UN Security Council activation is a classic safe-haven trigger, supporting gold demand."
+    }
+  ],
+  "trade_position": "Buy TotalEnergies (TTE) put options as a hedge against escalation risk to its Middle East upstream exposure while simultaneously going long gold futures as the safe-haven flow accelerates on formal UN crisis declaration.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-02-28T15:33:26+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#France #ME\n\nFrance has called for a United Nations Security Council meeting to discuss the situation in Iran and the broader Middle East, emphasizing the need for diplomatic solutions and de-escalation in the region. This meeting reflects France's commitment to addressing security concerns and promoting stability.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#France #ME\n\nFrance has called for a United Nations Security Council meeting to discuss the situation in Iran and the broader Middle East, emphasizing the need for diplomatic solutions and de-escalation in the region. This meeting reflects France's commitment to addressing security concerns and promoting stability.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T15:35:19+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Kuwait \n\nKuwait International Airport was targeted by an Iranian drone, resulting in minor injuries to several airport staff and limited material damage. All flights have been suspended as a precautionary measure.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Kuwait \n\nKuwait International Airport was targeted by an Iranian drone, resulting in minor injuries to several airport staff and limited material damage. All flights have been suspended as a precautionary measure.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T15:37:14+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran \n\nIran's Foreign Minister Abbas Araghchi stated that there is currently no communication with the United States, but he indicated that the U.S. knows how to reach Iran if they wish to engage in talks. He emphasized Iran's interest in de-escalation despite the ongoing conflict.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran \n\nIran's Foreign Minister Abbas Araghchi stated that there is currently no communication with the United States, but he indicated that the U.S. knows how to reach Iran if they wish to engage in talks. He emphasized Iran's interest in de-escalation despite the ongoing conflict.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T15:37:40+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #UK\n\nKeir Starmer has called on Iran to stop its military strikes, abandon its weapons programs, and end the violence against its own citizens. He emphasizes the need for peace and a return to diplomatic negotiations.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #UK\n\nKeir Starmer has called on Iran to stop its military strikes, abandon its weapons programs, and end the violence against its own citizens. He emphasizes the need for peace and a return to diplomatic negotiations.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T15:38:31+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #Israel \n\nIran's Foreign Minister Abbas Araghchi stated that Iran is capable of defending itself without relying on any external support or proxies. He emphasized the country's self-sufficiency in defense matters.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #Israel \n\nIran's Foreign Minister Abbas Araghchi stated that Iran is capable of defending itself without relying on any external support or proxies. He emphasized the country's self-sufficiency in defense matters.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T15:41:24+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran \n\nIran's Islamic Revolutionary Guard Corps (IRGC) has showcased its missile capabilities by releasing videos of missile launches targeting enemy bases, emphasizing their military strength and readiness. This display is part of ongoing tensions in the region, particularly with Israel and the U.S.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran \n\nIran's Islamic Revolutionary Guard Corps (IRGC) has showcased its missile capabilities by releasing videos of missile launches targeting enemy bases, emphasizing their military strength and readiness. This display is part of ongoing tensions in the region, particularly with Israel and the U.S.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-02-28/photos/153714_17509.jpg",
+      "data/OSINTdefender/2026-02-28/videos/154124_17512.mp4"
+    ]
+  }
+}

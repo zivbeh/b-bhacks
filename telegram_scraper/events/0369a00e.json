@@ -1,0 +1,78 @@
+{
+  "event_id": "0369a00e",
+  "headline": "Netanyahu Warns Iran of Devastating Response to Any Attack",
+  "timestamp": "2026-02-23T17:52:34Z",
+  "location": "Jerusalem",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "Israel",
+    "Iran"
+  ],
+  "summary": "Israeli Prime Minister Netanyahu issued a direct public warning to Iran's leadership, threatening an overwhelming military response if Iran attacks Israel. Netanyahu simultaneously convened a meeting with senior Israeli defense officials, signaling active military contingency planning. No kinetic action has occurred; this remains a deterrence and escalation-signaling event.",
+  "primary_markets": [
+    "defense",
+    "oil",
+    "gold"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Heightened Israel-Iran tensions drive expectations of increased Israeli defense procurement and system deployment."
+    },
+    {
+      "name": "Rafael Advanced Defense Systems",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Escalatory rhetoric raises demand for Israeli air-defense and precision-strike systems."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "U.S. defense contractors benefit from any surge in Israeli weapons orders and regional military posturing."
+    },
+    {
+      "name": "Brent Crude",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Israel-Iran escalation rhetoric raises geopolitical risk premium on oil, particularly given Iran's role as a major producer."
+    },
+    {
+      "name": "Gold",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Safe-haven demand increases as Middle East conflict risk perception rises following direct state-level threats."
+    }
+  ],
+  "trade_position": "The highest-conviction hidden opportunity is a long position in gold (via GLD or XAUUSD spot) as the safe-haven bid accelerates on Israel-Iran escalation fears before any kinetic event occurs. Netanyahu's concurrent defense meeting suggests this is more than rhetoric, compressing the timeline for market re-pricing of risk.",
+  "confidence": "medium",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-02-23T17:52:34+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "⚡Prime Minister Netanyahu: \n\n“I have conveyed and clarified to the Ayatollahs’ regime that if they make what might be the gravest mistake in their history and attack the State of Israel, we will respond with a force they cannot even imagine.”",
+        "text_orig": "⚡Prime Minister Netanyahu: \n\n“I have conveyed and clarified to the Ayatollahs’ regime that if they make what might be the gravest mistake in their history and attack the State of Israel, we will respond with a force they cannot even imagine.”"
+      },
+      {
+        "timestamp": "2026-02-23T17:52:54+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🇮🇱Prime Minister Netanyahu is currently meeting with senior Israeli defense officials.",
+        "text_orig": "🇮🇱Prime Minister Netanyahu is currently meeting with senior Israeli defense officials."
+      }
+    ],
+    "media_urls": [
+      "data/IsraelWarRoom/2026-02-23/photos/175234_61.jpg"
+    ]
+  }
+}

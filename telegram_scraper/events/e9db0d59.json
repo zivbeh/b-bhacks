@@ -1,0 +1,146 @@
+{
+  "event_id": "e9db0d59",
+  "headline": "Iran Confirms Khamenei and Pezeshkian Safe Amid Strikes",
+  "timestamp": "2026-02-28T18:41:40Z",
+  "location": "Tehran",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "Iran"
+  ],
+  "summary": "Iranian Foreign Ministry spokesperson Esmail Baghaei publicly confirmed that Supreme Leader Khamenei and President Pezeshkian are safe following US and Israeli strikes. The statement emphasized Iran's collective governance structure and political continuity. This public reassurance signals Iran intends to maintain a functioning government and coordinated response capability.",
+  "primary_markets": [
+    "oil",
+    "gold"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Brent Crude Oil",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Confirmed Iranian leadership survival means organized retaliation is certain, sustaining oil risk premium rather than allowing a rapid de-escalation."
+    },
+    {
+      "name": "Gold",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Continuity of Iranian command structure ensures prolonged conflict, supporting safe-haven gold demand."
+    },
+    {
+      "name": "iShares MSCI Israel ETF",
+      "ticker": "EIS",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Confirmed Iranian leadership survival means a sustained Iranian retaliatory campaign against Israel is likely, pressuring Israeli equity markets."
+    },
+    {
+      "name": "Iranian Rial",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bearish",
+      "reason": "Confirmed wartime footing with leadership intact accelerates sanctions enforcement and currency collapse risk."
+    },
+    {
+      "name": "Booking Holdings",
+      "ticker": "BKNG",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Regional tourism across Middle East collapses as confirmed multi-country conflict deters all non-essential travel."
+    }
+  ],
+  "trade_position": "Short EIS (iShares MSCI Israel ETF) as confirmed Iranian leadership survival guarantees sustained retaliatory pressure on Israel with no near-term off-ramp, compressing Israeli equity valuations and raising defense spending drag on the domestic economy.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-02-28T18:40:23+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nTrump's decision to launch Operation Epic Fury against Iran is seen as a significant gamble, with experts warning it could lead to substantial U.S. casualties while potentially altering the geopolitical landscape in the Middle East. The operation aims to dismantle Iran's military capabilities amidst ongoing tensions and threats from both sides.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nTrump's decision to launch Operation Epic Fury against Iran is seen as a significant gamble, with experts warning it could lead to substantial U.S. casualties while potentially altering the geopolitical landscape in the Middle East. The operation aims to dismantle Iran's military capabilities amidst ongoing tensions and threats from both sides.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T18:41:40+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nEsmail Baghaei, the spokesperson for Iran's Foreign Ministry, emphasized that both Supreme Leader Ali Khamenei and President Masoud Pezeshkian are safe and that Iran's political system functions collectively rather than being controlled by a single individual. This statement reflects the government's stance on maintaining stability and unity within its leadership.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nEsmail Baghaei, the spokesperson for Iran's Foreign Ministry, emphasized that both Supreme Leader Ali Khamenei and President Masoud Pezeshkian are safe and that Iran's political system functions collectively rather than being controlled by a single individual. This statement reflects the government's stance on maintaining stability and unity within its leadership.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T18:42:55+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #EU\n\nEU High Representative Kaja Kallas condemned Iran's attacks on neighboring countries, warning they risk escalating into a wider regional conflict. She emphasized the importance of protecting civilians and upholding international humanitarian law.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #EU\n\nEU High Representative Kaja Kallas condemned Iran's attacks on neighboring countries, warning they risk escalating into a wider regional conflict. She emphasized the importance of protecting civilians and upholding international humanitarian law.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T18:44:36+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Afghanistan #Pakistan \n\nThe recent clashes between Pakistan and Afghanistan have escalated, particularly along the border in Nangarhar Province, with reports of heavy weaponry being used, including artillery fire. This situation reflects ongoing tensions and military confrontations between the Taliban and Pakistani forces.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Afghanistan #Pakistan \n\nThe recent clashes between Pakistan and Afghanistan have escalated, particularly along the border in Nangarhar Province, with reports of heavy weaponry being used, including artillery fire. This situation reflects ongoing tensions and military confrontations between the Taliban and Pakistani forces.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T18:45:46+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Yemen \n\nAbdul-Malik al-Houthi, the leader of the Houthi movement, has declared that his forces are fully prepared for military operations and will respond decisively to any aggression, particularly from the US and Israel. He emphasized their readiness to confront regional threats and support allied groups like Hezbollah.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Yemen \n\nAbdul-Malik al-Houthi, the leader of the Houthi movement, has declared that his forces are fully prepared for military operations and will respond decisively to any aggression, particularly from the US and Israel. He emphasized their readiness to confront regional threats and support allied groups like Hezbollah.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T18:46:33+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #France \n\nFrench President Macron stated that France was not informed or involved in the recent U.S. and Israeli strikes on Iran, and emphasized that neither regional countries nor allies were notified beforehand. This highlights concerns about unilateral military actions and their implications for international relations.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #France \n\nFrench President Macron stated that France was not informed or involved in the recent U.S. and Israeli strikes on Iran, and emphasized that neither regional countries nor allies were notified beforehand. This highlights concerns about unilateral military actions and their implications for international relations.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T18:47:46+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #Turkey \n\nTurkish President Erdogan has condemned recent attacks on Iran, stating they violate Iran's sovereignty and threaten the peace and well-being of the Iranian people. He emphasized Türkiye's opposition to any military actions against Iran and called for diplomatic solutions to prevent further escalation.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #Turkey \n\nTurkish President Erdogan has condemned recent attacks on Iran, stating they violate Iran's sovereignty and threaten the peace and well-being of the Iranian people. He emphasized Türkiye's opposition to any military actions against Iran and called for diplomatic solutions to prevent further escalation.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T18:51:04+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #Israel \n\nThe Israeli army has launched a significant wave of strikes on Iran, targeting missile installations and air defense systems using around 200 fighter jets. This operation involved dropping hundreds of munitions on approximately 500 targets across various regions in Iran.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #Israel \n\nThe Israeli army has launched a significant wave of strikes on Iran, targeting missile installations and air defense systems using around 200 fighter jets. This operation involved dropping hundreds of munitions on approximately 500 targets across various regions in Iran.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T18:52:13+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nThe recent conflict saw the U.S. and Israel conduct extensive strikes across 24 provinces in Iran, resulting in significant casualties. In retaliation, Iran launched over 1,200 missiles targeting U.S. and Israeli military bases in eight different countries.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nThe recent conflict saw the U.S. and Israel conduct extensive strikes across 24 provinces in Iran, resulting in significant casualties. In retaliation, Iran launched over 1,200 missiles targeting U.S. and Israeli military bases in eight different countries.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T18:59:15+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nSSM Base. \n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nSSM Base. \n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T19:16:52+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#ME #USA #NATO\n\nDonald Trump has engaged in discussions with leaders from Saudi Arabia, Qatar, the UAE, and NATO Secretary General Mark Rutte, likely addressing ongoing military operations and regional security issues. These conversations reflect his approach to maintaining diplomatic relations while managing military strategies.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#ME #USA #NATO\n\nDonald Trump has engaged in discussions with leaders from Saudi Arabia, Qatar, the UAE, and NATO Secretary General Mark Rutte, likely addressing ongoing military operations and regional security issues. These conversations reflect his approach to maintaining diplomatic relations while managing military strategies.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T19:29:36+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#ME\n\nThe incident highlights the vulnerability of advanced military technology to low-cost drone attacks, a lesson reinforced by the ongoing conflict in Ukraine. This reflects a shift in warfare dynamics, where inexpensive drones can effectively counter expensive defense systems.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#ME\n\nThe incident highlights the vulnerability of advanced military technology to low-cost drone attacks, a lesson reinforced by the ongoing conflict in Ukraine. This reflects a shift in warfare dynamics, where inexpensive drones can effectively counter expensive defense systems.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T19:36:14+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nTrump's statement suggests he believes he has the capability to either engage in a prolonged military campaign against Iran or to quickly resolve the situation, warning Iran against rebuilding its nuclear program. He emphasizes a strong stance on preventing Iran from developing nuclear weapons.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nTrump's statement suggests he believes he has the capability to either engage in a prolonged military campaign against Iran or to quickly resolve the situation, warning Iran against rebuilding its nuclear program. He emphasizes a strong stance on preventing Iran from developing nuclear weapons.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-02-28/photos/184023_17517.jpg",
+      "data/OSINTdefender/2026-02-28/videos/184436_17520.MP4",
+      "data/OSINTdefender/2026-02-28/photos/184746_17523.jpg",
+      "data/OSINTdefender/2026-02-28/photos/185915_17526.jpg",
+      "data/OSINTdefender/2026-02-28/photos/193614_17531.jpg"
+    ]
+  }
+}

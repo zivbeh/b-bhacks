@@ -1,0 +1,84 @@
+{
+  "event_id": "ff03e671",
+  "headline": "Drone Strike Destroys Military Vehicle at Erbil Italian Base",
+  "timestamp": "2026-03-12T12:51:01Z",
+  "location": "Erbil",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Italy",
+    "PMF/Popular Mobilization Forces"
+  ],
+  "summary": "An Italian military base in Erbil, Kurdistan Region of Iraq, was struck by a drone, destroying at least one military vehicle with no reported casualties. The attack is consistent with a pattern of PMF-affiliated drone strikes targeting foreign military installations in Iraq. Italy maintains troops in Erbil as part of the NATO-led anti-ISIS coalition mission.",
+  "primary_markets": [
+    "defense",
+    "insurance"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Leonardo S.p.A.",
+      "ticker": "LDO.MI",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Italy's primary defense contractor supplying vehicles, helicopters, and electronics to Italian armed forces faces increased procurement urgency following equipment destruction."
+    },
+    {
+      "name": "Rheinmetall",
+      "ticker": "RHM.DE",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Supplies armored vehicles and force-protection systems to NATO coalition forces; destroyed vehicle replacement creates near-term procurement opportunity."
+    },
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Leading counter-drone and base-protection system provider benefits from renewed demand following successful drone penetration of coalition base perimeter."
+    },
+    {
+      "name": "Thales Group",
+      "ticker": "HO.PA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Provides C-UAS and surveillance systems to Italian and NATO forces; base vulnerability exposed creates upgrade contract pipeline."
+    },
+    {
+      "name": "Chemring Group",
+      "ticker": "CHG.L",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Manufactures countermeasures and explosive ordnance disposal equipment used by coalition forces in Iraq; attack escalation drives restocking demand."
+    }
+  ],
+  "trade_position": "Go long Leonardo (LDO.MI) as the direct Italian MoD prime contractor; a confirmed attack on Italian sovereign military assets will accelerate emergency defense supplemental spending through existing Leonardo contracts for vehicle replacement and enhanced base protection systems. The political pressure on Rome to visibly reinforce its forces creates a clear near-term earnings catalyst.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-12T12:39:13+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Kuwait\n\nKuwait's Civil Aviation Authority reported that a drone strike did occur at Kuwait International Airport, resulting in minor injuries to some employees and limited damage to the terminal. The incident is part of escalating regional tensions, and authorities are monitoring the situation.",
+        "text_orig": "#Kuwait\n\nKuwait's Civil Aviation Authority reported that a drone strike did occur at Kuwait International Airport, resulting in minor injuries to some employees and limited damage to the terminal. The incident is part of escalating regional tensions, and authorities are monitoring the situation."
+      },
+      {
+        "timestamp": "2026-03-12T12:51:01+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Italy #Iraq\n\nAn Italian military base in Erbil was targeted by a drone strike, which destroyed a military vehicle but resulted in no injuries. This incident highlights the ongoing tensions in the region amid escalating conflicts.",
+        "text_orig": "#Italy #Iraq\n\nAn Italian military base in Erbil was targeted by a drone strike, which destroyed a military vehicle but resulted in no injuries. This incident highlights the ongoing tensions in the region amid escalating conflicts."
+      },
+      {
+        "timestamp": "2026-03-12T12:55:47+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#ME #USA\n\nAn Indian crew member was killed when the U.S.-linked oil tanker Safesea Vishnu was struck in the northern Persian Gulf after reportedly ignoring warnings from Iran's Islamic Revolutionary Guard Corps (IRGC) Navy. This incident highlights the escalating tensions in the region and the risks faced by commercial shipping.",
+        "text_orig": "#ME #USA\n\nAn Indian crew member was killed when the U.S.-linked oil tanker Safesea Vishnu was struck in the northern Persian Gulf after reportedly ignoring warnings from Iran's Islamic Revolutionary Guard Corps (IRGC) Navy. This incident highlights the escalating tensions in the region and the risks faced by commercial shipping."
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-12/photos/125101_17980.jpg",
+      "data/OSINTdefender/2026-03-12/photos/125547_17981.jpg"
+    ]
+  }
+}

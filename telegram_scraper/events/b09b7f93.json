@@ -1,0 +1,71 @@
+{
+  "event_id": "b09b7f93",
+  "headline": "Israeli Air Force Destroys Hezbollah Launchers South of Litani River",
+  "timestamp": "2026-03-09T12:16:56+00:00",
+  "location": "Southern Lebanon",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Israel",
+    "Hezbollah"
+  ],
+  "summary": "The Israeli Air Force conducted strikes destroying dozens of Hezbollah rocket and missile launchers located south of the Litani River in Lebanon, following rocket fire toward Israeli territory. Simultaneously, Israeli air defenses intercepted dozens of Hezbollah UAVs launched toward Israel. No casualty figures were confirmed in this report; the IDF attributed the launchers as the source of recent cross-border fire.",
+  "primary_markets": [
+    "defense",
+    "insurance"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Elbit is a primary supplier of Israeli air defense and precision strike systems directly engaged in this operational tempo."
+    },
+    {
+      "name": "Rafael Advanced Defense Systems",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Rafael produces Iron Dome and other interceptor systems used to down the Hezbollah UAVs, driving procurement demand."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Sustained Israeli air operations increase consumption of US-supplied munitions and replenishment contracts with Lockheed Martin."
+    },
+    {
+      "name": "RTX Corporation",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "RTX co-produces Patriot and Iron Dome components; escalating interception operations accelerate resupply orders."
+    },
+    {
+      "name": "War Risk Insurance (Lloyd's of London)",
+      "ticker": "LLOY.L",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Renewed cross-border strikes and UAV exchanges elevate Lloyd's war-risk premium exposure on Israeli and Lebanese commercial assets."
+    }
+  ],
+  "trade_position": "The escalating UAV interception rate is a direct consumption signal for Iron Dome interceptors — go long ESLT.TA as Rafael and Elbit benefit from accelerated MoD emergency procurement orders. The secondary catalyst is rising war-risk insurance premiums pricing Lebanese and northern Israeli commercial real estate and cargo out of standard policies, creating a drag on regional tourism and logistics names.",
+  "confidence": "medium",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-09T12:16:56+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🎯 The Israeli Air Force has destroyed dozens of Hezbollah rocket and missile launchers in Lebanon in recent days, following rocket fire toward Israel.\n\nThe targeted launchers were located south of the Litani River and were used to fire rockets and missiles at Israeli territory.\n\nAt the same time, the Air Force has intercepted dozens of Hezbollah UAVs launched toward Israel. -@IDF",
+        "text_orig": "🎯 The Israeli Air Force has destroyed dozens of Hezbollah rocket and missile launchers in Lebanon in recent days, following rocket fire toward Israel.\n\nThe targeted launchers were located south of the Litani River and were used to fire rockets and missiles at Israeli territory.\n\nAt the same time, the Air Force has intercepted dozens of Hezbollah UAVs launched toward Israel. -@IDF"
+      }
+    ],
+    "media_urls": [
+      "data/IsraelWarRoom/2026-03-09/videos/121656_95.MP4"
+    ]
+  }
+}

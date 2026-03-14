@@ -1,0 +1,78 @@
+{
+  "event_id": "0e31752e",
+  "headline": "IDF Launches Major Strike Wave on Tehran Infrastructure",
+  "timestamp": "2026-03-05T05:47:59Z",
+  "location": "Tehran",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Israel",
+    "Iran"
+  ],
+  "summary": "The IDF confirmed a major wave of strikes targeting infrastructure of the Iranian government across Tehran. This represents a significant escalation, marking a direct Israeli strike on the Iranian capital. No casualty figures or specific infrastructure targets were confirmed in the initial report.",
+  "primary_markets": [
+    "oil",
+    "defense",
+    "gold"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Brent Crude",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Direct Israeli strikes on Tehran threaten Iranian oil export capacity and risk broader Strait of Hormuz disruption."
+    },
+    {
+      "name": "West Texas Intermediate",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Middle East supply risk premium surges on direct strikes against Iranian capital infrastructure."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Escalation against Iran drives demand for US-supplied precision munitions and air defense systems."
+    },
+    {
+      "name": "RTX Corporation",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "RTX supplies Israel with missile systems and benefits from accelerated resupply demand during active strikes."
+    },
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Israeli defense contractor directly benefits from IDF operational tempo and increased munitions drawdown requiring replenishment."
+    }
+  ],
+  "trade_position": "Long gold (GLD) as the single most asymmetric safe-haven play: a direct Israeli strike on Tehran is the highest escalation threshold crossed yet, triggering institutional flight-to-safety flows that gold captures faster than oil. If Iranian retaliation targets Strait of Hormuz shipping, a secondary long on tanker insurance names (WR Berkley, Lancashire Holdings) offers a lagged but powerful secondary position.",
+  "confidence": "medium",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-05T05:47:59+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🔥 **BREAKING:** The IDF says it has launched another major wave of strikes in Tehran, targeting infrastructure of the Iranian terror regime across the capital.",
+        "text_orig": "🔥 **BREAKING:** The IDF says it has launched another major wave of strikes in Tehran, targeting infrastructure of the Iranian terror regime across the capital."
+      },
+      {
+        "timestamp": "2026-03-05T05:48:44+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "**NEW**: The IDF confirms a new wave of strikes in Beirut, targeting additional Hezbollah terror command centers.\n\nAmong the targets: a headquarters used by Hezbollah’s aerial unit, involved in planning and executing attacks against Israeli forces and civilians.\n\nAdvance warnings, precision munitions, and aerial surveillance were used to minimize civilian harm.\n\nIsrael says it will continue striking Hezbollah after the terror group chose to join the war under the sponsorship of Iran’s terror regime.",
+        "text_orig": "**NEW**: The IDF confirms a new wave of strikes in Beirut, targeting additional Hezbollah terror command centers.\n\nAmong the targets: a headquarters used by Hezbollah’s aerial unit, involved in planning and executing attacks against Israeli forces and civilians.\n\nAdvance warnings, precision munitions, and aerial surveillance were used to minimize civilian harm.\n\nIsrael says it will continue striking Hezbollah after the terror group chose to join the war under the sponsorship of Iran’s terror regime."
+      }
+    ],
+    "media_urls": [
+      "data/IsraelWarRoom/2026-03-05/videos/054844_79.MP4"
+    ]
+  }
+}

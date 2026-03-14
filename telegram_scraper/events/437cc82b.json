@@ -1,0 +1,99 @@
+{
+  "event_id": "437cc82b",
+  "headline": "US Navy Plans to Escort Oil Tankers Through Strait of Hormuz",
+  "timestamp": "2026-03-13T05:04:04Z",
+  "location": "Strait of Hormuz",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "United States",
+    "Iran"
+  ],
+  "summary": "US Treasury Secretary Scott Bessent announced that the US Navy, potentially with an international coalition, plans to escort oil tankers through the Strait of Hormuz as soon as militarily feasible. The strait has not been mined, as Iranian and Chinese-flagged vessels are already transiting. The announcement signals active US military engagement to maintain freedom of navigation amid the Gulf crisis.",
+  "primary_markets": [
+    "shipping routes",
+    "oil",
+    "natural gas"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Frontline Ltd",
+      "ticker": "FRO",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "US naval escort program reduces tanker transit risk through Hormuz, enabling resumed VLCC traffic and higher freight rates for major tanker operators like Frontline."
+    },
+    {
+      "name": "Tsakos Energy Navigation",
+      "ticker": "TEN",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Escort program reopening the strait boosts utilization rates for TEN's tanker fleet currently idled or rerouted away from Hormuz."
+    },
+    {
+      "name": "Euronav NV",
+      "ticker": "EURN",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Resumption of escorted tanker transits through Hormuz directly increases voyage revenue for large crude tanker operators like Euronav."
+    },
+    {
+      "name": "Crude Oil (Brent)",
+      "ticker": "BZ=F",
+      "type": "commodity",
+      "signal": "bearish",
+      "reason": "Naval escort announcement signals US commitment to keeping Hormuz open, reducing the geopolitical risk premium embedded in Brent crude prices."
+    },
+    {
+      "name": "LNG (Henry Hub Natural Gas)",
+      "ticker": "NG=F",
+      "type": "commodity",
+      "signal": "bearish",
+      "reason": "Easing of Hormuz transit risk reduces supply disruption fears for LNG cargoes from Qatar and UAE, pressuring natural gas spot prices lower."
+    }
+  ],
+  "trade_position": "Short Brent crude futures (BZ=F) on the thesis that a credible US naval escort program caps the Hormuz risk premium that has driven recent price spikes. The catalyst is the first confirmed escort convoy transit, which would trigger algorithmic de-risking of energy long positions.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-13T04:42:36+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Israel #Lebanon #Gaza\n\nIsraeli Prime Minister Benjamin Netanyahu has warned that Hezbollah will face severe consequences for any aggression against Israel, emphasizing that they fear Israel's military strength. He stated that those who attack Israel will pay a \"very high price\" for their actions.",
+        "text_orig": "#Israel #Lebanon #Gaza\n\nIsraeli Prime Minister Benjamin Netanyahu has warned that Hezbollah will face severe consequences for any aggression against Israel, emphasizing that they fear Israel's military strength. He stated that those who attack Israel will pay a \"very high price\" for their actions."
+      },
+      {
+        "timestamp": "2026-03-13T05:04:04+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA #Iran \n\nU.S. Treasury Secretary Scott Bessent stated that the U.S. Navy, potentially with an international coalition, plans to escort oil tankers through the Strait of Hormuz as soon as it is militarily feasible. Some tankers, including Iranian and Chinese-flagged vessels, are already navigating the strait, indicating it has not been mined.",
+        "text_orig": "#USA #Iran \n\nU.S. Treasury Secretary Scott Bessent stated that the U.S. Navy, potentially with an international coalition, plans to escort oil tankers through the Strait of Hormuz as soon as it is militarily feasible. Some tankers, including Iranian and Chinese-flagged vessels, are already navigating the strait, indicating it has not been mined."
+      },
+      {
+        "timestamp": "2026-03-13T05:27:27+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran\n\nThe AGM-158B JASSM-ER is a stealthy, air-launched cruise missile designed for long-range precision strikes, featuring a WDU-42/B warhead and a Williams F107 turbofan engine. It was recently loaded onto B-1B bombers at RAF Fairford for missions against Iran, and debris from a shot-down missile was found near Ilam.",
+        "text_orig": "#Iran\n\nThe AGM-158B JASSM-ER is a stealthy, air-launched cruise missile designed for long-range precision strikes, featuring a WDU-42/B warhead and a Williams F107 turbofan engine. It was recently loaded onto B-1B bombers at RAF Fairford for missions against Iran, and debris from a shot-down missile was found near Ilam."
+      },
+      {
+        "timestamp": "2026-03-13T05:54:47+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Russia \n\nRussia has benefited financially from the Gulf crisis, with estimates of additional oil tax revenue ranging from $1.3 billion to $1.9 billion due to rising global oil prices. This boost is part of a broader trend where higher energy prices have positively impacted Russia's economy. The U.S. has granted a 30-day waiver for countries to purchase Russian oil stranded at sea to help stabilize energy markets affected by the ongoing conflict in Iran and disruptions in shipping routes. This decision is part of efforts to lower rising oil prices amid regional tensions.",
+        "text_orig": "#Russia \n\nRussia has benefited financially from the Gulf crisis, with estimates of additional oil tax revenue ranging from $1.3 billion to $1.9 billion due to rising global oil prices. This boost is part of a broader trend where higher energy prices have positively impacted Russia's economy. The U.S. has granted a 30-day waiver for countries to purchase Russian oil stranded at sea to help stabilize energy markets affected by the ongoing conflict in Iran and disruptions in shipping routes. This decision is part of efforts to lower rising oil prices amid regional tensions."
+      },
+      {
+        "timestamp": "2026-03-13T06:06:35+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA #Iran \n\nSenator Lindsey Graham has expressed strong support for military action in Iran, emphasizing that the U.S. must confront the Iranian regime to protect both American interests and the Iranian people. He believes that supporting military operations is essential for ensuring the safety and freedom of those involved, including U.S. troops.",
+        "text_orig": "#USA #Iran \n\nSenator Lindsey Graham has expressed strong support for military action in Iran, emphasizing that the U.S. must confront the Iranian regime to protect both American interests and the Iranian people. He believes that supporting military operations is essential for ensuring the safety and freedom of those involved, including U.S. troops."
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-13/photos/044236_17997.jpg",
+      "data/OSINTdefender/2026-03-13/photos/052727_17999.jpg",
+      "data/OSINTdefender/2026-03-13/photos/055447_18001.jpg",
+      "data/OSINTdefender/2026-03-13/photos/060635_18002.jpg"
+    ]
+  }
+}

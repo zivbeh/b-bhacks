@@ -1,0 +1,85 @@
+{
+  "event_id": "60d85ce9",
+  "headline": "US Military Aircraft Deploy to Ben Gurion Amid Iran Tensions",
+  "timestamp": "2026-02-27T19:17:26Z",
+  "location": "Tel Aviv",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "United States",
+    "Israel",
+    "Iran"
+  ],
+  "summary": "The United States has deployed military refueling aircraft, cargo planes, and fighter jets to Ben Gurion Airport in Israel amid escalating tensions with Iran. The deployment signals active preparation for potential military operations, though no strikes have been confirmed. This represents a significant visible deterrence posture and forward staging of US air assets in the region.",
+  "primary_markets": [
+    "defense",
+    "oil",
+    "airlines"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "US forward military deployment increases likelihood of kinetic action, driving near-term demand for LMT's F-35s, missiles, and precision munitions."
+    },
+    {
+      "name": "RTX Corporation",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "RTX's Raytheon division supplies Patriot and air defense systems critical to force protection during elevated US-Iran confrontation."
+    },
+    {
+      "name": "Brent Crude",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "US military buildup near Iran raises risk premium on Gulf oil supply disruption, particularly through the Strait of Hormuz."
+    },
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Israeli defense electronics leader directly benefits from elevated regional threat posture and likely acceleration of joint US-Israel defense procurement."
+    },
+    {
+      "name": "Israeli Airlines / El Al",
+      "ticker": "ELAL.TA",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "US military presence at Ben Gurion and rising Iran tensions increase airspace closure risk, disrupting civilian flight operations and raising insurance costs."
+    }
+  ],
+  "trade_position": "Buy Brent Crude futures (front-month) as the asymmetric risk play — US forward staging at Ben Gurion is the clearest indicator of imminent military action against Iran, and any strike on Iranian infrastructure would instantly spike oil via Strait of Hormuz risk. Pair with a short on El Al (ELAL.TA) as civilian aviation at Ben Gurion faces immediate operational disruption if hostilities commence.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-02-27T18:41:21+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#UK #Ukraine \n\nThe first Ukrainian drone factory has indeed opened in the UK, specifically in Suffolk, as announced by Ukrainian Ambassador Valeriy Zaluzhnyi. This facility aims to enhance Ukraine's defense capabilities against Russian aggression and is part of a broader cooperation between the UK and Ukraine's defense industries.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#UK #Ukraine \n\nThe first Ukrainian drone factory has indeed opened in the UK, specifically in Suffolk, as announced by Ukrainian Ambassador Valeriy Zaluzhnyi. This facility aims to enhance Ukraine's defense capabilities against Russian aggression and is part of a broader cooperation between the UK and Ukraine's defense industries.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-27T19:17:26+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA #Iran \n\nThe U.S. has deployed military refueling and cargo planes at Ben Gurion Airport in Israel as part of a significant military buildup in response to rising tensions with Iran. This deployment includes multiple refuelers and fighter jets, indicating preparations for potential military action.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#USA #Iran \n\nThe U.S. has deployed military refueling and cargo planes at Ben Gurion Airport in Israel as part of a significant military buildup in response to rising tensions with Iran. This deployment includes multiple refuelers and fighter jets, indicating preparations for potential military action.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-27T19:42:25+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Afghanistan #Pakistan \n\nRecent reports indicate that fighting has escalated along the Afghan-Pakistani border, with Pakistan launching air strikes in response to attacks from Afghan forces. Both sides have exchanged accusations regarding the initiation of these clashes, raising concerns about a potential wider conflict.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Afghanistan #Pakistan \n\nRecent reports indicate that fighting has escalated along the Afghan-Pakistani border, with Pakistan launching air strikes in response to attacks from Afghan forces. Both sides have exchanged accusations regarding the initiation of these clashes, raising concerns about a potential wider conflict.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-02-27/photos/184121_17461.jpg"
+    ]
+  }
+}

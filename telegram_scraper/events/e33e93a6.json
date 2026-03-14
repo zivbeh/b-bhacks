@@ -1,0 +1,70 @@
+{
+  "event_id": "e33e93a6",
+  "headline": "Iran Launches Missiles at Israel; IDF Intercepts Underway",
+  "timestamp": "2026-03-07T12:55:38Z",
+  "location": "Israel",
+  "event_type": "Attack and Miss",
+  "involved": [
+    "Iran",
+    "Israel"
+  ],
+  "summary": "Iran launched multiple missiles toward Israeli territory on March 7, 2026. The IDF activated defensive interception systems and the Home Front Command issued precautionary alerts directly to civilian mobile phones in affected areas. No confirmed hits or casualties reported at time of this report; intercept operations were ongoing.",
+  "primary_markets": [
+    "defense",
+    "oil",
+    "gold"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Elbit is a primary Israeli defense contractor supplying missile defense and air defense systems that would see accelerated procurement demand following an Iranian ballistic missile attack."
+    },
+    {
+      "name": "Rafael Advanced Defense Systems",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Rafael develops Iron Dome and David's Sling interceptors, both of which would be actively deployed and require rapid restocking following a large-scale Iranian missile salvo."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Lockheed supplies THAAD and Patriot missile defense components to Israel and the US; an Iranian attack escalates US re-supply and forward deployment orders."
+    },
+    {
+      "name": "Brent Crude Oil",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Direct Iran-Israel military exchange raises Strait of Hormuz closure risk and regional supply disruption premium, driving oil prices sharply higher."
+    },
+    {
+      "name": "Gold (spot)",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Escalation between Iran and Israel triggers safe-haven demand for gold as investors price in broader Middle East conflict risk."
+    }
+  ],
+  "trade_position": "The highest-conviction hidden opportunity is a long position in VanEck Oil Services ETF (OIH) or front-month Brent crude futures: an Iranian missile attack on Israel dramatically increases the probability of Israeli or US retaliatory strikes on Iranian energy infrastructure, which would directly reduce Iranian export capacity and spike the geopolitical risk premium embedded in crude. The catalyst is any confirmed Israeli or US retaliatory action against Iranian oil facilities within the next 24-72 hours.",
+  "confidence": "medium",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-07T12:55:38+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "IDF: A short while ago, the IDF identified missiles launched from Iran toward the territory of the State of Israel. \n\nDefensive systems are operating to intercept the threat.\n\nIn the past few minutes, the Home Front Command has sent a precautionary directive directly to mobile phones in the relevant areas.\n\nThe public is asked to act responsibly and follow the instructions—they save lives. \n\nUpon receiving an alert, the public is instructed to enter a protected space and remain there until further notice. \n\nLeaving a protected space is permitted only after receiving explicit instructions. The public is requested to continue acting in accordance with the Home Front Command’s guidelines.",
+        "text_orig": "IDF: A short while ago, the IDF identified missiles launched from Iran toward the territory of the State of Israel. \n\nDefensive systems are operating to intercept the threat.\n\nIn the past few minutes, the Home Front Command has sent a precautionary directive directly to mobile phones in the relevant areas.\n\nThe public is asked to act responsibly and follow the instructions—they save lives. \n\nUpon receiving an alert, the public is instructed to enter a protected space and remain there until further notice. \n\nLeaving a protected space is permitted only after receiving explicit instructions. The public is requested to continue acting in accordance with the Home Front Command’s guidelines."
+      }
+    ],
+    "media_urls": []
+  }
+}

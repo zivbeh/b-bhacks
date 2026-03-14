@@ -1,0 +1,95 @@
+{
+  "event_id": "17f010f9",
+  "headline": "Russia Shares US Military Location Intel With Iran",
+  "timestamp": "2026-03-13T07:01:48Z",
+  "location": "Tehran",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "Russia",
+    "Iran",
+    "United States"
+  ],
+  "summary": "Russia is reportedly providing Iran with real-time intelligence on the positions of US warships and aircraft operating in the Middle East, significantly enhancing Iran's targeting capability against American assets. This intelligence-sharing arrangement represents a direct Russia-Iran operational partnership against US forces in the region. No confirmed attack resulting from this intelligence has been reported at this time, but the threat to US military assets is materially elevated.",
+  "primary_markets": [
+    "defense",
+    "shipping routes",
+    "insurance"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Raytheon Technologies",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Increased threat to US naval assets in the Middle East accelerates demand for missile defense and electronic warfare systems."
+    },
+    {
+      "name": "Northrop Grumman",
+      "ticker": "NOC",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "US Navy vulnerability to precision Iranian targeting boosts demand for electronic countermeasures and surveillance platforms Northrop supplies."
+    },
+    {
+      "name": "General Dynamics",
+      "ticker": "GD",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Threat to US warships drives urgency for naval defense upgrades and munitions replenishment contracts."
+    },
+    {
+      "name": "War Risk Insurance",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Russia-Iran intelligence cooperation targeting US naval assets dramatically raises war risk premiums for Middle East shipping lanes."
+    },
+    {
+      "name": "Brent Crude",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Direct threat to US carrier groups in the Persian Gulf region raises probability of Strait of Hormuz disruption."
+    }
+  ],
+  "trade_position": "Long NOC (Northrop Grumman) as Russia-Iran intelligence sharing directly threatens US electronic warfare and ISR superiority, triggering emergency procurement of exactly the counter-systems Northrop specializes in. This is a second-order defense contractor play overlooked while attention focuses on oil markets.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-13T06:56:46+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Israel #Iran \n\nIsraeli Prime Minister Benjamin Netanyahu has stated that efforts are being made to help the Iranian people create the conditions necessary to remove their oppressive regime. He emphasizes that while support is being provided, the ultimate responsibility for change lies with the Iranian people themselves.",
+        "text_orig": "#Israel #Iran \n\nIsraeli Prime Minister Benjamin Netanyahu has stated that efforts are being made to help the Iranian people create the conditions necessary to remove their oppressive regime. He emphasizes that while support is being provided, the ultimate responsibility for change lies with the Iranian people themselves."
+      },
+      {
+        "timestamp": "2026-03-13T07:01:48+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Russia #ME #USA\n\nRussia is providing Iran with intelligence to assist in targeting U.S. military forces in the Middle East, including the locations of American warships and aircraft. This cooperation enhances Iran's ability to conduct more precise attacks against U.S. assets amid ongoing conflicts.",
+        "text_orig": "#Russia #ME #USA\n\nRussia is providing Iran with intelligence to assist in targeting U.S. military forces in the Middle East, including the locations of American warships and aircraft. This cooperation enhances Iran's ability to conduct more precise attacks against U.S. assets amid ongoing conflicts."
+      },
+      {
+        "timestamp": "2026-03-13T07:11:45+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Israel #Iran\n\nNetanyahu believes that Israel's military achievements against Iran are elevating its status as a superpower, allowing it to effectively manage threats and secure its future. He emphasizes that as Israel strengthens its power, it can better protect itself and influence the region.",
+        "text_orig": "#Israel #Iran\n\nNetanyahu believes that Israel's military achievements against Iran are elevating its status as a superpower, allowing it to effectively manage threats and secure its future. He emphasizes that as Israel strengthens its power, it can better protect itself and influence the region."
+      },
+      {
+        "timestamp": "2026-03-13T07:41:49+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Turkey #Iran\n\nTurkey has recently reported that NATO air defenses intercepted Iranian ballistic missiles targeting its airspace, including near the Incirlik Air Base. The situation remains tense as Turkey warns Iran against further attacks, emphasizing the need for regional stability.",
+        "text_orig": "#Turkey #Iran\n\nTurkey has recently reported that NATO air defenses intercepted Iranian ballistic missiles targeting its airspace, including near the Incirlik Air Base. The situation remains tense as Turkey warns Iran against further attacks, emphasizing the need for regional stability."
+      },
+      {
+        "timestamp": "2026-03-13T08:03:47+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Lebanon #Syria \n\nHezbollah has been accused of firing artillery shells from Lebanon into Syria, targeting Syrian army positions near the town of Serghaya, as tensions escalate in the region. The Syrian army has stated it will not tolerate such aggression.",
+        "text_orig": "#Lebanon #Syria \n\nHezbollah has been accused of firing artillery shells from Lebanon into Syria, targeting Syrian army positions near the town of Serghaya, as tensions escalate in the region. The Syrian army has stated it will not tolerate such aggression."
+      }
+    ],
+    "media_urls": []
+  }
+}

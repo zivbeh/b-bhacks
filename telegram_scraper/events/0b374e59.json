@@ -1,0 +1,90 @@
+{
+  "event_id": "0b374e59",
+  "headline": "Residential Buildings Targeted in Manama Amid Regional Escalation",
+  "timestamp": "2026-02-28T17:05:02Z",
+  "location": "Manama",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Iran",
+    "Bahrain"
+  ],
+  "summary": "The Bahrain Interior Ministry confirmed that several residential buildings in Manama were targeted, with Civil Defence actively conducting firefighting and rescue operations at affected sites. The incident occurs against a backdrop of Iranian Shahed drone activity reported in the UAE/Gulf region on the same date. No casualties or perpetrator confirmed yet, but context strongly implies Iranian drone involvement given simultaneous regional escalation.",
+  "primary_markets": [
+    "insurance",
+    "shipping routes",
+    "oil"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Brent Crude",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Attacks on Gulf state civilian infrastructure signal acute regional escalation that threatens Strait of Hormuz oil flow stability."
+    },
+    {
+      "name": "Arabian Gulf Insurance Group",
+      "ticker": "AGIG.BH",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Direct exposure to property and casualty claims from residential building strikes in Manama."
+    },
+    {
+      "name": "Gulf Air",
+      "ticker": null,
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Bahrain-based carrier faces immediate airspace risk and passenger demand shock from attacks on the capital."
+    },
+    {
+      "name": "AP Moller-Maersk",
+      "ticker": "MAERSK-B.CO",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Ongoing Gulf route disruption forces further costly re-routing away from Persian Gulf and Red Sea corridors."
+    },
+    {
+      "name": "Gold Spot",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Attacks on a US-allied Gulf capital accelerate safe-haven flows into gold amid maximum geopolitical uncertainty."
+    }
+  ],
+  "trade_position": "Go long December Brent crude options (call spreads) as a Strait of Hormuz closure premium trade — attacks on Bahrain, a US Fifth Fleet host nation, raise the probability of full Gulf shipping interdiction to levels not priced into current term structure. Simultaneously, long XAU/USD spot as the cleanest safe-haven expression with immediate liquidity.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-02-28T17:03:58+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Venezuela #Iran \n\nVenezuela has condemned the military actions by Israel against Iran, labeling them as \"illegitimate\" and a violation of international law, while expressing solidarity with Iran. The Venezuelan government has also criticized the U.S. for its role in these events.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Venezuela #Iran \n\nVenezuela has condemned the military actions by Israel against Iran, labeling them as \"illegitimate\" and a violation of international law, while expressing solidarity with Iran. The Venezuelan government has also criticized the U.S. for its role in these events.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T17:05:02+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#ME\n\nThe Bahrain Interior Ministry reported that several residential buildings in Manama were targeted, and Civil Defence is actively engaged in firefighting and rescue operations at the affected sites. No further details on casualties or the cause of the incidents were provided.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#ME\n\nThe Bahrain Interior Ministry reported that several residential buildings in Manama were targeted, and Civil Defence is actively engaged in firefighting and rescue operations at the affected sites. No further details on casualties or the cause of the incidents were provided.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T17:06:01+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Germany #Iran \n\nGermany's Chancellor Merz stated that the U.S. has been trying to negotiate a solution with Iran for several weeks, but Iran has not accepted the terms for a comprehensive agreement to halt its military nuclear program.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Germany #Iran \n\nGermany's Chancellor Merz stated that the U.S. has been trying to negotiate a solution with Iran for several weeks, but Iran has not accepted the terms for a comprehensive agreement to halt its military nuclear program.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T17:08:52+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#UAE \n\nThe Shahed drone is a type of Iranian drone known for its precision and deadly capabilities, often used in conflicts, including recent attacks in populated areas like Dubai. These drones can be launched from deep within Iranian territory and have been involved in various military operations across the Middle East.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#UAE \n\nThe Shahed drone is a type of Iranian drone known for its precision and deadly capabilities, often used in conflicts, including recent attacks in populated areas like Dubai. These drones can be launched from deep within Iranian territory and have been involved in various military operations across the Middle East.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-02-28/videos/170852_17516.mp4"
+    ]
+  }
+}

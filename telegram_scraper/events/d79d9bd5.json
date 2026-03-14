@@ -1,0 +1,98 @@
+{
+  "event_id": "d79d9bd5",
+  "headline": "Trump Prioritizes Halting Iran Nukes Despite Rising Oil Price Risk",
+  "timestamp": "2026-03-12T15:15:09Z",
+  "location": "Washington",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "United States",
+    "Iran"
+  ],
+  "summary": "President Trump publicly acknowledged the economic benefit to U.S. oil producers from elevated prices but stated that preventing Iran from acquiring nuclear weapons remains his primary strategic objective, overriding oil price concerns. This signals that U.S. military pressure on Iran will continue regardless of energy market disruption. The statement removes a key potential de-escalation lever and confirms sustained military posture.",
+  "primary_markets": [
+    "oil",
+    "defense",
+    "gold"
+  ],
+  "secondary_markets": [
+    {
+      "name": "ExxonMobil",
+      "ticker": "XOM",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "As the largest U.S. oil producer, Exxon directly benefits from elevated crude prices driven by Middle East conflict risk premium."
+    },
+    {
+      "name": "ConocoPhillips",
+      "ticker": "COP",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Major U.S. upstream producer; sustained high oil prices from Iran conflict premium boosts free cash flow and shareholder returns."
+    },
+    {
+      "name": "Gold Spot",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Trump's confirmation of prolonged Iran confrontation reinforces safe-haven gold demand as geopolitical uncertainty remains elevated."
+    },
+    {
+      "name": "Northrop Grumman",
+      "ticker": "NOC",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Trump's stated commitment to stopping Iran's nuclear program implies sustained demand for strategic bombers and nuclear detection systems Northrop supplies."
+    },
+    {
+      "name": "Pioneer Natural Resources",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "U.S. shale producers broadly benefit as Middle East supply risk keeps the floor under WTI prices, improving breakeven economics."
+    }
+  ],
+  "trade_position": "Long GLD (SPDR Gold ETF) as Trump's statement eliminates near-term de-escalation probability, extending the geopolitical risk premium in safe-haven assets. Simultaneously long XOM as U.S. producers are the structural winner if Hormuz disruption removes Middle Eastern barrels from global supply.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-12T14:49:01+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA #Israel #Iran \n\nShorter warning times for missile attacks in Israel are due to damage inflicted on U.S. radar systems by Iranian strikes, which has compromised missile detection capabilities in the region. This situation raises concerns about Israel's air defense readiness against potential threats.",
+        "text_orig": "#USA #Israel #Iran \n\nShorter warning times for missile attacks in Israel are due to damage inflicted on U.S. radar systems by Iranian strikes, which has compromised missile detection capabilities in the region. This situation raises concerns about Israel's air defense readiness against potential threats."
+      },
+      {
+        "timestamp": "2026-03-12T15:12:22+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA #Israel #Iran \n\nIran has threatened to disrupt oil flows through the Strait of Hormuz if attacks by the U.S. and Israel continue, which could significantly impact global oil supplies and prices. This threat complicates President Trump's war strategy, as rising oil prices become a major concern alongside military outcomes.",
+        "text_orig": "#USA #Israel #Iran \n\nIran has threatened to disrupt oil flows through the Strait of Hormuz if attacks by the U.S. and Israel continue, which could significantly impact global oil supplies and prices. This threat complicates President Trump's war strategy, as rising oil prices become a major concern alongside military outcomes."
+      },
+      {
+        "timestamp": "2026-03-12T15:14:07+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Lebanon \n\nThe IDF has issued an urgent warning for residents of southern Lebanon to evacuate north of the Litani River due to ongoing fighting with Hezbollah. This evacuation order aims to protect civilians from potential military actions targeting Hezbollah positions.",
+        "text_orig": "#Lebanon \n\nThe IDF has issued an urgent warning for residents of southern Lebanon to evacuate north of the Litani River due to ongoing fighting with Hezbollah. This evacuation order aims to protect civilians from potential military actions targeting Hezbollah positions."
+      },
+      {
+        "timestamp": "2026-03-12T15:15:09+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#ME\n\nTrump emphasizes that while the U.S. benefits economically from being the largest oil producer when prices rise, his primary concern as President is preventing Iran from acquiring nuclear weapons, which he views as a significant threat to global security. He believes stopping Iran is crucial for the stability of the Middle East and the world.",
+        "text_orig": "#ME\n\nTrump emphasizes that while the U.S. benefits economically from being the largest oil producer when prices rise, his primary concern as President is preventing Iran from acquiring nuclear weapons, which he views as a significant threat to global security. He believes stopping Iran is crucial for the stability of the Middle East and the world."
+      },
+      {
+        "timestamp": "2026-03-12T15:16:20+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran\n\nIran's Supreme Leader emphasizes that national unity is crucial, especially during challenging times, and it can be maintained by focusing on common goals rather than disagreements. This unity is seen as a defense against external threats and divisions.",
+        "text_orig": "#Iran\n\nIran's Supreme Leader emphasizes that national unity is crucial, especially during challenging times, and it can be maintained by focusing on common goals rather than disagreements. This unity is seen as a defense against external threats and divisions."
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-12/photos/151222_17984.jpg",
+      "data/OSINTdefender/2026-03-12/photos/151509_17986.jpg",
+      "data/OSINTdefender/2026-03-12/photos/151620_17987.jpg"
+    ]
+  }
+}

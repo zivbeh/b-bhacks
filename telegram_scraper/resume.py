@@ -13,8 +13,10 @@ Everything streams live to the Strata TUI.
 Usage:
   python resume.py --since 2026-03-01
   python resume.py --since 2026-03-01 --until 2026-03-14
-  python resume.py --since 2026-03-01 --live       # execute real trades
-  python resume.py --since 2026-03-01 --no-strata  # headless / stdout only
+  python resume.py --since 2026-03-01 --live         # execute real trades
+  python resume.py --since 2026-03-01 --no-strata    # headless / stdout only
+  python resume.py --since 2026-03-01 --search       # enable web search (slower)
+  python resume.py --since 2026-03-01 --workers 10   # parallel analysis workers
 """
 
 from __future__ import annotations
@@ -23,7 +25,9 @@ import json
 import os
 import subprocess
 import sys
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -108,6 +112,30 @@ def push_markets_to_strata(markets: list) -> None:
         urllib.request.urlopen(req, timeout=2)
     except Exception:
         pass
+
+
+# ── smart window-skip helpers ──────────────────────────────────────────────────
+
+def build_covered_timestamps(existing_events: list[dict]) -> set[str]:
+    """Build a set of 'channel|timestamp' strings already present in events."""
+    covered: set[str] = set()
+    for ev in existing_events:
+        for msg in ev.get("raw_input", {}).get("messages", []):
+            ts = msg.get("timestamp", "")
+            ch = msg.get("channel", "")
+            if ts:
+                covered.add(f"{ch}|{ts}")
+    return covered
+
+
+def window_already_covered(window: list[dict], covered: set[str]) -> bool:
+    """Return True if every message in the window already belongs to an event."""
+    if not covered:
+        return False
+    return all(
+        f"{m.get('channel', '')}|{m.get('timestamp', '')}" in covered
+        for m in window
+    )
 
 
 # ── trade ranking (same prompt as run.py) ─────────────────────────────────────
@@ -216,9 +244,12 @@ def rank_trades(ev: dict, markets: list[dict]) -> dict:
 
 # ── main pipeline ──────────────────────────────────────────────────────────────
 
-def run_resume(since: datetime, until: datetime | None, dry_run: bool):
+def run_resume(since: datetime, until: datetime | None, dry_run: bool,
+               use_search: bool = False, workers: int = 5):
     divider()
-    label = f"  RESUME  |  {'DRY RUN' if dry_run else 'LIVE TRADES'}  |  {since.date()} → {(until.date() if until else 'today')}"
+    label = (f"  RESUME  |  {'DRY RUN' if dry_run else 'LIVE TRADES'}"
+             f"  |  {since.date()} → {(until.date() if until else 'today')}"
+             f"  |  workers={workers}  search={'on' if use_search else 'off'}")
     strata_bridge.log(label)
     divider()
 
@@ -241,33 +272,63 @@ def run_resume(since: datetime, until: datetime | None, dry_run: bool):
     push_markets_to_strata(poly_markets)
     strata_bridge.log(f"  ✓ {len(poly_markets)} conflict markets")
 
-    # ── Step 3: Analyze windows (skip already-processed) ─────────────────────
+    # ── Step 3: Analyze windows (skip already-processed, run parallel) ────────
     strata_bridge.log("  [3/4] Analyzing message windows...")
     windows = group_into_windows(messages)
     strata_bridge.log(f"  ✓ {len(windows)} time windows ({WINDOW_MINUTES}-min gaps)")
 
     existing_events = load_existing_events()
-    existing_ids    = {ev["event_id"] for ev in existing_events}
-    strata_bridge.log(f"  ✓ {len(existing_ids)} events already on disk — skipping duplicates")
+    strata_bridge.log(f"  ✓ {len(existing_events)} events already on disk")
 
-    # Push already-existing events to strata for live display
+    # Push already-existing events to strata to restore TUI state
     for ev in existing_events:
         push_event_to_strata(ev)
-    time.sleep(0.5)
+    time.sleep(0.3)
+
+    # Build coverage set — skip windows whose messages are already in events
+    covered = build_covered_timestamps(existing_events)
+
+    # Identify windows that still need analysis
+    pending = [(i, w) for i, w in enumerate(windows)
+               if not window_already_covered(w, covered)]
+    skipped = len(windows) - len(pending)
+    strata_bridge.log(f"  ✓ {skipped} windows already covered — analyzing {len(pending)} new")
 
     all_events   = list(existing_events)
     new_events   = []
-    window_count = len(windows)
+    print_lock   = threading.Lock()
+    done_count   = [0]
+    total_pending = len(pending)
 
-    for i, window in enumerate(windows, 1):
-        t0 = window[0]["_ts"].strftime("%Y-%m-%d %H:%M")
-        t1 = window[-1]["_ts"].strftime("%H:%M")
-        strata_bridge.log(f"  [{i:3}/{window_count}] {t0}–{t1}  ({len(window)} msgs)...")
+    def process_window(args: tuple[int, list]) -> tuple[int, list]:
+        idx, window = args
+        extracted = analyze_message_group(window, use_search=use_search)
+        with print_lock:
+            done_count[0] += 1
+            t0 = window[0]["_ts"].strftime("%Y-%m-%d %H:%M")
+            t1 = window[-1]["_ts"].strftime("%H:%M")
+            n  = len(extracted) if extracted else 0
+            strata_bridge.log(
+                f"  [{done_count[0]:3}/{total_pending}] {t0}–{t1}"
+                f"  ({len(window)} msgs) → {n} events"
+            )
+        return idx, extracted or []
 
-        extracted = analyze_message_group(window)
+    results: dict[int, list] = {}
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futures = {pool.submit(process_window, item): item[0] for item in pending}
+        for fut in as_completed(futures):
+            try:
+                idx, extracted = fut.result()
+                results[idx] = extracted
+            except Exception as e:
+                strata_bridge.log(f"  [!] worker error: {e}")
+
+    # Merge in chronological order (sorted by original window index)
+    for orig_idx, _window in sorted(pending, key=lambda x: x[0]):
+        extracted = results.get(orig_idx, [])
         if not extracted:
             continue
-
         all_events, added = merge_events(all_events, extracted)
         for ev in added:
             strata_bridge.log(f"  ✓ NEW: {ev.get('headline', '')[:70]}")
@@ -359,6 +420,8 @@ Examples:
     ap.add_argument("--until",     metavar="YYYY-MM-DD")
     ap.add_argument("--live",      action="store_true", help="execute real Polymarket trades")
     ap.add_argument("--no-strata", action="store_true", help="headless / stdout only")
+    ap.add_argument("--search",    action="store_true", help="enable web search for event verification (slower)")
+    ap.add_argument("--workers",   type=int, default=5, metavar="N", help="parallel analysis workers (default: 5)")
     args = ap.parse_args()
 
     missing = [k for k in ("ANTHROPIC_API_KEY",) if not os.getenv(k)]
@@ -377,7 +440,8 @@ Examples:
             time.sleep(2)  # let strata initialize
 
     try:
-        run_resume(since=since, until=until, dry_run=dry_run)
+        run_resume(since=since, until=until, dry_run=dry_run,
+                   use_search=args.search, workers=args.workers)
     except KeyboardInterrupt:
         strata_bridge.log("  [!] interrupted by user")
     finally:

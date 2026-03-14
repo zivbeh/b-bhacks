@@ -1,0 +1,104 @@
+{
+  "event_id": "0f264156",
+  "headline": "Iran IRGC Releases Missile Launch Videos Targeting Enemy Bases",
+  "timestamp": "2026-02-28T15:41:24Z",
+  "location": "Tehran",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "Iran",
+    "Israel",
+    "United States"
+  ],
+  "summary": "The IRGC released video footage of missile launches described as targeting enemy bases, presented as a demonstration of Iran's military readiness and strike capability. While framed as a show of force rather than a confirmed active strike, the public release is a deliberate escalatory signal directed at both Israel and the United States. Combined with the FM's de-escalation language, this reflects Iran's dual-track coercive diplomacy strategy.",
+  "primary_markets": [
+    "defense",
+    "oil",
+    "gold"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Rafael Advanced Defense Systems",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Iranian missile capability display increases urgency for Israeli missile defense procurement, directly benefiting Rafael's Iron Dome and Arrow system production."
+    },
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "IRGC missile demonstrations drive Israeli and allied defense procurement cycles, benefiting Elbit's electronic warfare and missile defense divisions."
+    },
+    {
+      "name": "RTX Corporation (Raytheon)",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Iranian ballistic missile showcasing directly accelerates US and Gulf ally Patriot missile system purchases from RTX."
+    },
+    {
+      "name": "Brent Crude Oil",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "IRGC missile posturing raises Strait of Hormuz closure probability, embedding a structural risk premium in crude prices."
+    },
+    {
+      "name": "Gold",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Military escalation signaling from the IRGC accelerates institutional safe-haven flows into gold amid regional war risk."
+    }
+  ],
+  "trade_position": "Long Elbit Systems (ESLT.TA) as Iranian missile demonstration videos are a direct catalyst for accelerated Israeli and allied missile defense procurement budgets; this is a higher-beta, less-followed play than RTX with direct correlation to Israeli defense spending uplift that the market has not yet fully priced.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-02-28T15:33:26+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#France #ME\n\nFrance has called for a United Nations Security Council meeting to discuss the situation in Iran and the broader Middle East, emphasizing the need for diplomatic solutions and de-escalation in the region. This meeting reflects France's commitment to addressing security concerns and promoting stability.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#France #ME\n\nFrance has called for a United Nations Security Council meeting to discuss the situation in Iran and the broader Middle East, emphasizing the need for diplomatic solutions and de-escalation in the region. This meeting reflects France's commitment to addressing security concerns and promoting stability.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T15:35:19+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Kuwait \n\nKuwait International Airport was targeted by an Iranian drone, resulting in minor injuries to several airport staff and limited material damage. All flights have been suspended as a precautionary measure.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Kuwait \n\nKuwait International Airport was targeted by an Iranian drone, resulting in minor injuries to several airport staff and limited material damage. All flights have been suspended as a precautionary measure.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T15:37:14+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran \n\nIran's Foreign Minister Abbas Araghchi stated that there is currently no communication with the United States, but he indicated that the U.S. knows how to reach Iran if they wish to engage in talks. He emphasized Iran's interest in de-escalation despite the ongoing conflict.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran \n\nIran's Foreign Minister Abbas Araghchi stated that there is currently no communication with the United States, but he indicated that the U.S. knows how to reach Iran if they wish to engage in talks. He emphasized Iran's interest in de-escalation despite the ongoing conflict.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T15:37:40+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #UK\n\nKeir Starmer has called on Iran to stop its military strikes, abandon its weapons programs, and end the violence against its own citizens. He emphasizes the need for peace and a return to diplomatic negotiations.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #UK\n\nKeir Starmer has called on Iran to stop its military strikes, abandon its weapons programs, and end the violence against its own citizens. He emphasizes the need for peace and a return to diplomatic negotiations.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T15:38:31+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #Israel \n\nIran's Foreign Minister Abbas Araghchi stated that Iran is capable of defending itself without relying on any external support or proxies. He emphasized the country's self-sufficiency in defense matters.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #Israel \n\nIran's Foreign Minister Abbas Araghchi stated that Iran is capable of defending itself without relying on any external support or proxies. He emphasized the country's self-sufficiency in defense matters.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T15:41:24+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran \n\nIran's Islamic Revolutionary Guard Corps (IRGC) has showcased its missile capabilities by releasing videos of missile launches targeting enemy bases, emphasizing their military strength and readiness. This display is part of ongoing tensions in the region, particularly with Israel and the U.S.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran \n\nIran's Islamic Revolutionary Guard Corps (IRGC) has showcased its missile capabilities by releasing videos of missile launches targeting enemy bases, emphasizing their military strength and readiness. This display is part of ongoing tensions in the region, particularly with Israel and the U.S.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-02-28/photos/153714_17509.jpg",
+      "data/OSINTdefender/2026-02-28/videos/154124_17512.mp4"
+    ]
+  }
+}

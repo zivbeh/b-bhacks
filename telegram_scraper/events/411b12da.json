@@ -1,0 +1,71 @@
+{
+  "event_id": "411b12da",
+  "headline": "3.2 Million Internally Displaced in Iran Amid Ongoing Conflict",
+  "timestamp": "2026-03-12T13:57:01Z",
+  "location": "Tehran",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "Iran"
+  ],
+  "summary": "The UN reports up to 3.2 million people have been internally displaced inside Iran due to ongoing conflict, with civilians fleeing major cities including Tehran to rural areas. The displacement figure is expected to rise as fighting continues. No specific armed actor or opposing force is named in this report, suggesting a broad internal conflict scenario.",
+  "primary_markets": [
+    "oil",
+    "natural gas",
+    "insurance"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Crude Oil (Brent)",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Internal conflict disrupting Iranian oil production and export infrastructure would tighten global supply and push Brent prices higher."
+    },
+    {
+      "name": "TotalEnergies SE",
+      "ticker": "TTE",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "TotalEnergies has legacy exposure to Iranian energy assets and any escalation increases operational and sanctions risk for European majors with Iran ties."
+    },
+    {
+      "name": "Lloyd's of London",
+      "ticker": "LLOY.L",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Mass displacement and active conflict in Iran dramatically increases political risk insurance payouts and raises reinsurance premiums across the region."
+    },
+    {
+      "name": "Natural Gas (TTF)",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Iran holds the world's second-largest natural gas reserves; internal conflict threatening production supports upward price pressure on European TTF benchmarks."
+    },
+    {
+      "name": "Hafnia Ltd",
+      "ticker": "HAFNI.CO",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Tanker operators active in the Persian Gulf face elevated risk premiums and potential route disruptions if Iranian conflict expands toward coastal and port infrastructure."
+    }
+  ],
+  "trade_position": "Long Brent crude futures (ICE BRN) as the most direct play on Iranian supply disruption risk; a displacement crisis of 3.2 million suggests fighting has already reached or threatened major urban and industrial centers, making near-term production cuts highly probable. Pair with long war-risk insurance exposure via Beazley (BEZ.L) as a secondary hedge on rising Middle East underwriting premiums.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-12T13:57:01+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran\n\nThe UN reports that up to 3.2 million people have been internally displaced in Iran due to the ongoing conflict, with many fleeing from major cities like Tehran to safer rural areas. This number is expected to increase as the fighting continues.",
+        "text_orig": "#Iran\n\nThe UN reports that up to 3.2 million people have been internally displaced in Iran due to the ongoing conflict, with many fleeing from major cities like Tehran to safer rural areas. This number is expected to increase as the fighting continues."
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-12/photos/135701_17982.jpg"
+    ]
+  }
+}

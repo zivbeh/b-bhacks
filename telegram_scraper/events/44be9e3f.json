@@ -1,0 +1,90 @@
+{
+  "event_id": "44be9e3f",
+  "headline": "Graham Warns Iranian Nuclear Acquisition Would Threaten Hormuz Oil Flows",
+  "timestamp": "2026-03-13T14:07:18Z",
+  "location": "Washington",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "United States",
+    "Iran"
+  ],
+  "summary": "U.S. Senator Lindsey Graham publicly warned that if Iran acquires nuclear weapons, it would gain significantly enhanced leverage over global oil markets by threatening the Strait of Hormuz, the world's most critical oil chokepoint. Graham stated this scenario would lead to sustained elevated global gas prices as Iran could credibly threaten to interdict roughly 20% of global oil supply. The statement reflects growing U.S. legislative pressure for stronger preventive action against Iran's nuclear program.",
+  "primary_markets": [
+    "oil",
+    "natural gas",
+    "defense"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Brent Crude Oil",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "A nuclear-armed Iran with Hormuz leverage would structurally reprice oil risk premium upward on a sustained basis."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Graham's hawkish stance signals congressional appetite for military options against Iran, boosting prospects for defense procurement authorization."
+    },
+    {
+      "name": "RTX Corporation",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Escalating Iran nuclear rhetoric increases demand for Patriot and other missile defense systems among Gulf state allies."
+    },
+    {
+      "name": "Natural Gas (Henry Hub)",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Hormuz interdiction risk motivates European and Asian buyers to pay premiums for non-Gulf LNG supply alternatives."
+    },
+    {
+      "name": "Cheniere Energy",
+      "ticker": "LNG",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Sustained Hormuz risk drives long-term LNG offtake contracts with U.S. exporters as buyers diversify away from Gulf supply."
+    }
+  ],
+  "trade_position": "Initiate a long position in Cheniere Energy (LNG) — Graham's warning institutionalizes the political narrative that Gulf supply is structurally unreliable, accelerating European and Asian offtake diversification toward U.S. LNG exporters. Pair with a long in RTX as Gulf Cooperation Council allies respond to Iranian nuclear escalation by fast-tracking missile defense procurement contracts.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-13T13:48:46+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#France #Italy #Iran\n\nFrance and Italy are engaging in discussions with Iran to establish safe passage through the Strait of Hormuz, which has been blocked due to ongoing conflict. This effort aims to facilitate the flow of oil and gas from the region once hostilities decrease.",
+        "text_orig": "#France #Italy #Iran\n\nFrance and Italy are engaging in discussions with Iran to establish safe passage through the Strait of Hormuz, which has been blocked due to ongoing conflict. This effort aims to facilitate the flow of oil and gas from the region once hostilities decrease."
+      },
+      {
+        "timestamp": "2026-03-13T13:57:47+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Israel #Iran \n\nNetanyahu implied that he believes both Mojtaba Khamenei and Naim Qassem are in significant danger, suggesting that their positions may lead to their downfall. This statement reflects the ongoing tensions and conflicts involving Iran and its leadership.",
+        "text_orig": "#Israel #Iran \n\nNetanyahu implied that he believes both Mojtaba Khamenei and Naim Qassem are in significant danger, suggesting that their positions may lead to their downfall. This statement reflects the ongoing tensions and conflicts involving Iran and its leadership."
+      },
+      {
+        "timestamp": "2026-03-13T14:03:01+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Pakistan #Afghanistan\n\nPakistan's airstrikes near Kandahar Airport targeted a fuel depot allegedly used for militant logistics, which Islamabad claims justified the action. The Taliban condemned the strike as a violation of sovereignty and promised to retaliate.",
+        "text_orig": "#Pakistan #Afghanistan\n\nPakistan's airstrikes near Kandahar Airport targeted a fuel depot allegedly used for militant logistics, which Islamabad claims justified the action. The Taliban condemned the strike as a violation of sovereignty and promised to retaliate."
+      },
+      {
+        "timestamp": "2026-03-13T14:07:18+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA #Iran \n\nSenator Lindsey Graham warns that if Iran acquires nuclear weapons, it could significantly impact global oil prices, particularly by threatening the Strait of Hormuz, a crucial shipping route for oil. This could lead to sustained high gas prices as Iran would have increased leverage over oil supply.",
+        "text_orig": "#USA #Iran \n\nSenator Lindsey Graham warns that if Iran acquires nuclear weapons, it could significantly impact global oil prices, particularly by threatening the Strait of Hormuz, a crucial shipping route for oil. This could lead to sustained high gas prices as Iran would have increased leverage over oil supply."
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-13/photos/134846_18016.jpg"
+    ]
+  }
+}

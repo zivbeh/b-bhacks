@@ -1,0 +1,78 @@
+{
+  "event_id": "061fb327",
+  "headline": "IDF Strikes Eight Hezbollah Radwan Force Compounds in Baalbek",
+  "timestamp": "2026-02-26T19:05:31Z",
+  "location": "Baalbek",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Israel",
+    "Hezbollah"
+  ],
+  "summary": "The IDF struck eight Hezbollah Radwan Force compounds in the Baalbek area of Lebanon, citing continued ceasefire violations. The targeted compounds contained weapons including guns and rockets. No casualty figures were provided in the report, but strike footage was released by the IDF.",
+  "primary_markets": [
+    "defense",
+    "insurance"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Renewed IDF strike activity in Lebanon signals continued demand for Israeli precision munitions and drone systems supplied by Elbit."
+    },
+    {
+      "name": "Rafael Advanced Defense Systems",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "As a primary IDF munitions supplier, escalating strikes in Lebanon increase procurement demand for Rafael's guided weapons systems."
+    },
+    {
+      "name": "Israel Aerospace Industries",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Sustained IDF offensive operations in Lebanon elevate demand for IAI's surveillance and strike platforms."
+    },
+    {
+      "name": "Bezeq Israeli Telecom",
+      "ticker": "BEZQ.TA",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Renewed Israeli military escalation raises risk of Hezbollah retaliatory strikes on Israeli infrastructure, exposing domestic telecom assets."
+    },
+    {
+      "name": "War risk insurance premiums (Lebanon)",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Confirmed IDF strikes on Lebanese territory will push war risk and property insurance premiums higher for Lebanon-exposed underwriters."
+    }
+  ],
+  "trade_position": "Go long on Elbit Systems (ESLT.TA) as the ceasefire breakdown pattern suggests a sustained operational tempo requiring ongoing munitions replenishment. The secondary opportunity is in global reinsurance names with Lebanon exposure going short — Lloyd's syndicates and Munich Re (MUV2.DE) face rising claims risk if Hezbollah retaliates against Israeli civilian or economic targets.",
+  "confidence": "medium",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-02-26T19:05:31+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🎯 In response to Hezbollah’s continued ceasefire violations, the IDF struck eight Hezbollah Radwan Force compounds in the Baalbek area in Lebanon. \n\nThe compounds contained weapons, including guns and rockets, and Hezbollah’s activities at the compounds constituted violations of the ceasefire agreement.",
+        "text_orig": "🎯 In response to Hezbollah’s continued ceasefire violations, the IDF struck eight Hezbollah Radwan Force compounds in the Baalbek area in Lebanon. \n\nThe compounds contained weapons, including guns and rockets, and Hezbollah’s activities at the compounds constituted violations of the ceasefire agreement."
+      },
+      {
+        "timestamp": "2026-02-26T19:06:08+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🎯IDF footage from strikes against the Hezbollah Radwan Force compounds:",
+        "text_orig": "🎯IDF footage from strikes against the Hezbollah Radwan Force compounds:"
+      }
+    ],
+    "media_urls": [
+      "data/IsraelWarRoom/2026-02-26/photos/190531_64.jpg",
+      "data/IsraelWarRoom/2026-02-26/videos/190608_65.MP4"
+    ]
+  }
+}

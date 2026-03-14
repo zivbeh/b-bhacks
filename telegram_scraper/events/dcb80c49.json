@@ -1,0 +1,78 @@
+{
+  "event_id": "dcb80c49",
+  "headline": "Iran Launches Missile/Drone Attack on Northern Israel",
+  "timestamp": "2026-03-12T23:55:19Z",
+  "location": "Northern Israel",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Iran",
+    "Israel"
+  ],
+  "summary": "Air raid sirens activated across northern Israel on the night of March 12, 2026, indicating an Iranian-launched aerial attack targeting civilian areas. The attack is attributed directly to Iran by Israeli sources. Damage assessment and casualty figures are not yet confirmed in available reporting.",
+  "primary_markets": [
+    "defense",
+    "insurance"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Israeli defense contractor benefits directly from increased domestic air defense procurement following Iranian attacks on Israeli territory."
+    },
+    {
+      "name": "Rafael Advanced Defense Systems",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "State-owned Israeli missile defense developer sees demand surge as Iron Dome and David's Sling intercept systems are activated."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "US defense giant supplying F-35s and munitions to Israel faces increased orders as conflict with Iran intensifies."
+    },
+    {
+      "name": "RTX Corporation",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Raytheon's Patriot missile systems and air defense components see elevated demand as Iranian aerial campaigns escalate."
+    },
+    {
+      "name": "Gold",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Direct Iran-Israel exchanges drive safe-haven flows into gold as geopolitical risk premium rises sharply."
+    }
+  ],
+  "trade_position": "Buy RTX (Raytheon/RTX Corp) calls given accelerating demand for air defense systems as Iran escalates direct strikes on Israeli territory; the catalyst is continued Iranian aerial campaigns forcing Israel and US allies to replenish and expand interceptor stockpiles. Simultaneously, long gold via GLD ETF captures safe-haven premium as Iran-Israel conflict enters a new direct-strike phase.",
+  "confidence": "medium",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-12T23:55:19+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🚨Sirens sounding across northern Israel, as the Iranian terror regime attacks civilians once again.",
+        "text_orig": "🚨Sirens sounding across northern Israel, as the Iranian terror regime attacks civilians once again."
+      },
+      {
+        "timestamp": "2026-03-13T00:13:47+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#ME #USA\n\nAt least 19 commercial ships have been damaged in the Persian Gulf and Strait of Hormuz since the conflict began, as Iran has ramped up attacks on vessels and regional energy infrastructure. This escalation has raised significant maritime security concerns for shipping in the area.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#ME #USA\n\nAt least 19 commercial ships have been damaged in the Persian Gulf and Strait of Hormuz since the conflict began, as Iran has ramped up attacks on vessels and regional energy infrastructure. This escalation has raised significant maritime security concerns for shipping in the area.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": [
+      "data/IsraelWarRoom/2026-03-12/photos/235519_109.jpg",
+      "data/OSINTdefender/2026-03-13/photos/001347_17996.jpg"
+    ]
+  }
+}

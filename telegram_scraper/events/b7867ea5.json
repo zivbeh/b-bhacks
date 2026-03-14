@@ -1,0 +1,84 @@
+{
+  "event_id": "b7867ea5",
+  "headline": "IDF Launches New Wave of Strikes on Dahiya, Beirut",
+  "timestamp": "2026-03-06T09:08:15Z",
+  "location": "Beirut",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Israel",
+    "Hezbollah"
+  ],
+  "summary": "The IDF launched another wave of airstrikes targeting the Dahiya district of Beirut, a Hezbollah stronghold in the southern suburbs of the Lebanese capital. This follows a pattern of repeated Israeli strikes on Hezbollah infrastructure in Dahiya as part of ongoing military operations in Lebanon. No casualty figures or specific target details were confirmed in the initial report.",
+  "primary_markets": [
+    "defense",
+    "insurance",
+    "tourism & hotels"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Continued Israeli offensive operations in Lebanon sustain demand for Elbit's precision munitions, surveillance drones, and C4I systems."
+    },
+    {
+      "name": "Middle East Airlines",
+      "ticker": null,
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Strikes on Beirut's southern suburbs increase risk of airspace disruption at Beirut Rafic Hariri International Airport, directly threatening MEA's hub operations."
+    },
+    {
+      "name": "War Risk Insurance (Lloyd's)",
+      "ticker": "LLOY.L",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Repeated strikes on a major Arab capital escalate war risk insurance premiums for Lebanon, regional shipping, and aviation, benefiting underwriters with exposure to premium increases."
+    },
+    {
+      "name": "Brent Crude",
+      "ticker": "BZ=F",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Sustained multi-front Israeli military operations in Lebanon and Iran simultaneously raise the risk premium embedded in regional crude prices."
+    },
+    {
+      "name": "Israeli Shekel (USD/ILS)",
+      "ticker": "ILS=X",
+      "type": "commodity",
+      "signal": "bearish",
+      "reason": "Continued multi-front warfare increases fiscal pressure on Israel and risk-off sentiment toward the shekel, pushing USD/ILS higher."
+    }
+  ],
+  "trade_position": "Short Middle East Airlines exposure via long war-risk insurance proxies such as Lloyd's of London (LLOY.L): Beirut airport has historically closed or severely restricted operations during Dahiya strikes, and repeated attack waves create compounding operational and liability risk for regional aviation and tourism infrastructure. Simultaneously, a long position in USD/ILS captures shekel depreciation pressure from sustained multi-front military spending.",
+  "confidence": "medium",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-06T08:37:12+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "⚠️🇮🇷🇦🇪The UAE is reportedly considering freezing billions of dollars in Iranian assets held in the country.\n\nAccording to reporting by the Wall Street Journal, the move could significantly restrict Tehran’s access to foreign currency and global trade networks.\n\nDubai has long served as a key hub for Iranian businesses and sanctions-evasion networks used to sell oil and move funds internationally.\n\nOfficials are also exploring measures targeting IRGC-linked accounts, front companies, currency exchanges, and parts of Iran’s shadow oil fleet operating through Emirati ports.\n\nIf implemented, it would mark one of the most significant financial pressure points placed on Iran from within the Gulf.",
+        "text_orig": "⚠️🇮🇷🇦🇪The UAE is reportedly considering freezing billions of dollars in Iranian assets held in the country.\n\nAccording to reporting by the Wall Street Journal, the move could significantly restrict Tehran’s access to foreign currency and global trade networks.\n\nDubai has long served as a key hub for Iranian businesses and sanctions-evasion networks used to sell oil and move funds internationally.\n\nOfficials are also exploring measures targeting IRGC-linked accounts, front companies, currency exchanges, and parts of Iran’s shadow oil fleet operating through Emirati ports.\n\nIf implemented, it would mark one of the most significant financial pressure points placed on Iran from within the Gulf."
+      },
+      {
+        "timestamp": "2026-03-06T08:41:33+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🎯Before missiles were launched toward Israel, the Air Force destroyed six Iranian ballistic missile launchers overnight on Wednesday (March 4), just minutes before they were set to fire.\n\nDuring the same operation, three advanced Iranian air defense systems were also destroyed.\n\nAccording to the IDF, efforts to degrade the Iranian regime’s missile launch and air defense capabilities have been ongoing since the start of Operation Roaring Lion 🦁",
+        "text_orig": "🎯Before missiles were launched toward Israel, the Air Force destroyed six Iranian ballistic missile launchers overnight on Wednesday (March 4), just minutes before they were set to fire.\n\nDuring the same operation, three advanced Iranian air defense systems were also destroyed.\n\nAccording to the IDF, efforts to degrade the Iranian regime’s missile launch and air defense capabilities have been ongoing since the start of Operation Roaring Lion 🦁"
+      },
+      {
+        "timestamp": "2026-03-06T09:08:15+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🎯The IDF has launched another wave of strikes in Dahiya, Beirut. -IDF",
+        "text_orig": "🎯The IDF has launched another wave of strikes in Dahiya, Beirut. -IDF"
+      }
+    ],
+    "media_urls": [
+      "data/IsraelWarRoom/2026-03-06/videos/084133_85.MP4"
+    ]
+  }
+}

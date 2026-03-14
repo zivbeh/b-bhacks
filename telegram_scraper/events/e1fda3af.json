@@ -1,0 +1,70 @@
+{
+  "event_id": "e1fda3af",
+  "headline": "Trump Weighs Limited Strike on Iran to Halt Nuclear Enrichment",
+  "timestamp": "2026-02-20T06:17:34Z",
+  "location": "Tehran",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "United States",
+    "Iran"
+  ],
+  "summary": "The Wall Street Journal reports that President Trump is actively considering a limited military strike against Iran to compel an end to nuclear enrichment activities. The plan envisions an escalating force posture — beginning with limited strikes and increasing pressure if Iran does not comply. U.S. carriers and advanced aircraft are reportedly repositioning, with a decision window cited at within 10 days.",
+  "primary_markets": [
+    "defense",
+    "oil",
+    "natural gas"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "A U.S. strike on Iran would drive demand for precision munitions and advanced aircraft systems that Lockheed supplies."
+    },
+    {
+      "name": "RTX Corporation",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "RTX manufactures Tomahawk cruise missiles and air defense systems likely to be central to any limited strike package."
+    },
+    {
+      "name": "Brent Crude Oil",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Any military action near or in Iran risks disruption to Strait of Hormuz transit, through which roughly 20% of global oil supply flows."
+    },
+    {
+      "name": "Natural Gas (TTF)",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Iran is a top-five global gas producer; escalation threatens regional LNG supply chains and European alternative supply pricing."
+    },
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "A U.S.-Iran confrontation directly benefits Israeli defense firms as Israel would face elevated threat from Iranian retaliation and would likely coordinate with U.S. forces."
+    }
+  ],
+  "trade_position": "The highest-conviction non-obvious position is long WTI/Brent call options with a 30-60 day expiry: a Strait of Hormuz disruption — even a partial one driven by Iranian retaliation — would spike oil prices sharply, yet options pricing has not fully priced a credible strike scenario. Pair with a long position in tanker insurance proxies such as Gard or war-risk premium ETFs, as insurance rates on Hormuz-transiting vessels will reprice violently on any confirmed military action.",
+  "confidence": "medium",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-02-20T06:17:34+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "WSJ: President Trump is considering a limited strike on the Iran regime to compel an end to nuclear enrichment.\n\nLimited strikes at first. More force if the Iran regime does not comply.\n\nCarriers and advanced aircraft are moving into position. \n\nA decision could come within 10 days.\n\nThis is no longer just talk. Military preparations are underway.",
+        "text_orig": "WSJ: President Trump is considering a limited strike on the Iran regime to compel an end to nuclear enrichment.\n\nLimited strikes at first. More force if the Iran regime does not comply.\n\nCarriers and advanced aircraft are moving into position. \n\nA decision could come within 10 days.\n\nThis is no longer just talk. Military preparations are underway."
+      }
+    ],
+    "media_urls": []
+  }
+}

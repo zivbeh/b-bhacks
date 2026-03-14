@@ -1,0 +1,132 @@
+{
+  "event_id": "f040d72f",
+  "headline": "Explosions Strike Erbil Airport Iraq; US Troops Targeted",
+  "timestamp": "2026-03-01T05:50:40Z",
+  "location": "Erbil",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Iran",
+    "United States"
+  ],
+  "summary": "Explosions and smoke were reported near Erbil Airport in northern Iraq, where U.S. troops are stationed, in what is described as part of Iran's escalating retaliation following military strikes on Iran. The attack represents direct Iranian targeting of U.S. military personnel in Iraq, raising the risk of formal U.S. casualties triggering further escalation. The situation is described as tense with ongoing threats of intensified Iranian attacks against additional U.S. bases across the region.",
+  "primary_markets": [
+    "defense",
+    "oil",
+    "insurance"
+  ],
+  "secondary_markets": [
+    {
+      "name": "L3Harris Technologies",
+      "ticker": "LHX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "L3Harris supplies C-RAM (counter-rocket, artillery, mortar) and base defense systems critical for protecting U.S. forward operating bases under Iranian missile attack."
+    },
+    {
+      "name": "Leidos Holdings",
+      "ticker": "LDOS",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Leidos provides intelligence, surveillance, and logistics support for U.S. military bases in the Middle East; base attacks trigger emergency support contract expansions."
+    },
+    {
+      "name": "Kurdish Regional Oil Exports",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bearish",
+      "reason": "Erbil is the hub for Kurdish Regional Government oil exports via the Kirkuk-Ceyhan pipeline; Iranian strikes on the region threaten the 450,000 bpd export route."
+    },
+    {
+      "name": "Fluor Corporation",
+      "ticker": "FLR",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Fluor holds U.S. military base construction and logistics contracts in Iraq; direct strikes on bases create liability exposure and operational disruption risk."
+    },
+    {
+      "name": "Lloyd's of London War Risk Insurance",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "War risk insurance premiums for Iraq, the Persian Gulf, and broader Middle East shipping lanes spike immediately as a U.S. base is directly struck by Iranian forces."
+    }
+  ],
+  "trade_position": "Short Kurdish Regional Government oil pipeline operators and long war-risk reinsurers: the Erbil strike signals Iran is activating its full proxy and direct-fire network across Iraq, putting the Kirkuk-Ceyhan pipeline (Turkey exit route for 450,000 bpd) at acute interdiction risk. The most actionable instrument is long Brent crude calendar spreads (front-month over back-month) as Iraqi export disruption compounds the Hormuz closure risk already priced into the curve.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-01T05:42:26+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA #Israel \n\nPresident Trump announced that the U.S. has begun major combat operations in Iran, aiming to eliminate threats from the Iranian regime, which he described as a significant danger to the U.S. and its allies. He emphasized that the military actions are a response to Iran's continued aggression and nuclear ambitions.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA #Israel \n\nPresident Trump announced that the U.S. has begun major combat operations in Iran, aiming to eliminate threats from the Iranian regime, which he described as a significant danger to the U.S. and its allies. He emphasized that the military actions are a response to Iran's continued aggression and nuclear ambitions.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-01T05:47:13+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA #Israel \n\nThe Islamic Revolutionary Guard Corps (IRGC) has announced that it will conduct a series of retaliatory attacks in response to recent military actions against Iran, indicating a commitment to escalate their response significantly. This suggests that Iran is preparing for a prolonged conflict following the recent strikes by the U.S. and Israel.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA #Israel \n\nThe Islamic Revolutionary Guard Corps (IRGC) has announced that it will conduct a series of retaliatory attacks in response to recent military actions against Iran, indicating a commitment to escalate their response significantly. This suggests that Iran is preparing for a prolonged conflict following the recent strikes by the U.S. and Israel.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-01T05:48:11+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran\n\nIranian Parliament Speaker Mohammad Bagher Ghalibaf has stated that Iran is prepared for various scenarios, including plans for the period following the martyrdom of Imam Khamenei. This indicates a focus on maintaining stability and continuity in leadership amid potential changes.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran\n\nIranian Parliament Speaker Mohammad Bagher Ghalibaf has stated that Iran is prepared for various scenarios, including plans for the period following the martyrdom of Imam Khamenei. This indicates a focus on maintaining stability and continuity in leadership amid potential changes.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-01T05:49:16+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA #Israel \n\nIsrael's Defense Minister Israel Katz has stated that the Iranian regime and its proxies have been significantly weakened, indicating a shift in power dynamics in the region. \n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA #Israel \n\nIsrael's Defense Minister Israel Katz has stated that the Iranian regime and its proxies have been significantly weakened, indicating a shift in power dynamics in the region. \n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-01T05:50:40+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA #Iraq\n\nExplosions and smoke have been reported near Erbil Airport in Iraq, where U.S. troops are stationed, as part of Iran's escalating retaliation following the death of Supreme Leader Ali Khamenei. The situation remains tense, with ongoing threats of intensified Iranian attacks on U.S. bases in the region.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA #Iraq\n\nExplosions and smoke have been reported near Erbil Airport in Iraq, where U.S. troops are stationed, as part of Iran's escalating retaliation following the death of Supreme Leader Ali Khamenei. The situation remains tense, with ongoing threats of intensified Iranian attacks on U.S. bases in the region.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-01T05:52:41+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nThe U.S. military used Anthropic's Claude AI system in strikes against Iran, even after President Trump ordered federal agencies to stop using the technology just hours before the operation. This situation highlights the ongoing tensions between the Pentagon and Anthropic regarding the use of AI in military operations.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nThe U.S. military used Anthropic's Claude AI system in strikes against Iran, even after President Trump ordered federal agencies to stop using the technology just hours before the operation. This situation highlights the ongoing tensions between the Pentagon and Anthropic regarding the use of AI in military operations.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-01T05:53:59+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#KSA #USA #Israel \n\nReports indicate that Israeli Prime Minister Benjamin Netanyahu and Saudi Crown Prince Mohammed bin Salman played significant roles in persuading President Trump to initiate military strikes against Iran, despite previous diplomatic efforts. Their lobbying efforts led to a dramatic shift in U.S. foreign policy, culminating in a coordinated attack on Iranian targets.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#KSA #USA #Israel \n\nReports indicate that Israeli Prime Minister Benjamin Netanyahu and Saudi Crown Prince Mohammed bin Salman played significant roles in persuading President Trump to initiate military strikes against Iran, despite previous diplomatic efforts. Their lobbying efforts led to a dramatic shift in U.S. foreign policy, culminating in a coordinated attack on Iranian targets.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-01T05:56:17+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran \n\nAli Larijani, the Secretary of Iran's National Security Council, stated that despite suffering many casualties in previous conflicts, the recent military operations resulted in fewer martyrs due to the armed forces' improved control and experience. This suggests a focus on enhancing military readiness and strategy in response to ongoing threats.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran \n\nAli Larijani, the Secretary of Iran's National Security Council, stated that despite suffering many casualties in previous conflicts, the recent military operations resulted in fewer martyrs due to the armed forces' improved control and experience. This suggests a focus on enhancing military readiness and strategy in response to ongoing threats.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-01T06:28:59+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#NK\n\nNorth Korea is indeed the only country confirmed to have conducted nuclear weapons tests in the 21st century, while Iran has faced significant international pressure and sanctions to deter its nuclear ambitions. However, recent evidence suggests that Iran is attempting to advance its nuclear program, raising concerns about its potential to develop nuclear weapons.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#NK\n\nNorth Korea is indeed the only country confirmed to have conducted nuclear weapons tests in the 21st century, while Iran has faced significant international pressure and sanctions to deter its nuclear ambitions. However, recent evidence suggests that Iran is attempting to advance its nuclear program, raising concerns about its potential to develop nuclear weapons.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-01T06:46:08+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "The ongoing conflict in the Middle East has resulted in significant human suffering, with many civilians facing dire conditions, including loss of life, displacement, and lack of basic necessities. The long-term implications include potential health crises, economic instability, and ongoing humanitarian needs that will require sustained international attention and support.",
+        "text_orig": "The ongoing conflict in the Middle East has resulted in significant human suffering, with many civilians facing dire conditions, including loss of life, displacement, and lack of basic necessities. The long-term implications include potential health crises, economic instability, and ongoing humanitarian needs that will require sustained international attention and support."
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-01/photos/054226_17532.jpg",
+      "data/OSINTdefender/2026-03-01/photos/054811_17534.jpg",
+      "data/OSINTdefender/2026-03-01/photos/054916_17535.jpg",
+      "data/OSINTdefender/2026-03-01/photos/055040_17536.jpg",
+      "data/OSINTdefender/2026-03-01/photos/055241_17537.jpg",
+      "data/OSINTdefender/2026-03-01/photos/055359_17538.jpg",
+      "data/OSINTdefender/2026-03-01/photos/062859_17540.jpg"
+    ]
+  }
+}

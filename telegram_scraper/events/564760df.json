@@ -1,0 +1,78 @@
+{
+  "event_id": "564760df",
+  "headline": "Israel Orders Military Buildup Along Lebanon Border",
+  "timestamp": "2026-03-13T17:17:48Z",
+  "location": "Haifa",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "Israel",
+    "Hezbollah"
+  ],
+  "summary": "Israeli Defense Minister Israel Katz has ordered the IDF to increase its presence along the Lebanon border and prepare for expanded operations aimed at preventing Hezbollah attacks. The directive follows a period of renewed tensions and signals a potential escalation of Israeli military activity in northern Israel and southern Lebanon. No confirmed kinetic engagement has been reported at this time.",
+  "primary_markets": [
+    "defense",
+    "insurance",
+    "tourism & hotels"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Expanded IDF border operations increase demand for Elbit's surveillance, drone, and electronic warfare systems deployed in northern Israel."
+    },
+    {
+      "name": "Rafael Advanced Defense Systems",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Hezbollah rocket and missile threat drives demand for Rafael's Iron Dome and Trophy active protection systems."
+    },
+    {
+      "name": "Israel Aerospace Industries (IAI)",
+      "ticker": "ARSP.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "IDF border buildup likely involves IAI surveillance drones and missile defense assets deployed in the northern theater."
+    },
+    {
+      "name": "Bezeq Israeli Telecom",
+      "ticker": "BEZQ.TA",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Escalation in northern Israel risks disruption to infrastructure and suppresses broader Israeli equity sentiment."
+    },
+    {
+      "name": "Tourism (Israel)",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bearish",
+      "reason": "Military buildup on the Lebanon border deters inbound tourism to northern Israel, with spillover effects on national tourism revenue."
+    }
+  ],
+  "trade_position": "Long Elbit Systems (ESLT) as the most liquid and directly exposed Israeli defense name; a Lebanon escalation order triggers immediate procurement of border surveillance and force-protection systems where Elbit holds dominant IDF contracts. The near-term catalyst is any confirmed IDF ground movement or Hezbollah retaliatory fire that would accelerate defense budget drawdowns.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-13T17:06:04+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Russia\n\nThe reported increase in the Russian Army's T-90M tank fleet from 400 to 650 tanks indicates significant production and refurbishment efforts, likely in response to battlefield losses and the need to maintain operational capabilities. This growth reflects Russia's ongoing commitment to modernizing its armored forces amid the ongoing conflict in Ukraine.",
+        "text_orig": "#Russia\n\nThe reported increase in the Russian Army's T-90M tank fleet from 400 to 650 tanks indicates significant production and refurbishment efforts, likely in response to battlefield losses and the need to maintain operational capabilities. This growth reflects Russia's ongoing commitment to modernizing its armored forces amid the ongoing conflict in Ukraine."
+      },
+      {
+        "timestamp": "2026-03-13T17:17:48+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Israel #Lebanon \n\nIsraeli forces are indeed increasing their presence along the border with Lebanon, as Defense Minister Israel Katz has ordered the military to prepare for expanded operations to enhance security and prevent attacks from Hezbollah. This move follows recent tensions and attacks in the region.",
+        "text_orig": "#Israel #Lebanon \n\nIsraeli forces are indeed increasing their presence along the border with Lebanon, as Defense Minister Israel Katz has ordered the military to prepare for expanded operations to enhance security and prevent attacks from Hezbollah. This move follows recent tensions and attacks in the region."
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-13/photos/170604_18023.jpg"
+    ]
+  }
+}

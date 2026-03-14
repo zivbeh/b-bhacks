@@ -1,19 +1,21 @@
 #!/usr/bin/env python3
 """
-ME Conflict Intelligence Pipeline — single command to run everything.
+ME Conflict Intelligence Pipeline — event analysis + trade ranking.
 
 Usage:
-  python run.py --since 2026-02-27          # process Feb 27 → today
-  python run.py --since 2026-02-27 --until 2026-03-14
-  python run.py --watch                     # real-time (scraper must be running)
-  python run.py                             # process all scraped data
+  python run.py                                        # process all scraped data
+  python run.py --since 2026-02-27                     # process from date (fast, no search)
+  python run.py --since 2026-02-27 --until 2026-03-14  # specific range
+  python run.py --watch                                # real-time (reads queue.jsonl)
+  python run.py --since 2026-02-27 --search            # enable web search (slower, richer)
+  python run.py --since 2026-02-27 --workers 10        # more parallel Claude workers
 
 Steps (automatic):
-  1  Load scraped messages (text only, no videos/images for speed)
+  1  Load scraped messages from data/
   2  Fetch active Polymarket conflict markets
-  3  Extract events with Claude Sonnet + web search
-  4  For each new event: rank top-5 Polymarket trades with Claude Sonnet
-  5  Save to events.json continuously
+  3  Group messages into 45-min windows, analyze in parallel (default: 5 workers)
+  4  For each new event: rank top Polymarket trades with Claude
+  5  Save events to events/<event_id>.json and stream to Strata TUI
 """
 
 from __future__ import annotations
@@ -21,8 +23,10 @@ import argparse
 import json
 import os
 import sys
+import threading
 import time
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -243,7 +247,8 @@ def print_trades(trades: dict):
 
 # ── batch pipeline ─────────────────────────────────────────────────────────────
 
-def run_batch(since: datetime | None, until: datetime | None):
+def run_batch(since: datetime | None, until: datetime | None,
+              use_search: bool = False, workers: int = 5):
     divider()
     label_since = since.date() if since else "all time"
     label_until = until.date() if until else "today"
@@ -263,37 +268,56 @@ def run_batch(since: datetime | None, until: datetime | None):
     step(2, 3, "Fetching Polymarket conflict markets...")
     poly_markets = load_conflict_markets()
 
-    # ── Step 3: extract events ─────────────────────────────────────────────────
-    step(3, 3, "Extracting events + ranking Polymarket trades...")
+    # ── Step 3: extract events in parallel ────────────────────────────────────
+    step(3, 3, f"Extracting events ({workers} parallel workers)...")
     windows = group_into_windows(messages)
     indent(f"{len(windows)} time windows ({WINDOW_MINUTES}-min gaps)")
 
-    events         = load_existing_events()
-    new_event_list: list[dict] = []
+    print_lock   = threading.Lock()
+    done_count   = [0]   # mutable counter shared across threads
+    total        = len(windows)
 
-    for i, window in enumerate(windows, 1):
+    def process_window(args):
+        idx, window = args
         t0 = window[0]["_ts"].strftime("%Y-%m-%d %H:%M")
         t1 = window[-1]["_ts"].strftime("%H:%M")
-        sys.stdout.write(f"  [{i:3}/{len(windows)}] {t0}–{t1} UTC  ({len(window):3} msgs)  ")
-        sys.stdout.flush()
+        extracted = analyze_message_group(window, use_search=use_search)
+        with print_lock:
+            done_count[0] += 1
+            label = f"→ {len(extracted)} event(s)" if extracted else "  (no events)"
+            print(f"  [{done_count[0]:3}/{total}] {t0}–{t1}  ({len(window):3} msgs)  {label}")
+        return idx, extracted
 
-        extracted = analyze_message_group(window)
+    # Collect results keyed by window index so we can merge in chronological order
+    results: dict[int, list] = {}
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futures = {pool.submit(process_window, (i, w)): i
+                   for i, w in enumerate(windows)}
+        for fut in as_completed(futures):
+            try:
+                idx, extracted = fut.result()
+                results[idx] = extracted
+            except Exception as exc:
+                with print_lock:
+                    print(f"  [!] window failed: {exc}")
 
-        if extracted:
-            events, added = merge_events(events, extracted)
+    # Merge in order and rank trades
+    events         = load_existing_events()
+    new_event_list: list[dict] = []
+    for i in range(total):
+        extracted = results.get(i) or []
+        if not extracted:
+            continue
+        events, added = merge_events(events, extracted)
+        if added:
             new_event_list.extend(added)
-
-            if added:
-                print(f"→ {len(added)} new event(s)")
-                for ev in added:
-                    print_event(ev)
-                    trades = rank_polymarket_trades(ev, poly_markets)
-                    ev["polymarket_trades"] = trades
-                    print_trades(trades)
-                save_events(events)
-                push_to_strata(added)
-            else:
-                sys.stdout.write("\r" + " " * 80 + "\r")  # clear the line (all dupes)
+            for ev in added:
+                print_event(ev)
+                trades = rank_polymarket_trades(ev, poly_markets)
+                ev["polymarket_trades"] = trades
+                print_trades(trades)
+            save_events(events)
+            push_to_strata(added)
 
     indent(f"\nDone. {len(new_event_list)} new events → events/")
     divider("─")
@@ -301,7 +325,7 @@ def run_batch(since: datetime | None, until: datetime | None):
 
 # ── real-time watch mode ───────────────────────────────────────────────────────
 
-def run_watch():
+def run_watch(use_search: bool = False):
     DATA_DIR.mkdir(exist_ok=True)
     QUEUE_FILE.touch()
 
@@ -354,7 +378,7 @@ def run_watch():
             strata_bridge.log(f"  Analyzing {len(pending)} messages...")
 
             events    = load_existing_events()
-            extracted = analyze_message_group(pending)
+            extracted = analyze_message_group(pending, use_search=use_search)
 
             if extracted:
                 events, new_events = merge_events(events, extracted)
@@ -398,15 +422,21 @@ if __name__ == "__main__":
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python run.py --since 2026-02-27          process Feb 27 → today
+  python run.py --since 2026-02-27          process Feb 27 → today (fast, no web search)
+  python run.py --since 2026-02-27 --search enable web search for real-time verification
   python run.py --since 2026-02-27 --until 2026-03-14
   python run.py --watch                     real-time mode
+  python run.py --watch --search            real-time mode with web search
   python run.py                             process all data
         """,
     )
     ap.add_argument("--since",  metavar="YYYY-MM-DD")
     ap.add_argument("--until",  metavar="YYYY-MM-DD")
     ap.add_argument("--watch",  action="store_true")
+    ap.add_argument("--search", action="store_true",
+                    help="enable web_search tool for real-time event verification (slower)")
+    ap.add_argument("--workers", type=int, default=5, metavar="N",
+                    help="parallel Claude workers for batch processing (default: 5)")
     args = ap.parse_args()
 
     for key in ("ANTHROPIC_API_KEY",):
@@ -415,8 +445,8 @@ Examples:
             sys.exit(1)
 
     if args.watch:
-        run_watch()
+        run_watch(use_search=args.search)
     else:
         since = parse_date(args.since) if args.since else None
         until = parse_date(args.until).replace(hour=23, minute=59, second=59) if args.until else None
-        run_batch(since=since, until=until)
+        run_batch(since=since, until=until, use_search=args.search, workers=args.workers)

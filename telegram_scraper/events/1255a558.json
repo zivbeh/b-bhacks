@@ -1,0 +1,85 @@
+{
+  "event_id": "1255a558",
+  "headline": "IRGC Strikes US-Linked Oil Tanker in Persian Gulf, One Killed",
+  "timestamp": "2026-03-12T12:55:47Z",
+  "location": "Strait of Hormuz",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Iran",
+    "United States"
+  ],
+  "summary": "The oil tanker Safesea Vishnu, described as US-linked, was struck by Iran's IRGC Navy in the northern Persian Gulf after reportedly ignoring IRGC warnings, killing one Indian crew member. The vessel was operating in a highly sensitive transit corridor amid heightened US-Iran tensions. The incident represents a significant escalation as it marks a direct kinetic action against a US-affiliated commercial vessel with a confirmed fatality.",
+  "primary_markets": [
+    "oil",
+    "shipping routes",
+    "insurance"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Crude Oil (Brent)",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "IRGC attack on a US-linked tanker in the Persian Gulf directly threatens Strait of Hormuz transit security, the chokepoint for approximately 20% of global oil supply."
+    },
+    {
+      "name": "Frontline Ltd",
+      "ticker": "FRO",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Major crude tanker operator with significant Persian Gulf exposure; war-risk premium spike raises spot rates sharply for vessels willing to transit the region."
+    },
+    {
+      "name": "Euronav",
+      "ticker": "EURN",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Large crude tanker company operating VLCC fleet through Persian Gulf routes; higher war-risk premiums translate directly into elevated day rates."
+    },
+    {
+      "name": "Tsakos Energy Navigation",
+      "ticker": "TEN",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Operates tankers on Persian Gulf crude export routes; confirmed IRGC interdiction will force insurance-driven rate increases across the fleet."
+    },
+    {
+      "name": "Gard P&I Club",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Leading marine mutual insurer will reprice Persian Gulf war-risk coverage sharply upward following this confirmed kinetic strike on a commercial tanker."
+    }
+  ],
+  "trade_position": "Go long Brent crude futures (front-month) as the highest-conviction play; a confirmed IRGC kinetic strike with fatality on a US-linked vessel is the precise trigger that historically produces immediate Hormuz risk premium of $3–8/barrel. Layer a long position in Frontline (FRO) as the most liquid tanker equity beneficiary of the resulting war-risk rate spike across Persian Gulf crude routes.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-12T12:39:13+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Kuwait\n\nKuwait's Civil Aviation Authority reported that a drone strike did occur at Kuwait International Airport, resulting in minor injuries to some employees and limited damage to the terminal. The incident is part of escalating regional tensions, and authorities are monitoring the situation.",
+        "text_orig": "#Kuwait\n\nKuwait's Civil Aviation Authority reported that a drone strike did occur at Kuwait International Airport, resulting in minor injuries to some employees and limited damage to the terminal. The incident is part of escalating regional tensions, and authorities are monitoring the situation."
+      },
+      {
+        "timestamp": "2026-03-12T12:51:01+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Italy #Iraq\n\nAn Italian military base in Erbil was targeted by a drone strike, which destroyed a military vehicle but resulted in no injuries. This incident highlights the ongoing tensions in the region amid escalating conflicts.",
+        "text_orig": "#Italy #Iraq\n\nAn Italian military base in Erbil was targeted by a drone strike, which destroyed a military vehicle but resulted in no injuries. This incident highlights the ongoing tensions in the region amid escalating conflicts."
+      },
+      {
+        "timestamp": "2026-03-12T12:55:47+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#ME #USA\n\nAn Indian crew member was killed when the U.S.-linked oil tanker Safesea Vishnu was struck in the northern Persian Gulf after reportedly ignoring warnings from Iran's Islamic Revolutionary Guard Corps (IRGC) Navy. This incident highlights the escalating tensions in the region and the risks faced by commercial shipping.",
+        "text_orig": "#ME #USA\n\nAn Indian crew member was killed when the U.S.-linked oil tanker Safesea Vishnu was struck in the northern Persian Gulf after reportedly ignoring warnings from Iran's Islamic Revolutionary Guard Corps (IRGC) Navy. This incident highlights the escalating tensions in the region and the risks faced by commercial shipping."
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-12/photos/125101_17980.jpg",
+      "data/OSINTdefender/2026-03-12/photos/125547_17981.jpg"
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "event_id": "0c7cd0c7",
+  "headline": "Venezuela Condemns Israeli Strikes on Iran, Backs Tehran",
+  "timestamp": "2026-02-28T17:03:58Z",
+  "location": "Caracas",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "Venezuela",
+    "Iran",
+    "Israel",
+    "United States"
+  ],
+  "summary": "The Venezuelan government formally condemned Israeli military actions against Iran as illegitimate violations of international law and expressed explicit solidarity with Tehran. Venezuela also publicly criticized the United States for its role in the events, signaling alignment with the Iran-Russia-China bloc. This diplomatic posture raises the risk of Venezuela leveraging its oil exports as a geopolitical tool and complicates US efforts to use Venezuelan crude as a replacement for sanctioned Iranian barrels.",
+  "primary_markets": [
+    "oil",
+    "defense"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Venezuelan Heavy Crude (Merey)",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Venezuelan alignment with Iran increases the probability of coordinated OPEC+ supply restraint or export disruption targeting Western markets."
+    },
+    {
+      "name": "Chevron",
+      "ticker": "CVX",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Chevron holds the only active US license to operate in Venezuela; political deterioration directly threatens its production-sharing arrangements there."
+    },
+    {
+      "name": "Valero Energy",
+      "ticker": "VLO",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Valero's Gulf Coast heavy crude refineries are calibrated for Venezuelan heavy barrels and face feedstock cost increases if Venezuelan exports are restricted."
+    },
+    {
+      "name": "Brent Crude",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Loss of Venezuelan crude as a Western supply alternative tightens global heavy crude balances and supports Brent price upside."
+    },
+    {
+      "name": "HF Sinclair",
+      "ticker": "DINO",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Mid-continent refiner exposed to heavy crude feedstock pricing that worsens if Venezuelan barrels are redirected toward China and Iran-aligned buyers."
+    }
+  ],
+  "trade_position": "Long Brent crude calendar spread (buy front-month, sell 12-month) — Venezuelan political alignment with Iran structurally reduces the pool of non-sanctioned heavy crude available to Western refiners, creating near-term backwardation as spot tightness hits before the market reprices the geopolitical realignment. The spread trade isolates the supply shock without taking outright directional crude risk.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-02-28T17:03:58+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Venezuela #Iran \n\nVenezuela has condemned the military actions by Israel against Iran, labeling them as \"illegitimate\" and a violation of international law, while expressing solidarity with Iran. The Venezuelan government has also criticized the U.S. for its role in these events.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Venezuela #Iran \n\nVenezuela has condemned the military actions by Israel against Iran, labeling them as \"illegitimate\" and a violation of international law, while expressing solidarity with Iran. The Venezuelan government has also criticized the U.S. for its role in these events.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T17:05:02+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#ME\n\nThe Bahrain Interior Ministry reported that several residential buildings in Manama were targeted, and Civil Defence is actively engaged in firefighting and rescue operations at the affected sites. No further details on casualties or the cause of the incidents were provided.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#ME\n\nThe Bahrain Interior Ministry reported that several residential buildings in Manama were targeted, and Civil Defence is actively engaged in firefighting and rescue operations at the affected sites. No further details on casualties or the cause of the incidents were provided.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T17:06:01+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Germany #Iran \n\nGermany's Chancellor Merz stated that the U.S. has been trying to negotiate a solution with Iran for several weeks, but Iran has not accepted the terms for a comprehensive agreement to halt its military nuclear program.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Germany #Iran \n\nGermany's Chancellor Merz stated that the U.S. has been trying to negotiate a solution with Iran for several weeks, but Iran has not accepted the terms for a comprehensive agreement to halt its military nuclear program.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T17:08:52+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#UAE \n\nThe Shahed drone is a type of Iranian drone known for its precision and deadly capabilities, often used in conflicts, including recent attacks in populated areas like Dubai. These drones can be launched from deep within Iranian territory and have been involved in various military operations across the Middle East.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#UAE \n\nThe Shahed drone is a type of Iranian drone known for its precision and deadly capabilities, often used in conflicts, including recent attacks in populated areas like Dubai. These drones can be launched from deep within Iranian territory and have been involved in various military operations across the Middle East.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-02-28/videos/170852_17516.mp4"
+    ]
+  }
+}

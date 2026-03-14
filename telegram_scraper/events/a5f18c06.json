@@ -1,0 +1,71 @@
+{
+  "event_id": "a5f18c06",
+  "headline": "Trump Declares US-Iran War Nearing End, Oil Drop Expected",
+  "timestamp": "2026-03-12T08:21:58Z",
+  "location": "Washington D.C.",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "United States",
+    "Iran",
+    "Israel"
+  ],
+  "summary": "President Trump stated the US-Iran war will end 'very soon,' predicting a subsequent decline in elevated oil prices. He characterized the conflict as a limited military operation aimed at crippling Iran's military capabilities alongside Israeli forces. Trump framed current operations as necessary to prevent broader escalation while claiming significant progress has already been achieved.",
+  "primary_markets": [
+    "oil",
+    "natural gas",
+    "defense"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Crude Oil (Brent)",
+      "ticker": "BZ=F",
+      "type": "commodity",
+      "signal": "bearish",
+      "reason": "Trump's explicit signal of imminent conflict resolution is a direct forward guidance for oil price decline as war-risk premium deflates."
+    },
+    {
+      "name": "WTI Crude Oil",
+      "ticker": "CL=F",
+      "type": "commodity",
+      "signal": "bearish",
+      "reason": "Anticipated end of US-Iran hostilities would remove the key supply-disruption risk premium currently embedded in WTI pricing."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "A declared end to the conflict reduces near-term emergency defense procurement urgency, pressuring defense contractor valuations."
+    },
+    {
+      "name": "RTX Corporation",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Conflict wind-down signals reduced near-term munitions and missile defense system demand from the US and Israeli militaries."
+    },
+    {
+      "name": "Energy Transfer LP",
+      "ticker": "ET",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Normalization of Strait of Hormuz shipping and lower oil prices could boost energy throughput volumes and pipeline utilization as regional trade resumes."
+    }
+  ],
+  "trade_position": "Short front-month Brent crude (BZ=F) as Trump's explicit peace signal is the clearest catalyst for war-risk premium unwind; the oil market has been pricing sustained Strait of Hormuz disruption risk, and any credible de-escalation move compresses that premium rapidly. Pair with a long position in airline sector ETFs (e.g., JETS) as lower jet fuel costs and reopening of Middle East airspace would deliver an immediate margin tailwind to carriers.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-12T08:21:58+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA\n\nPresident Trump has stated that the war with Iran will end \"very soon,\" which he believes will lead to a decrease in oil prices that have surged due to the conflict. He emphasized that the U.S. is achieving significant military objectives, suggesting that stability in oil markets will follow the resolution of the war.\n\nPresident Trump described the conflict with Iran as both a \"little excursion\" and a war, suggesting that the military actions are intended to prevent a larger war from occurring. He believes that the current operations are necessary to achieve broader objectives while minimizing escalation.\n\nPresident Trump has suggested that the military operation against Iran has been less challenging than anticipated for the U.S., indicating a belief that American and Israeli forces have made significant progress in crippling Iran's military capabilities. However, he also emphasized the ongoing nature of the conflict and the need for continued military pressure until Iran's leadership is decisively defeated.\n\nPresident Trump has warned Iran about potential naval mines in the Strait of Hormuz, stating that the U.S. military has already destroyed several Iranian mine-laying vessels. He emphasized that any attempt by Iran to mine the strait would lead to severe military consequences.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#USA\n\nPresident Trump has stated that the war with Iran will end \"very soon,\" which he believes will lead to a decrease in oil prices that have surged due to the conflict. He emphasized that the U.S. is achieving significant military objectives, suggesting that stability in oil markets will follow the resolution of the war.\n\nPresident Trump described the conflict with Iran as both a \"little excursion\" and a war, suggesting that the military actions are intended to prevent a larger war from occurring. He believes that the current operations are necessary to achieve broader objectives while minimizing escalation.\n\nPresident Trump has suggested that the military operation against Iran has been less challenging than anticipated for the U.S., indicating a belief that American and Israeli forces have made significant progress in crippling Iran's military capabilities. However, he also emphasized the ongoing nature of the conflict and the need for continued military pressure until Iran's leadership is decisively defeated.\n\nPresident Trump has warned Iran about potential naval mines in the Strait of Hormuz, stating that the U.S. military has already destroyed several Iranian mine-laying vessels. He emphasized that any attempt by Iran to mine the strait would lead to severe military consequences.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": []
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "event_id": "07ae1835",
+  "headline": "Russia Expands T-90M Tank Fleet Amid Ukraine Conflict",
+  "timestamp": "2026-03-13T17:06:04Z",
+  "location": "Moscow",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "Russia"
+  ],
+  "summary": "Russia has reportedly increased its T-90M tank fleet from approximately 400 to 650 units, reflecting accelerated production and refurbishment efforts. This expansion is assessed as a direct response to battlefield attrition in Ukraine and a signal of continued investment in armored warfare capability. No kinetic event is confirmed; this is a force posture development.",
+  "primary_markets": [
+    "defense",
+    "steel & metals"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Uralvagonzavod (UVZ) — T-90M manufacturer",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Increased T-90M production directly benefits UVZ as Russia's primary tank manufacturer and state defense contractor."
+    },
+    {
+      "name": "Rheinmetall AG",
+      "ticker": "RHM.DE",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "A larger Russian armored force raises NATO threat perception, accelerating European defense procurement from Rheinmetall."
+    },
+    {
+      "name": "Leonardo S.p.A.",
+      "ticker": "LDO.DE",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Escalating Russian armor production increases demand for anti-tank systems and European defense investment."
+    },
+    {
+      "name": "Steel (Hot Rolled Coil)",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Expanded tank manufacturing drives incremental demand for high-grade armor steel and raw steel inputs."
+    },
+    {
+      "name": "BAE Systems",
+      "ticker": "BA.L",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Growing Russian armored threat bolsters the case for NATO partners to procure BAE's armored vehicle and counter-armor platforms."
+    }
+  ],
+  "trade_position": "Long Rheinmetall (RHM.DE) as the primary beneficiary of NATO's accelerated armored vehicle and anti-tank procurement cycle driven by Russia's expanding tank fleet. The catalyst is the near-term NATO defense budget revision cycle and Germany's continued Sondervermögen defense spending.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-13T17:06:04+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Russia\n\nThe reported increase in the Russian Army's T-90M tank fleet from 400 to 650 tanks indicates significant production and refurbishment efforts, likely in response to battlefield losses and the need to maintain operational capabilities. This growth reflects Russia's ongoing commitment to modernizing its armored forces amid the ongoing conflict in Ukraine.",
+        "text_orig": "#Russia\n\nThe reported increase in the Russian Army's T-90M tank fleet from 400 to 650 tanks indicates significant production and refurbishment efforts, likely in response to battlefield losses and the need to maintain operational capabilities. This growth reflects Russia's ongoing commitment to modernizing its armored forces amid the ongoing conflict in Ukraine."
+      },
+      {
+        "timestamp": "2026-03-13T17:17:48+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Israel #Lebanon \n\nIsraeli forces are indeed increasing their presence along the border with Lebanon, as Defense Minister Israel Katz has ordered the military to prepare for expanded operations to enhance security and prevent attacks from Hezbollah. This move follows recent tensions and attacks in the region.",
+        "text_orig": "#Israel #Lebanon \n\nIsraeli forces are indeed increasing their presence along the border with Lebanon, as Defense Minister Israel Katz has ordered the military to prepare for expanded operations to enhance security and prevent attacks from Hezbollah. This move follows recent tensions and attacks in the region."
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-13/photos/170604_18023.jpg"
+    ]
+  }
+}

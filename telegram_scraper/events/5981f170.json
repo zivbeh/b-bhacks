@@ -1,0 +1,69 @@
+{
+  "event_id": "5981f170",
+  "headline": "Germany Approves €540M Military Drone Budget, Eyes €4.4B Total",
+  "timestamp": "2026-02-27T20:27:58Z",
+  "location": "Berlin",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "Germany"
+  ],
+  "summary": "The German Bundestag has approved an initial budget of €540 million for military drone procurement as part of a broader Bundeswehr modernization drive. The program could expand to €4.4 billion over coming years, explicitly framed as a response to the ongoing Russia-Ukraine conflict. This represents one of the largest single drone acquisition commitments in European NATO history.",
+  "primary_markets": [
+    "defense"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Rheinmetall AG",
+      "ticker": "RHM.DE",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Rheinmetall is Germany's leading defense prime and a top candidate for domestic drone component supply and systems integration contracts under Bundeswehr programs."
+    },
+    {
+      "name": "Airbus Defence & Space",
+      "ticker": "AIR.DE",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Airbus has existing Bundeswehr contracts and produces the Euro Hawk and Eurodrone platforms, making it a primary beneficiary of large German UAV spending."
+    },
+    {
+      "name": "Hensoldt AG",
+      "ticker": "HAG.DE",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Hensoldt provides sensors, radar, and electronic warfare systems critical to military drone payloads, positioning it as a key sub-contractor in this program."
+    },
+    {
+      "name": "Diehl Defence",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Diehl is a private German defense firm supplying munitions and guidance systems relevant to armed or loitering drone configurations for the Bundeswehr."
+    },
+    {
+      "name": "Leonardo DRS",
+      "ticker": "DRS",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Leonardo DRS and its European parent supply UAV systems to NATO members and could compete for or partner on German drone frame and sensor contracts."
+    }
+  ],
+  "trade_position": "Go long Rheinmetall (RHM.DE) as the domestic defense prime most likely to capture integration and supply chain revenue from this multi-year €4.4B program; the initial €540M approval de-risks near-term order flow with a clear catalyst for upward earnings revisions in Q1 2026 results. A secondary long on Hensoldt (HAG.DE) captures the sensor/EW payload spend that follows any large-frame UAV commitment.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-02-27T20:27:58+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Germany \n\nThe German parliament has approved an initial budget of €540 million for military drones, with plans to potentially spend up to €4.4 billion over the coming years. This decision is part of a larger program to enhance the Bundeswehr's capabilities, particularly in response to the ongoing conflict in Ukraine.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Germany \n\nThe German parliament has approved an initial budget of €540 million for military drones, with plans to potentially spend up to €4.4 billion over the coming years. This decision is part of a larger program to enhance the Bundeswehr's capabilities, particularly in response to the ongoing conflict in Ukraine.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-02-27/photos/202758_17465.jpg"
+    ]
+  }
+}

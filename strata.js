@@ -2,8 +2,15 @@
 'use strict';
 
 const { Transform } = require('stream');
+const { spawn }     = require('child_process');
+const path          = require('path');
+const fs            = require('fs');
 const http  = require('http');
 const https = require('https');
+
+// Resolve media path relative to the telegram_scraper project dir
+// strata.js lives in b-bhacks/, data lives in b-bhacks/telegram_scraper/data/
+const SCRAPER_ROOT = path.join(__dirname, 'telegram_scraper');
 
 // ── ANSI helpers ──────────────────────────────────────────────────────────────
 const C = {
@@ -15,6 +22,9 @@ const C = {
   gray:   '\x1B[90m',
   cyan:   '\x1B[96m',
   green:  '\x1B[92m',
+  white:  '\x1B[97m',
+  orange: '\x1B[38;5;214m',
+  blue:   '\x1B[94m',
 };
 
 // ── Layout ────────────────────────────────────────────────────────────────────
@@ -66,6 +76,7 @@ const canvasHeight  = (mapHeight - 1) * 4;
 // ── State ─────────────────────────────────────────────────────────────────────
 const incidents   = [];  // { lat, lon, col, row, headline, summary, event_type, confidence, location, ts, pmUrl }
 const feedLines   = [];  // AI event entries: {t, text}
+const seenEventIds = new Set();  // deduplicate processEvent calls
 let   totalEvents = 0;
 const countrySeen = new Set();
 let   lastEventInfo = '';
@@ -75,7 +86,25 @@ let popup = null;  // null | { incident, boxCol, boxRow }
 
 // Telegram message feed (structured, from /telegram endpoint)
 const telegramMsgs = [];  // [{ts, channel, text, mediaPath, mediaType, expanded}]
-const leftPanelRowMap = {};  // terminal row → telegramMsgs index (rebuilt on each draw)
+const leftPanelRowMap      = {};   // terminal row → telegramMsgs index (rebuilt on each draw)
+const leftPanelAiEvMap     = {};   // terminal row → evIdx for AI event h1 rows (for collapse click)
+const leftPanelMediaRowMap = {};   // terminal row → telegramMsgs index for media rows (click to open)
+let   leftPanelScroll = 0;    // scroll offset for left panel (rows from bottom)
+
+// AI event collapse state
+let evCounter = 0;
+const collapsedEvents = new Set();  // evIdx values that are collapsed (body hidden)
+
+// Media per event (populated by processEvent from raw_input.media_urls)
+const evMediaFiles = {};  // evIdx → [{absPath, type:'photo'|'video'}]
+const evMapPos     = {};  // evIdx → {col, row} map terminal position
+
+// Media popup state
+let mediaPopup = null;
+// null | { evIdx, files:[{absPath,type}], idx:number, mapRow:number, mapCol:number }
+
+// Live analysis status line (shown at top of left panel while pipeline runs)
+let analysisStatus = '';     // e.g. "  [47/120] 2026-03-01 08:00–09:30 (12 msgs)..."
 
 // Claude trade rankings (latest event with polymarket_trades)
 let latestClaudeTrades = null;  // { headline, primary: [], secondary: [] }
@@ -89,6 +118,46 @@ const polyState = {
   markets:    [],   // [{id, question, category, yesPrice, noPrice, change}]
   prevPrices: {},   // id → yesPrice
 };
+
+// Accumulated AI signal trades from all processed events (for right panel bars)
+const allSignalTrades = [];       // [{...trade, _pri, _evHeadline}]
+const seenTradeMarkets = new Set(); // "market|trade" keys for deduplication
+
+// ── CLI arguments ─────────────────────────────────────────────────────────────
+const _sinceIdx = process.argv.indexOf('--since');
+const sinceMs   = _sinceIdx >= 0 && process.argv[_sinceIdx + 1]
+  ? new Date(process.argv[_sinceIdx + 1]).getTime()
+  : null;
+
+// ── Simulation speed / time-warp ──────────────────────────────────────────────
+let simSpeed     = sinceMs !== null ? 1000 : 1;  // --since defaults to 1000× replay speed
+let simStartReal = sinceMs !== null ? Date.now() : null;  // Date.now() when sim clock started
+let simStartMs   = sinceMs;   // event timestamp (ms) at sim start (null = not yet started)
+const simQueue   = [];      // [{ev, ts}] sorted ascending by ts (ms)
+
+function simNowMs() {
+  if (simStartReal === null) return Date.now();
+  return simStartMs + (Date.now() - simStartReal) * simSpeed;
+}
+
+function enqueueEvent(ev) {
+  const ts = ev.timestamp ? new Date(ev.timestamp).getTime() : Date.now();
+  if (simStartMs === null) { simStartMs = ts; simStartReal = Date.now(); }
+  let i = simQueue.length;
+  while (i > 0 && simQueue[i - 1].ts > ts) i--;
+  simQueue.splice(i, 0, { ev, ts });
+}
+
+setInterval(() => {
+  if (simStartReal === null || simQueue.length === 0) return;
+  const now = simNowMs();
+  let redrew = false;
+  while (simQueue.length > 0 && simQueue[0].ts <= now) {
+    processEvent(simQueue.shift().ev);
+    redrew = true;
+  }
+  if (!redrew) drawStatusBar();   // keep sim-time ticker updated
+}, 50);
 
 // ── Graceful exit ─────────────────────────────────────────────────────────────
 function cleanup() {
@@ -133,10 +202,20 @@ function getDateTimeStr() {
 
 function drawDateTime() {
   withAbsPos(() => {
-    const dtStr = getDateTimeStr();
+    let dtStr;
+    if (simStartMs !== null) {
+      const d = new Date(simNowMs());
+      const date = d.toISOString().slice(0, 10);
+      const time = d.toISOString().slice(11, 19) + 'Z';
+      const spd  = simSpeed > 1 ? ` ×${simSpeed}` : '';
+      dtStr = `${date}  ${time}${spd}`;
+    } else {
+      dtStr = getDateTimeStr();
+    }
     const col = COL_MLB + 1 + MAP_W - dtStr.length;
     if (col > COL_MLB + 1) {
-      process.stdout.write(`\x1B[2;${col}H${C.bold}${dtStr}${C.reset}`);
+      const color = simStartMs !== null ? `${C.yellow}${C.bold}` : C.bold;
+      process.stdout.write(`\x1B[2;${col}H${color}${dtStr}${C.reset}`);
     }
   });
 }
@@ -176,8 +255,18 @@ function drawBorders() {
     out.push(`${C.dim}║${C.reset}${C.red}${C.bold}${'  INCIDENT FEED'.padEnd(LEFT_W)}${C.reset}`);
     out.push(mv(2, COL_MLB));
     const strataTitle = '  ▌ S T R A T A';
-    const dtStr = getDateTimeStr();
-    out.push(`${C.dim}║${C.reset}${C.red}${C.bold}${strataTitle}${C.reset}${C.bold}${dtStr.padStart(MAP_W - strataTitle.length)}${C.reset}`);
+    let dtStr;
+    if (simStartMs !== null) {
+      const d = new Date(simNowMs());
+      const date = d.toISOString().slice(0, 10);
+      const time = d.toISOString().slice(11, 19) + 'Z';
+      const spd  = simSpeed > 1 ? ` ×${simSpeed}` : '';
+      dtStr = `${date}  ${time}${spd}`;
+    } else {
+      dtStr = getDateTimeStr();
+    }
+    const dtColor = simStartMs !== null ? `${C.yellow}${C.bold}` : C.bold;
+    out.push(`${C.dim}║${C.reset}${C.red}${C.bold}${strataTitle}${C.reset}${dtColor}${dtStr.padStart(MAP_W - strataTitle.length)}${C.reset}`);
     out.push(mv(2, COL_MRB));
     out.push(`${C.dim}║${C.reset}${C.cyan}${C.bold}${'  INTEL STATS'.padEnd(RIGHT_W)}${C.reset}`);
     out.push(mv(2, cols));
@@ -201,7 +290,7 @@ function drawBorders() {
 
     // TRADES_TITLE_ROW
     out.push(mv(TRADES_TITLE_ROW, 1));
-    out.push(`${C.dim}║${C.reset}${C.yellow}${C.bold}${'  ▌ POLYMARKET PREDICTIONS'.padEnd(cols - 2)}${C.reset}`);
+    out.push(`${C.dim}║${C.reset}${C.yellow}${C.bold}${'  ▌ AI SIGNALS'.padEnd(cols - 2)}${C.reset}`);
     out.push(mv(TRADES_TITLE_ROW, cols));
     out.push(`${C.dim}║${C.reset}`);
 
@@ -232,8 +321,28 @@ const PORT = parseInt(process.env.PORT || '3001', 10);
 
 function drawStatusBar() {
   withAbsPos(() => {
-    const inner  = cols - 2;
-    const left   = `  ${C.green}● HTTP :${PORT}${C.reset}  ${C.dim}[ x ] exit${C.reset}`;
+    const inner = cols - 2;
+
+    // Speed indicator
+    const speedLbl   = simSpeed === 1 ? '1×' : `${simSpeed}×`;
+    const speedColor = simSpeed > 1 ? C.yellow : C.dim;
+
+    // Simulated time (shown when queue has started)
+    let simPart = '';
+    if (simStartMs !== null) {
+      const d = new Date(simNowMs());
+      const simStr = d.toISOString().slice(0, 16).replace('T', ' ') + 'Z';
+      const pending = simQueue.length > 0 ? ` ${C.dim}[${simQueue.length}▸]${C.reset}` : '';
+      simPart = `  ${C.cyan}SIM ${simStr}${C.reset}${pending}`;
+    }
+
+    const left = (
+      `  ${C.green}● HTTP :${PORT}${C.reset}` +
+      `  ${C.dim}[ x ] exit${C.reset}` +
+      `  ${speedColor}[ +/- ] speed: ${speedLbl}${C.reset}` +
+      `  ${C.dim}[ z/Z ] zoom${C.reset}` +
+      simPart
+    );
     const visLen = left.replace(/\x1B\[[^m]*m/g, '').length;
     const pad    = ' '.repeat(Math.max(0, inner - visLen));
     process.stdout.write(`\x1B[${rows};2H${left}${pad}`);
@@ -266,9 +375,15 @@ function buildLeftPanelRows() {
   for (const entry of aiEntries) {
     const e = typeof entry === 'string' ? {t:'sys', text:entry} : entry;
     if (e.t === 'h1') {
-      for (const l of wrapText(e.text, W - 2)) rows.push({t:'h1', text:l});
+      const collapsed  = collapsedEvents.has(e.evIdx);
+      const hasMedia   = !!(evMediaFiles[e.evIdx]?.length);
+      const toggle     = collapsed ? '[+]' : '[-]';
+      const txt = `${toggle} ${e.text}`.slice(0, W);
+      rows.push({t:'h1', text:txt.padEnd(W), evIdx: e.evIdx, hasMedia});
     } else if (e.t === 'body') {
-      for (const l of wrapText(e.text, W - 3)) rows.push({t:'body', text:'   ' + l});
+      // Skip body lines when event is collapsed
+      if (e.evIdx !== undefined && collapsedEvents.has(e.evIdx)) continue;
+      rows.push({t:'body', text:'   ' + e.text});
     } else {
       rows.push(e);
     }
@@ -318,14 +433,33 @@ function drawLeftPanel() {
       process.stdout.write(`\x1B[${r};${xCol}H${blank}`);
     }
 
-    const visible = r1 - r0 + 1;
-    const allRows = buildLeftPanelRows();
-    const view    = allRows.slice(Math.max(0, allRows.length - visible));
-
-    // Clear old row map
-    for (const k of Object.keys(leftPanelRowMap)) delete leftPanelRowMap[k];
-
     let r = r0;
+
+    // ── Pinned status bar (analysis progress) ─────────────────────────────────
+    if (analysisStatus) {
+      const statusText = analysisStatus.slice(0, W);
+      process.stdout.write(
+        `\x1B[${r};${xCol}H\x1B[38;5;220m${C.bold}${statusText.padEnd(W)}${C.reset}`
+      );
+      r++;
+    }
+
+    // ── Scrollable feed area ───────────────────────────────────────────────────
+    const feedArea  = r1 - r + 1;  // rows available after status bar
+    const allRows   = buildLeftPanelRows();
+    const maxScroll = Math.max(0, allRows.length - feedArea);
+    if (leftPanelScroll > maxScroll) leftPanelScroll = maxScroll;
+    if (leftPanelScroll < 0) leftPanelScroll = 0;
+
+    // 0 = pinned to bottom (newest); positive = scrolled up into history
+    const startIdx = Math.max(0, allRows.length - feedArea - leftPanelScroll);
+    const view     = allRows.slice(startIdx, startIdx + feedArea);
+
+    // Clear old row maps
+    for (const k of Object.keys(leftPanelRowMap))      delete leftPanelRowMap[k];
+    for (const k of Object.keys(leftPanelAiEvMap))    delete leftPanelAiEvMap[k];
+    for (const k of Object.keys(leftPanelMediaRowMap)) delete leftPanelMediaRowMap[k];
+
     for (const e of view) {
       if (r > r1) break;
       let rendered = '';
@@ -340,16 +474,28 @@ function drawLeftPanel() {
           break;
         case 'tg_media':
           rendered = `\x1B[38;5;172m${e.text.slice(0, W).padEnd(W)}${C.reset}`;
+          if (e.tmIdx !== undefined) leftPanelMediaRowMap[r] = e.tmIdx;
           break;
-        case 'h1':
-          rendered = `${C.bold}${e.text.slice(0, W).padEnd(W)}${C.reset}`;
+        case 'h1': {
+          // Color the leading [+]/[-] toggle green when event has media
+          const raw  = e.text.slice(0, W).padEnd(W);
+          const tog  = raw.slice(0, 3);   // "[+]" or "[-]"
+          const rest = raw.slice(3);
+          const togColored = e.hasMedia
+            ? `${C.green}${C.bold}${tog}${C.reset}${C.bold}`
+            : `${C.dim}${tog}${C.reset}${C.bold}`;
+          rendered = `${C.bold}${togColored}${rest}${C.reset}`;
+          if (e.evIdx !== undefined) leftPanelAiEvMap[r] = e.evIdx;
           break;
+        }
         case 'meta':
           rendered = `${C.cyan}${C.dim}${e.text.slice(0, W).padEnd(W)}${C.reset}`;
           break;
-        case 'tag':
-          rendered = `${C.yellow}${C.dim}${e.text.slice(0, W).padEnd(W)}${C.reset}`;
+        case 'tag': {
+          const tagColor = dotColor(e.event_type);
+          rendered = `${tagColor}${C.dim}${e.text.slice(0, W).padEnd(W)}${C.reset}`;
           break;
+        }
         case 'body':
           rendered = `${C.dim}${e.text.slice(0, W).padEnd(W)}${C.reset}`;
           break;
@@ -365,10 +511,94 @@ function drawLeftPanel() {
       process.stdout.write(`\x1B[${r};${xCol}H${rendered}`);
       r++;
     }
+
+    // ── Scroll indicator (bottom-right of left panel) ─────────────────────────
+    if (allRows.length > feedArea) {
+      const pct = leftPanelScroll === 0 ? 100
+        : Math.round((1 - leftPanelScroll / maxScroll) * 100);
+      const ind = `${C.dim} ↕${pct}% ${C.reset}`;
+      process.stdout.write(`\x1B[${r1};${xCol + W - 7}H${ind}`);
+    }
   });
 }
 
-// ── Right panel — intel stats ─────────────────────────────────────────────────
+// ── Media popup ───────────────────────────────────────────────────────────────
+// Shown over the map at the incident's lat/lon position when user clicks a [+]
+// with media.  Press ←/→ to cycle files, q to close.
+
+function openMediaFile(absPath) {
+  try { spawn('open', [absPath], { detached: true, stdio: 'ignore' }).unref(); }
+  catch (_) {}
+}
+
+function drawMediaPopup() {
+  if (!mediaPopup) return;
+  const { files, idx, mapRow, mapCol } = mediaPopup;
+  const f    = files[idx];
+  const W    = POPUP_W;
+  const name = path.basename(f.absPath);
+  const icon = f.type === 'video' ? '▶ VIDEO' : '⬜ PHOTO';
+  const navStr = files.length > 1 ? `  ·  ${idx + 1}/${files.length}` : '';
+  const titleLine = `${icon}${navStr}`;
+  const bodyLines = wrapText(name, W);
+  const hintLine  = files.length > 1 ? '← prev   → next   q: close' : 'q: close';
+
+  const allLines = [titleLine, '', ...bodyLines, '', hintLine];
+  const H = allLines.length + 2;  // top + bottom borders
+
+  const bar  = '═'.repeat(W + 2);
+  const thin = '─'.repeat(W + 2);
+
+  // Position — clamp to map area
+  let pc = Math.min(Math.max(mapCol - Math.floor(W / 2) - 2, COL_MLB + 1), cols - W - 5);
+  let pr = Math.min(Math.max(mapRow - Math.floor(H / 2), mapTopLine), mapBottomLine - H + 1);
+
+  withAbsPos(() => {
+    process.stdout.write(`\x1B[${pr};${pc}H${C.yellow}╔${bar}╗${C.reset}`);
+    pr++;
+    for (const line of allLines) {
+      const padded = line.slice(0, W).padEnd(W);
+      const isTitle = line === titleLine;
+      const color   = isTitle ? `${C.yellow}${C.bold}` : (line === hintLine ? C.dim : C.reset);
+      process.stdout.write(`\x1B[${pr};${pc}H${C.yellow}║${C.reset} ${color}${padded}${C.reset} ${C.yellow}║${C.reset}`);
+      pr++;
+    }
+    process.stdout.write(`\x1B[${pr};${pc}H${C.yellow}╚${bar}╝${C.reset}`);
+  });
+}
+
+function openMediaPopup(evIdx) {
+  const files = evMediaFiles[evIdx];
+  if (!files?.length) return;
+  const pos = evMapPos[evIdx] || { col: Math.floor((COL_MLB + COL_MRB) / 2), row: Math.floor((mapTopLine + mapBottomLine) / 2) };
+  mediaPopup = { evIdx, files, idx: 0, mapRow: pos.row, mapCol: pos.col };
+  openMediaFile(files[0].absPath);
+  drawMediaPopup();
+}
+
+function closeMediaPopup() {
+  if (!mediaPopup) return;
+  mediaPopup = null;
+  // Force mapscii to repaint (clears the popup chars from the map area)
+  if (mapscii) mapscii._draw();
+  setTimeout(() => {
+    drawBorders();
+    drawLeftPanel();
+    drawRightPanel();
+    drawTradesPanel();
+    drawStatusBar();
+  }, 50);
+}
+
+function mediaPopupNav(delta) {
+  if (!mediaPopup) return;
+  const n = mediaPopup.files.length;
+  mediaPopup.idx = (mediaPopup.idx + delta + n) % n;
+  openMediaFile(mediaPopup.files[mediaPopup.idx].absPath);
+  drawMediaPopup();
+}
+
+// ── Right panel — intel stats + AI signal trades with progress bars ───────────
 function drawRightPanel() {
   withAbsPos(() => {
     const W     = RIGHT_W;
@@ -397,31 +627,62 @@ function drawRightPanel() {
     put('─'.repeat(W), C.dim);
     r++;
 
-    // ── Trades log ────────────────────────────────────────────────────────────
-    put(' TRADES LOG', `${C.cyan}${C.bold}`);
+    // ── AI Signal Trades with progress bars (sorted by urgency + confidence) ──
+    put(' AI SIGNALS', `${C.cyan}${C.bold}`);
     put('─'.repeat(W), C.dim);
 
-    if (executedTrades.length === 0) {
-      put(' (no trades yet)', C.dim);
+    if (allSignalTrades.length === 0) {
+      put(' awaiting events...', C.dim);
     } else {
-      // Show most-recent trades first, fill available rows
-      const trades = [...executedTrades].reverse();
-      for (const t of trades) {
-        if (r > r1) break;
-        const ts     = t.timestamp ? t.timestamp.slice(5, 16).replace('T', ' ') : '??-?? ??:??';
-        const status = (t.status || '?').slice(0, 9);
-        const scol   = status === 'PLACED'         ? C.green
-                     : status === 'DRY_RUN'        ? C.yellow
-                     : status.startsWith('ERROR')  ? C.red
-                     : C.dim;
-        const dir    = (t.trade || '').replace('BUY ', '');
-        const dcol   = dir === 'YES' ? C.green : dir === 'NO' ? C.red : C.yellow;
-        const prefix = `${C.dim}${ts} ${dcol}${dir.padEnd(4)}${C.reset}${scol}${status.padEnd(10)}${C.reset}`;
-        // Prefix visible length: ts(11) + space(1) + dir(4) + space(1) + status(10) = 27
-        const marketW = W - 27;
-        const market  = (t.market || '').slice(0, marketW);
-        process.stdout.write(`\x1B[${r};${xCol}H${prefix}${C.dim}${market}${C.reset}${' '.repeat(Math.max(0, W - 27 - market.length))}`);
+      // Sort: immediate > short-term > medium-term; within same urgency: more extreme price first
+      const urgRank = { 'immediate': 0, 'short-term': 1, 'medium-term': 2 };
+      const sorted = [...allSignalTrades].sort((a, b) => {
+        const ua = urgRank[a.urgency] ?? 3;
+        const ub = urgRank[b.urgency] ?? 3;
+        if (ua !== ub) return ua - ub;
+        // Primary trades before secondary within same urgency
+        if (a._pri !== b._pri) return a._pri ? -1 : 1;
+        // More extreme price = more confident market edge
+        const ea = Math.abs((a.current_price ?? 0.5) - 0.5);
+        const eb = Math.abs((b.current_price ?? 0.5) - 0.5);
+        return eb - ea;
+      });
+
+      const BAR_W = Math.max(4, W - 19);  // width of ░█ bar
+
+      for (const t of sorted) {
+        if (r >= r1 - 1) break;
+
+        const isBull = /YES|OVER/i.test(t.trade || '');
+        const dirColor = isBull ? C.green : C.red;
+        const arrow    = isBull ? '▲' : '▼';
+        const dir      = (t.trade || '').replace('BUY ', '').slice(0, 4).padEnd(4);
+
+        const price  = t.current_price ?? 0.5;
+        const pct    = Math.round(price * 100);
+        const filled = Math.round(price * BAR_W);
+        const bar    = '█'.repeat(filled) + '░'.repeat(BAR_W - filled);
+
+        const urgAbbr = t.urgency === 'immediate'  ? 'NOW'
+                      : t.urgency === 'short-term' ? ' 1W' : ' 1M';
+        const urgColor = t.urgency === 'immediate'  ? C.red
+                       : t.urgency === 'short-term' ? C.yellow : C.dim;
+
+        // Line 1: ▲YES [████░░░░] 72% NOW
+        const line1 = `${arrow}${dir} [${bar}] ${String(pct).padStart(2)}% ${urgAbbr}`;
+        process.stdout.write(
+          `\x1B[${r};${xCol}H${dirColor}${line1.slice(0, W).padEnd(W)}${C.reset}`
+        );
         r++;
+
+        // Line 2: truncated market question
+        if (r <= r1) {
+          const mkt = ` ${(t.market || '(no market)').slice(0, W - 1)}`;
+          process.stdout.write(
+            `\x1B[${r};${xCol}H${C.white}${mkt.slice(0, W).padEnd(W)}${C.reset}`
+          );
+          r++;
+        }
       }
     }
   });
@@ -442,8 +703,9 @@ function buildTradesPanelLines() {
       ...latestClaudeTrades.secondary.map(t => ({ ...t, _sec: 'SEC' })),
     ];
 
-    const title = `  ▸ ${latestClaudeTrades.headline}`;
-    push(`${C.cyan}${C.bold}${title.slice(0, innerW).padEnd(innerW)}${C.reset}`);
+    const hl    = latestClaudeTrades.headline.slice(0, innerW - 36);
+    const note  = `${C.dim}  (AI recommendations — not executed)`;
+    push(`${C.cyan}${C.bold}  ▸ ${hl}${note}${C.reset}`);
 
     const R_W = 2, S_W = 3, D_W = 8, P_W = 5, U_W = 11;
     const FIXED = 2 + R_W + 3 + S_W + 3 + D_W + 3 + P_W + 3 + U_W + 3;
@@ -451,7 +713,7 @@ function buildTradesPanelLines() {
 
     const hdr = '  ' +
       '#'.padEnd(R_W)   + ' │ ' + 'S'.padEnd(S_W)  + ' │ ' +
-      'TRADE'.padEnd(D_W) + ' │ ' + 'PRICE'.padStart(P_W) + ' │ ' +
+      'SIGNAL'.padEnd(D_W) + ' │ ' + 'PRICE'.padStart(P_W) + ' │ ' +
       'URGENCY'.padEnd(U_W) + ' │ ' + 'MARKET';
     push(`${C.dim}${hdr.slice(0, innerW)}${C.reset}`);
 
@@ -476,7 +738,7 @@ function buildTradesPanelLines() {
         ` ${C.dim}│${C.reset} ${tradeColor}${dirStr}${C.reset}` +
         ` ${C.dim}│${C.reset}${C.yellow}${prcStr}${C.reset}` +
         ` ${C.dim}│${C.reset} ${urgColor}${urgStr}${C.reset}` +
-        ` ${C.dim}│${C.reset} ${C.gray}${mktStr}${C.reset}`
+        ` ${C.dim}│${C.reset} ${C.white}${mktStr}${C.reset}`
       );
     }
     return lines;
@@ -511,8 +773,8 @@ function buildTradesPanelLines() {
 
   for (const m of polyState.markets) {
     const catColor = m.category === 'MILITARY'   ? C.red
-                   : m.category === 'ECONOMIC'   ? C.yellow
-                   : C.cyan;
+                   : m.category === 'ECONOMIC'   ? C.blue
+                   : C.yellow;  // DIPLOMATIC
 
     const yp  = Math.round(m.yesPrice * 100);
     const np  = Math.round(m.noPrice  * 100);
@@ -534,7 +796,7 @@ function buildTradesPanelLines() {
     push(
       `  ${catColor}${cat}${C.reset}` +
       ` ${C.dim}│${C.reset} ` +
-      `${C.gray}${mkt}${C.reset}` +
+      `${C.white}${mkt}${C.reset}` +
       ` ${C.dim}│${C.reset}` +
       `${C.yellow}${yes}${C.reset}` +
       ` ${C.dim}│${C.reset}` +
@@ -582,11 +844,22 @@ function drawTradesPanel() {
 }
 
 // ── Red dots on map ───────────────────────────────────────────────────────────
+function dotColor(event_type) {
+  const et = (event_type || '').toUpperCase();
+  if (/DIPLOMATIC/.test(et)) return C.yellow;
+  if (/ECONOMIC/.test(et))   return C.blue;
+  return C.red;  // MILITARY or other
+}
+
 function drawDots() {
   withAbsPos(() => {
-    for (const { col, row } of incidents) {
-      if (col > COL_MLB && col < COL_MRB && row >= mapTopLine && row <= mapBottomLine) {
-        process.stdout.write(`\x1B[${row};${col}H${C.red}${C.bold}⬤${C.reset}`);
+    for (const { col, row, event_type } of incidents) {
+      // Strict integer bounds — exclude border rows/cols so dots never bleed outside map
+      if (!Number.isFinite(col) || !Number.isFinite(row)) continue;
+      const c = Math.round(col);
+      const r = Math.round(row);
+      if (c > COL_MLB + 1 && c < COL_MRB - 1 && r > mapTopLine && r < mapBottomLine) {
+        process.stdout.write(`\x1B[${r};${c}H${dotColor(event_type)}${C.bold}⬤${C.reset}`);
       }
     }
   });
@@ -608,7 +881,12 @@ function drawPopup() {
     const bodyLines = wrapText(inc.headline || inc.summary, W);
     const metaLine  = `${inc.location}${inc.confidence ? `  ·  conf: ${inc.confidence}` : ''}`;
 
-    const allLines = [titleLine, '', ...bodyLines, '', metaLine];
+    const mediaFiles = inc.evIdx !== undefined ? (evMediaFiles[inc.evIdx] || []) : [];
+    const mediaHint  = mediaFiles.length > 0
+      ? `  [m] view ${mediaFiles.length} media file${mediaFiles.length > 1 ? 's' : ''}`
+      : null;
+
+    const allLines = [titleLine, '', ...bodyLines, '', metaLine, ...(mediaHint ? [mediaHint] : [])];
     const H = allLines.length + (inc.pmUrl ? 4 : 3);  // borders + optional URL row
 
     // Clamp so popup stays inside terminal
@@ -622,7 +900,9 @@ function drawPopup() {
     // Content lines
     for (const line of allLines) {
       const padded = line.slice(0, W).padEnd(W);
-      const color  = line === titleLine ? `${C.yellow}${C.bold}` : C.reset;
+      const color  = line === titleLine   ? `${C.yellow}${C.bold}`
+                   : line === mediaHint   ? `${C.green}${C.bold}`
+                   : C.reset;
       process.stdout.write(`\x1B[${pr};${pc}H${C.yellow}║${C.reset} ${color}${padded}${C.reset} ${C.yellow}║${C.reset}`);
       pr++;
     }
@@ -641,7 +921,8 @@ function drawPopup() {
     // Bottom: dismiss hint
     process.stdout.write(`\x1B[${pr};${pc}H${C.yellow}╠${thin}╣${C.reset}`);
     pr++;
-    const hint = '  click anywhere to dismiss'.padEnd(W);
+    const hintBase = mediaFiles.length > 0 ? '  [m] media   click anywhere to dismiss' : '  click anywhere to dismiss';
+    const hint = hintBase.padEnd(W);
     process.stdout.write(`\x1B[${pr};${pc}H${C.yellow}║${C.reset}${C.dim}${hint}${C.reset} ${C.yellow}║${C.reset}`);
     pr++;
     process.stdout.write(`\x1B[${pr};${pc}H${C.yellow}╚${bar}╝${C.reset}`);
@@ -659,6 +940,7 @@ function dismissPopup() {
     drawTradesPanel();
     drawDots();
     drawStatusBar();
+    drawMediaPopup();
   });
 }
 
@@ -682,7 +964,6 @@ function handleMapClick(cx, cy) {
 }
 
 // ── MapSCII config ────────────────────────────────────────────────────────────
-const path = require('path');
 const mapsciiRoot = path.join(__dirname, 'node_modules', 'mapscii', 'src');
 const mapConfig = require(path.join(mapsciiRoot, 'config'));
 mapConfig.delimeter = `\n\r\x1B[${leftOffset}C`;
@@ -864,12 +1145,41 @@ function handleKey(buf) {
   const b = Buffer.isBuffer(buf) ? buf : Buffer.from(buf);
   if (b[0] === 0x03 || b[0] === 0x78 || b[0] === 0x58) cleanup();
 
-  // + or = → zoom in; - → zoom out
-  if (b[0] === 0x2B || b[0] === 0x3D) { zoomMap(+1); return; }
-  if (b[0] === 0x2D)                  { zoomMap(-1); return; }
+  const ks = b.toString();
+
+  // ── Media popup key handling (intercepts arrows + q) ──────────────────────
+  if (mediaPopup) {
+    if (b[0] === 0x71 /* q */ || b[0] === 0x51 /* Q */) { closeMediaPopup(); return; }
+    if (ks === '\x1B[C') { mediaPopupNav(+1); return; }  // → next
+    if (ks === '\x1B[D') { mediaPopupNav(-1); return; }  // ← prev
+    return;  // swallow all other keys while popup is open
+  }
+
+  // [m] — open media for current incident popup
+  if (b[0] === 0x6D /* m */ && popup) {
+    const evIdx = popup.inc.evIdx;
+    if (evIdx !== undefined && evMediaFiles[evIdx]?.length) {
+      popup = null;
+      openMediaPopup(evIdx);
+    }
+    return;
+  }
+
+  // + / = → simulation speed up (+1000×); - → speed down (-1000×, min 1)
+  if (b[0] === 0x2B || b[0] === 0x3D) {
+    simSpeed = simSpeed < 1000 ? 1000 : simSpeed + 1000;
+    drawStatusBar(); drawDateTime(); return;
+  }
+  if (b[0] === 0x2D) {
+    simSpeed = Math.max(1, simSpeed - 1000);
+    drawStatusBar(); drawDateTime(); return;
+  }
+
+  // z → zoom in, Z → zoom out
+  if (b[0] === 0x7A) { zoomMap(+1); return; }  // z
+  if (b[0] === 0x5A) { zoomMap(-1); return; }  // Z
 
   // Arrow keys → pan map
-  const ks = b.toString();
   if (ks === '\x1B[A') { panMap(+1,  0); return; }  // up
   if (ks === '\x1B[B') { panMap(-1,  0); return; }  // down
   if (ks === '\x1B[C') { panMap( 0, +1); return; }  // right
@@ -884,28 +1194,66 @@ function handleKey(buf) {
     const my      = parseInt(mouseMatch[3], 10);
     const isPress = mouseMatch[4] === 'M';
 
-    // Route scroll to bottom panel when cursor is hovering there
+    // Route scroll based on where the cursor is hovering
     const inBottomPanel = my >= TRADES_TITLE_ROW && my <= TRADES_CONTENT_END;
-    if (btn === 64) {
+    const inLeftPanel   = mx >= 2 && mx <= LEFT_W + 1 && my >= mapTopLine && my <= mapBottomLine;
+    if (btn === 64) {  // scroll up
       if (inBottomPanel) { tradesPanelScroll = Math.max(0, tradesPanelScroll - 1); drawTradesPanel(); }
+      else if (inLeftPanel) { leftPanelScroll++; drawLeftPanel(); drawBorders(); }
       else { zoomMap(+1); }
       return;
     }
-    if (btn === 65) {
+    if (btn === 65) {  // scroll down
       if (inBottomPanel) { tradesPanelScroll++; drawTradesPanel(); }
+      else if (inLeftPanel) { leftPanelScroll = Math.max(0, leftPanelScroll - 1); drawLeftPanel(); drawBorders(); }
       else { zoomMap(-1); }
       return;
     }
     if (btn === 0 && isPress) {
-      // Check if click is in the left panel (telegram expand/collapse)
-      if (mx >= 2 && mx <= LEFT_W + 1 && leftPanelRowMap[my] !== undefined) {
-        const idx = leftPanelRowMap[my];
-        if (telegramMsgs[idx]) {
-          telegramMsgs[idx].expanded = !telegramMsgs[idx].expanded;
-          drawLeftPanel();
-          drawBorders();
+      if (mx >= 2 && mx <= LEFT_W + 1) {
+        // AI event h1 click:
+        //   • if clicking the [+]/[-] toggle area (first 3 cols) → collapse/expand body
+        //   • if clicking the headline text with media → open media popup
+        if (leftPanelAiEvMap[my] !== undefined) {
+          const evIdx   = leftPanelAiEvMap[my];
+          const toggleX = 2 + 3;  // left panel starts at col 2; [+]/[-] is 3 chars
+          if (mx <= toggleX) {
+            // Toggle collapse
+            if (collapsedEvents.has(evIdx)) collapsedEvents.delete(evIdx);
+            else collapsedEvents.add(evIdx);
+            drawLeftPanel(); drawBorders();
+          } else if (evMediaFiles[evIdx]?.length) {
+            // Open media popup
+            openMediaPopup(evIdx);
+          } else {
+            // No media — just toggle collapse on full click
+            if (collapsedEvents.has(evIdx)) collapsedEvents.delete(evIdx);
+            else collapsedEvents.add(evIdx);
+            drawLeftPanel(); drawBorders();
+          }
+          return;
         }
-        return;
+        // Telegram media row click → open media file
+        if (leftPanelMediaRowMap[my] !== undefined) {
+          const idx = leftPanelMediaRowMap[my];
+          const tm  = telegramMsgs[idx];
+          if (tm?.mediaPath) {
+            const abs = path.isAbsolute(tm.mediaPath)
+              ? tm.mediaPath
+              : path.join(SCRAPER_ROOT, 'data', tm.mediaPath);
+            openMediaFile(abs);
+          }
+          return;
+        }
+        // Telegram message click → expand/collapse full text
+        if (leftPanelRowMap[my] !== undefined) {
+          const idx = leftPanelRowMap[my];
+          if (telegramMsgs[idx]) {
+            telegramMsgs[idx].expanded = !telegramMsgs[idx].expanded;
+            drawLeftPanel(); drawBorders();
+          }
+          return;
+        }
       }
       handleMapClick(mx, my);
       return;
@@ -933,6 +1281,24 @@ mapscii.init().then(() => {
     drawRightPanel();
     drawTradesPanel();
     drawStatusBar();
+
+    // ── --since: load and replay events from events/ dir ─────────────────────
+    if (sinceMs !== null) {
+      const eventsDir = path.join(SCRAPER_ROOT, 'events');
+      let files = [];
+      try { files = fs.readdirSync(eventsDir).filter(f => f.endsWith('.json')); } catch {}
+      const evs = [];
+      for (const f of files) {
+        try {
+          const ev = JSON.parse(fs.readFileSync(path.join(eventsDir, f), 'utf8'));
+          const ts = ev.timestamp ? new Date(ev.timestamp).getTime() : null;
+          if (ts !== null && ts >= sinceMs) evs.push({ ev, ts });
+        } catch {}
+      }
+      evs.sort((a, b) => a.ts - b.ts);
+      for (const { ev } of evs) enqueueEvent(ev);
+      tuiLog(`  Loaded ${evs.length} events since ${process.argv[_sinceIdx + 1]}`);
+    }
   }, 150);
 }).catch(err => {
   tuiLog('[!] MapSCII failed: ' + err);
@@ -942,6 +1308,11 @@ mapscii.init().then(() => {
 
 function processEvent(eventData) {
   const ev = typeof eventData === 'string' ? JSON.parse(eventData) : eventData;
+
+  // Deduplicate — resume.py pushes the same event multiple times (on start + after trade ranking)
+  if (ev.event_id && seenEventIds.has(ev.event_id)) return false;
+  if (ev.event_id) seenEventIds.add(ev.event_id);
+
   const coords = resolveLocation(ev.location);
 
   if (!coords) {
@@ -965,11 +1336,40 @@ function processEvent(eventData) {
   const summary  = ev.summary || `Event ${ev.event_id}`;
   const display  = headline || summary;
 
-  feedLines.push({t:'sep',  text:'─'.repeat(LEFT_W)});
-  if (ts) feedLines.push({t:'meta', text:`${ts}  ${locName}`});
-  if (ev.event_type) feedLines.push({t:'tag',  text:`[${(ev.event_type||'').toUpperCase()}]  conf:${ev.confidence||'?'}`});
-  if (headline)      feedLines.push({t:'h1',   text:headline});
-  for (const line of wrapText(headline ? summary : display, LEFT_W - 3)) feedLines.push({t:'body', text:line});
+  const evIdx = ++evCounter;
+  collapsedEvents.add(evIdx);   // start collapsed — user clicks [+] to expand
+
+  // Extract media files from raw_input.media_urls
+  // Paths may be: absolute, relative to SCRAPER_ROOT, or relative to SCRAPER_ROOT/data
+  const rawMediaUrls = ev.raw_input?.media_urls || [];
+  const mediaFiles = rawMediaUrls
+    .map(p => {
+      let absPath;
+      if (path.isAbsolute(p)) {
+        absPath = p;
+      } else if (p.startsWith('data/') || p.startsWith('data\\')) {
+        // "data/channel/date/photos/file.jpg" → join with SCRAPER_ROOT
+        absPath = path.join(SCRAPER_ROOT, p);
+      } else {
+        // Fallback: try both locations
+        const candidate1 = path.join(SCRAPER_ROOT, p);
+        const candidate2 = path.join(SCRAPER_ROOT, 'data', p);
+        absPath = fs.existsSync(candidate1) ? candidate1 : candidate2;
+      }
+      const type = /\/videos\//i.test(p) || /\.(mp4|webm|mov|avi)$/i.test(p) ? 'video' : 'photo';
+      return { absPath, type };
+    })
+    .filter(f => fs.existsSync(f.absPath));
+  if (mediaFiles.length) evMediaFiles[evIdx] = mediaFiles;
+
+  // Store map position for media popup placement
+  evMapPos[evIdx] = { col: pos.col, row: pos.row };
+
+  feedLines.push({t:'sep',  text:'─'.repeat(LEFT_W), evIdx});
+  if (ts) feedLines.push({t:'meta', text:`${ts}  ${locName}`, evIdx});
+  if (ev.event_type) feedLines.push({t:'tag',  text:`[${(ev.event_type||'').toUpperCase()}]  conf:${ev.confidence||'?'}`, evIdx, event_type: (ev.event_type||'').toUpperCase()});
+  if (headline)      feedLines.push({t:'h1',   text:headline, evIdx});
+  for (const line of wrapText(headline ? summary : display, LEFT_W - 5)) feedLines.push({t:'body', text:line, evIdx});
   while (feedLines.length > 400) feedLines.shift();
 
   totalEvents++;
@@ -988,6 +1388,57 @@ function processEvent(eventData) {
       primary:   pt.primary   || [],
       secondary: pt.secondary || [],
     };
+
+    // Accumulate trades for the right-panel progress bars (deduplicate by market+trade)
+    const newTrades = [
+      ...(pt.primary   || []).map(t => ({ ...t, _pri: true,  _evHeadline: headline || locName })),
+      ...(pt.secondary || []).map(t => ({ ...t, _pri: false, _evHeadline: headline || locName })),
+    ];
+    for (const t of newTrades) {
+      const key = `${t.market}|${t.trade}`;
+      if (!seenTradeMarkets.has(key)) {
+        seenTradeMarkets.add(key);
+        allSignalTrades.push(t);
+      }
+    }
+  } else if (ev.secondary_markets && ev.secondary_markets.length) {
+    // Fallback: synthesize signals from old secondary_markets format
+    const synthSecondary = ev.secondary_markets.slice(0, 10).map((m, i) => ({
+      rank: i + 1,
+      market: m.name + (m.ticker ? ` (${m.ticker})` : ''),
+      trade: m.signal === 'bullish' ? 'BUY YES' : 'BUY NO',
+      current_price: null,
+      reasoning: m.reason || '',
+      urgency: 'short-term',
+      volume_usd: 0,
+    }));
+    latestClaudeTrades = {
+      headline:  headline || locName,
+      primary:   [],
+      secondary: synthSecondary,
+    };
+    for (const t of synthSecondary) {
+      const key = `${t.market}|${t.trade}`;
+      if (!seenTradeMarkets.has(key)) {
+        seenTradeMarkets.add(key);
+        allSignalTrades.push({ ...t, _pri: false, _evHeadline: headline || locName });
+      }
+    }
+  }
+
+  // During sim replay, push raw Telegram messages into the left-panel feed
+  if (sinceMs !== null && ev.raw_input && Array.isArray(ev.raw_input.messages)) {
+    for (const msg of ev.raw_input.messages) {
+      telegramMsgs.push({
+        ts:        (msg.timestamp || ts || '').slice(0, 16).replace('T', ' '),
+        channel:   msg.channel   || '',
+        text:      msg.text_en   || msg.text_orig || '',
+        mediaPath: null,
+        mediaType: null,
+        expanded:  false,
+      });
+    }
+    while (telegramMsgs.length > 300) telegramMsgs.shift();
   }
 
   // Store full event data so dot can show popup on click
@@ -996,7 +1447,11 @@ function processEvent(eventData) {
     lat: coords.lat, lon: coords.lon, col: pos.col, row: pos.row,
     headline, summary, event_type: (ev.event_type || '').toUpperCase(),
     confidence: ev.confidence || '', location: locName, ts, pmUrl,
+    evIdx,  // link back to media files + map position
   });
+
+  // Auto-scroll left panel to show newest event at the bottom
+  leftPanelScroll = 0;
 
   drawDots();
   drawLeftPanel();
@@ -1039,11 +1494,23 @@ function tuiLog(msg) {
     else if (/^\s*\+\s+@|\d{2}:\d{2}\s+@/.test(text)) t = 'msg';
     else if (/^\s*[─═]{4}/.test(text))                t = 'sep';
 
-    // Suppress pipeline chatter — only keep AI event markers and "All systems running."
-    // AI event markers written by processEvent (sep/meta/tag/h1/body) bypass tuiLog entirely.
-    // tuiLog receives system/pipeline messages; we only want "All systems running." from those.
-    if (['sys', 'ok', 'warn', 'msg'].includes(t)) {
-      if (!/all systems running/i.test(text)) continue;  // suppress everything else
+    // Capture analysis/pipeline progress into the pinned status bar at top of left panel.
+    // Matches: "  [1/4] ...", "  [ 47/120] ...", "  → Ranking: ...", "  → Fetching ..."
+    if (/^\s*\[\s*\d+\/\d+\]/.test(text) || /^\s*→\s+\S/.test(text)) {
+      analysisStatus = text.trim();
+      drawLeftPanel(); drawBorders();
+      continue;
+    }
+    // Clear progress bar when pipeline reports done
+    if (/^\s*DONE\s+\|/.test(text)) {
+      analysisStatus = '';
+    }
+
+    // Suppress pipeline chatter — only keep "All systems running." from system messages.
+    // sep/meta/tag/h1/body are written directly by processEvent, not via tuiLog.
+    // Suppress sep from tuiLog (pipeline dividers ════/────) to avoid double separators.
+    if (['sys', 'ok', 'warn', 'msg', 'sep'].includes(t)) {
+      if (!/all systems running/i.test(text)) continue;
     }
 
     feedLines.push({t, text});
@@ -1181,13 +1648,13 @@ http.createServer((req, res) => {
       return;
     }
 
-    // Default — process conflict events
+    // Default — process conflict events (route through sim queue)
     try {
       const data   = JSON.parse(body);
       const events = Array.isArray(data) ? data : [data];
-      const ok     = events.filter(e => processEvent(e)).length;
+      for (const ev of events) enqueueEvent(ev);
       res.writeHead(200, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({ processed: ok, total: events.length }));
+      res.end(JSON.stringify({ queued: events.length, pending: simQueue.length }));
     } catch (e) {
       res.writeHead(400); res.end('Bad JSON\n');
     }

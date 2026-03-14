@@ -1,0 +1,184 @@
+{
+  "event_id": "ca8c4fef",
+  "headline": "Iran Missiles Intercepted Over Doha Targeting Al Udeid Air Base",
+  "timestamp": "2026-02-28T10:50:00Z",
+  "location": "Doha",
+  "event_type": "Attack and Miss",
+  "involved": [
+    "Iran",
+    "United States",
+    "Qatar"
+  ],
+  "summary": "Iranian ballistic missiles targeted Al Udeid Air Base near Doha, Qatar, the largest US air base in the Middle East. Video footage showed air defense systems activating and intercepting incoming missiles over Doha. Qatar's Foreign Ministry condemned the attack as a serious violation of its sovereignty and threatened a response.",
+  "primary_markets": [
+    "defense",
+    "natural gas"
+  ],
+  "secondary_markets": [
+    {
+      "name": "QatarEnergy LNG",
+      "ticker": null,
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Iranian missile strikes near Doha threaten Qatar's LNG export infrastructure, which handles 20% of global LNG supply."
+    },
+    {
+      "name": "LNG (Liquefied Natural Gas)",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Missile strikes on or near Qatar raise severe supply disruption risk for global LNG markets given Qatar's dominant export position."
+    },
+    {
+      "name": "Shell",
+      "ticker": "SHEL",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Shell is a major partner in Qatar's LNG mega-projects and faces supply disruption and asset risk from escalating strikes."
+    },
+    {
+      "name": "TotalEnergies",
+      "ticker": "TTE",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "TotalEnergies holds significant stakes in Qatar's North Field LNG expansion, directly threatened by Iranian missile campaign."
+    },
+    {
+      "name": "RTX Corporation",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Patriot air defense systems deployed at Al Udeid are consuming interceptors at high rates, driving urgent procurement demand."
+    }
+  ],
+  "trade_position": "Go long LNG futures immediately — Iranian missiles targeting Qatar, the world's largest LNG exporter, represent a direct supply shock catalyst that markets have not yet fully priced given the speed of escalation. This is the highest-conviction hidden trade from this event cluster.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-02-28T11:01:58+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Israel #Iran #USA\n\nIsraeli strikes on Iran targeted key military and political figures, but it is currently unclear if any of them were actually hit. The situation remains tense as both nations navigate the aftermath of these attacks.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Israel #Iran #USA\n\nIsraeli strikes on Iran targeted key military and political figures, but it is currently unclear if any of them were actually hit. The situation remains tense as both nations navigate the aftermath of these attacks.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T11:02:44+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#ME\n\nThe global reaction to the US-Israel strikes on Iran has been mixed, with Russia condemning the actions as irresponsible, the EU urging for de-escalation, and Gulf states expressing concern over the escalating tensions. Many leaders are calling for a return to diplomatic negotiations to prevent further conflict.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#ME\n\nThe global reaction to the US-Israel strikes on Iran has been mixed, with Russia condemning the actions as irresponsible, the EU urging for de-escalation, and Gulf states expressing concern over the escalating tensions. Many leaders are calling for a return to diplomatic negotiations to prevent further conflict.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T11:03:37+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Qatar \n\nQatar's Foreign Ministry has condemned the Iranian missile attack as a serious violation of its sovereignty and a direct threat to regional stability, stating that it reserves the right to respond in accordance with international law. This response indicates Qatar's commitment to safeguarding its national security and protecting its residents.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Qatar \n\nQatar's Foreign Ministry has condemned the Iranian missile attack as a serious violation of its sovereignty and a direct threat to regional stability, stating that it reserves the right to respond in accordance with international law. This response indicates Qatar's commitment to safeguarding its national security and protecting its residents.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T11:04:33+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#UAE\n\nExplosions were reported near Abu Dhabi International Airport, with at least one person killed after missiles launched from Iran were intercepted. The United Arab Emirates condemned the attack as a violation of its sovereignty and reserved the right to respond.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#UAE\n\nExplosions were reported near Abu Dhabi International Airport, with at least one person killed after missiles launched from Iran were intercepted. The United Arab Emirates condemned the attack as a violation of its sovereignty and reserved the right to respond.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T11:05:23+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nThere are reports of Iranian military actions targeting the U.S. naval base in Bahrain, particularly following recent tensions and strikes on Iranian nuclear facilities. \n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nThere are reports of Iranian military actions targeting the U.S. naval base in Bahrain, particularly following recent tensions and strikes on Iranian nuclear facilities. \n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T11:06:03+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nVideos have surfaced showing missile interceptions over Doha, Qatar, following an Iranian missile attack on the Al Udeid Air Base. The footage captures the air defense systems activating to intercept incoming missiles, highlighting the escalating tensions in the region.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nVideos have surfaced showing missile interceptions over Doha, Qatar, following an Iranian missile attack on the Al Udeid Air Base. The footage captures the air defense systems activating to intercept incoming missiles, highlighting the escalating tensions in the region.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T11:15:15+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nThe U.S. has conducted strikes on Iran, with no reported casualties from the attack on the U.S. base in Bahrain. The strikes represent a significant escalation in tensions that have been building in the region for weeks.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nThe U.S. has conducted strikes on Iran, with no reported casualties from the attack on the U.S. base in Bahrain. The strikes represent a significant escalation in tensions that have been building in the region for weeks.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T11:16:11+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#UAE\n\nThe United Arab Emirates has stated that it reserves the right to respond to the Iranian missile attack, which they condemned as a violation of their sovereignty and a threat to regional stability. They are prepared to take necessary measures to protect their territory.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#UAE\n\nThe United Arab Emirates has stated that it reserves the right to respond to the Iranian missile attack, which they condemned as a violation of their sovereignty and a threat to regional stability. They are prepared to take necessary measures to protect their territory.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T11:17:11+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#ME\n\nThe U.S. has deployed over a dozen warships, including the aircraft carriers USS Abraham Lincoln and USS Gerald R. Ford, along with destroyers and littoral combat ships, to support military operations against Iran in the Arabian Sea and near the Strait of Hormuz. This buildup is part of ongoing tensions and efforts to pressure Iran regarding its military activities.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#ME\n\nThe U.S. has deployed over a dozen warships, including the aircraft carriers USS Abraham Lincoln and USS Gerald R. Ford, along with destroyers and littoral combat ships, to support military operations against Iran in the Arabian Sea and near the Strait of Hormuz. This buildup is part of ongoing tensions and efforts to pressure Iran regarding its military activities.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T11:18:39+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nAyatollah Ali Khamenei's current whereabouts are unclear, but he has reportedly been hiding in an underground bunker due to fears of a potential U.S. attack. Recent satellite images indicate that several buildings in his compound in Tehran have been destroyed.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nAyatollah Ali Khamenei's current whereabouts are unclear, but he has reportedly been hiding in an underground bunker due to fears of a potential U.S. attack. Recent satellite images indicate that several buildings in his compound in Tehran have been destroyed.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T11:19:51+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Russia #Israel #Iran #USA\n\nIsraeli officials have reportedly sent mixed messages to Russia regarding their interest in military confrontation with Iran, despite earlier claims of disinterest in war. This situation highlights the ongoing complexities and tensions in the region.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Russia #Israel #Iran #USA\n\nIsraeli officials have reportedly sent mixed messages to Russia regarding their interest in military confrontation with Iran, despite earlier claims of disinterest in war. This situation highlights the ongoing complexities and tensions in the region.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T11:20:27+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Israel #Iran #USA\n\nThe U.S. has launched major airstrikes against Iran, and officials have indicated that these operations are expected to last for several days. This escalation follows ongoing tensions and aims to address perceived threats from the Iranian regime.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Israel #Iran #USA\n\nThe U.S. has launched major airstrikes against Iran, and officials have indicated that these operations are expected to last for several days. This escalation follows ongoing tensions and aims to address perceived threats from the Iranian regime.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T11:21:18+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Russia #Israel #Iran #USA\n\nIran has launched a significant number of ballistic missiles towards Israel, reportedly between 30 to 75, following a joint attack by the US and Israel on Iranian targets. The Israeli military is actively working to intercept these missiles as sirens sound across northern Israel.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Russia #Israel #Iran #USA\n\nIran has launched a significant number of ballistic missiles towards Israel, reportedly between 30 to 75, following a joint attack by the US and Israel on Iranian targets. The Israeli military is actively working to intercept these missiles as sirens sound across northern Israel.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T11:21:54+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nExplosions have been reported in Doha and Abu Dhabi, likely linked to ongoing tensions and military actions involving Iran, Israel, and the US. Recent incidents include missile interceptions and retaliatory threats, contributing to heightened security measures in the region.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nExplosions have been reported in Doha and Abu Dhabi, likely linked to ongoing tensions and military actions involving Iran, Israel, and the US. Recent incidents include missile interceptions and retaliatory threats, contributing to heightened security measures in the region.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T11:23:19+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Russia #Israel #Iran #USA\n\nA potential conflict between the US and Iran could indeed lead to missile shortages for air defense systems, which may have implications for military support in other regions, including Ukraine. This situation highlights the interconnected nature of global military resources and conflicts.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Russia #Israel #Iran #USA\n\nA potential conflict between the US and Iran could indeed lead to missile shortages for air defense systems, which may have implications for military support in other regions, including Ukraine. This situation highlights the interconnected nature of global military resources and conflicts.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T11:35:51+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Kuwait\n\nThe runway at Ali Al Salem Air Base in Kuwait, which hosts Italian troops, has reportedly sustained damage, affecting operations at the base. Further details on the extent of the damage and its impact on military activities have not been specified.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Kuwait\n\nThe runway at Ali Al Salem Air Base in Kuwait, which hosts Italian troops, has reportedly sustained damage, affecting operations at the base. Further details on the extent of the damage and its impact on military activities have not been specified.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T11:43:34+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#ME\n\nThe Face of War\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#ME\n\nThe Face of War\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T11:46:25+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Spain #Israel #Iran #USA\n\nPedro Sánchez has expressed Spain's rejection of unilateral military actions by the United States and Israel, emphasizing the need for a more collaborative and diplomatic approach to conflicts. This stance reflects Spain's concerns about the implications of such actions on international relations and regional stability.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Spain #Israel #Iran #USA\n\nPedro Sánchez has expressed Spain's rejection of unilateral military actions by the United States and Israel, emphasizing the need for a more collaborative and diplomatic approach to conflicts. This stance reflects Spain's concerns about the implications of such actions on international relations and regional stability.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-02-28T11:47:46+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Jordan \n\nIran has launched missile strikes targeting the Muwaffaq Salti Air Base in Jordan, resulting in columns of smoke rising from the facility. This attack is part of a broader retaliation against U.S. and Israeli military operations in the region.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Jordan \n\nIran has launched missile strikes targeting the Muwaffaq Salti Air Base in Jordan, resulting in columns of smoke rising from the facility. This attack is part of a broader retaliation against U.S. and Israeli military operations in the region.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-02-28/photos/110244_17489.jpg",
+      "data/OSINTdefender/2026-02-28/photos/110523_17492.jpg",
+      "data/OSINTdefender/2026-02-28/photos/111515_17494.jpg",
+      "data/OSINTdefender/2026-02-28/photos/112118_17500.jpg",
+      "data/OSINTdefender/2026-02-28/videos/114334_17504.mp4"
+    ]
+  }
+}

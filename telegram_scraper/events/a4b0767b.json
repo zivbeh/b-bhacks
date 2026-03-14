@@ -1,0 +1,78 @@
+{
+  "event_id": "a4b0767b",
+  "headline": "China Advises Citizens to Leave Iran Amid Security Concerns",
+  "timestamp": "2026-02-27T10:57:17Z",
+  "location": "Tehran",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "China",
+    "Iran"
+  ],
+  "summary": "China's Ministry of Foreign Affairs issued a travel advisory urging its nationals to leave Iran as soon as possible, citing rising regional security concerns. This is a notable diplomatic signal, as China maintains significant economic ties with Iran and such advisories are rarely issued lightly. The advisory suggests Chinese intelligence may be anticipating an escalation in the Iran-Israel conflict or a broader regional deterioration.",
+  "primary_markets": [
+    "oil",
+    "insurance",
+    "airlines"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Crude Oil (Brent)",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "A Chinese evacuation advisory from Iran signals anticipated conflict escalation near one of the world's most critical oil chokepoints, the Strait of Hormuz, supporting a supply-risk premium."
+    },
+    {
+      "name": "COSCO Shipping Holdings",
+      "ticker": "1919.HK",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Chinese nationals and cargo routing through Iran-adjacent waters face heightened risk, likely forcing COSCO to reroute or suspend Iran-linked freight operations."
+    },
+    {
+      "name": "Air China",
+      "ticker": "601111.SS",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Emergency repatriation flights and subsequent suspension of Tehran routes would pressure Air China revenues and raise operational costs."
+    },
+    {
+      "name": "National Iranian Oil Company offtake (Iranian crude)",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bearish",
+      "reason": "Chinese refiners, the primary buyers of Iranian crude, may pause spot purchases if evacuation signals an imminent military escalation disrupting Iranian export infrastructure."
+    },
+    {
+      "name": "Allianz SE",
+      "ticker": "ALV.DE",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "War-risk and political-risk insurance premiums for the Persian Gulf region will spike as a major power publicly signals its nationals to flee Iran."
+    }
+  ],
+  "trade_position": "Buy front-month Brent crude futures (ICE BRN) as the Chinese government evacuation advisory is a high-credibility leading indicator of imminent kinetic escalation near Hormuz, historically the single most powerful bullish catalyst for oil prices. The position benefits from a supply-disruption risk premium building before any physical disruption occurs.",
+  "confidence": "medium",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-02-27T10:57:17+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🚨🇨🇳🇮🇷 China’s Ministry of Foreign Affairs is advising its citizens not to travel to Iran and urging those currently in the country to leave as soon as possible.\n\nAnother signal of rising concern over regional security conditions.",
+        "text_orig": "🚨🇨🇳🇮🇷 China’s Ministry of Foreign Affairs is advising its citizens not to travel to Iran and urging those currently in the country to leave as soon as possible.\n\nAnother signal of rising concern over regional security conditions."
+      },
+      {
+        "timestamp": "2026-02-27T10:58:12+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🎯 In response to a ceasefire violation, the IDF precisely struck armed Hamas terrorists in Rafah overnight.\n\nYesterday, IDF troops identified armed terrorists emerging from underground infrastructure in eastern Rafah, a clear breach of the agreement.\n\nThe terrorists were eliminated to remove the immediate threat.\n\nIDF forces remain deployed in accordance with the ceasefire and will act against any attempt to carry out attacks.",
+        "text_orig": "🎯 In response to a ceasefire violation, the IDF precisely struck armed Hamas terrorists in Rafah overnight.\n\nYesterday, IDF troops identified armed terrorists emerging from underground infrastructure in eastern Rafah, a clear breach of the agreement.\n\nThe terrorists were eliminated to remove the immediate threat.\n\nIDF forces remain deployed in accordance with the ceasefire and will act against any attempt to carry out attacks."
+      }
+    ],
+    "media_urls": [
+      "data/IsraelWarRoom/2026-02-27/videos/105812_68.MP4"
+    ]
+  }
+}

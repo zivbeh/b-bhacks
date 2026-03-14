@@ -1,0 +1,70 @@
+{
+  "event_id": "263a592d",
+  "headline": "Poland Raises Military Spending to 4.8% GDP Amid Russia Threat",
+  "timestamp": "2026-02-27T22:38:58+00:00",
+  "location": "Warsaw",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "Poland",
+    "Russia"
+  ],
+  "summary": "Poland announced plans to increase military spending to 4.8% of GDP in 2026, making it one of the highest defense spenders in NATO. The decision is driven by perceived threats from Russia and is part of a sustained effort to modernize and expand Polish armed forces. No kinetic activity is reported; this is a budgetary and strategic posture shift.",
+  "primary_markets": [
+    "defense"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Leonardo DRS / Leonardo S.p.A",
+      "ticker": "LDO.MI",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Leonardo has active defense contracts in Poland and stands to benefit from increased procurement budgets for armored and electronic warfare systems."
+    },
+    {
+      "name": "Rheinmetall AG",
+      "ticker": "RHM.DE",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Rheinmetall is Poland's key partner for tank production and ammunition supply, with a joint venture already established in Poland, making it a primary beneficiary of the spending surge."
+    },
+    {
+      "name": "BAE Systems",
+      "ticker": "BA.L",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "BAE Systems supplies Poland with CV90 infantry fighting vehicles and is positioned to win additional contracts as Poland expands its ground forces."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Poland operates F-35s procured from Lockheed Martin, and increased defense budgets will accelerate sustainment, munitions, and potential additional airframe orders."
+    },
+    {
+      "name": "MBDA / Thales Group",
+      "ticker": "HO.PA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Thales and MBDA supply Poland with air defense and missile systems; a larger Polish defense budget directly expands their addressable contract pipeline in Central Europe."
+    }
+  ],
+  "trade_position": "Go long Rheinmetall (RHM.DE) as the single most direct beneficiary — the company's Polish tank factory joint venture and ammunition contracts place it first in line for incremental budget allocation. The catalyst is the formal 2026 budget passage expected in Q1-Q2 2026, which should trigger new contract announcements and earnings guidance upgrades.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-02-27T22:38:58+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Poland \n\nPoland plans to increase its military spending to 4.8% of its GDP in 2026 due to concerns about threats from Russia. This increase is part of a broader commitment to enhance its defense capabilities amid regional security challenges.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Poland \n\nPoland plans to increase its military spending to 4.8% of its GDP in 2026 due to concerns about threats from Russia. This increase is part of a broader commitment to enhance its defense capabilities amid regional security challenges.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-02-27/photos/223858_17467.jpg"
+    ]
+  }
+}

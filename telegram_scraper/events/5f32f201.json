@@ -1,0 +1,70 @@
+{
+  "event_id": "5f32f201",
+  "headline": "US Destroys Iranian Mine-Laying Vessels Near Strait of Hormuz",
+  "timestamp": "2026-03-12T08:21:58Z",
+  "location": "Strait of Hormuz",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "United States",
+    "Iran"
+  ],
+  "summary": "President Trump revealed that the US military has already destroyed several Iranian mine-laying vessels in or near the Strait of Hormuz. Trump issued a direct warning that any Iranian attempt to mine the strait would trigger severe military retaliation. The statement confirms active US naval operations to neutralize Iranian maritime interdiction capabilities in the world's most critical oil chokepoint.",
+  "primary_markets": [
+    "shipping routes",
+    "oil",
+    "insurance"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Crude Oil (Brent)",
+      "ticker": "BZ=F",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Active Iranian mine-laying threat in the Strait of Hormuz, even if currently suppressed, sustains elevated risk premium on all Gulf crude flows."
+    },
+    {
+      "name": "A.P. Moller-Maersk",
+      "ticker": "MAERSK-B.CO",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Any Strait of Hormuz mining threat forces major shipping operators to reroute or suspend Gulf transits, directly disrupting revenues and container scheduling."
+    },
+    {
+      "name": "Frontline PLC",
+      "ticker": "FRO",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Tanker operators earn war-risk surcharges and benefit from longer re-routing voyages when Hormuz passage is threatened, boosting day rates."
+    },
+    {
+      "name": "International Seaways",
+      "ticker": "INSW",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Tanker spot rates surge when Hormuz transit risk rises, as cargo owners pay premium freight for vessels willing to navigate the region."
+    },
+    {
+      "name": "Lloyd's of London (Beazley PLC)",
+      "ticker": "BEZ.L",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Marine war-risk insurance premiums spike sharply when mine threats are confirmed in a critical chokepoint, directly boosting specialty insurer revenues."
+    }
+  ],
+  "trade_position": "Go long tanker operators such as Frontline (FRO) and International Seaways (INSW): even if mines are not successfully laid, the credible threat forces war-risk surcharges and rerouting premiums onto every cargo transiting the Gulf, inflating spot day rates immediately. The asymmetric opportunity is in marine war-risk reinsurers — premium income rises sharply on confirmed mine threats regardless of whether ships are actually hit.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-12T08:21:58+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA\n\nPresident Trump has stated that the war with Iran will end \"very soon,\" which he believes will lead to a decrease in oil prices that have surged due to the conflict. He emphasized that the U.S. is achieving significant military objectives, suggesting that stability in oil markets will follow the resolution of the war.\n\nPresident Trump described the conflict with Iran as both a \"little excursion\" and a war, suggesting that the military actions are intended to prevent a larger war from occurring. He believes that the current operations are necessary to achieve broader objectives while minimizing escalation.\n\nPresident Trump has suggested that the military operation against Iran has been less challenging than anticipated for the U.S., indicating a belief that American and Israeli forces have made significant progress in crippling Iran's military capabilities. However, he also emphasized the ongoing nature of the conflict and the need for continued military pressure until Iran's leadership is decisively defeated.\n\nPresident Trump has warned Iran about potential naval mines in the Strait of Hormuz, stating that the U.S. military has already destroyed several Iranian mine-laying vessels. He emphasized that any attempt by Iran to mine the strait would lead to severe military consequences.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#USA\n\nPresident Trump has stated that the war with Iran will end \"very soon,\" which he believes will lead to a decrease in oil prices that have surged due to the conflict. He emphasized that the U.S. is achieving significant military objectives, suggesting that stability in oil markets will follow the resolution of the war.\n\nPresident Trump described the conflict with Iran as both a \"little excursion\" and a war, suggesting that the military actions are intended to prevent a larger war from occurring. He believes that the current operations are necessary to achieve broader objectives while minimizing escalation.\n\nPresident Trump has suggested that the military operation against Iran has been less challenging than anticipated for the U.S., indicating a belief that American and Israeli forces have made significant progress in crippling Iran's military capabilities. However, he also emphasized the ongoing nature of the conflict and the need for continued military pressure until Iran's leadership is decisively defeated.\n\nPresident Trump has warned Iran about potential naval mines in the Strait of Hormuz, stating that the U.S. military has already destroyed several Iranian mine-laying vessels. He emphasized that any attempt by Iran to mine the strait would lead to severe military consequences.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": []
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "event_id": "a1a77d24",
+  "headline": "IDF Orders Southern Lebanon Evacuation North of Litani River",
+  "timestamp": "2026-03-12T15:14:07Z",
+  "location": "Southern Lebanon",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "Israel",
+    "Hezbollah"
+  ],
+  "summary": "The IDF has issued an urgent evacuation warning for all residents of southern Lebanon to move north of the Litani River, signaling an imminent escalation of military operations against Hezbollah positions in the south. This order mirrors the operational pattern used prior to large-scale ground or air campaigns. No strikes confirmed at time of report, but the warning suggests significant military action is imminent.",
+  "primary_markets": [
+    "defense",
+    "tourism & hotels",
+    "insurance"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Israeli escalation in Lebanon drives increased consumption of precision munitions and surveillance systems supplied by Elbit."
+    },
+    {
+      "name": "Israel Aerospace Industries",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "IAI supplies air-launched munitions and UAVs central to IDF operations in Lebanon; escalation accelerates procurement cycles."
+    },
+    {
+      "name": "Middle East Airlines",
+      "ticker": null,
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Lebanon's national carrier faces route suspensions and reduced bookings as military operations expand in southern Lebanon."
+    },
+    {
+      "name": "Solidere (Beirut Real Estate)",
+      "ticker": "SOLB.L",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Lebanese reconstruction and real estate holding company faces severe valuation pressure from renewed large-scale military conflict."
+    },
+    {
+      "name": "Tourism & Hotel sector Lebanon",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bearish",
+      "reason": "Any IDF ground incursion north of the Blue Line collapses Lebanon's already fragile tourism and hospitality revenue."
+    }
+  ],
+  "trade_position": "Short SOLB.L (Solidere) as the leading proxy for Lebanese economic stability; a confirmed IDF operation north of the Litani historically collapses this stock 20-40% within days. Consider paired long on Israeli defense ETF (ISRA if available) as the asymmetric hedge.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-12T14:49:01+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA #Israel #Iran \n\nShorter warning times for missile attacks in Israel are due to damage inflicted on U.S. radar systems by Iranian strikes, which has compromised missile detection capabilities in the region. This situation raises concerns about Israel's air defense readiness against potential threats.",
+        "text_orig": "#USA #Israel #Iran \n\nShorter warning times for missile attacks in Israel are due to damage inflicted on U.S. radar systems by Iranian strikes, which has compromised missile detection capabilities in the region. This situation raises concerns about Israel's air defense readiness against potential threats."
+      },
+      {
+        "timestamp": "2026-03-12T15:12:22+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA #Israel #Iran \n\nIran has threatened to disrupt oil flows through the Strait of Hormuz if attacks by the U.S. and Israel continue, which could significantly impact global oil supplies and prices. This threat complicates President Trump's war strategy, as rising oil prices become a major concern alongside military outcomes.",
+        "text_orig": "#USA #Israel #Iran \n\nIran has threatened to disrupt oil flows through the Strait of Hormuz if attacks by the U.S. and Israel continue, which could significantly impact global oil supplies and prices. This threat complicates President Trump's war strategy, as rising oil prices become a major concern alongside military outcomes."
+      },
+      {
+        "timestamp": "2026-03-12T15:14:07+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Lebanon \n\nThe IDF has issued an urgent warning for residents of southern Lebanon to evacuate north of the Litani River due to ongoing fighting with Hezbollah. This evacuation order aims to protect civilians from potential military actions targeting Hezbollah positions.",
+        "text_orig": "#Lebanon \n\nThe IDF has issued an urgent warning for residents of southern Lebanon to evacuate north of the Litani River due to ongoing fighting with Hezbollah. This evacuation order aims to protect civilians from potential military actions targeting Hezbollah positions."
+      },
+      {
+        "timestamp": "2026-03-12T15:15:09+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#ME\n\nTrump emphasizes that while the U.S. benefits economically from being the largest oil producer when prices rise, his primary concern as President is preventing Iran from acquiring nuclear weapons, which he views as a significant threat to global security. He believes stopping Iran is crucial for the stability of the Middle East and the world.",
+        "text_orig": "#ME\n\nTrump emphasizes that while the U.S. benefits economically from being the largest oil producer when prices rise, his primary concern as President is preventing Iran from acquiring nuclear weapons, which he views as a significant threat to global security. He believes stopping Iran is crucial for the stability of the Middle East and the world."
+      },
+      {
+        "timestamp": "2026-03-12T15:16:20+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran\n\nIran's Supreme Leader emphasizes that national unity is crucial, especially during challenging times, and it can be maintained by focusing on common goals rather than disagreements. This unity is seen as a defense against external threats and divisions.",
+        "text_orig": "#Iran\n\nIran's Supreme Leader emphasizes that national unity is crucial, especially during challenging times, and it can be maintained by focusing on common goals rather than disagreements. This unity is seen as a defense against external threats and divisions."
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-12/photos/151222_17984.jpg",
+      "data/OSINTdefender/2026-03-12/photos/151509_17986.jpg",
+      "data/OSINTdefender/2026-03-12/photos/151620_17987.jpg"
+    ]
+  }
+}

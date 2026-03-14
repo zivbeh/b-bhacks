@@ -1,0 +1,102 @@
+{
+  "event_id": "a889689b",
+  "headline": "Iran's Larijani Condemns Trump, Signals Nuclear Talks via Oman",
+  "timestamp": "2026-03-02T05:37:13Z",
+  "location": "Tehran",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "Iran",
+    "United States"
+  ],
+  "summary": "Ali Larijani, Secretary of Iran's Supreme National Security Council, publicly condemned Trump's regional policy while simultaneously pursuing backchannel nuclear negotiations via Omani mediators. Larijani is managing Iran's security posture following the death of Supreme Leader Khamenei, though he is not formally part of the interim ruling council. The dual-track approach — military retaliation plus diplomatic outreach — signals Iran is seeking an off-ramp while maintaining escalatory pressure.",
+  "primary_markets": [
+    "oil",
+    "natural gas",
+    "gold"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Brent Crude Oil",
+      "ticker": "null",
+      "type": "commodity",
+      "signal": "bearish",
+      "reason": "Any credible nuclear diplomacy signal reduces the probability of a full-scale Iran oil embargo, capping the geopolitical risk premium in crude prices."
+    },
+    {
+      "name": "Gold (XAU/USD)",
+      "ticker": "null",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Post-Khamenei leadership vacuum combined with mixed military-diplomatic signals sustains safe-haven demand for gold as uncertainty premium remains elevated."
+    },
+    {
+      "name": "TotalEnergies",
+      "ticker": "TTE",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "A diplomatic resolution pathway could eventually reopen Iranian energy assets to European majors, with TotalEnergies holding historic Iranian upstream interests."
+    },
+    {
+      "name": "Oman sovereign bonds",
+      "ticker": "null",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Oman's mediator role elevates its geopolitical standing and reduces its own conflict-spillover risk, supporting Omani sovereign credit spreads."
+    },
+    {
+      "name": "iShares MSCI Emerging Markets ETF",
+      "ticker": "EEM",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Unresolved Iranian leadership succession combined with active regional conflict keeps risk-off pressure on EM assets broadly."
+    }
+  ],
+  "trade_position": "Long gold (XAU/USD) spot as the primary safe-haven instrument — the Larijani dual-track signals that Iran's leadership transition is unstable and that military escalation will continue regardless of diplomatic rhetoric, sustaining the geopolitical risk premium. The hidden opportunity is that Omani mediation failure (likely given simultaneous Iranian missile strikes on Qatar and Kuwait) will be the catalyst for gold to break above recent resistance as nuclear risk premium reprices.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-02T05:28:32+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nLoud explosions were reported in Doha, Qatar, as part of a series of attacks that included missile interceptions targeting the Gulf state. The explosions are linked to escalating tensions in the region following Iranian retaliatory strikes.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nLoud explosions were reported in Doha, Qatar, as part of a series of attacks that included missile interceptions targeting the Gulf state. The explosions are linked to escalating tensions in the region following Iranian retaliatory strikes.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:34:32+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nFootage has emerged showing the crash of a U.S. F-15 jet in Kuwait.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nFootage has emerged showing the crash of a U.S. F-15 jet in Kuwait.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:35:03+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Lebanon \n\nIsrael has warned that it will increase its military strikes on Lebanon, particularly targeting Hezbollah positions, in response to the group's involvement in the ongoing conflict with Iran. This escalation follows recent rocket attacks from Hezbollah into Israel.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Lebanon \n\nIsrael has warned that it will increase its military strikes on Lebanon, particularly targeting Hezbollah positions, in response to the group's involvement in the ongoing conflict with Iran. This escalation follows recent rocket attacks from Hezbollah into Israel.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:35:52+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nAli Larijani, the Secretary of Iran's Supreme National Security Council, criticized former President Trump for causing instability in the region due to what he described as \"delusional ambitions.\" He accused Trump of attempting to weaken Iran and sow discord among its people.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nAli Larijani, the Secretary of Iran's Supreme National Security Council, criticized former President Trump for causing instability in the region due to what he described as \"delusional ambitions.\" He accused Trump of attempting to weaken Iran and sow discord among its people.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:37:13+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nAli Larijani is indeed pushing to resume nuclear talks with the U.S. through Omani mediators while managing Iran's security and military response following the death of Supreme Leader Khamenei. Although he is a key figure in Iran's security hierarchy, he is not officially part of the interim ruling council.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nAli Larijani is indeed pushing to resume nuclear talks with the U.S. through Omani mediators while managing Iran's security and military response following the death of Supreme Leader Khamenei. Although he is a key figure in Iran's security hierarchy, he is not officially part of the interim ruling council.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:37:43+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nPresident Trump claimed that he preemptively struck Iran's Supreme Leader Ayatollah Khamenei, stating, \"I got him before he got me,\" referring to alleged Iranian plots against him. This statement was made following a successful U.S.-Israeli operation that resulted in Khamenei's death.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nPresident Trump claimed that he preemptively struck Iran's Supreme Leader Ayatollah Khamenei, stating, \"I got him before he got me,\" referring to alleged Iranian plots against him. This statement was made following a successful U.S.-Israeli operation that resulted in Khamenei's death.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-02/videos/053432_17579.mp4"
+    ]
+  }
+}

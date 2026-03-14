@@ -1,0 +1,97 @@
+{
+  "event_id": "138d9a57",
+  "headline": "Iran Supreme Leader Calls for National Unity Against External Threats",
+  "timestamp": "2026-03-12T15:16:20Z",
+  "location": "Tehran",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "Iran"
+  ],
+  "summary": "Iran's Supreme Leader Ali Khamenei issued a public call for national unity, framing internal cohesion as a defensive necessity against external threats amid ongoing U.S. and Israeli military pressure. The statement is consistent with wartime domestic messaging and signals that Iran does not intend to back down from the current confrontation. This rhetorical posture suggests Iran is preparing its population for a prolonged conflict rather than seeking immediate de-escalation.",
+  "primary_markets": [
+    "oil",
+    "gold",
+    "defense"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Brent Crude Oil",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Khamenei's defiant posture signals no imminent Iranian stand-down, sustaining the conflict risk premium in oil markets."
+    },
+    {
+      "name": "SPDR Gold Shares",
+      "ticker": "GLD",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Prolonged Iran-U.S. confrontation reinforced by Supreme Leader's unity speech sustains safe-haven gold demand."
+    },
+    {
+      "name": "BAE Systems",
+      "ticker": "BA.L",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Prolonged Middle East conflict sustains Western defense procurement cycles; BAE is a key supplier to U.S. and UK forces in the region."
+    },
+    {
+      "name": "General Dynamics",
+      "ticker": "GD",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Extended conflict timeline increases munitions and naval systems demand; General Dynamics supplies both."
+    },
+    {
+      "name": "Strait of Hormuz Tanker Insurance",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Iran's hardened posture and unity messaging increases probability of asymmetric naval action, driving war risk insurance premiums sharply higher."
+    }
+  ],
+  "trade_position": "Long BAE Systems (BA.L) as a Europe-listed defense play benefiting from sustained Middle East conflict without direct U.S. political risk overhang. The catalyst is prolonged Iranian resistance signaled by Khamenei's speech, which extends the conflict timeline and defense spending cycle beyond near-term resolution.",
+  "confidence": "low",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-12T14:49:01+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA #Israel #Iran \n\nShorter warning times for missile attacks in Israel are due to damage inflicted on U.S. radar systems by Iranian strikes, which has compromised missile detection capabilities in the region. This situation raises concerns about Israel's air defense readiness against potential threats.",
+        "text_orig": "#USA #Israel #Iran \n\nShorter warning times for missile attacks in Israel are due to damage inflicted on U.S. radar systems by Iranian strikes, which has compromised missile detection capabilities in the region. This situation raises concerns about Israel's air defense readiness against potential threats."
+      },
+      {
+        "timestamp": "2026-03-12T15:12:22+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA #Israel #Iran \n\nIran has threatened to disrupt oil flows through the Strait of Hormuz if attacks by the U.S. and Israel continue, which could significantly impact global oil supplies and prices. This threat complicates President Trump's war strategy, as rising oil prices become a major concern alongside military outcomes.",
+        "text_orig": "#USA #Israel #Iran \n\nIran has threatened to disrupt oil flows through the Strait of Hormuz if attacks by the U.S. and Israel continue, which could significantly impact global oil supplies and prices. This threat complicates President Trump's war strategy, as rising oil prices become a major concern alongside military outcomes."
+      },
+      {
+        "timestamp": "2026-03-12T15:14:07+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Lebanon \n\nThe IDF has issued an urgent warning for residents of southern Lebanon to evacuate north of the Litani River due to ongoing fighting with Hezbollah. This evacuation order aims to protect civilians from potential military actions targeting Hezbollah positions.",
+        "text_orig": "#Lebanon \n\nThe IDF has issued an urgent warning for residents of southern Lebanon to evacuate north of the Litani River due to ongoing fighting with Hezbollah. This evacuation order aims to protect civilians from potential military actions targeting Hezbollah positions."
+      },
+      {
+        "timestamp": "2026-03-12T15:15:09+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#ME\n\nTrump emphasizes that while the U.S. benefits economically from being the largest oil producer when prices rise, his primary concern as President is preventing Iran from acquiring nuclear weapons, which he views as a significant threat to global security. He believes stopping Iran is crucial for the stability of the Middle East and the world.",
+        "text_orig": "#ME\n\nTrump emphasizes that while the U.S. benefits economically from being the largest oil producer when prices rise, his primary concern as President is preventing Iran from acquiring nuclear weapons, which he views as a significant threat to global security. He believes stopping Iran is crucial for the stability of the Middle East and the world."
+      },
+      {
+        "timestamp": "2026-03-12T15:16:20+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran\n\nIran's Supreme Leader emphasizes that national unity is crucial, especially during challenging times, and it can be maintained by focusing on common goals rather than disagreements. This unity is seen as a defense against external threats and divisions.",
+        "text_orig": "#Iran\n\nIran's Supreme Leader emphasizes that national unity is crucial, especially during challenging times, and it can be maintained by focusing on common goals rather than disagreements. This unity is seen as a defense against external threats and divisions."
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-12/photos/151222_17984.jpg",
+      "data/OSINTdefender/2026-03-12/photos/151509_17986.jpg",
+      "data/OSINTdefender/2026-03-12/photos/151620_17987.jpg"
+    ]
+  }
+}

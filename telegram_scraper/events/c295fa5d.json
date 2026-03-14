@@ -1,0 +1,102 @@
+{
+  "event_id": "c295fa5d",
+  "headline": "Israel Warns of Intensified Military Strikes Against Hezbollah in Lebanon",
+  "timestamp": "2026-03-02T05:35:03Z",
+  "location": "Beirut",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "Israel",
+    "Hezbollah"
+  ],
+  "summary": "Israel issued an official warning of escalated military operations targeting Hezbollah positions in Lebanon, framing the action as a response to Hezbollah's rocket attacks and its broader involvement in the Iran-U.S. conflict. The warning signals imminent kinetic escalation on the northern front. No confirmed strikes reported at time of this message.",
+  "primary_markets": [
+    "defense",
+    "insurance",
+    "tourism & hotels"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Escalation on Israel's northern front drives immediate demand for Elbit's precision munitions, drone systems, and battlefield electronics for IDF operations."
+    },
+    {
+      "name": "Rafael Advanced Defense Systems",
+      "ticker": "null",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Expanded IDF strikes on Lebanon increase consumption of Rafael's Iron Dome interceptors and Spike missile systems, accelerating replenishment contracts."
+    },
+    {
+      "name": "Israel Aerospace Industries",
+      "ticker": "null",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Multi-front conflict environment boosts IAI's Arrow missile defense system deployments and loitering munitions demand."
+    },
+    {
+      "name": "Bezeq Israeli Telecom",
+      "ticker": "BEZQ.TA",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Northern Israel conflict escalation disrupts civilian infrastructure, weighing on domestic telecom revenues and investor sentiment toward Israeli equities."
+    },
+    {
+      "name": "Lloyd's of London (insurance market)",
+      "ticker": "null",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "War-risk insurance premiums for vessels and cargo transiting eastern Mediterranean will spike sharply on confirmed Israeli military escalation into Lebanon."
+    }
+  ],
+  "trade_position": "Long war-risk insurance derivatives or long reinsurance shorts via Beazley (BEZ.L) puts — eastern Mediterranean war-risk premiums will reprice violently upward as a two-front Israeli conflict (Lebanon + Iran) materializes, and reinsurers with heavy Middle East marine exposure face outsized loss ratios. The catalyst is the first confirmed Israeli airstrike on Beirut, which will trigger automatic premium escalation clauses across marine and aviation war-risk policies.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-02T05:28:32+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nLoud explosions were reported in Doha, Qatar, as part of a series of attacks that included missile interceptions targeting the Gulf state. The explosions are linked to escalating tensions in the region following Iranian retaliatory strikes.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nLoud explosions were reported in Doha, Qatar, as part of a series of attacks that included missile interceptions targeting the Gulf state. The explosions are linked to escalating tensions in the region following Iranian retaliatory strikes.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:34:32+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nFootage has emerged showing the crash of a U.S. F-15 jet in Kuwait.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nFootage has emerged showing the crash of a U.S. F-15 jet in Kuwait.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:35:03+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Lebanon \n\nIsrael has warned that it will increase its military strikes on Lebanon, particularly targeting Hezbollah positions, in response to the group's involvement in the ongoing conflict with Iran. This escalation follows recent rocket attacks from Hezbollah into Israel.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Lebanon \n\nIsrael has warned that it will increase its military strikes on Lebanon, particularly targeting Hezbollah positions, in response to the group's involvement in the ongoing conflict with Iran. This escalation follows recent rocket attacks from Hezbollah into Israel.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:35:52+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nAli Larijani, the Secretary of Iran's Supreme National Security Council, criticized former President Trump for causing instability in the region due to what he described as \"delusional ambitions.\" He accused Trump of attempting to weaken Iran and sow discord among its people.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nAli Larijani, the Secretary of Iran's Supreme National Security Council, criticized former President Trump for causing instability in the region due to what he described as \"delusional ambitions.\" He accused Trump of attempting to weaken Iran and sow discord among its people.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:37:13+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nAli Larijani is indeed pushing to resume nuclear talks with the U.S. through Omani mediators while managing Iran's security and military response following the death of Supreme Leader Khamenei. Although he is a key figure in Iran's security hierarchy, he is not officially part of the interim ruling council.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nAli Larijani is indeed pushing to resume nuclear talks with the U.S. through Omani mediators while managing Iran's security and military response following the death of Supreme Leader Khamenei. Although he is a key figure in Iran's security hierarchy, he is not officially part of the interim ruling council.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      },
+      {
+        "timestamp": "2026-03-02T05:37:43+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nPresident Trump claimed that he preemptively struck Iran's Supreme Leader Ayatollah Khamenei, stating, \"I got him before he got me,\" referring to alleged Iranian plots against him. This statement was made following a successful U.S.-Israeli operation that resulted in Khamenei's death.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nPresident Trump claimed that he preemptively struck Iran's Supreme Leader Ayatollah Khamenei, stating, \"I got him before he got me,\" referring to alleged Iranian plots against him. This statement was made following a successful U.S.-Israeli operation that resulted in Khamenei's death.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-02/videos/053432_17579.mp4"
+    ]
+  }
+}

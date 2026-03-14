@@ -1,0 +1,70 @@
+{
+  "event_id": "b6a8bc1a",
+  "headline": "Iran Launches Ballistic Missiles Toward Southern Israel",
+  "timestamp": "2026-03-04T02:20:12Z",
+  "location": "Southern Israel",
+  "event_type": "Attack and Miss",
+  "involved": [
+    "Iran",
+    "Israel"
+  ],
+  "summary": "The IDF detected a new wave of ballistic missiles launched from Iran toward southern Israel on March 4, 2026. Air raid sirens were expected to activate across southern Israel imminently following detection. No confirmed impact or interception outcome is available from the source at time of reporting; event_type is provisionally classified as Attack and Miss pending damage confirmation.",
+  "primary_markets": [
+    "defense",
+    "oil",
+    "gold"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Elbit is Israel's primary defense electronics and missile defense systems contractor and benefits directly from escalating conflict requiring interceptor replenishment."
+    },
+    {
+      "name": "Rafael Advanced Defense Systems",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Rafael produces Iron Dome and David's Sling interceptors, which are expended in each interception wave and must be rapidly restocked."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "US-made THAAD and Patriot systems deployed in Israel require Lockheed-supplied interceptors during sustained ballistic missile campaigns."
+    },
+    {
+      "name": "Brent Crude Oil",
+      "ticker": "BZ=F",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Direct Iran-Israel ballistic missile exchange raises Strait of Hormuz closure risk, tightening global crude supply expectations."
+    },
+    {
+      "name": "Gold",
+      "ticker": "GC=F",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Escalating state-on-state missile exchange drives safe-haven demand for gold as geopolitical risk premium spikes."
+    }
+  ],
+  "trade_position": "The highest-conviction hidden opportunity is a long position in Israeli defense ETF (ISRA.TA proxy or ESLT.TA) funded by a short in Tel Aviv tourism and hospitality stocks — direct missile strikes on southern Israel will devastate near-term inbound tourism while simultaneously guaranteeing emergency defense procurement budgets. Secondary play: long Brent crude calls as Iran-Israel escalation is the single most credible Strait of Hormuz disruption catalyst.",
+  "confidence": "medium",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-04T02:20:12+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🚨A new wave of ballistic missiles from Iran has been detected by the IDF.\n\nSirens are expected to sound in southern Israel in the coming minutes.",
+        "text_orig": "🚨A new wave of ballistic missiles from Iran has been detected by the IDF.\n\nSirens are expected to sound in southern Israel in the coming minutes."
+      }
+    ],
+    "media_urls": []
+  }
+}

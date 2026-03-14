@@ -1,0 +1,70 @@
+{
+  "event_id": "6ea14522",
+  "headline": "US Orders Non-Emergency Staff Evacuation from Beirut Embassy",
+  "timestamp": "2026-02-23T15:59:17Z",
+  "location": "Beirut",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "United States",
+    "Lebanon"
+  ],
+  "summary": "The US State Department has ordered the departure of non-emergency personnel and eligible family members from the US Embassy in Beirut. This is an 'ordered departure,' a formal step above a voluntary departure advisory, signaling elevated threat assessment by the US government. No casualties or kinetic events have been reported in conjunction with this order.",
+  "primary_markets": [
+    "insurance",
+    "tourism & hotels",
+    "airlines"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Middle East Airlines",
+      "ticker": null,
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Diplomatic evacuation signals elevated threat environment in Lebanon, likely to reduce passenger traffic and increase operational risk premiums for the national carrier."
+    },
+    {
+      "name": "Airline War Risk Insurance",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Ordered embassy departures historically trigger immediate re-pricing of war risk insurance premiums for Beirut airspace and regional routes."
+    },
+    {
+      "name": "XL Catlin / AXA XL",
+      "ticker": "CS.PA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Major war risk and political risk insurer exposed to Lebanon; rising threat levels drive premium revenue but also increase reserve requirements."
+    },
+    {
+      "name": "Gold",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Diplomatic evacuations in the Middle East historically trigger safe-haven flows into gold as investors hedge escalation risk."
+    },
+    {
+      "name": "Marriott International",
+      "ticker": "MAR",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Ordered US government departures from Beirut will suppress business and diplomatic travel, directly impacting hospitality revenues in Lebanon and the broader Levant region."
+    }
+  ],
+  "trade_position": "The most actionable hidden opportunity is long war risk reinsurance exposure via Everest Re (EG) or RenaissanceRe (RNR), as ordered embassy departures force immediate upward repricing of political risk and marine war risk premiums across the Eastern Mediterranean — a revenue catalyst that is non-correlated to equity markets. The catalyst is the formal State Department order, which triggers automatic review clauses in existing war risk policies covering Beirut port, airport, and adjacent shipping lanes.",
+  "confidence": "medium",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-02-23T15:59:17+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "⚠️The State Department has ordered the departure of non-emergency staff and eligible family members from the US Embassy in Beirut.",
+        "text_orig": "⚠️The State Department has ordered the departure of non-emergency staff and eligible family members from the US Embassy in Beirut."
+      }
+    ],
+    "media_urls": []
+  }
+}

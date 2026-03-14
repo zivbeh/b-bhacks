@@ -1,0 +1,85 @@
+{
+  "event_id": "ac20f15a",
+  "headline": "Macron Rejects Oil Price Relief as Grounds to Ease Russia Sanctions",
+  "timestamp": "2026-03-13T16:03:39Z",
+  "location": "Paris",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "France",
+    "Russia",
+    "Iran"
+  ],
+  "summary": "French President Macron publicly rejected any linkage between rising global oil prices — driven by the ongoing Iran War — and a relaxation of Western sanctions on Russia. Macron emphasized that maintaining pressure on Moscow remains a strategic priority regardless of energy market stress. The statement signals EU solidarity on Russia sanctions will hold even as energy costs rise, reducing the probability of a sanctions-relief rally in Russian energy assets.",
+  "primary_markets": [
+    "oil",
+    "natural gas"
+  ],
+  "secondary_markets": [
+    {
+      "name": "TotalEnergies",
+      "ticker": "TTE",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "TotalEnergies, as a major non-Russian international oil major, benefits from sustained high oil prices while sanctions block Russian supply from re-entering Western markets."
+    },
+    {
+      "name": "Brent Crude Oil",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Macron's rejection of sanctions easing confirms dual supply constraints — Iran War disruption plus continued Russian export restrictions — supporting elevated Brent prices."
+    },
+    {
+      "name": "European Natural Gas (TTF)",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Continued Russia sanctions with no relief pathway keeps European gas supply tight, sustaining elevated TTF spot and forward prices."
+    },
+    {
+      "name": "Equinor",
+      "ticker": "EQNR",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "As Norway's state energy company and a key alternative gas supplier to Europe, Equinor is a direct beneficiary of sustained Russia sanctions and high TTF prices."
+    },
+    {
+      "name": "Gazprom",
+      "ticker": "GAZP.ME",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Macron's explicit rejection of sanctions relief forecloses near-term normalization of Gazprom's European market access, prolonging its revenue and export losses."
+    }
+  ],
+  "trade_position": "The non-obvious trade is long TTF natural gas futures or Equinor (EQNR) — Macron's statement eliminates the tail risk of a sanctions-relief energy deal that markets had begun to partially price in, effectively locking in European gas supply tightness through at least 2026. This confirmation removes a key bearish overhang on European gas prices and creates a clean re-entry catalyst for energy longs.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-13T15:42:27+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#USA\n\nThe U.S. has rapidly depleted key munitions, including Tomahawk missiles, during the Iran War, raising concerns about military stockpiles and the costs of war. The Pentagon is expected to request up to $50 billion in additional funding to replenish these weapons, which may lead to significant political debates in Congress.",
+        "text_orig": "#USA\n\nThe U.S. has rapidly depleted key munitions, including Tomahawk missiles, during the Iran War, raising concerns about military stockpiles and the costs of war. The Pentagon is expected to request up to $50 billion in additional funding to replenish these weapons, which may lead to significant political debates in Congress."
+      },
+      {
+        "timestamp": "2026-03-13T15:58:47+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Israel #Lebanon \n\nIsraeli Prime Minister Benjamin Netanyahu has warned the Lebanese government that failing to disarm Hezbollah could lead to severe consequences for Lebanon, emphasizing that their inaction would result in Israel taking necessary measures. He stated that the Lebanese government's responsibility is to enforce the ceasefire and disarm Hezbollah to avoid disaster.",
+        "text_orig": "#Israel #Lebanon \n\nIsraeli Prime Minister Benjamin Netanyahu has warned the Lebanese government that failing to disarm Hezbollah could lead to severe consequences for Lebanon, emphasizing that their inaction would result in Israel taking necessary measures. He stated that the Lebanese government's responsibility is to enforce the ceasefire and disarm Hezbollah to avoid disaster."
+      },
+      {
+        "timestamp": "2026-03-13T16:03:39+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#France #Russia\n\nFrench President Emmanuel Macron has stated that the rising oil prices due to the Iran war should not prompt any changes in sanctions against Russia. He emphasized that maintaining pressure on Moscow is crucial despite the current energy crisis.",
+        "text_orig": "#France #Russia\n\nFrench President Emmanuel Macron has stated that the rising oil prices due to the Iran war should not prompt any changes in sanctions against Russia. He emphasized that maintaining pressure on Moscow is crucial despite the current energy crisis."
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-13/photos/154227_18020.jpg",
+      "data/OSINTdefender/2026-03-13/photos/160339_18022.jpg"
+    ]
+  }
+}

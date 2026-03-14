@@ -1,0 +1,71 @@
+{
+  "event_id": "e7d768bc",
+  "headline": "Netanyahu Convenes Security Meeting Amid Iran-Hezbollah Escalation Fears",
+  "timestamp": "2026-03-12T01:05:58+00:00",
+  "location": "Jerusalem",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "Israel",
+    "Iran",
+    "Hezbollah"
+  ],
+  "summary": "Israeli Prime Minister Netanyahu convened an emergency meeting of senior political and security officials to assess the threat of potential escalating attacks from Iran and Hezbollah. No strikes have been confirmed; the event reflects heightened defensive posturing and intelligence assessments. No casualties or kinetic activity reported at this time.",
+  "primary_markets": [
+    "defense",
+    "insurance",
+    "gold"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Israel's leading defense contractor benefits directly from any escalation-driven procurement and readiness spending by the IDF."
+    },
+    {
+      "name": "Rafael Advanced Defense Systems",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "As a primary supplier of Israeli missile defense systems (Iron Dome, David's Sling), escalation threats drive demand for interceptor restocking."
+    },
+    {
+      "name": "Gold (XAU/USD)",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Regional escalation fears in the Middle East historically trigger safe-haven inflows into gold."
+    },
+    {
+      "name": "SPDR Gold Shares",
+      "ticker": "GLD",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Increased geopolitical risk in the Levant supports safe-haven demand reflected in gold ETF inflows."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Major U.S. defense contractor supplying Israel with F-35s and missile systems; escalation reinforces long-term contract pipeline."
+    }
+  ],
+  "trade_position": "Consider a tactical long on GLD or XAU/USD as the second-order safe-haven play; if escalation materializes, gold typically reprices faster than defense equities. A defined-risk call spread on GLD expiring within 30 days captures the binary escalation catalyst without excessive premium outlay.",
+  "confidence": "low",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-12T01:05:58+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Israel \n\nIsrael is indeed preparing for a potential escalation of attacks from Iran and Hezbollah, with Prime Minister Netanyahu convening a meeting of key political and security officials to evaluate the situation. This reflects the heightened tensions and concerns regarding regional security.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Israel \n\nIsrael is indeed preparing for a potential escalation of attacks from Iran and Hezbollah, with Prime Minister Netanyahu convening a meeting of key political and security officials to evaluate the situation. This reflects the heightened tensions and concerns regarding regional security.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": []
+  }
+}

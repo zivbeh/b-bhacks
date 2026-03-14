@@ -1,0 +1,84 @@
+{
+  "event_id": "230fdcf3",
+  "headline": "Israel Destroys Six Iranian Ballistic Missile Launchers Before Launch",
+  "timestamp": "2026-03-04T23:59:00Z",
+  "location": "Tehran",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Israel",
+    "Iran"
+  ],
+  "summary": "The Israeli Air Force destroyed six Iranian ballistic missile launchers minutes before they were set to fire, in an overnight operation on March 4, 2026. During the same operation, three advanced Iranian air defense systems were also destroyed. The IDF confirmed the strikes are part of the ongoing Operation Roaring Lion, aimed at systematically degrading Iran's missile launch and air defense capabilities.",
+  "primary_markets": [
+    "defense",
+    "oil",
+    "insurance"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "As Israel's primary defense electronics and precision strike systems manufacturer, Elbit benefits directly from sustained high-tempo offensive operations under Operation Roaring Lion."
+    },
+    {
+      "name": "Rafael Advanced Defense Systems",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Rafael supplies the munitions and missile defense systems being actively consumed and replenished during ongoing Israeli strike campaigns against Iran."
+    },
+    {
+      "name": "Crude Oil (Brent)",
+      "ticker": "BZ=F",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Strikes on Iranian military infrastructure escalate the risk of Iranian retaliation against Gulf oil infrastructure or Strait of Hormuz transit."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "US-supplied F-35s and other Lockheed platforms are central to Israeli strike packages; sustained conflict accelerates Israeli procurement and replenishment orders."
+    },
+    {
+      "name": "Gold",
+      "ticker": "GC=F",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Escalating direct Israel-Iran military conflict drives safe-haven demand into gold as geopolitical risk premium rises."
+    }
+  ],
+  "trade_position": "Go long Elbit Systems (ESLT.TA): the systematic, ongoing nature of Operation Roaring Lion — now confirmed to include pre-emptive destruction of Iranian launch infrastructure — signals a prolonged high-intensity campaign that will drive sustained Israeli defense procurement and replenishment cycles. A secondary safe-haven position long gold (GC=F) hedges against broader regional escalation risk if Iran retaliates against Gulf energy infrastructure.",
+  "confidence": "medium",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-06T08:37:12+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "⚠️🇮🇷🇦🇪The UAE is reportedly considering freezing billions of dollars in Iranian assets held in the country.\n\nAccording to reporting by the Wall Street Journal, the move could significantly restrict Tehran’s access to foreign currency and global trade networks.\n\nDubai has long served as a key hub for Iranian businesses and sanctions-evasion networks used to sell oil and move funds internationally.\n\nOfficials are also exploring measures targeting IRGC-linked accounts, front companies, currency exchanges, and parts of Iran’s shadow oil fleet operating through Emirati ports.\n\nIf implemented, it would mark one of the most significant financial pressure points placed on Iran from within the Gulf.",
+        "text_orig": "⚠️🇮🇷🇦🇪The UAE is reportedly considering freezing billions of dollars in Iranian assets held in the country.\n\nAccording to reporting by the Wall Street Journal, the move could significantly restrict Tehran’s access to foreign currency and global trade networks.\n\nDubai has long served as a key hub for Iranian businesses and sanctions-evasion networks used to sell oil and move funds internationally.\n\nOfficials are also exploring measures targeting IRGC-linked accounts, front companies, currency exchanges, and parts of Iran’s shadow oil fleet operating through Emirati ports.\n\nIf implemented, it would mark one of the most significant financial pressure points placed on Iran from within the Gulf."
+      },
+      {
+        "timestamp": "2026-03-06T08:41:33+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🎯Before missiles were launched toward Israel, the Air Force destroyed six Iranian ballistic missile launchers overnight on Wednesday (March 4), just minutes before they were set to fire.\n\nDuring the same operation, three advanced Iranian air defense systems were also destroyed.\n\nAccording to the IDF, efforts to degrade the Iranian regime’s missile launch and air defense capabilities have been ongoing since the start of Operation Roaring Lion 🦁",
+        "text_orig": "🎯Before missiles were launched toward Israel, the Air Force destroyed six Iranian ballistic missile launchers overnight on Wednesday (March 4), just minutes before they were set to fire.\n\nDuring the same operation, three advanced Iranian air defense systems were also destroyed.\n\nAccording to the IDF, efforts to degrade the Iranian regime’s missile launch and air defense capabilities have been ongoing since the start of Operation Roaring Lion 🦁"
+      },
+      {
+        "timestamp": "2026-03-06T09:08:15+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🎯The IDF has launched another wave of strikes in Dahiya, Beirut. -IDF",
+        "text_orig": "🎯The IDF has launched another wave of strikes in Dahiya, Beirut. -IDF"
+      }
+    ],
+    "media_urls": [
+      "data/IsraelWarRoom/2026-03-06/videos/084133_85.MP4"
+    ]
+  }
+}

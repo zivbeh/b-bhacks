@@ -1,0 +1,71 @@
+{
+  "event_id": "be09fb33",
+  "headline": "Iran IRGC Claims US MQ-9 Reaper Drone Shot Down Over Southern Iran",
+  "timestamp": "2026-03-01T21:48:58Z",
+  "location": "Bandar Abbas",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Iran",
+    "United States"
+  ],
+  "summary": "Iran's Islamic Revolutionary Guard Corps (IRGC) announced it shot down a U.S. MQ-9 Reaper drone using an air defense system over southern Iran. The incident represents a direct kinetic engagement between Iranian forces and a U.S. military asset. No U.S. personnel casualties are reported given the unmanned nature of the platform, but the event marks a significant escalation in U.S.-Iran tensions.",
+  "primary_markets": [
+    "defense",
+    "oil"
+  ],
+  "secondary_markets": [
+    {
+      "name": "General Atomics (MQ-9 Manufacturer — private)",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Loss of MQ-9 assets drives replacement procurement demand from the U.S. DoD, benefiting the sole-source manufacturer."
+    },
+    {
+      "name": "Raytheon Technologies / RTX",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Escalating U.S.-Iran tensions increase demand for air defense and counter-drone systems in the region."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Broader Middle East military escalation supports increased defense spending and weapons sales to Gulf allies."
+    },
+    {
+      "name": "Crude Oil (WTI)",
+      "ticker": "CL=F",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Iranian military action near the Strait of Hormuz raises supply disruption risk premium on global oil prices."
+    },
+    {
+      "name": "Northrop Grumman",
+      "ticker": "NOC",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Northrop produces ISR and drone-adjacent systems; escalation in the Gulf accelerates U.S. DoD ISR procurement cycles."
+    }
+  ],
+  "trade_position": "The most actionable hidden opportunity is long WTI crude via near-month futures or energy ETFs (XLE): a drone shootdown in southern Iran — proximate to the Strait of Hormuz — signals Iranian willingness to escalate, which markets have not yet fully priced as a supply-disruption event. If the U.S. responds with retaliatory posture or naval reinforcement, the risk premium could expand sharply within 48–72 hours.",
+  "confidence": "medium",
+  "sources": [
+    "@OSINTdefender"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-01T21:48:58+00:00",
+        "channel": "OSINTdefender",
+        "text_en": "#Iran #USA\n\nIran's Islamic Revolutionary Guard Corps announced that it shot down a U.S. MQ-9 Reaper drone using a defense system in southern Iran. This incident highlights ongoing tensions between the U.S. and Iran in the region.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)",
+        "text_orig": "#Iran #USA\n\nIran's Islamic Revolutionary Guard Corps announced that it shot down a U.S. MQ-9 Reaper drone using a defense system in southern Iran. This incident highlights ongoing tensions between the U.S. and Iran in the region.\n\nSubscribe to[ ](https://t.me/+DwDkxaYZhSRiMzVi)[@OSINTdefender](https://t.me/OSINTdefender) [Chat room](https://t.me/+DwDkxaYZhSRiMzVi)"
+      }
+    ],
+    "media_urls": [
+      "data/OSINTdefender/2026-03-01/photos/214858_17576.jpg"
+    ]
+  }
+}

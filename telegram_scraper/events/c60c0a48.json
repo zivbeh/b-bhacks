@@ -1,0 +1,71 @@
+{
+  "event_id": "c60c0a48",
+  "headline": "US F-22 Raptors Deploy to Israeli Air Force Base",
+  "timestamp": "2026-02-24T18:29:43Z",
+  "location": "Israel",
+  "event_type": "Diplomatic Event",
+  "involved": [
+    "United States",
+    "Israel"
+  ],
+  "summary": "American F-22 Raptor stealth fighter jets landed at an Israeli Air Force base, according to a single Telegram source. The F-22 is a front-line air superiority platform not typically forward-deployed to allied bases, suggesting an elevated deterrence posture or pre-positioning for potential offensive operations. No official US or Israeli statement has been confirmed at time of reporting.",
+  "primary_markets": [
+    "defense",
+    "airlines"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Lockheed manufactures the F-22 and associated munitions/support contracts; visible US power projection validates continued defense spending and platform relevance."
+    },
+    {
+      "name": "RTX Corporation",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "RTX supplies advanced air-to-air missiles and avionics integral to F-22 combat packages, benefiting from any escalation or surge tasking."
+    },
+    {
+      "name": "Boeing",
+      "ticker": "BA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Boeing produces weapons systems and logistics support for US Air Force forward deployments, gaining from increased operational tempo in the region."
+    },
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Israeli defense electronics firm benefits from deepened US-Israel military integration and potential joint operational requirements."
+    },
+    {
+      "name": "Crude Oil (Brent)",
+      "ticker": "BZ=F",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Forward deployment of stealth fighters raises regional escalation risk premium, supporting a geopolitical risk bid in oil prices."
+    }
+  ],
+  "trade_position": "Buy LMT calls with a 30-60 day expiry as the visible F-22 deployment signals accelerating US Air Force operational commitments and potential munitions drawdown replenishment contracts. The stealth deployment also compresses Israeli risk assets short-term — consider a small tactical long in ESLT.TA as US-Israel interoperability deepens ahead of any Iran-linked operation.",
+  "confidence": "low",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-02-24T18:29:43+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🇺🇸🇮🇱💪American F-22 Raptor stealth fighter jets landed at an Air Force Base in Israel.",
+        "text_orig": "🇺🇸🇮🇱💪American F-22 Raptor stealth fighter jets landed at an Air Force Base in Israel."
+      }
+    ],
+    "media_urls": [
+      "data/IsraelWarRoom/2026-02-24/photos/182943_63.jpg"
+    ]
+  }
+}

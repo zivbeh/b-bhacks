@@ -1,0 +1,71 @@
+{
+  "event_id": "3a29109d",
+  "headline": "Iran Launches Attack on Central Israel Triggering Air Raid Sirens",
+  "timestamp": "2026-03-07T03:03:03+00:00",
+  "location": "Tel Aviv",
+  "event_type": "Attack and Miss",
+  "involved": [
+    "Iran",
+    "Israel"
+  ],
+  "summary": "Air raid sirens were activated across central Israel on March 7, 2026, following what the source describes as an Iranian attack targeting Israeli civilians. The event type is assessed as 'Attack and Miss' pending confirmation of impact, as sirens indicate incoming threats that may have been intercepted by Iron Dome or Arrow defense systems. No confirmed casualties or damage reported at time of this intelligence capture.",
+  "primary_markets": [
+    "defense",
+    "insurance"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT.TA",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Escalating Iranian attacks on Israeli soil drive immediate demand for Israeli air defense and drone interception systems."
+    },
+    {
+      "name": "Rafael Advanced Defense Systems",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Rafael produces Iron Dome and David's Sling interceptors, which see accelerated procurement during active Iranian attack cycles."
+    },
+    {
+      "name": "Israel Aerospace Industries",
+      "ticker": null,
+      "type": "company",
+      "signal": "bullish",
+      "reason": "IAI manufactures Arrow 3 ballistic missile defense systems directly relevant to Iranian ballistic/drone threats."
+    },
+    {
+      "name": "RTX (Raytheon)",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Raytheon co-produces Patriot and is a key US supplier of interceptor missiles that replenish Israeli stockpiles post-engagement."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "LMT supplies F-35s and precision munitions to Israel; escalation with Iran accelerates Israeli defense procurement pipelines."
+    }
+  ],
+  "trade_position": "The least obvious opportunity is in Israeli war-risk insurance premiums: short Harel Insurance (HARL.TA) or Phoenix Holdings (PHOE.TA) as repeated Iranian strikes structurally impair their Israeli real-estate and life insurance books. Simultaneously, the NIS/USD exchange rate will weaken on sustained escalation — a long USD/ILS position offers a clean macro hedge with tight risk parameters.",
+  "confidence": "medium",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-07T03:03:03+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🚨Sirens sounding across central Israel, as the Islamic Republic of Iran attacks Israeli civilians yet again.",
+        "text_orig": "🚨Sirens sounding across central Israel, as the Islamic Republic of Iran attacks Israeli civilians yet again."
+      }
+    ],
+    "media_urls": [
+      "data/IsraelWarRoom/2026-03-07/photos/030303_88.jpg"
+    ]
+  }
+}

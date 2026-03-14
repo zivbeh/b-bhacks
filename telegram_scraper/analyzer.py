@@ -1,11 +1,23 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 """
-Conflict Event Analyzer — library used by run.py.
+Conflict Event Analyzer — library used by run.py and resume.py.
 
-Exported: load_all_messages, group_into_windows, analyze_message_group,
-          load_existing_events, merge_events, save_events, extract_json,
-          DATA_DIR, EVENTS_FILE, QUEUE_FILE, WINDOW_MINUTES
+Not a CLI — import and call directly:
+  from analyzer import analyze_message_group, load_all_messages, group_into_windows
+
+Key functions:
+  analyze_message_group(messages, use_search=False)
+      Send a time-window of messages to Claude. Returns list of event dicts.
+      use_search=True adds web_search tool (slower, richer secondary market data).
+
+  load_all_messages(since, until)    Load JSONL files from data/ into a sorted list.
+  group_into_windows(messages)       Split into 45-min windows by message gap.
+  load_existing_events()             Load all events/<event_id>.json files.
+  merge_events(existing, new)        Deduplicate by content fingerprint.
+  save_events(events)                Write each event to events/<event_id>.json.
+
+Exported constants: DATA_DIR, EVENTS_FILE, QUEUE_FILE, WINDOW_MINUTES
 """
 
 import base64
@@ -234,8 +246,12 @@ def build_raw_input_record(messages: list) -> dict:
 
 # ── Claude analysis ────────────────────────────────────────────────────────────
 
-def analyze_message_group(messages: list) -> list:
-    """Send a group of messages (+ photos) to Claude. Returns list of event dicts."""
+def analyze_message_group(messages: list, use_search: bool = False) -> list:
+    """Send a group of messages (+ photos) to Claude. Returns list of event dicts.
+
+    use_search=True enables web_search tool for real-time verification (slower).
+    Default is False for faster offline analysis.
+    """
     if not messages:
         return []
 
@@ -267,28 +283,34 @@ def analyze_message_group(messages: list) -> list:
             line += f"\n  [media: {DATA_DIR / mf}]"
         lines.append(line)
 
+    search_instruction = (
+        "Use web_search to verify the event, confirm the precise city/location, "
+        "and find currently active companies on affected routes/ports.\n\n"
+        if use_search else
+        "Analyze the reports below using only the provided information.\n\n"
+    )
     content.append({
         "type": "text",
-        "text": (
-            "Analyze these intelligence reports. Use web_search to verify, locate, "
-            "and find currently active companies on affected routes/ports.\n\n"
-            + "\n\n".join(lines)
-        ),
+        "text": f"Analyze these intelligence reports. {search_instruction}" + "\n\n".join(lines),
     })
+
+    tools = [{"type": "web_search_20260209", "name": "web_search"}] if use_search else []
 
     loop_messages = [{"role": "user", "content": content}]
     continuations = 0
-    max_cont      = 6
+    max_cont      = 6 if use_search else 1
 
     while continuations < max_cont:
         try:
-            response = client.messages.create(
+            create_kwargs = dict(
                 model="claude-sonnet-4-6",
                 max_tokens=6000,
                 system=SYSTEM_PROMPT,
-                tools=[{"type": "web_search_20260209", "name": "web_search"}],
                 messages=loop_messages,
             )
+            if tools:
+                create_kwargs["tools"] = tools
+            response = client.messages.create(**create_kwargs)
         except anthropic.RateLimitError:
             strata_bridge.log("  [!] rate limited — waiting 60s...")
             time.sleep(60)
