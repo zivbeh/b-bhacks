@@ -1,0 +1,74 @@
+{
+  "event_id": "7630ecc9",
+  "headline": "Iran Launches Massive Missile Barrage Across All Israel",
+  "timestamp": "2026-03-01T08:17:00+00:00",
+  "location": "Tel Aviv",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Iran",
+    "Israel"
+  ],
+  "summary": "Iran fired dozens of ballistic missiles at Israel targeting cities from the northern Galilee through Tel Aviv to Jerusalem, triggering nationwide Red Alert sirens. A missile struck Beit Shemesh near Jerusalem, killing 9 civilians in a synagogue shelter and injuring over 20. A separate missile struck a building in Tel Aviv, killing 1 and injuring dozens. This is part of Iran's retaliatory wave following the joint US-Israeli military operation launched February 28.",
+  "primary_markets": [
+    "defense",
+    "oil",
+    "shipping routes",
+    "airlines",
+    "insurance"
+  ],
+  "secondary_markets": [
+    {
+      "name": "RTX Corporation (Raytheon)",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Co-manufacturer of Iron Dome interceptors with Rafael; stock already up 4.7% with continued demand for missile-defense systems as Iran sustains barrages."
+    },
+    {
+      "name": "Northrop Grumman",
+      "ticker": "NOC",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Stealth-bomber and missile-defense technologies in high demand; shares surged 6% on initial strike day and war premium persists."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Prime contractor for F-35s actively used in the operation and THAAD missile defense; stock climbed 3.3% with further upside expected."
+    },
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Israel's largest publicly-traded defense company providing precision-guided munitions, UAVs, and electronic warfare systems under record wartime demand."
+    },
+    {
+      "name": "El Al Israel Airlines",
+      "ticker": "ELAL.TA",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Israeli airspace closed, Ben Gurion Airport shut down; antitrust fine for price gouging and fleet grounded with only limited evacuation flights permitted."
+    }
+  ],
+  "trade_position": "Long RTX calls (3-month expiry): as the sole Western Iron Dome interceptor co-manufacturer, every sustained Iranian barrage depletes Israeli Tamir missile stocks and accelerates the $1.25B replenishment contract signed in November 2025. This is a recurring revenue catalyst that compounds with each attack wave.",
+  "confidence": "high",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-01T08:17:34+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "ONCE AGAIN: Iran is attacking civilians across Israel",
+        "text_orig": "ONCE AGAIN: Iran is attacking civilians across Israel"
+      }
+    ],
+    "media_urls": [
+      "/Users/zivbehar/Documents/projects/b-bhacks/telegram_scraper/data/IsraelWarRoom/2026-03-01/photos/081734_71.jpg"
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "event_id": "e057c548",
+  "headline": "Hezbollah Breaks Ceasefire, Fires Rockets at Northern Israel",
+  "timestamp": "2026-03-01T22:00:00Z",
+  "location": "Haifa",
+  "event_type": "Attack and Miss",
+  "involved": [
+    "Hezbollah",
+    "Israel"
+  ],
+  "summary": "Hezbollah fired multiple rockets and drones at northern Israel — targeting a missile defense site south of Haifa — marking the first cross-border attack since the November 2024 ceasefire. The IDF confirmed intercepting at least one projectile, with the remainder falling in open areas. No confirmed structural damage or casualties were reported on the Israeli side.",
+  "primary_markets": [
+    "defense",
+    "insurance"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Elbit is Israel's largest defense electronics supplier; ceasefire collapse and renewed hostilities directly drive Israeli MoD procurement and drone/EW system demand, with shares hitting an all-time high of $829 on March 2."
+    },
+    {
+      "name": "RTX (Raytheon)",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "RTX's Patriot and Iron Dome interceptor production benefits directly from renewed Israeli air defense activation and US Pentagon supplemental budget requests triggered by the widening regional conflict."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Prime contractor for F-35s used in IDF strikes; ceasefire collapse and escalating sortie tempo accelerate munitions and airframe replenishment orders from both Israel and allied nations."
+    },
+    {
+      "name": "Beazley",
+      "ticker": "BEZ.L",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "As a leading Lloyd's war-risk syndicate underwriter, Beazley captures sharply higher premium income as Middle East hull war-risk rates spike over 1000% following the ceasefire collapse."
+    },
+    {
+      "name": "ZIM Integrated Shipping",
+      "ticker": "ZIM",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "As an Israeli-flagged carrier operating Eastern Mediterranean routes, ZIM faces triple the war-risk insurance surcharges of non-Israeli peers plus port avoidance by counterparties, compressing margins."
+    }
+  ],
+  "trade_position": "Long RTX via near-term call options ahead of the expected Pentagon $50B supplemental budget announcement — the ceasefire collapse re-activates Israeli Patriot/interceptor replenishment contracts that RTX is sole-source on. The catalyst is the pending Pentagon budget request, not yet priced into consensus estimates.",
+  "confidence": "high",
+  "sources": [
+    "@IsraelWarRoom",
+    "Times of Israel",
+    "Wikipedia 2026 Lebanon War",
+    "FDD Analysis"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-02T01:46:46+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🚨BREAKING: In response to Hezbollah's rocket fire toward Israel in violation of the ceasefire agreement, the IDF has begun striking Hezbollah targets across Lebanon.\n\nA short while ago, the IDF precisely struck senior Hezbollah terrorists in the Beirut area and a central Hezbollah terrorist in southern Lebanon.",
+        "text_orig": "🚨BREAKING: In response to Hezbollah's rocket fire toward Israel in violation of the ceasefire agreement, the IDF has begun striking Hezbollah targets across Lebanon.\n\nA short while ago, the IDF precisely struck senior Hezbollah terrorists in the Beirut area and a central Hezbollah terrorist in southern Lebanon."
+      }
+    ],
+    "media_urls": []
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "b-bhacks",
+  "version": "1.0.0",
+  "description": "**Real-time conflict intelligence → market signals → automated trading**",
+  "main": "strata.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zivbeh/b-bhacks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/zivbeh/b-bhacks/issues"
+  },
+  "homepage": "https://github.com/zivbeh/b-bhacks#readme",
+  "dependencies": {
+    "mapscii": "^0.3.1"
+  }
+}

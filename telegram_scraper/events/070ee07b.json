@@ -1,0 +1,78 @@
+{
+  "event_id": "070ee07b",
+  "headline": "IDF Kills Hezbollah Intelligence Chief in Beirut Strike",
+  "timestamp": "2026-03-02T01:00:00Z",
+  "location": "Beirut",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Israel",
+    "Hezbollah"
+  ],
+  "summary": "In direct retaliation for Hezbollah's rocket/drone salvo, IDF jets struck the Dahiyeh southern suburbs of Beirut at approximately 03:00 local time. The IDF confirmed the killing of Hussein Makled, described as 'the head of Hezbollah's intelligence headquarters,' responsible for coordinating Hezbollah's intelligence collection infrastructure. A second senior Hezbollah operative was simultaneously struck and killed in southern Lebanon.",
+  "primary_markets": [
+    "defense",
+    "shipping routes",
+    "insurance",
+    "airlines"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "IDF precision strike confirms live-combat use of Elbit targeting and ISR systems; wartime operational tempo sustains record $25B+ order backlog and accelerates new procurement cycles."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "F-35 airstrikes over Beirut demonstrate platform combat effectiveness, reinforcing allied procurement pipelines and US supplemental defense budget allocations."
+    },
+    {
+      "name": "Maersk",
+      "ticker": "MAERSK-B.CO",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Active strikes on Beirut — a key Eastern Mediterranean transshipment hub — disrupt CMA CGM and Maersk Eastern Med port call schedules, forcing costly re-routing and void sailings."
+    },
+    {
+      "name": "Northrop Grumman",
+      "ticker": "NOC",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Shares jumped 6% on March 2 as stealth-bomber and missile-defense technology demand surges with the confirmed re-opening of the Lebanon front and broader Iran-theater escalation."
+    },
+    {
+      "name": "War Risk Insurance Premium (Lloyd's)",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "London's Joint War Committee widened its high-risk zone following the Beirut strikes; hull war-risk premiums for the Eastern Mediterranean are spiking, directly benefiting Lloyd's syndicate underwriters."
+    }
+  ],
+  "trade_position": "Long Beazley (BEZ.L) as the purest listed proxy for surging Lloyd's war-risk premium income — war-risk rates have spiked 1000%+ in the Gulf and are now spreading to the Eastern Mediterranean following the Beirut strikes, yet Beazley's equity has not fully re-rated to reflect this premium windfall. Secondary catalyst: the Joint War Committee's formal expansion of high-risk zones forces mandatory hull war-risk purchases from all transiting operators, creating a structural premium floor.",
+  "confidence": "high",
+  "sources": [
+    "@IsraelWarRoom",
+    "Times of Israel",
+    "Jerusalem Post",
+    "Wikipedia 2026 Lebanon War",
+    "Invezz",
+    "Euronews",
+    "Lloyd's List",
+    "Insurance Journal"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-02T01:46:46+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🚨BREAKING: In response to Hezbollah's rocket fire toward Israel in violation of the ceasefire agreement, the IDF has begun striking Hezbollah targets across Lebanon.\n\nA short while ago, the IDF precisely struck senior Hezbollah terrorists in the Beirut area and a central Hezbollah terrorist in southern Lebanon.",
+        "text_orig": "🚨BREAKING: In response to Hezbollah's rocket fire toward Israel in violation of the ceasefire agreement, the IDF has begun striking Hezbollah targets across Lebanon.\n\nA short while ago, the IDF precisely struck senior Hezbollah terrorists in the Beirut area and a central Hezbollah terrorist in southern Lebanon."
+      }
+    ],
+    "media_urls": []
+  }
+}

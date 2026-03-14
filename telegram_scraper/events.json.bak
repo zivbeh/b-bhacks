@@ -1,0 +1,384 @@
+[
+  {
+    "event_id": "d4c98ffe",
+    "headline": "Iranian Ballistic Missiles Strike Central Israel Killing Ten",
+    "timestamp": "2026-03-01T04:13:00Z",
+    "location": "Tel Aviv",
+    "event_type": "Attack and Hit",
+    "involved": [
+      "Iran",
+      "Israel"
+    ],
+    "summary": "Iran launched multiple waves of ballistic missiles at central Israel on March 1, 2026, in retaliation for the US-Israeli strikes that killed Supreme Leader Khamenei. Confirmed hits include a residential building in Tel Aviv killing one Philippine national and injuring 22+, and a synagogue/bomb shelter in nearby Beit Shemesh killing 9 and injuring 40+. Red Alert sirens activated across the entire central region from Netanya to Hebron, with Israel's multi-layered air defenses (Arrow, David's Sling, Iron Dome) engaging but failing to intercept all threats.",
+    "primary_markets": [
+      "defense",
+      "airlines",
+      "insurance"
+    ],
+    "secondary_markets": [
+      {
+        "name": "Elbit Systems",
+        "ticker": "ESLT",
+        "type": "company",
+        "signal": "bullish",
+        "reason": "Israel's largest public defense firm; wartime demand for EW, UAV, and munitions surging with price target revisions toward $1,200/share."
+      },
+      {
+        "name": "RTX Corporation (Raytheon)",
+        "ticker": "RTX",
+        "type": "company",
+        "signal": "bullish",
+        "reason": "Raytheon-Rafael JV awarded $1.25B Tamir interceptor contract; Iron Dome resupply is critical and accelerating."
+      },
+      {
+        "name": "El Al Israel Airlines",
+        "ticker": "ELAL.TA",
+        "type": "company",
+        "signal": "bearish",
+        "reason": "All flights cancelled through at least March 14; aircraft evacuated from Ben Gurion; thousands of passengers stranded with no revenue."
+      },
+      {
+        "name": "ZIM Integrated Shipping",
+        "ticker": "ZIM",
+        "type": "company",
+        "signal": "bearish",
+        "reason": "Operating Haifa and Ashdod ports under severe pressure; Maersk already halted Haifa calls citing safety risks; pending $4.2B Hapag-Lloyd merger at risk."
+      },
+      {
+        "name": "Gold",
+        "ticker": null,
+        "type": "commodity",
+        "signal": "bullish",
+        "reason": "Safe-haven flows pushed gold past $5,300/oz for first time in history; escalating Iran war drives further upside."
+      }
+    ],
+    "trade_position": "Long RTX (Raytheon) calls: the confirmed penetration of Israel's air defenses by Iranian missiles guarantees emergency interceptor replenishment orders worth billions — Raytheon's Tamir co-production JV is the sole supplier and the $1.25B contract is just the first tranche. Short ELAL.TA as Ben Gurion remains closed indefinitely with no revenue visibility.",
+    "confidence": "high",
+    "sources": [
+      "@IsraelWarRoom"
+    ],
+    "raw_input": {
+      "messages": [
+        {
+          "timestamp": "2026-03-01T04:13:38+00:00",
+          "channel": "IsraelWarRoom",
+          "text_en": "🚨 Initial warning: sirens expected soon across central Israel as the Islamic Republic of Iran launches yet another attack on Israeli civilians",
+          "text_orig": "🚨 Initial warning: sirens expected soon across central Israel as the Islamic Republic of Iran launches yet another attack on Israeli civilians"
+        },
+        {
+          "timestamp": "2026-03-01T04:18:45+00:00",
+          "channel": "IsraelWarRoom",
+          "text_en": "🚨 NOW: Sirens sounding across central Israel as the Iranian regime launches yet another attack on Israeli civilians",
+          "text_orig": "🚨 NOW: Sirens sounding across central Israel as the Iranian regime launches yet another attack on Israeli civilians"
+        }
+      ],
+      "media_urls": [
+        "/Users/zivbehar/Documents/projects/b-bhacks/telegram_scraper/data/IsraelWarRoom/2026-03-01/photos/041338_69.jpg",
+        "/Users/zivbehar/Documents/projects/b-bhacks/telegram_scraper/data/IsraelWarRoom/2026-03-01/photos/041845_70.jpg"
+      ]
+    }
+  },
+  {
+    "event_id": "5d0d5b8d",
+    "headline": "Israel Closes Airspace and Ben Gurion Airport Indefinitely",
+    "timestamp": "2026-03-01T04:00:00Z",
+    "location": "Ben Gurion Airport",
+    "event_type": "Blockade",
+    "involved": [
+      "Israel",
+      "Iran"
+    ],
+    "summary": "Israeli Airports Authority suspended all flights and closed Israeli airspace due to ongoing Iranian ballistic missile strikes on central Israel. El Al evacuated its Boeing 787 and 737 fleet from Ben Gurion Airport, breaking Shabbat protocols. Airspace not expected to reopen until at least March 2, with controlled reopening plan allowing only one aircraft per hour initially. Over 20,000 travelers affected by cancellations across the region including UAE airports.",
+    "primary_markets": [
+      "airlines",
+      "shipping routes",
+      "tourism & hotels"
+    ],
+    "secondary_markets": [
+      {
+        "name": "El Al Israel Airlines",
+        "ticker": "ELAL.TA",
+        "type": "company",
+        "signal": "bearish",
+        "reason": "Full flight suspension through March 14+; fleet dispersed to foreign airports; bookings closed through March 21."
+      },
+      {
+        "name": "Maersk",
+        "ticker": "MAERSK-B.CO",
+        "type": "company",
+        "signal": "bearish",
+        "reason": "Halted Haifa port calls citing Israel-Iran safety risks; re-routing adds cost and transit time for Eastern Mediterranean services."
+      },
+      {
+        "name": "Brent Crude Oil",
+        "ticker": null,
+        "type": "commodity",
+        "signal": "bullish",
+        "reason": "Oil surged above $100/bbl as Strait of Hormuz near-closure removes 20M bbl/day capacity from market; Iran mining the strait compounds supply shock."
+      },
+      {
+        "name": "Hapag-Lloyd",
+        "ticker": "HLAG.DE",
+        "type": "company",
+        "signal": "bearish",
+        "reason": "Suspended Strait of Hormuz operations; pending $4.2B ZIM acquisition faces wartime integration risk and Israeli port disruption."
+      },
+      {
+        "name": "CMA CGM",
+        "ticker": null,
+        "type": "company",
+        "signal": "bearish",
+        "reason": "Issued fresh guidance suspending Strait of Hormuz transits; Eastern Mediterranean and Gulf container services severely disrupted."
+      }
+    ],
+    "trade_position": "Long war-risk insurance-exposed reinsurers (Lancashire Holdings LRE.L, Hiscox HSX.L): US/UK/Israeli-linked vessels now paying 3x normal war-risk premiums with some underwriters refusing to quote entirely — this reprices the entire Middle East marine book upward, a windfall for those still writing policies.",
+    "confidence": "high",
+    "sources": [
+      "@IsraelWarRoom"
+    ],
+    "raw_input": {
+      "messages": [
+        {
+          "timestamp": "2026-03-01T04:13:38+00:00",
+          "channel": "IsraelWarRoom",
+          "text_en": "🚨 Initial warning: sirens expected soon across central Israel as the Islamic Republic of Iran launches yet another attack on Israeli civilians",
+          "text_orig": "🚨 Initial warning: sirens expected soon across central Israel as the Islamic Republic of Iran launches yet another attack on Israeli civilians"
+        },
+        {
+          "timestamp": "2026-03-01T04:18:45+00:00",
+          "channel": "IsraelWarRoom",
+          "text_en": "🚨 NOW: Sirens sounding across central Israel as the Iranian regime launches yet another attack on Israeli civilians",
+          "text_orig": "🚨 NOW: Sirens sounding across central Israel as the Iranian regime launches yet another attack on Israeli civilians"
+        }
+      ],
+      "media_urls": [
+        "/Users/zivbehar/Documents/projects/b-bhacks/telegram_scraper/data/IsraelWarRoom/2026-03-01/photos/041338_69.jpg",
+        "/Users/zivbehar/Documents/projects/b-bhacks/telegram_scraper/data/IsraelWarRoom/2026-03-01/photos/041845_70.jpg"
+      ]
+    }
+  },
+  {
+    "event_id": "7630ecc9",
+    "headline": "Iran Launches Massive Missile Barrage Across All Israel",
+    "timestamp": "2026-03-01T08:17:00+00:00",
+    "location": "Tel Aviv",
+    "event_type": "Attack and Hit",
+    "involved": [
+      "Iran",
+      "Israel"
+    ],
+    "summary": "Iran fired dozens of ballistic missiles at Israel targeting cities from the northern Galilee through Tel Aviv to Jerusalem, triggering nationwide Red Alert sirens. A missile struck Beit Shemesh near Jerusalem, killing 9 civilians in a synagogue shelter and injuring over 20. A separate missile struck a building in Tel Aviv, killing 1 and injuring dozens. This is part of Iran's retaliatory wave following the joint US-Israeli military operation launched February 28.",
+    "primary_markets": [
+      "defense",
+      "oil",
+      "shipping routes",
+      "airlines",
+      "insurance"
+    ],
+    "secondary_markets": [
+      {
+        "name": "RTX Corporation (Raytheon)",
+        "ticker": "RTX",
+        "type": "company",
+        "signal": "bullish",
+        "reason": "Co-manufacturer of Iron Dome interceptors with Rafael; stock already up 4.7% with continued demand for missile-defense systems as Iran sustains barrages."
+      },
+      {
+        "name": "Northrop Grumman",
+        "ticker": "NOC",
+        "type": "company",
+        "signal": "bullish",
+        "reason": "Stealth-bomber and missile-defense technologies in high demand; shares surged 6% on initial strike day and war premium persists."
+      },
+      {
+        "name": "Lockheed Martin",
+        "ticker": "LMT",
+        "type": "company",
+        "signal": "bullish",
+        "reason": "Prime contractor for F-35s actively used in the operation and THAAD missile defense; stock climbed 3.3% with further upside expected."
+      },
+      {
+        "name": "Elbit Systems",
+        "ticker": "ESLT",
+        "type": "company",
+        "signal": "bullish",
+        "reason": "Israel's largest publicly-traded defense company providing precision-guided munitions, UAVs, and electronic warfare systems under record wartime demand."
+      },
+      {
+        "name": "El Al Israel Airlines",
+        "ticker": "ELAL.TA",
+        "type": "company",
+        "signal": "bearish",
+        "reason": "Israeli airspace closed, Ben Gurion Airport shut down; antitrust fine for price gouging and fleet grounded with only limited evacuation flights permitted."
+      }
+    ],
+    "trade_position": "Long RTX calls (3-month expiry): as the sole Western Iron Dome interceptor co-manufacturer, every sustained Iranian barrage depletes Israeli Tamir missile stocks and accelerates the $1.25B replenishment contract signed in November 2025. This is a recurring revenue catalyst that compounds with each attack wave.",
+    "confidence": "high",
+    "sources": [
+      "@IsraelWarRoom"
+    ],
+    "raw_input": {
+      "messages": [
+        {
+          "timestamp": "2026-03-01T08:17:34+00:00",
+          "channel": "IsraelWarRoom",
+          "text_en": "ONCE AGAIN: Iran is attacking civilians across Israel",
+          "text_orig": "ONCE AGAIN: Iran is attacking civilians across Israel"
+        }
+      ],
+      "media_urls": [
+        "/Users/zivbehar/Documents/projects/b-bhacks/telegram_scraper/data/IsraelWarRoom/2026-03-01/photos/081734_71.jpg"
+      ]
+    }
+  },
+  {
+    "event_id": "e057c548",
+    "headline": "Hezbollah Breaks Ceasefire, Fires Rockets at Northern Israel",
+    "timestamp": "2026-03-01T22:00:00Z",
+    "location": "Haifa",
+    "event_type": "Attack and Miss",
+    "involved": [
+      "Hezbollah",
+      "Israel"
+    ],
+    "summary": "Hezbollah fired multiple rockets and drones at northern Israel — targeting a missile defense site south of Haifa — marking the first cross-border attack since the November 2024 ceasefire. The IDF confirmed intercepting at least one projectile, with the remainder falling in open areas. No confirmed structural damage or casualties were reported on the Israeli side.",
+    "primary_markets": [
+      "defense",
+      "insurance"
+    ],
+    "secondary_markets": [
+      {
+        "name": "Elbit Systems",
+        "ticker": "ESLT",
+        "type": "company",
+        "signal": "bullish",
+        "reason": "Elbit is Israel's largest defense electronics supplier; ceasefire collapse and renewed hostilities directly drive Israeli MoD procurement and drone/EW system demand, with shares hitting an all-time high of $829 on March 2."
+      },
+      {
+        "name": "RTX (Raytheon)",
+        "ticker": "RTX",
+        "type": "company",
+        "signal": "bullish",
+        "reason": "RTX's Patriot and Iron Dome interceptor production benefits directly from renewed Israeli air defense activation and US Pentagon supplemental budget requests triggered by the widening regional conflict."
+      },
+      {
+        "name": "Lockheed Martin",
+        "ticker": "LMT",
+        "type": "company",
+        "signal": "bullish",
+        "reason": "Prime contractor for F-35s used in IDF strikes; ceasefire collapse and escalating sortie tempo accelerate munitions and airframe replenishment orders from both Israel and allied nations."
+      },
+      {
+        "name": "Beazley",
+        "ticker": "BEZ.L",
+        "type": "company",
+        "signal": "bullish",
+        "reason": "As a leading Lloyd's war-risk syndicate underwriter, Beazley captures sharply higher premium income as Middle East hull war-risk rates spike over 1000% following the ceasefire collapse."
+      },
+      {
+        "name": "ZIM Integrated Shipping",
+        "ticker": "ZIM",
+        "type": "company",
+        "signal": "bearish",
+        "reason": "As an Israeli-flagged carrier operating Eastern Mediterranean routes, ZIM faces triple the war-risk insurance surcharges of non-Israeli peers plus port avoidance by counterparties, compressing margins."
+      }
+    ],
+    "trade_position": "Long RTX via near-term call options ahead of the expected Pentagon $50B supplemental budget announcement — the ceasefire collapse re-activates Israeli Patriot/interceptor replenishment contracts that RTX is sole-source on. The catalyst is the pending Pentagon budget request, not yet priced into consensus estimates.",
+    "confidence": "high",
+    "sources": [
+      "@IsraelWarRoom",
+      "Times of Israel",
+      "Wikipedia 2026 Lebanon War",
+      "FDD Analysis"
+    ],
+    "raw_input": {
+      "messages": [
+        {
+          "timestamp": "2026-03-02T01:46:46+00:00",
+          "channel": "IsraelWarRoom",
+          "text_en": "🚨BREAKING: In response to Hezbollah's rocket fire toward Israel in violation of the ceasefire agreement, the IDF has begun striking Hezbollah targets across Lebanon.\n\nA short while ago, the IDF precisely struck senior Hezbollah terrorists in the Beirut area and a central Hezbollah terrorist in southern Lebanon.",
+          "text_orig": "🚨BREAKING: In response to Hezbollah's rocket fire toward Israel in violation of the ceasefire agreement, the IDF has begun striking Hezbollah targets across Lebanon.\n\nA short while ago, the IDF precisely struck senior Hezbollah terrorists in the Beirut area and a central Hezbollah terrorist in southern Lebanon."
+        }
+      ],
+      "media_urls": []
+    }
+  },
+  {
+    "event_id": "070ee07b",
+    "headline": "IDF Kills Hezbollah Intelligence Chief in Beirut Strike",
+    "timestamp": "2026-03-02T01:00:00Z",
+    "location": "Beirut",
+    "event_type": "Attack and Hit",
+    "involved": [
+      "Israel",
+      "Hezbollah"
+    ],
+    "summary": "In direct retaliation for Hezbollah's rocket/drone salvo, IDF jets struck the Dahiyeh southern suburbs of Beirut at approximately 03:00 local time. The IDF confirmed the killing of Hussein Makled, described as 'the head of Hezbollah's intelligence headquarters,' responsible for coordinating Hezbollah's intelligence collection infrastructure. A second senior Hezbollah operative was simultaneously struck and killed in southern Lebanon.",
+    "primary_markets": [
+      "defense",
+      "shipping routes",
+      "insurance",
+      "airlines"
+    ],
+    "secondary_markets": [
+      {
+        "name": "Elbit Systems",
+        "ticker": "ESLT",
+        "type": "company",
+        "signal": "bullish",
+        "reason": "IDF precision strike confirms live-combat use of Elbit targeting and ISR systems; wartime operational tempo sustains record $25B+ order backlog and accelerates new procurement cycles."
+      },
+      {
+        "name": "Lockheed Martin",
+        "ticker": "LMT",
+        "type": "company",
+        "signal": "bullish",
+        "reason": "F-35 airstrikes over Beirut demonstrate platform combat effectiveness, reinforcing allied procurement pipelines and US supplemental defense budget allocations."
+      },
+      {
+        "name": "Maersk",
+        "ticker": "MAERSK-B.CO",
+        "type": "company",
+        "signal": "bearish",
+        "reason": "Active strikes on Beirut — a key Eastern Mediterranean transshipment hub — disrupt CMA CGM and Maersk Eastern Med port call schedules, forcing costly re-routing and void sailings."
+      },
+      {
+        "name": "Northrop Grumman",
+        "ticker": "NOC",
+        "type": "company",
+        "signal": "bullish",
+        "reason": "Shares jumped 6% on March 2 as stealth-bomber and missile-defense technology demand surges with the confirmed re-opening of the Lebanon front and broader Iran-theater escalation."
+      },
+      {
+        "name": "War Risk Insurance Premium (Lloyd's)",
+        "ticker": null,
+        "type": "commodity",
+        "signal": "bullish",
+        "reason": "London's Joint War Committee widened its high-risk zone following the Beirut strikes; hull war-risk premiums for the Eastern Mediterranean are spiking, directly benefiting Lloyd's syndicate underwriters."
+      }
+    ],
+    "trade_position": "Long Beazley (BEZ.L) as the purest listed proxy for surging Lloyd's war-risk premium income — war-risk rates have spiked 1000%+ in the Gulf and are now spreading to the Eastern Mediterranean following the Beirut strikes, yet Beazley's equity has not fully re-rated to reflect this premium windfall. Secondary catalyst: the Joint War Committee's formal expansion of high-risk zones forces mandatory hull war-risk purchases from all transiting operators, creating a structural premium floor.",
+    "confidence": "high",
+    "sources": [
+      "@IsraelWarRoom",
+      "Times of Israel",
+      "Jerusalem Post",
+      "Wikipedia 2026 Lebanon War",
+      "Invezz",
+      "Euronews",
+      "Lloyd's List",
+      "Insurance Journal"
+    ],
+    "raw_input": {
+      "messages": [
+        {
+          "timestamp": "2026-03-02T01:46:46+00:00",
+          "channel": "IsraelWarRoom",
+          "text_en": "🚨BREAKING: In response to Hezbollah's rocket fire toward Israel in violation of the ceasefire agreement, the IDF has begun striking Hezbollah targets across Lebanon.\n\nA short while ago, the IDF precisely struck senior Hezbollah terrorists in the Beirut area and a central Hezbollah terrorist in southern Lebanon.",
+          "text_orig": "🚨BREAKING: In response to Hezbollah's rocket fire toward Israel in violation of the ceasefire agreement, the IDF has begun striking Hezbollah targets across Lebanon.\n\nA short while ago, the IDF precisely struck senior Hezbollah terrorists in the Beirut area and a central Hezbollah terrorist in southern Lebanon."
+        }
+      ],
+      "media_urls": []
+    }
+  }
+]

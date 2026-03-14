@@ -1,0 +1,232 @@
+{
+  "event_id": "25e45732",
+  "headline": "IDF Kills Hezbollah Intelligence Chief Hussein Makled in Beirut",
+  "timestamp": "2026-03-02T00:00:00Z",
+  "location": "Beirut",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Israel",
+    "Hezbollah"
+  ],
+  "summary": "The IDF confirmed a precision airstrike in the Dahieh district of Beirut killed Hussein Makled (also transliterated Moukalled/Maklad), head of Hezbollah's intelligence headquarters, responsible for intelligence collection and targeting assessments against IDF forces. The strike occurred in the early hours of March 2, 2026, amid a broader escalation following the collapse of the November 2024 ceasefire, with Hezbollah having fired over 210 missiles into Israel since March 2; no confirmed civilian casualty count at Dahieh specifically, though nearby structures were damaged.",
+  "primary_markets": [
+    "defense",
+    "insurance",
+    "airlines",
+    "shipping routes"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Primary Israeli defense electronics supplier with $2.3B+ in active contracts; escalating Lebanon operations drive sustained IDF procurement demand."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Key IDF supplier (F-35, MLRS systems); high-tempo precision-strike operations in Beirut accelerate munitions and platform replenishment cycles."
+    },
+    {
+      "name": "CMA CGM",
+      "ticker": "CGA.PA",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "One of the top shipping operators serving Beirut port; renewed IDF strikes raise war-risk exposure and may force further Eastern Mediterranean route suspensions."
+    },
+    {
+      "name": "Hapag-Lloyd",
+      "ticker": "HLAG.DE",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Active Mediterranean operator already rerouting cargo around conflict zones; Beirut strike escalation compounds operational disruption and insurance cost inflation."
+    },
+    {
+      "name": "War-Risk Insurance Premiums (Lloyd's JWC)",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "London market JWC has already expanded high-risk zones across the Eastern Mediterranean; Beirut strike intensifies upward pressure on war-risk premiums for vessels and aircraft."
+    }
+  ],
+  "trade_position": "The highest-conviction hidden opportunity is long on marine war-risk reinsurance proxies (e.g., Beazley BEZ.L or Lancashire LRE.L): as the JWC widens the Eastern Mediterranean risk zone following the Beirut strike, primary insurers will cede more risk upward, inflating reinsurer premiums with minimal offsetting claims if shipping avoids the zone entirely — a classic premium-without-loss scenario.",
+  "confidence": "high",
+  "sources": [
+    "@StrataIntel",
+    "Times of Israel",
+    "Naharnet",
+    "Wikipedia/2026 Lebanon war",
+    "JPost",
+    "FDD Analysis"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-14T19:50:09+00:00",
+        "channel": "StrataIntel",
+        "text_en": "`IDF Kills Hezbollah Intelligence Chief in Beirut Strike`",
+        "text_orig": "`IDF Kills Hezbollah Intelligence Chief in Beirut Strike`"
+      }
+    ],
+    "media_urls": []
+  },
+  "polymarket_trades": {
+    "primary": [
+      {
+        "rank": 1,
+        "market": "Will Iran strike Israel on March 10?",
+        "url": "https://polymarket.com/event/will-iran-strike-israel-on-march-10",
+        "trade": "BUY YES",
+        "current_price": 0.9965,
+        "reasoning": "The IDF killing of Hezbollah's intelligence chief in Beirut, combined with 210+ missiles already fired and the ceasefire collapse, makes an Iranian retaliatory strike imminent and this market is already pricing near-certainty — hold/confirm position.",
+        "urgency": "immediate",
+        "volume_usd": 7650576
+      },
+      {
+        "rank": 2,
+        "market": "Will Iran strike Dimona by March 31?",
+        "url": "https://polymarket.com/event/will-iran-strike-dimona-by-march-31",
+        "trade": "BUY YES",
+        "current_price": 0.08,
+        "reasoning": "Eliminating Hezbollah's intelligence chief — who was directly targeting IDF assets — dramatically escalates Israeli-Iranian hostilities and increases probability of Iran escalating to striking Israel's nuclear facility as a symbolic counter-strike.",
+        "urgency": "short-term",
+        "volume_usd": 89961
+      },
+      {
+        "rank": 3,
+        "market": "Will Hezbollah disarm by December 31?",
+        "url": "https://polymarket.com/event/will-hezbollah-disarm-by-december-31",
+        "trade": "BUY NO",
+        "current_price": 0.655,
+        "reasoning": "Killing Hezbollah's intelligence chief will harden the organization's resolve and trigger internal succession dynamics that make disarmament politically impossible in the near term.",
+        "urgency": "immediate",
+        "volume_usd": 9206
+      },
+      {
+        "rank": 4,
+        "market": "Will Crude Oil (CL) hit (HIGH) $140 by end of March?",
+        "url": "https://polymarket.com/event/will-crude-oil-cl-hit-high-140-by-end-of-march",
+        "trade": "BUY YES",
+        "current_price": 0.245,
+        "reasoning": "A precision strike on Hezbollah's intelligence HQ in Beirut amid active missile exchanges materially raises the probability of Strait of Hormuz disruption and regional oil supply shock pushing crude toward $140.",
+        "urgency": "short-term",
+        "volume_usd": 956724
+      },
+      {
+        "rank": 5,
+        "market": "US x Iran ceasefire by March 31?",
+        "url": "https://polymarket.com/event/us-x-iran-ceasefire-by-march-31",
+        "trade": "BUY NO",
+        "current_price": 0.855,
+        "reasoning": "Israel's assassination of a senior Hezbollah intelligence commander in Beirut makes any near-term US-Iran ceasefire politically untenable as both sides escalate, confirming the NO side remains undervalued.",
+        "urgency": "immediate",
+        "volume_usd": 8452318
+      }
+    ],
+    "secondary": [
+      {
+        "rank": 1,
+        "market": "Will Israel strike 4 countries in 2026?",
+        "url": "https://polymarket.com/event/will-israel-strike-4-countries-in-2026",
+        "trade": "BUY YES",
+        "current_price": 0.332,
+        "reasoning": "Each high-profile Hezbollah leadership kill in Beirut (Lebanon = 1 country) combined with ongoing Iran and Yemen operations edges Israel closer to the 4-country threshold, and this strike is fresh evidence of operational tempo.",
+        "urgency": "short-term",
+        "volume_usd": 832977
+      },
+      {
+        "rank": 2,
+        "market": "Will 20 ships transit the Strait of Hormuz on any day in March?",
+        "url": "https://polymarket.com/event/will-20-ships-transit-the-strait-of-hormuz-on-any-day-in-march",
+        "trade": "BUY NO",
+        "current_price": 0.665,
+        "reasoning": "Escalating Hezbollah-Israel hostilities with Iranian proxy involvement directly raises war-risk insurance premiums and incentivizes shipping companies to reduce or delay Hormuz transits, suppressing daily transit counts.",
+        "urgency": "short-term",
+        "volume_usd": 99029
+      },
+      {
+        "rank": 3,
+        "market": "US-Iran nuclear deal by June 30?",
+        "url": "https://polymarket.com/event/us-iran-nuclear-deal-by-june-30",
+        "trade": "BUY NO",
+        "current_price": 0.205,
+        "reasoning": "Israel killing Hezbollah's intelligence chief eliminates diplomatic space for US-Iran nuclear negotiations as Tehran faces internal pressure to respond militarily rather than engage diplomatically.",
+        "urgency": "short-term",
+        "volume_usd": 823578
+      },
+      {
+        "rank": 4,
+        "market": "Iran x Israel/US conflict ends by December 31?",
+        "url": "https://polymarket.com/event/iran-x-israelus-conflict-ends-by-december-31",
+        "trade": "BUY NO",
+        "current_price": 0.165,
+        "reasoning": "Decapitating Hezbollah's intelligence leadership guarantees Iranian retaliation and a prolonged conflict cycle, making a December 2026 resolution far less likely than the market's current 83.5% YES implies.",
+        "urgency": "immediate",
+        "volume_usd": 9498
+      },
+      {
+        "rank": 5,
+        "market": "Israel and Saudi Arabia normalize relations before 2027?",
+        "url": "https://polymarket.com/event/israel-and-saudi-arabia-normalize-relations-before-2027",
+        "trade": "BUY NO",
+        "current_price": 0.815,
+        "reasoning": "Airstrikes in Beirut's densely populated Dahieh district generate regional Arab political backlash that makes Saudi normalization with Israel domestically toxic for Riyadh in this timeframe.",
+        "urgency": "medium-term",
+        "volume_usd": 89482
+      },
+      {
+        "rank": 6,
+        "market": "Will any European country expel an Israeli ambassador by March 31?",
+        "url": "https://polymarket.com/event/will-any-european-country-expel-an-israeli-ambassador-by-march-31",
+        "trade": "BUY YES",
+        "current_price": 0.076,
+        "reasoning": "A precision strike killing a named intelligence chief in a civilian district of Beirut will generate fresh European diplomatic outrage, and several EU governments are already at the threshold of expulsion actions.",
+        "urgency": "short-term",
+        "volume_usd": 79509
+      },
+      {
+        "rank": 7,
+        "market": "Will the Bank of Israel make no change to the Bank of Israel Interest Rate after the March decision?",
+        "url": "https://polymarket.com/event/will-the-bank-of-israel-make-no-change-to-the-bank-of-israel-interest-rate-after-the-march-decision",
+        "trade": "BUY NO",
+        "current_price": 0.13,
+        "reasoning": "Renewed Hezbollah missile barrages into Israel following this assassination will force the Bank of Israel to consider emergency rate adjustments to stabilize the shekel under war-economy pressures.",
+        "urgency": "medium-term",
+        "volume_usd": 8582
+      },
+      {
+        "rank": 8,
+        "market": "Will Crude Oil (CL) settle at $60-$65 in March?",
+        "url": "https://polymarket.com/event/will-crude-oil-cl-settle-at-60-65-in-march",
+        "trade": "BUY NO",
+        "current_price": 0.987,
+        "reasoning": "An active Lebanon-Israel war with Iranian proxy involvement and Hormuz risk spikes make a sub-$65 crude settlement in March extremely improbable — this NO is already near max but confirms the directional thesis.",
+        "urgency": "immediate",
+        "volume_usd": 77145
+      },
+      {
+        "rank": 9,
+        "market": "Israel x Turkey military clash before 2027?",
+        "url": "https://polymarket.com/event/israel-x-turkey-military-clash-before-2027",
+        "trade": "BUY YES",
+        "current_price": 0.225,
+        "reasoning": "Turkish President Erdogan has consistently threatened intervention when Israel conducts high-profile strikes in Arab capitals; the Dahieh airstrike raises the temperature on this political tripwire significantly.",
+        "urgency": "medium-term",
+        "volume_usd": 76070
+      },
+      {
+        "rank": 10,
+        "market": "Will the Iranian regime fall before 2027?",
+        "url": "https://polymarket.com/event/will-the-iranian-regime-fall-before-2027",
+        "trade": "BUY YES",
+        "current_price": 0.375,
+        "reasoning": "Sustained elimination of Iran's proxy command infrastructure (Hezbollah intelligence chief killed) combined with US military pressure creates the conditions for internal Iranian instability that could cascade into regime collapse.",
+        "urgency": "medium-term",
+        "volume_usd": 9786915
+      }
+    ]
+  }
+}

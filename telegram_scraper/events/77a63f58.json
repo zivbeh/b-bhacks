@@ -1,0 +1,126 @@
+{
+  "event_id": "77a63f58",
+  "headline": "Hezbollah Fires Rockets at Israel, Breaking 2024 Ceasefire",
+  "timestamp": "2026-03-02T00:30:00Z",
+  "location": "Haifa",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Hezbollah",
+    "Israel"
+  ],
+  "summary": "Hezbollah launched multiple rockets and drones toward northern Israel on the night of March 1–2, 2026, targeting a missile defense site south of Haifa — the first such attack since the US-brokered ceasefire came into effect in November 2024. The attack constituted a formal ceasefire violation and was the trigger for Israel's subsequent broad strike campaign across Lebanon. Lebanese President Joseph Aoun publicly criticized Hezbollah for violating its commitment to neutrality and called on the Lebanese Armed Forces to seize Hezbollah's weapons, indicating deepening political fracture within Lebanon over Hezbollah's unilateral military action.",
+  "primary_markets": [
+    "defense",
+    "oil",
+    "gold"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Brent Crude",
+      "ticker": "BZ=F",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Ceasefire collapse elevates Iran-Israel escalation risk, with Brent already up ~10% since broader regional conflict resumed; Hezbollah rocket fire reinforces upward price pressure."
+    },
+    {
+      "name": "Gold Spot",
+      "ticker": "GC=F",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Resumption of direct Hezbollah-Israel hostilities accelerates safe-haven demand flows into gold as Middle East risk premium re-prices upward."
+    },
+    {
+      "name": "SPDR S&P Aerospace & Defense ETF",
+      "ticker": "XAR",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Broad-based escalation benefits the full US defense industrial base supplying Israel and the US military assets deployed to the region."
+    },
+    {
+      "name": "El Al Israel Airlines",
+      "ticker": "ELAL.TA",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Rocket fire toward northern Israel and expanding ground campaign will trigger airspace restrictions and insurance surcharges, suppressing passenger traffic and load factors."
+    },
+    {
+      "name": "ZIM Integrated Shipping",
+      "ticker": "ZIM",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Israeli-domiciled shipper with Eastern Mediterranean exposure faces elevated war-risk premiums and possible port disruption at Haifa as Hezbollah resumes offensive operations."
+    }
+  ],
+  "trade_position": "The non-obvious position is short ZIM (NYSE: ZIM) on the basis that Haifa port — Israel's primary commercial gateway — is now a declared Hezbollah target; even a single successful strike or extended rocket-threat closure would cause severe booking cancellations and cargo diversions that consensus has not yet priced in. Hedge with a long in gold futures (GC=F) as the ceasefire collapse is a structural shift, not a one-day event, ensuring sustained safe-haven demand regardless of near-term tactical de-escalation.",
+  "confidence": "high",
+  "sources": [
+    "@IsraelWarRoom",
+    "Times of Israel",
+    "CNN",
+    "Al Jazeera",
+    "ACLED"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-02T01:46:46+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🚨BREAKING: In response to Hezbollah's rocket fire toward Israel in violation of the ceasefire agreement, the IDF has begun striking Hezbollah targets across Lebanon.\n\nA short while ago, the IDF precisely struck senior Hezbollah terrorists in the Beirut area and a central Hezbollah terrorist in southern Lebanon.",
+        "text_orig": "🚨BREAKING: In response to Hezbollah's rocket fire toward Israel in violation of the ceasefire agreement, the IDF has begun striking Hezbollah targets across Lebanon.\n\nA short while ago, the IDF precisely struck senior Hezbollah terrorists in the Beirut area and a central Hezbollah terrorist in southern Lebanon."
+      }
+    ],
+    "media_urls": []
+  },
+  "polymarket_trades": [
+    {
+      "rank": 1,
+      "market": "Will Hezbollah disarm by December 31?",
+      "url": "https://polymarket.com/event/will-hezbollah-disarm-by-december-31",
+      "trade": "BUY NO",
+      "current_price": 0.655,
+      "reasoning": "Hezbollah just fired rockets at Israel breaking the ceasefire, making disarmament by year-end virtually impossible as full conflict has resumed.",
+      "urgency": "immediate",
+      "volume_usd": 9206
+    },
+    {
+      "rank": 2,
+      "market": "Will Israel strike 4 countries in 2026?",
+      "url": "https://polymarket.com/event/will-israel-strike-4-countries-in-2026",
+      "trade": "BUY YES",
+      "current_price": 0.33,
+      "reasoning": "Israel has now launched a broad strike campaign across Lebanon in retaliation, adding Lebanon to its 2026 target list alongside Gaza, Yemen, and likely Iran, making 4-country threshold increasingly reachable.",
+      "urgency": "immediate",
+      "volume_usd": 832977
+    },
+    {
+      "rank": 3,
+      "market": "Will Crude Oil (CL) hit (HIGH) $140 by end of March?",
+      "url": "https://polymarket.com/event/will-crude-oil-cl-hit-high-140-by-end-of-march",
+      "trade": "BUY YES",
+      "current_price": 0.255,
+      "reasoning": "A full Israel-Hezbollah war resumption with Iranian proxy involvement dramatically raises Strait of Hormuz disruption risk and regional supply shock probability within the March timeframe.",
+      "urgency": "immediate",
+      "volume_usd": 956469
+    },
+    {
+      "rank": 4,
+      "market": "Will Iran strike Dimona by March 31?",
+      "url": "https://polymarket.com/event/will-iran-strike-dimona-by-march-31",
+      "trade": "BUY YES",
+      "current_price": 0.075,
+      "reasoning": "Hezbollah's ceasefire break and Israel's broad retaliatory strikes on Lebanon significantly raise the probability of Iranian direct intervention targeting Israel's nuclear facility within weeks.",
+      "urgency": "short-term",
+      "volume_usd": 89716
+    },
+    {
+      "rank": 5,
+      "market": "US x Iran ceasefire by March 31?",
+      "url": "https://polymarket.com/event/us-x-iran-ceasefire-by-march-31",
+      "trade": "BUY NO",
+      "current_price": 0.855,
+      "reasoning": "Hezbollah's attack and Israel's broad Lebanon strikes will harden US-Iran tensions, making any ceasefire framework by March 31 essentially impossible as the conflict widens.",
+      "urgency": "immediate",
+      "volume_usd": 8450596
+    }
+  ]
+}

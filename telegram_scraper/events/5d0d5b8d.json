@@ -1,0 +1,79 @@
+{
+  "event_id": "5d0d5b8d",
+  "headline": "Israel Closes Airspace and Ben Gurion Airport Indefinitely",
+  "timestamp": "2026-03-01T04:00:00Z",
+  "location": "Ben Gurion Airport",
+  "event_type": "Blockade",
+  "involved": [
+    "Israel",
+    "Iran"
+  ],
+  "summary": "Israeli Airports Authority suspended all flights and closed Israeli airspace due to ongoing Iranian ballistic missile strikes on central Israel. El Al evacuated its Boeing 787 and 737 fleet from Ben Gurion Airport, breaking Shabbat protocols. Airspace not expected to reopen until at least March 2, with controlled reopening plan allowing only one aircraft per hour initially. Over 20,000 travelers affected by cancellations across the region including UAE airports.",
+  "primary_markets": [
+    "airlines",
+    "shipping routes",
+    "tourism & hotels"
+  ],
+  "secondary_markets": [
+    {
+      "name": "El Al Israel Airlines",
+      "ticker": "ELAL.TA",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Full flight suspension through March 14+; fleet dispersed to foreign airports; bookings closed through March 21."
+    },
+    {
+      "name": "Maersk",
+      "ticker": "MAERSK-B.CO",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Halted Haifa port calls citing Israel-Iran safety risks; re-routing adds cost and transit time for Eastern Mediterranean services."
+    },
+    {
+      "name": "Brent Crude Oil",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Oil surged above $100/bbl as Strait of Hormuz near-closure removes 20M bbl/day capacity from market; Iran mining the strait compounds supply shock."
+    },
+    {
+      "name": "Hapag-Lloyd",
+      "ticker": "HLAG.DE",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Suspended Strait of Hormuz operations; pending $4.2B ZIM acquisition faces wartime integration risk and Israeli port disruption."
+    },
+    {
+      "name": "CMA CGM",
+      "ticker": null,
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Issued fresh guidance suspending Strait of Hormuz transits; Eastern Mediterranean and Gulf container services severely disrupted."
+    }
+  ],
+  "trade_position": "Long war-risk insurance-exposed reinsurers (Lancashire Holdings LRE.L, Hiscox HSX.L): US/UK/Israeli-linked vessels now paying 3x normal war-risk premiums with some underwriters refusing to quote entirely — this reprices the entire Middle East marine book upward, a windfall for those still writing policies.",
+  "confidence": "high",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-01T04:13:38+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🚨 Initial warning: sirens expected soon across central Israel as the Islamic Republic of Iran launches yet another attack on Israeli civilians",
+        "text_orig": "🚨 Initial warning: sirens expected soon across central Israel as the Islamic Republic of Iran launches yet another attack on Israeli civilians"
+      },
+      {
+        "timestamp": "2026-03-01T04:18:45+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🚨 NOW: Sirens sounding across central Israel as the Iranian regime launches yet another attack on Israeli civilians",
+        "text_orig": "🚨 NOW: Sirens sounding across central Israel as the Iranian regime launches yet another attack on Israeli civilians"
+      }
+    ],
+    "media_urls": [
+      "/Users/zivbehar/Documents/projects/b-bhacks/telegram_scraper/data/IsraelWarRoom/2026-03-01/photos/041338_69.jpg",
+      "/Users/zivbehar/Documents/projects/b-bhacks/telegram_scraper/data/IsraelWarRoom/2026-03-01/photos/041845_70.jpg"
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "event_id": "d4c98ffe",
+  "headline": "Iranian Ballistic Missiles Strike Central Israel Killing Ten",
+  "timestamp": "2026-03-01T04:13:00Z",
+  "location": "Tel Aviv",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Iran",
+    "Israel"
+  ],
+  "summary": "Iran launched multiple waves of ballistic missiles at central Israel on March 1, 2026, in retaliation for the US-Israeli strikes that killed Supreme Leader Khamenei. Confirmed hits include a residential building in Tel Aviv killing one Philippine national and injuring 22+, and a synagogue/bomb shelter in nearby Beit Shemesh killing 9 and injuring 40+. Red Alert sirens activated across the entire central region from Netanya to Hebron, with Israel's multi-layered air defenses (Arrow, David's Sling, Iron Dome) engaging but failing to intercept all threats.",
+  "primary_markets": [
+    "defense",
+    "airlines",
+    "insurance"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Israel's largest public defense firm; wartime demand for EW, UAV, and munitions surging with price target revisions toward $1,200/share."
+    },
+    {
+      "name": "RTX Corporation (Raytheon)",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Raytheon-Rafael JV awarded $1.25B Tamir interceptor contract; Iron Dome resupply is critical and accelerating."
+    },
+    {
+      "name": "El Al Israel Airlines",
+      "ticker": "ELAL.TA",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "All flights cancelled through at least March 14; aircraft evacuated from Ben Gurion; thousands of passengers stranded with no revenue."
+    },
+    {
+      "name": "ZIM Integrated Shipping",
+      "ticker": "ZIM",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Operating Haifa and Ashdod ports under severe pressure; Maersk already halted Haifa calls citing safety risks; pending $4.2B Hapag-Lloyd merger at risk."
+    },
+    {
+      "name": "Gold",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Safe-haven flows pushed gold past $5,300/oz for first time in history; escalating Iran war drives further upside."
+    }
+  ],
+  "trade_position": "Long RTX (Raytheon) calls: the confirmed penetration of Israel's air defenses by Iranian missiles guarantees emergency interceptor replenishment orders worth billions — Raytheon's Tamir co-production JV is the sole supplier and the $1.25B contract is just the first tranche. Short ELAL.TA as Ben Gurion remains closed indefinitely with no revenue visibility.",
+  "confidence": "high",
+  "sources": [
+    "@IsraelWarRoom"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-01T04:13:38+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🚨 Initial warning: sirens expected soon across central Israel as the Islamic Republic of Iran launches yet another attack on Israeli civilians",
+        "text_orig": "🚨 Initial warning: sirens expected soon across central Israel as the Islamic Republic of Iran launches yet another attack on Israeli civilians"
+      },
+      {
+        "timestamp": "2026-03-01T04:18:45+00:00",
+        "channel": "IsraelWarRoom",
+        "text_en": "🚨 NOW: Sirens sounding across central Israel as the Iranian regime launches yet another attack on Israeli civilians",
+        "text_orig": "🚨 NOW: Sirens sounding across central Israel as the Iranian regime launches yet another attack on Israeli civilians"
+      }
+    ],
+    "media_urls": [
+      "/Users/zivbehar/Documents/projects/b-bhacks/telegram_scraper/data/IsraelWarRoom/2026-03-01/photos/041338_69.jpg",
+      "/Users/zivbehar/Documents/projects/b-bhacks/telegram_scraper/data/IsraelWarRoom/2026-03-01/photos/041845_70.jpg"
+    ]
+  }
+}

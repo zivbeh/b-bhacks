@@ -1,0 +1,8 @@
+telethon==1.36.0
+deep-translator==1.11.4
+aiofiles==24.1.0
+python-dotenv==1.0.1
+langdetect==1.0.9
+anthropic>=0.40.0
+requests>=2.31.0
+py-clob-client>=0.17.0

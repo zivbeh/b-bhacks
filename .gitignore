@@ -1,0 +1,4 @@
+.env
+.claude
+me_watcher.session
+/node_modules
