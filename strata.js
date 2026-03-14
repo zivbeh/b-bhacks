@@ -64,11 +64,25 @@ const canvasWidth   = MAP_W * 2;
 const canvasHeight  = (mapHeight - 1) * 4;
 
 // ── State ─────────────────────────────────────────────────────────────────────
-const incidents   = [];
-const feedLines   = [];
+const incidents   = [];  // { lat, lon, col, row, headline, summary, event_type, confidence, location, ts, pmUrl }
+const feedLines   = [];  // AI event entries: {t, text}
 let   totalEvents = 0;
 const countrySeen = new Set();
 let   lastEventInfo = '';
+
+// Popup state — shown when user clicks a red dot
+let popup = null;  // null | { incident, boxCol, boxRow }
+
+// Telegram message feed (structured, from /telegram endpoint)
+const telegramMsgs = [];  // [{ts, channel, text, mediaPath, mediaType, expanded}]
+const leftPanelRowMap = {};  // terminal row → telegramMsgs index (rebuilt on each draw)
+
+// Claude trade rankings (latest event with polymarket_trades)
+let latestClaudeTrades = null;  // { headline, primary: [], secondary: [] }
+let tradesPanelScroll = 0;      // scroll offset (rows) for bottom trades panel
+
+// Executed trades log (pushed from Python trade_executor.py)
+const executedTrades = [];  // [ { timestamp, event, trade, market, price, status, url } ]
 
 // Polymarket state
 const polyState = {
@@ -227,6 +241,71 @@ function drawStatusBar() {
 }
 
 // ── Left panel — incident feed ────────────────────────────────────────────────
+// Feed shows three kinds of entries (newest at bottom):
+//   1. "All systems running." — single system status line (gray, once)
+//   2. Telegram messages      — orange, collapsible with [ + ] / [ - ]
+//   3. AI event analysis      — sep / meta / tag / h1 / body (existing colors)
+//
+// All other sys/ok/warn pipeline chatter is suppressed.
+
+function buildLeftPanelRows() {
+  // Returns [{t, text, tmIdx?}] — ordered oldest→newest, ready to render.
+  const W    = LEFT_W;
+  const rows = [];
+
+  const pushTm = (tmIdx, lines, type) => {
+    for (const l of lines) rows.push({t: type, text: l, tmIdx});
+  };
+
+  // ── AI event entries (feedLines: sep, meta, tag, h1, body, sys-filtered) ──
+  const aiEntries = feedLines.filter(e => {
+    const t = typeof e === 'string' ? 'sys' : e.t;
+    if (t === 'sys') return /all systems running/i.test(typeof e === 'string' ? e : e.text);
+    return ['sep','meta','tag','h1','body'].includes(t);
+  });
+  for (const entry of aiEntries) {
+    const e = typeof entry === 'string' ? {t:'sys', text:entry} : entry;
+    if (e.t === 'h1') {
+      for (const l of wrapText(e.text, W - 2)) rows.push({t:'h1', text:l});
+    } else if (e.t === 'body') {
+      for (const l of wrapText(e.text, W - 3)) rows.push({t:'body', text:'   ' + l});
+    } else {
+      rows.push(e);
+    }
+  }
+
+  // ── Telegram messages (interleaved, most recent at bottom) ────────────────
+  const tmSlice = telegramMsgs.slice(-40);  // keep last 40 messages
+  for (let i = 0; i < tmSlice.length; i++) {
+    const tm     = tmSlice[i];
+    const tmIdx  = telegramMsgs.length - tmSlice.length + i;  // real index
+    const lines  = (tm.text || '').split('\n').filter(Boolean);
+    const first  = (lines[0] || '').slice(0, W - 14);  // leave room for prefix
+    const prefix = `${tm.ts || ''} @${tm.channel || ''}`;
+    const toggle = tm.expanded ? '[-]' : '[+]';
+    const head   = `${toggle} ${prefix.slice(0, 16).padEnd(16)} ${first}`;
+
+    // Header row
+    rows.push({t: 'tg_head', text: head.slice(0, W), tmIdx});
+
+    if (tm.expanded) {
+      // All lines of message body
+      for (let li = 1; li < lines.length; li++) {
+        for (const l of wrapText(lines[li], W - 4))
+          rows.push({t: 'tg_body', text: '    ' + l, tmIdx});
+      }
+      // Media indicator
+      if (tm.mediaType) {
+        const icon = tm.mediaType === 'video' ? '🎥' : '📷';
+        const fn   = tm.mediaPath ? ` ${tm.mediaPath.split('/').pop()}` : '';
+        rows.push({t: 'tg_media', text: `    ${icon}${fn}`, tmIdx});
+      }
+    }
+  }
+
+  return rows;
+}
+
 function drawLeftPanel() {
   withAbsPos(() => {
     const W     = LEFT_W;
@@ -240,11 +319,50 @@ function drawLeftPanel() {
     }
 
     const visible = r1 - r0 + 1;
+    const allRows = buildLeftPanelRows();
+    const view    = allRows.slice(Math.max(0, allRows.length - visible));
+
+    // Clear old row map
+    for (const k of Object.keys(leftPanelRowMap)) delete leftPanelRowMap[k];
+
     let r = r0;
-    for (let i = Math.max(0, feedLines.length - visible); i < feedLines.length && r <= r1; i++) {
-      const line  = feedLines[i];
-      const color = line.startsWith('[') ? C.gray : C.yellow;
-      process.stdout.write(`\x1B[${r};${xCol}H${color}${line.slice(0, W).padEnd(W)}${C.reset}`);
+    for (const e of view) {
+      if (r > r1) break;
+      let rendered = '';
+      switch (e.t) {
+        case 'tg_head':
+          // Orange for Telegram messages — leading [+]/[-] is the clickable toggle
+          rendered = `\x1B[38;5;214m${e.text.slice(0, W).padEnd(W)}${C.reset}`;
+          if (e.tmIdx !== undefined) leftPanelRowMap[r] = e.tmIdx;
+          break;
+        case 'tg_body':
+          rendered = `\x1B[38;5;172m${C.dim}${e.text.slice(0, W).padEnd(W)}${C.reset}`;
+          break;
+        case 'tg_media':
+          rendered = `\x1B[38;5;172m${e.text.slice(0, W).padEnd(W)}${C.reset}`;
+          break;
+        case 'h1':
+          rendered = `${C.bold}${e.text.slice(0, W).padEnd(W)}${C.reset}`;
+          break;
+        case 'meta':
+          rendered = `${C.cyan}${C.dim}${e.text.slice(0, W).padEnd(W)}${C.reset}`;
+          break;
+        case 'tag':
+          rendered = `${C.yellow}${C.dim}${e.text.slice(0, W).padEnd(W)}${C.reset}`;
+          break;
+        case 'body':
+          rendered = `${C.dim}${e.text.slice(0, W).padEnd(W)}${C.reset}`;
+          break;
+        case 'sep':
+          rendered = `${C.dim}${'─'.repeat(W)}${C.reset}`;
+          break;
+        case 'sys':
+          rendered = `${C.gray}${C.dim}${e.text.slice(0, W).padEnd(W)}${C.reset}`;
+          break;
+        default:
+          rendered = `${C.dim}${e.text.slice(0, W).padEnd(W)}${C.reset}`;
+      }
+      process.stdout.write(`\x1B[${r};${xCol}H${rendered}`);
       r++;
     }
   });
@@ -270,115 +388,195 @@ function drawRightPanel() {
       r++;
     };
 
+    // ── Compact stats header ──────────────────────────────────────────────────
     r++;
-    put('─'.repeat(W), C.dim);
-    r++;
-    put(' Total Events', C.dim);
-    put(`  ${totalEvents}`, `${C.yellow}${C.bold}`);
-    r++;
-    put(' Countries', C.dim);
-    put(`  ${countrySeen.size}`, `${C.yellow}${C.bold}`);
-    r++;
-
     const level      = totalEvents === 0 ? 'LOW' : totalEvents < 5 ? 'MEDIUM' : 'HIGH';
     const levelColor = level === 'LOW' ? C.green : level === 'MEDIUM' ? C.yellow : C.red;
-    put(' Alert Level', C.dim);
-    put(`  ● ${level}`, `${levelColor}${C.bold}`);
+    const statsLine  = ` Evts:${totalEvents}  Ctry:${countrySeen.size}  ${levelColor}●${C.reset}${C.dim}`;
+    put(statsLine, C.dim);
+    put('─'.repeat(W), C.dim);
     r++;
 
-    if (lastEventInfo) {
-      put(' Last Event', C.dim);
-      for (const l of wrapText(lastEventInfo, W - 3)) {
-        put(`  ${l}`, C.gray);
+    // ── Trades log ────────────────────────────────────────────────────────────
+    put(' TRADES LOG', `${C.cyan}${C.bold}`);
+    put('─'.repeat(W), C.dim);
+
+    if (executedTrades.length === 0) {
+      put(' (no trades yet)', C.dim);
+    } else {
+      // Show most-recent trades first, fill available rows
+      const trades = [...executedTrades].reverse();
+      for (const t of trades) {
+        if (r > r1) break;
+        const ts     = t.timestamp ? t.timestamp.slice(5, 16).replace('T', ' ') : '??-?? ??:??';
+        const status = (t.status || '?').slice(0, 9);
+        const scol   = status === 'PLACED'         ? C.green
+                     : status === 'DRY_RUN'        ? C.yellow
+                     : status.startsWith('ERROR')  ? C.red
+                     : C.dim;
+        const dir    = (t.trade || '').replace('BUY ', '');
+        const dcol   = dir === 'YES' ? C.green : dir === 'NO' ? C.red : C.yellow;
+        const prefix = `${C.dim}${ts} ${dcol}${dir.padEnd(4)}${C.reset}${scol}${status.padEnd(10)}${C.reset}`;
+        // Prefix visible length: ts(11) + space(1) + dir(4) + space(1) + status(10) = 27
+        const marketW = W - 27;
+        const market  = (t.market || '').slice(0, marketW);
+        process.stdout.write(`\x1B[${r};${xCol}H${prefix}${C.dim}${market}${C.reset}${' '.repeat(Math.max(0, W - 27 - market.length))}`);
+        r++;
       }
     }
   });
 }
 
 // ── Trades / Polymarket panel ─────────────────────────────────────────────────
+function buildTradesPanelLines() {
+  // Returns an array of pre-rendered line strings (with ANSI) for the trades panel.
+  const innerW = cols - 2;
+  const lines  = [];
+
+  const push = (text) => lines.push(text);
+
+  // ── Claude AI trade picks ──────────────────────────────────────────────────
+  if (latestClaudeTrades) {
+    const all = [
+      ...latestClaudeTrades.primary.map(t   => ({ ...t, _sec: 'PRI' })),
+      ...latestClaudeTrades.secondary.map(t => ({ ...t, _sec: 'SEC' })),
+    ];
+
+    const title = `  ▸ ${latestClaudeTrades.headline}`;
+    push(`${C.cyan}${C.bold}${title.slice(0, innerW).padEnd(innerW)}${C.reset}`);
+
+    const R_W = 2, S_W = 3, D_W = 8, P_W = 5, U_W = 11;
+    const FIXED = 2 + R_W + 3 + S_W + 3 + D_W + 3 + P_W + 3 + U_W + 3;
+    const M_W   = Math.max(8, innerW - FIXED);
+
+    const hdr = '  ' +
+      '#'.padEnd(R_W)   + ' │ ' + 'S'.padEnd(S_W)  + ' │ ' +
+      'TRADE'.padEnd(D_W) + ' │ ' + 'PRICE'.padStart(P_W) + ' │ ' +
+      'URGENCY'.padEnd(U_W) + ' │ ' + 'MARKET';
+    push(`${C.dim}${hdr.slice(0, innerW)}${C.reset}`);
+
+    for (const t of all) {
+      const secColor   = t._sec === 'PRI' ? C.yellow : C.dim;
+      const urgColor   = t.urgency === 'immediate'  ? C.red
+                       : t.urgency === 'short-term' ? C.yellow : C.dim;
+      const tradeColor = /YES|OVER/i.test(t.trade || '') ? C.green
+                       : /NO|UNDER/i.test(t.trade || '') ? C.red : C.yellow;
+
+      const rankStr = String(t.rank || '').padEnd(R_W);
+      const secStr  = (t._sec || '').slice(0, S_W).padEnd(S_W);
+      const dirStr  = (t.trade || '').slice(0, D_W).padEnd(D_W);
+      const prcStr  = t.current_price != null
+        ? `${Math.round(t.current_price * 100)}%`.padStart(P_W) : '   — ';
+      const urgStr  = (t.urgency || '').slice(0, U_W).padEnd(U_W);
+      const mktStr  = (t.market || '').slice(0, M_W);
+
+      push(
+        `  ${C.dim}${rankStr}${C.reset}` +
+        ` ${C.dim}│${C.reset} ${secColor}${secStr}${C.reset}` +
+        ` ${C.dim}│${C.reset} ${tradeColor}${dirStr}${C.reset}` +
+        ` ${C.dim}│${C.reset}${C.yellow}${prcStr}${C.reset}` +
+        ` ${C.dim}│${C.reset} ${urgColor}${urgStr}${C.reset}` +
+        ` ${C.dim}│${C.reset} ${C.gray}${mktStr}${C.reset}`
+      );
+    }
+    return lines;
+  }
+
+  // ── Polymarket polling data (fallback) ────────────────────────────────────
+  if (polyState.markets.length === 0) {
+    push(`${C.dim}  Fetching Polymarket data...${C.reset}`);
+    return lines;
+  }
+
+  const CAT_W  = 11;
+  const YES_W  = 6;
+  const NO_W   = 6;
+  const CHG_W  = 7;
+  const FIXED  = 2 + CAT_W + 3 + 3 + YES_W + 3 + NO_W + 3 + CHG_W;
+  const MKT_W  = Math.max(8, innerW - FIXED);
+
+  const hdr = (
+    '  ' +
+    'CATEGORY'.padEnd(CAT_W) +
+    ' │ ' +
+    'MARKET'.padEnd(MKT_W) +
+    ' │ ' +
+    'YES'.padStart(YES_W) +
+    ' │ ' +
+    'NO'.padStart(NO_W) +
+    ' │ ' +
+    'CHNG'.padStart(CHG_W)
+  );
+  push(`${C.dim}${hdr.slice(0, innerW)}${C.reset}`);
+
+  for (const m of polyState.markets) {
+    const catColor = m.category === 'MILITARY'   ? C.red
+                   : m.category === 'ECONOMIC'   ? C.yellow
+                   : C.cyan;
+
+    const yp  = Math.round(m.yesPrice * 100);
+    const np  = Math.round(m.noPrice  * 100);
+    const cat = m.category.slice(0, CAT_W).padEnd(CAT_W);
+    const mkt = (m.question || '').slice(0, MKT_W).padEnd(MKT_W);
+    const yes = `${yp}¢`.padStart(YES_W);
+    const no  = `${np}¢`.padStart(NO_W);
+
+    let chgStr = '  —  ';
+    let chgCol = C.dim;
+    if (m.change !== null && m.change !== undefined) {
+      const d = Math.round(m.change * 100);
+      if (d > 0)      { chgStr = `+${d}¢`; chgCol = C.green; }
+      else if (d < 0) { chgStr = `${d}¢`;  chgCol = C.red;   }
+      else            { chgStr = ' ±0¢';   chgCol = C.dim;   }
+    }
+    const chg = chgStr.padStart(CHG_W);
+
+    push(
+      `  ${catColor}${cat}${C.reset}` +
+      ` ${C.dim}│${C.reset} ` +
+      `${C.gray}${mkt}${C.reset}` +
+      ` ${C.dim}│${C.reset}` +
+      `${C.yellow}${yes}${C.reset}` +
+      ` ${C.dim}│${C.reset}` +
+      `${C.yellow}${no}${C.reset}` +
+      ` ${C.dim}│${C.reset}` +
+      `${chgCol}${chg}${C.reset}`
+    );
+  }
+  return lines;
+}
+
 function drawTradesPanel() {
   withAbsPos(() => {
-    const innerW = cols - 2;
-    const xCol   = 2;
-    const blank  = ' '.repeat(innerW);
+    const innerW  = cols - 2;
+    const xCol    = 2;
+    const blank   = ' '.repeat(innerW);
+    const visible = TRADES_CONTENT_END - TRADES_CONTENT_START + 1;
 
+    // Clear content area
     for (let r = TRADES_CONTENT_START; r <= TRADES_CONTENT_END; r++) {
       process.stdout.write(`\x1B[${r};${xCol}H${blank}`);
     }
 
-    let r = TRADES_CONTENT_START;
+    const allLines = buildTradesPanelLines();
+    const maxScroll = Math.max(0, allLines.length - visible);
+    // Clamp scroll
+    if (tradesPanelScroll > maxScroll) tradesPanelScroll = maxScroll;
+    if (tradesPanelScroll < 0) tradesPanelScroll = 0;
 
-    if (polyState.markets.length === 0) {
-      process.stdout.write(
-        `\x1B[${r};${xCol}H${C.dim}  Fetching Polymarket data...${C.reset}`
-      );
-      return;
+    const visible_lines = allLines.slice(tradesPanelScroll, tradesPanelScroll + visible);
+    let r = TRADES_CONTENT_START;
+    for (const line of visible_lines) {
+      process.stdout.write(`\x1B[${r};${xCol}H${line}`);
+      r++;
     }
 
-    // Column widths
-    const CAT_W  = 11;
-    const YES_W  = 6;
-    const NO_W   = 6;
-    const CHG_W  = 7;
-    // layout: "  [CAT] │ [MKT] │ [YES] │ [NO] │ [CHG]"
-    const FIXED  = 2 + CAT_W + 3 + 3 + YES_W + 3 + NO_W + 3 + CHG_W;
-    const MKT_W  = Math.max(8, innerW - FIXED);
-
-    // Header row
-    const hdr = (
-      '  ' +
-      'CATEGORY'.padEnd(CAT_W) +
-      ' │ ' +
-      'MARKET'.padEnd(MKT_W) +
-      ' │ ' +
-      'YES'.padStart(YES_W) +
-      ' │ ' +
-      'NO'.padStart(NO_W) +
-      ' │ ' +
-      'CHNG'.padStart(CHG_W)
-    );
-    process.stdout.write(
-      `\x1B[${r};${xCol}H${C.dim}${hdr.slice(0, innerW)}${C.reset}`
-    );
-    r++;
-
-    for (const m of polyState.markets) {
-      if (r > TRADES_CONTENT_END) break;
-
-      const catColor = m.category === 'MILITARY'   ? C.red
-                     : m.category === 'ECONOMIC'   ? C.yellow
-                     : C.cyan;
-
-      const yp  = Math.round(m.yesPrice * 100);
-      const np  = Math.round(m.noPrice  * 100);
-      const cat = m.category.slice(0, CAT_W).padEnd(CAT_W);
-      const mkt = (m.question || '').slice(0, MKT_W).padEnd(MKT_W);
-      const yes = `${yp}¢`.padStart(YES_W);
-      const no  = `${np}¢`.padStart(NO_W);
-
-      let chgStr = '  —  ';
-      let chgCol = C.dim;
-      if (m.change !== null && m.change !== undefined) {
-        const d = Math.round(m.change * 100);
-        if (d > 0)      { chgStr = `+${d}¢`; chgCol = C.green; }
-        else if (d < 0) { chgStr = `${d}¢`;  chgCol = C.red;   }
-        else            { chgStr = ' ±0¢';   chgCol = C.dim;   }
-      }
-      const chg = chgStr.padStart(CHG_W);
-
-      process.stdout.write(
-        `\x1B[${r};${xCol}H` +
-        `  ${catColor}${cat}${C.reset}` +
-        ` ${C.dim}│${C.reset} ` +
-        `${C.gray}${mkt}${C.reset}` +
-        ` ${C.dim}│${C.reset}` +
-        `${C.yellow}${yes}${C.reset}` +
-        ` ${C.dim}│${C.reset}` +
-        `${C.yellow}${no}${C.reset}` +
-        ` ${C.dim}│${C.reset}` +
-        `${chgCol}${chg}${C.reset}`
-      );
-      r++;
+    // Scroll indicator (top-right corner of content area) when scrollable
+    if (allLines.length > visible) {
+      const pct  = Math.round(tradesPanelScroll / maxScroll * 100);
+      const ind  = `${C.dim} ↕${pct}% ${C.reset}`;
+      const indW = 6; // visible chars
+      process.stdout.write(`\x1B[${TRADES_CONTENT_START};${cols - indW}H${ind}`);
     }
   });
 }
@@ -392,6 +590,95 @@ function drawDots() {
       }
     }
   });
+}
+
+// ── Event popup (shown on dot click) ─────────────────────────────────────────
+const POPUP_W = 54;  // inner text width
+
+function drawPopup() {
+  if (!popup) return;
+  withAbsPos(() => {
+    const { inc, boxCol, boxRow } = popup;
+    const W = POPUP_W;
+    const bar  = '═'.repeat(W + 2);
+    const thin = '─'.repeat(W + 2);
+
+    const titleTag  = inc.event_type ? `[${inc.event_type}] ` : '';
+    const titleLine = `${titleTag}${inc.ts}`;
+    const bodyLines = wrapText(inc.headline || inc.summary, W);
+    const metaLine  = `${inc.location}${inc.confidence ? `  ·  conf: ${inc.confidence}` : ''}`;
+
+    const allLines = [titleLine, '', ...bodyLines, '', metaLine];
+    const H = allLines.length + (inc.pmUrl ? 4 : 3);  // borders + optional URL row
+
+    // Clamp so popup stays inside terminal
+    const pc = Math.min(Math.max(boxCol - 2, COL_MLB + 1), cols - W - 5);
+    let   pr = Math.min(Math.max(boxRow - Math.floor(H / 2), mapTopLine), mapBottomLine - H + 1);
+
+    // Top border
+    process.stdout.write(`\x1B[${pr};${pc}H${C.yellow}╔${bar}╗${C.reset}`);
+    pr++;
+
+    // Content lines
+    for (const line of allLines) {
+      const padded = line.slice(0, W).padEnd(W);
+      const color  = line === titleLine ? `${C.yellow}${C.bold}` : C.reset;
+      process.stdout.write(`\x1B[${pr};${pc}H${C.yellow}║${C.reset} ${color}${padded}${C.reset} ${C.yellow}║${C.reset}`);
+      pr++;
+    }
+
+    // URL row (if available)
+    if (inc.pmUrl) {
+      process.stdout.write(`\x1B[${pr};${pc}H${C.yellow}╠${thin}╣${C.reset}`);
+      pr++;
+      const linkLabel = '  ⬡  POLYMARKET  →  ' + inc.pmUrl;
+      // OSC 8 terminal hyperlink — works in iTerm2, Warp, etc.
+      const hyperlink = `\x1B]8;;${inc.pmUrl}\x1B\\${C.cyan}${C.bold}${linkLabel.slice(0, W).padEnd(W)}${C.reset}\x1B]8;;\x1B\\`;
+      process.stdout.write(`\x1B[${pr};${pc}H${C.yellow}║${C.reset} ${hyperlink} ${C.yellow}║${C.reset}`);
+      pr++;
+    }
+
+    // Bottom: dismiss hint
+    process.stdout.write(`\x1B[${pr};${pc}H${C.yellow}╠${thin}╣${C.reset}`);
+    pr++;
+    const hint = '  click anywhere to dismiss'.padEnd(W);
+    process.stdout.write(`\x1B[${pr};${pc}H${C.yellow}║${C.reset}${C.dim}${hint}${C.reset} ${C.yellow}║${C.reset}`);
+    pr++;
+    process.stdout.write(`\x1B[${pr};${pc}H${C.yellow}╚${bar}╝${C.reset}`);
+  });
+}
+
+function dismissPopup() {
+  popup = null;
+  // Repaint map area to erase the popup
+  mapscii._draw();
+  setImmediate(() => {
+    drawBorders();
+    drawLeftPanel();
+    drawRightPanel();
+    drawTradesPanel();
+    drawDots();
+    drawStatusBar();
+  });
+}
+
+function handleMapClick(cx, cy) {
+  // If popup is open, any click dismisses it
+  if (popup) { dismissPopup(); return; }
+
+  // Find nearest incident dot within 2-cell radius
+  let best = null, bestDist = 3;
+  for (const inc of incidents) {
+    const d = Math.abs(inc.col - cx) + Math.abs(inc.row - cy);
+    if (d < bestDist && inc.col > COL_MLB && inc.col < COL_MRB &&
+        inc.row >= mapTopLine && inc.row <= mapBottomLine) {
+      best = inc; bestDist = d;
+    }
+  }
+  if (best) {
+    popup = { inc: best, boxCol: cx, boxRow: cy };
+    drawPopup();
+  }
 }
 
 // ── MapSCII config ────────────────────────────────────────────────────────────
@@ -588,13 +875,41 @@ function handleKey(buf) {
   if (ks === '\x1B[C') { panMap( 0, +1); return; }  // right
   if (ks === '\x1B[D') { panMap( 0, -1); return; }  // left
 
-  // Mouse scroll (SGR: \x1B[<Pb;Px;PyM  — button 64=scroll-up, 65=scroll-down)
+  // SGR mouse events: \x1B[<Btn;Col;RowM (press) or m (release)
   const s = b.toString();
-  const scrollMatch = s.match(/^\x1B\[<(\d+);\d+;\d+M$/);
-  if (scrollMatch) {
-    const btn = parseInt(scrollMatch[1], 10);
-    if (btn === 64) { zoomMap(+1); return; }
-    if (btn === 65) { zoomMap(-1); return; }
+  const mouseMatch = s.match(/^\x1B\[<(\d+);(\d+);(\d+)([Mm])$/);
+  if (mouseMatch) {
+    const btn     = parseInt(mouseMatch[1], 10);
+    const mx      = parseInt(mouseMatch[2], 10);
+    const my      = parseInt(mouseMatch[3], 10);
+    const isPress = mouseMatch[4] === 'M';
+
+    // Route scroll to bottom panel when cursor is hovering there
+    const inBottomPanel = my >= TRADES_TITLE_ROW && my <= TRADES_CONTENT_END;
+    if (btn === 64) {
+      if (inBottomPanel) { tradesPanelScroll = Math.max(0, tradesPanelScroll - 1); drawTradesPanel(); }
+      else { zoomMap(+1); }
+      return;
+    }
+    if (btn === 65) {
+      if (inBottomPanel) { tradesPanelScroll++; drawTradesPanel(); }
+      else { zoomMap(-1); }
+      return;
+    }
+    if (btn === 0 && isPress) {
+      // Check if click is in the left panel (telegram expand/collapse)
+      if (mx >= 2 && mx <= LEFT_W + 1 && leftPanelRowMap[my] !== undefined) {
+        const idx = leftPanelRowMap[my];
+        if (telegramMsgs[idx]) {
+          telegramMsgs[idx].expanded = !telegramMsgs[idx].expanded;
+          drawLeftPanel();
+          drawBorders();
+        }
+        return;
+      }
+      handleMapClick(mx, my);
+      return;
+    }
   }
 }
 
@@ -619,11 +934,8 @@ mapscii.init().then(() => {
     drawTradesPanel();
     drawStatusBar();
   }, 150);
-  setTimeout(testEvent, 1200);
-  // Start Polymarket polling after UI is ready
-  setTimeout(pollPolymarkets, 2000);
 }).catch(err => {
-  process.stderr.write('MapSCII failed: ' + err + '\n');
+  tuiLog('[!] MapSCII failed: ' + err);
 });
 
 // ── Public API ────────────────────────────────────────────────────────────────
@@ -633,12 +945,11 @@ function processEvent(eventData) {
   const coords = resolveLocation(ev.location);
 
   if (!coords) {
-    process.stderr.write(`[STRATA] Cannot resolve location: ${JSON.stringify(ev.location)}\n`);
+    tuiLog(`[!] cannot resolve location: ${typeof ev.location === 'string' ? ev.location : JSON.stringify(ev.location)}`);
     return false;
   }
 
   const pos = latLonToTermPos(coords.lat, coords.lon);
-  incidents.push({ lat: coords.lat, lon: coords.lon, col: pos.col, row: pos.row });
 
   // Handle both Python string location and legacy object location
   const locName = typeof ev.location === 'string'
@@ -654,11 +965,12 @@ function processEvent(eventData) {
   const summary  = ev.summary || `Event ${ev.event_id}`;
   const display  = headline || summary;
 
-  if (ts) feedLines.push(`[${ts}] ${locName}`);
-  if (headline) feedLines.push(`${C.bold}${headline.slice(0, LEFT_W - 1)}${C.reset}`);
-  for (const line of wrapText(headline ? summary : display, LEFT_W - 1)) feedLines.push(line);
-  feedLines.push('');
-  while (feedLines.length > 300) feedLines.shift();
+  feedLines.push({t:'sep',  text:'─'.repeat(LEFT_W)});
+  if (ts) feedLines.push({t:'meta', text:`${ts}  ${locName}`});
+  if (ev.event_type) feedLines.push({t:'tag',  text:`[${(ev.event_type||'').toUpperCase()}]  conf:${ev.confidence||'?'}`});
+  if (headline)      feedLines.push({t:'h1',   text:headline});
+  for (const line of wrapText(headline ? summary : display, LEFT_W - 3)) feedLines.push({t:'body', text:line});
+  while (feedLines.length > 400) feedLines.shift();
 
   totalEvents++;
   // Track country from either format
@@ -667,6 +979,24 @@ function processEvent(eventData) {
   // Also track countries from the involved array (Python pipeline)
   if (Array.isArray(ev.involved)) ev.involved.forEach(c => countrySeen.add(c));
   lastEventInfo = ts ? `${locName} · ${ts}` : locName;
+
+  // Capture Claude's AI trade rankings if present
+  const pt = ev.polymarket_trades;
+  if (pt && ((pt.primary && pt.primary.length) || (pt.secondary && pt.secondary.length))) {
+    latestClaudeTrades = {
+      headline:  headline || locName,
+      primary:   pt.primary   || [],
+      secondary: pt.secondary || [],
+    };
+  }
+
+  // Store full event data so dot can show popup on click
+  const pmUrl = pt?.primary?.[0]?.url || pt?.secondary?.[0]?.url || '';
+  incidents.push({
+    lat: coords.lat, lon: coords.lon, col: pos.col, row: pos.row,
+    headline, summary, event_type: (ev.event_type || '').toUpperCase(),
+    confidence: ev.confidence || '', location: locName, ts, pmUrl,
+  });
 
   drawDots();
   drawLeftPanel();
@@ -698,102 +1028,85 @@ function testEvent() {
 
 // ── TUI logging ───────────────────────────────────────────────────────────────
 function tuiLog(msg) {
-  feedLines.push(`${C.dim}${msg}${C.reset}`);
-  while (feedLines.length > 300) feedLines.shift();
+  for (const raw of msg.split('\n')) {
+    const text = raw.trimEnd();
+    if (!text) continue;
+
+    // Classify
+    let t = 'sys';
+    if      (/^\s*[✓✔]/.test(text))                  t = 'ok';
+    else if (/^\s*\[!]/.test(text))                   t = 'warn';
+    else if (/^\s*\+\s+@|\d{2}:\d{2}\s+@/.test(text)) t = 'msg';
+    else if (/^\s*[─═]{4}/.test(text))                t = 'sep';
+
+    // Suppress pipeline chatter — only keep AI event markers and "All systems running."
+    // AI event markers written by processEvent (sep/meta/tag/h1/body) bypass tuiLog entirely.
+    // tuiLog receives system/pipeline messages; we only want "All systems running." from those.
+    if (['sys', 'ok', 'warn', 'msg'].includes(t)) {
+      if (!/all systems running/i.test(text)) continue;  // suppress everything else
+    }
+
+    feedLines.push({t, text});
+  }
+  while (feedLines.length > 400) feedLines.shift();
   drawLeftPanel();
   drawBorders();
 }
 
-// ── Polymarket API ────────────────────────────────────────────────────────────
+// ── Polymarket data (pushed from Python pipeline via /markets endpoint) ───────
 //
-// Fetches the top active Middle East markets in three categories:
-//   MILITARY   – conflict escalation, strikes, ceasefires
-//   ECONOMIC   – oil, sanctions, OPEC
-//   DIPLOMATIC – nuclear deals, normalization, peace
-//
-const POLY_QUERIES = [
-  // MILITARY
-  { term: 'Israel attack Iran',          category: 'MILITARY'   },
-  { term: 'Gaza ceasefire 2026',         category: 'MILITARY'   },
-  { term: 'Houthi Yemen attack',         category: 'MILITARY'   },
-  { term: 'Lebanon Hezbollah war',       category: 'MILITARY'   },
-  // ECONOMIC
-  { term: 'oil price $100 Middle East',  category: 'ECONOMIC'   },
-  { term: 'Iran oil sanctions OPEC',     category: 'ECONOMIC'   },
-  { term: 'Saudi Arabia OPEC cut',       category: 'ECONOMIC'   },
-  // DIPLOMATIC
-  { term: 'Iran nuclear deal agreement', category: 'DIPLOMATIC' },
-  { term: 'Saudi Arabia Israel peace',   category: 'DIPLOMATIC' },
-  { term: 'Iran US negotiations 2026',   category: 'DIPLOMATIC' },
-];
+// Python's polymarket.py already fetches and keyword-filters the right markets.
+// strata.js receives them via POST /markets and classifies by category for display.
 
-// Max markets displayed per category (keeps panel from overflowing)
-const MAX_PER_CAT = 2;
+function classifyMarket(question) {
+  const q = question.toLowerCase();
+  if (/oil|opec|crude|brent|sanction|strait|energy|barrel/.test(q)) return 'ECONOMIC';
+  if (/nuclear|deal|peace|normaliz|hostage|negotiat|diplomac|arms deal|accord/.test(q)) return 'DIPLOMATIC';
+  return 'MILITARY';
+}
 
-async function refreshPolymarkets() {
-  const seen      = new Set();
-  const byCat     = { MILITARY: [], ECONOMIC: [], DIPLOMATIC: [] };
+function ingestMarkets(rawMarkets) {
+  const newMarkets = rawMarkets.slice(0, TRADES_H - 1).map(m => {
+    const id  = m.condition_id || m.question || '';
+    const yp  = parseFloat((m.prices || [])[0] || '0');
+    const np  = parseFloat((m.prices || [])[1] || '0');
+    const prev = polyState.prevPrices[id];
+    const change = (prev !== undefined) ? yp - prev : null;
+    polyState.prevPrices[id] = yp;
+    return {
+      id,
+      question: (m.question || '').replace(/\?$/, ''),
+      category: classifyMarket(m.question || ''),
+      yesPrice: yp,
+      noPrice:  np,
+      change,
+    };
+  });
 
-  for (const { term, category } of POLY_QUERIES) {
-    if (byCat[category].length >= MAX_PER_CAT) continue;
-
-    try {
-      const url = 'https://gamma-api.polymarket.com/markets?' +
-        'active=true&closed=false&limit=5' +
-        '&order=volume&ascending=false' +
-        `&search=${encodeURIComponent(term)}`;
-      const data = await httpsGet(url);
-      if (!Array.isArray(data)) continue;
-
-      for (const m of data) {
-        if (seen.has(m.id)) continue;
-        const prices = tryParseJSON(m.outcomePrices);
-        if (!Array.isArray(prices) || prices.length < 2) continue;
-        const yp = parseFloat(prices[0]);
-        const np = parseFloat(prices[1]);
-        if (isNaN(yp) || isNaN(np)) continue;
-
-        seen.add(m.id);
-        const prev = polyState.prevPrices[m.id];
-        byCat[category].push({
-          id:       m.id,
-          question: (m.question || m.title || term).replace(/\?$/, ''),
-          category,
-          yesPrice: yp,
-          noPrice:  np,
-          change:   prev !== undefined ? yp - prev : null,
-        });
-        break; // one result per query term is enough
-      }
-    } catch (_) {
-      // network / parse errors — silently skip
-    }
-  }
-
-  // Update stored prices for change tracking next cycle
-  for (const cat of Object.values(byCat)) {
-    for (const m of cat) polyState.prevPrices[m.id] = m.yesPrice;
-  }
-
-  // Interleave categories: MIL, ECO, DIP, MIL, ECO, DIP …
-  polyState.markets = [];
-  const maxLen = Math.max(byCat.MILITARY.length, byCat.ECONOMIC.length, byCat.DIPLOMATIC.length);
-  for (let i = 0; i < maxLen; i++) {
-    if (byCat.MILITARY[i])   polyState.markets.push(byCat.MILITARY[i]);
-    if (byCat.ECONOMIC[i])   polyState.markets.push(byCat.ECONOMIC[i]);
-    if (byCat.DIPLOMATIC[i]) polyState.markets.push(byCat.DIPLOMATIC[i]);
-  }
-
+  // Sort: MILITARY first, then ECONOMIC, then DIPLOMATIC
+  const order = { MILITARY: 0, ECONOMIC: 1, DIPLOMATIC: 2 };
+  newMarkets.sort((a, b) => order[a.category] - order[b.category]);
+  polyState.markets = newMarkets;
   drawTradesPanel();
   drawBorders();
 }
 
-function pollPolymarkets() {
-  tuiLog('[POLY] Fetching Polymarket data…');
-  refreshPolymarkets().catch(e => tuiLog(`[POLY] Error: ${e.message}`));
-  setInterval(() => {
-    refreshPolymarkets().catch(() => {});
-  }, 60_000);
+// ── Executed trades (pushed from Python trade_executor.py via /trades) ────────
+function ingestTrades(rawTrades) {
+  if (!Array.isArray(rawTrades) || rawTrades.length === 0) return;
+  // Merge by timestamp+market key to avoid duplicates on restart
+  const existing = new Set(executedTrades.map(t => `${t.timestamp}|${t.market}`));
+  for (const t of rawTrades) {
+    const key = `${t.timestamp}|${t.market}`;
+    if (!existing.has(key)) {
+      executedTrades.push(t);
+      existing.add(key);
+    }
+  }
+  // Cap at 200 most recent
+  if (executedTrades.length > 200) executedTrades.splice(0, executedTrades.length - 200);
+  drawRightPanel();
+  drawBorders();
 }
 
 // ── HTTP server ────────────────────────────────────────────────────────────────
@@ -804,6 +1117,71 @@ http.createServer((req, res) => {
   let body = '';
   req.on('data', d => { body += d; });
   req.on('end', () => {
+    // /markets — receive Python's filtered conflict markets
+    if (req.url === '/markets') {
+      try {
+        const data = JSON.parse(body);
+        const markets = Array.isArray(data) ? data : [data];
+        ingestMarkets(markets);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: true, count: polyState.markets.length }));
+      } catch (e) {
+        res.writeHead(400); res.end('Bad JSON\n');
+      }
+      return;
+    }
+
+    // /trades — receive executed trade results from Python trade_executor.py
+    if (req.url === '/trades') {
+      try {
+        const data   = JSON.parse(body);
+        const trades = Array.isArray(data) ? data : [data];
+        ingestTrades(trades);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: true, count: executedTrades.length }));
+      } catch (e) {
+        res.writeHead(400); res.end('Bad JSON\n');
+      }
+      return;
+    }
+
+    // /log — route a text message to the left feed panel
+    if (req.url === '/log') {
+      try {
+        const data = JSON.parse(body);
+        tuiLog(typeof data.msg === 'string' ? data.msg : JSON.stringify(data));
+      } catch (_) {
+        tuiLog(body.trim());
+      }
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: true }));
+      return;
+    }
+
+    // /telegram — structured Telegram message (ts, channel, text, mediaPath, mediaType)
+    if (req.url === '/telegram') {
+      try {
+        const d = JSON.parse(body);
+        telegramMsgs.push({
+          ts:        d.ts        || '',
+          channel:   d.channel   || '',
+          text:      d.text      || '',
+          mediaPath: d.media_path || null,
+          mediaType: d.media_type || null,
+          expanded:  false,
+        });
+        while (telegramMsgs.length > 200) telegramMsgs.shift();
+        drawLeftPanel();
+        drawBorders();
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: true, count: telegramMsgs.length }));
+      } catch (e) {
+        res.writeHead(400); res.end('Bad JSON\n');
+      }
+      return;
+    }
+
+    // Default — process conflict events
     try {
       const data   = JSON.parse(body);
       const events = Array.isArray(data) ? data : [data];
@@ -815,7 +1193,7 @@ http.createServer((req, res) => {
     }
   });
 }).listen(PORT, () => {
-  setTimeout(() => tuiLog(`[HTTP] listening on :${PORT}`), 300);
+  setTimeout(() => tuiLog('  All systems running.'), 300);
 });
 
 

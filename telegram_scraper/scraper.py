@@ -19,6 +19,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 from telethon import TelegramClient, events
+import strata_bridge
 from telethon.tl.functions.messages import ImportChatInviteRequest
 from telethon.errors import UserAlreadyParticipantError
 from telethon.tl.types import MessageMediaDocument, MessageMediaPhoto
@@ -147,7 +148,7 @@ async def resolve_channels(client: TelegramClient, public: list[str], private: l
         try:
             entities.append(await client.get_entity(ch))
         except Exception as e:
-            print(f"  [!] could not resolve @{ch}: {e}")
+            strata_bridge.log(f"  [!] could not resolve @{ch}: {e}")
 
     # Private channels — join if needed, then resolve
     for link in private:
@@ -155,11 +156,11 @@ async def resolve_channels(client: TelegramClient, public: list[str], private: l
         try:
             result = await client(ImportChatInviteRequest(hash_))
             entity = result.chats[0]
-            print(f"  [joined] {getattr(entity, 'title', link)}")
+            strata_bridge.log(f"  [joined] {getattr(entity, 'title', link)}")
         except UserAlreadyParticipantError:
             entity = await client.get_entity(link)
         except Exception as e:
-            print(f"  [!] could not join {link}: {e}")
+            strata_bridge.log(f"  [!] could not join {link}: {e}")
             continue
         entities.append(entity)
         private_ids.add(entity.id)
@@ -199,7 +200,7 @@ async def process_message(client: TelegramClient, message, channel: str, *, live
             await client.download_media(message.media, file=str(fpath))
             record["media_file"] = str(fpath.relative_to(DATA_DIR))
         except Exception as e:
-            print(f"  [!] media error [{channel}]: {e}")
+            strata_bridge.log(f"  [!] media error [{channel}]: {e}")
 
     append_jsonl(cdir / "messages.jsonl", record)
 
@@ -207,10 +208,18 @@ async def process_message(client: TelegramClient, message, channel: str, *, live
     append_jsonl(DATA_DIR / "queue.jsonl", record)
 
     if live:
-        mflag   = "[vid]" if (message.media and is_video(message.media)) else (
-                   "[img]" if isinstance(message.media, MessageMediaPhoto) else "")
-        snippet = (eng_txt or "(no text)")[:100].replace("\n", " ")
-        print(f"  {ts.strftime('%H:%M')} @{channel} {mflag} {snippet}")
+        media_type = (
+            "video" if (message.media and is_video(message.media)) else
+            "photo" if isinstance(message.media, MessageMediaPhoto) else
+            None
+        )
+        strata_bridge.log_telegram(
+            ts          = ts.strftime("%H:%M"),
+            channel     = channel,
+            text        = eng_txt or "(no text)",
+            media_path  = record.get("media_file"),
+            media_type  = media_type,
+        )
     return True
 
 
@@ -218,20 +227,20 @@ async def process_message(client: TelegramClient, message, channel: str, *, live
 
 async def backfill(client: TelegramClient, channel: str, limit: int):
     """Pull the N most recent messages from a channel."""
-    print(f"  backfilling @{channel} (last {limit} msgs)...", end="", flush=True)
+    strata_bridge.log(f"  backfilling @{channel} (last {limit} msgs)...")
     count = 0
     try:
         async for msg in client.iter_messages(channel, limit=limit):
             if await process_message(client, msg, channel):
                 count += 1
-        print(f" {count} saved")
+        strata_bridge.log(f"  backfill @{channel}: {count} saved")
     except Exception as e:
-        print(f" FAILED: {e}")
+        strata_bridge.log(f"  [!] backfill @{channel} FAILED: {e}")
 
 
 async def fetch_range(client: TelegramClient, channel: str, since: datetime, until: datetime):
     """Pull all messages from a channel between since (inclusive) and until (inclusive)."""
-    print(f"  fetching @{channel} from {since.date()} to {until.date()}...", end="", flush=True)
+    strata_bridge.log(f"  fetching @{channel} from {since.date()} to {until.date()}...")
     count = 0
     try:
         # offset_date + reverse=True starts iteration forward from `since`
@@ -246,9 +255,9 @@ async def fetch_range(client: TelegramClient, channel: str, since: datetime, unt
                 break
             if await process_message(client, msg, channel):
                 count += 1
-        print(f" {count} saved")
+        strata_bridge.log(f"  fetch @{channel}: {count} saved")
     except Exception as e:
-        print(f" FAILED: {e}")
+        strata_bridge.log(f"  [!] fetch @{channel} FAILED: {e}")
 
 
 # ── entrypoints ────────────────────────────────────────────────────────────────
@@ -256,7 +265,7 @@ async def fetch_range(client: TelegramClient, channel: str, since: datetime, unt
 async def run_live(client: TelegramClient, channels: list, backfill_limit: int):
     entities, private_ids = await resolve_channels(client, channels, PRIVATE_CHANNELS)
     if not entities:
-        print("  [!] no channels resolved — check usernames and network")
+        strata_bridge.log("  [!] no channels resolved — check usernames and network")
         return
 
     if backfill_limit > 0:
@@ -277,21 +286,21 @@ async def run_live(client: TelegramClient, channels: list, backfill_limit: int):
     try:
         await client.run_until_disconnected()
     except KeyboardInterrupt:
-        print("\n\nStopped.")
+        strata_bridge.log("  scraper stopped.")
 
 
 async def run_fetch_range(client: TelegramClient, channels: list, since: datetime, until: datetime):
-    print(f"\n{'='*70}")
-    print(f"  Telegram ME Conflict Scraper  |  date range fetch")
-    print(f"  Range:    {since.date()} -> {until.date()}")
-    print(f"  Channels: {', '.join(channels)}")
-    print(f"  Saving to: ./data/")
-    print(f"{'='*70}\n")
+    strata_bridge.log(f"{'='*70}")
+    strata_bridge.log(f"  Telegram ME Conflict Scraper  |  date range fetch")
+    strata_bridge.log(f"  Range:    {since.date()} -> {until.date()}")
+    strata_bridge.log(f"  Channels: {', '.join(channels)}")
+    strata_bridge.log(f"  Saving to: ./data/")
+    strata_bridge.log(f"{'='*70}")
 
     for ch in channels:
         await fetch_range(client, ch, since, until)
 
-    print(f"\nDone. Data saved to ./data/")
+    strata_bridge.log(f"Done. Data saved to ./data/")
 
 
 async def main():

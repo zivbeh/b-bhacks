@@ -29,6 +29,7 @@ from pathlib import Path
 import anthropic
 from dotenv import load_dotenv
 
+import strata_bridge
 from analyzer import (
     load_all_messages,
     group_into_windows,
@@ -49,6 +50,22 @@ load_dotenv()
 client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
 STRATA_URL = os.getenv("STRATA_URL", "http://localhost:3001")
+
+def push_markets_to_strata(markets: list) -> None:
+    """Push Python's filtered conflict markets to the Strata TUI."""
+    if not markets:
+        return
+    try:
+        data = json.dumps(markets[:20]).encode("utf-8")  # top 20 by volume
+        req  = urllib.request.Request(
+            f"{STRATA_URL}/markets", data=data,
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        urllib.request.urlopen(req, timeout=2)
+    except Exception:
+        pass
+
 
 def push_to_strata(events: list):
     """Push new events to the Strata TUI if it's running. Silent if not."""
@@ -175,7 +192,7 @@ def rank_polymarket_trades(event: dict, markets: list[dict]) -> dict:
             "secondary": patch_urls(result.get("secondary", [])[:10]),
         }
     except Exception as e:
-        print(f"  [!] trade ranking error: {e}")
+        strata_bridge.log(f"  [!] trade ranking error: {e}")
         return {"primary": [], "secondary": []}
 
 
@@ -285,15 +302,11 @@ def run_batch(since: datetime | None, until: datetime | None):
 # ── real-time watch mode ───────────────────────────────────────────────────────
 
 def run_watch():
-    divider()
-    print(f"  ME Conflict Intelligence Pipeline  |  LIVE MODE")
-    print(f"  Watching {QUEUE_FILE} — scraper.py must be running")
-    divider()
-
     DATA_DIR.mkdir(exist_ok=True)
     QUEUE_FILE.touch()
 
     poly_markets      = load_conflict_markets()
+    push_markets_to_strata(poly_markets)
     poly_last_refresh = time.time()
     POLY_REFRESH_SEC  = 600  # refresh markets every 10 minutes
 
@@ -307,6 +320,7 @@ def run_watch():
         # Refresh Polymarket markets on schedule
         if time.time() - poly_last_refresh >= POLY_REFRESH_SEC:
             poly_markets = load_conflict_markets()
+            push_markets_to_strata(poly_markets)
             poly_last_refresh = time.time()
 
         # Read new queue entries
@@ -329,15 +343,15 @@ def run_watch():
                     last_msg_at = time.time()
                     ch   = rec.get("channel", "")
                     text = (rec.get("text_en") or "")[:90]
-                    print(f"  + @{ch}  {text}")
+                    strata_bridge.log(f"  + @{ch}  {text}")
                 except Exception:
                     pass
         except Exception as e:
-            print(f"  [!] queue read error: {e}")
+            strata_bridge.log(f"  [!] queue read error: {e}")
 
         # Fire as soon as DEBOUNCE_SEC has passed with no new messages
         if pending and last_msg_at and (time.time() - last_msg_at) >= DEBOUNCE_SEC:
-            print(f"\n  Analyzing {len(pending)} messages...")
+            strata_bridge.log(f"  Analyzing {len(pending)} messages...")
 
             events    = load_existing_events()
             extracted = analyze_message_group(pending)
@@ -346,14 +360,15 @@ def run_watch():
                 events, new_events = merge_events(events, extracted)
 
                 for ev in new_events:
-                    print(f"\n  ✓ {ev.get('headline','')}")
-                    print(f"    {ev.get('event_type','')} | {ev.get('location','')} | "
-                          f"confidence: {ev.get('confidence','')}")
-                    print(f"    {ev.get('summary','')[:140]}")
+                    strata_bridge.log(f"  ✓ {ev.get('headline','')}")
+                    strata_bridge.log(
+                        f"    {ev.get('event_type','')} | {ev.get('location','')} | "
+                        f"confidence: {ev.get('confidence','')}"
+                    )
 
                     trades = rank_polymarket_trades(ev, poly_markets)
                     ev["polymarket_trades"] = trades
-                    print_trades(trades)
+                    # trades are shown in the Polymarket panel via push_to_strata
 
                     for i, e in enumerate(events):
                         if e.get("event_id") == ev.get("event_id"):
@@ -366,7 +381,7 @@ def run_watch():
             pending     = []
             last_msg_at = None
         elif not pending:
-            last_flush = time.time()
+            pass  # idle
 
         time.sleep(10)
 

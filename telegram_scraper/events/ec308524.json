@@ -1,0 +1,226 @@
+{
+  "event_id": "ec308524",
+  "headline": "Iran-Backed Militia Strikes US Military Base in Erbil",
+  "timestamp": "2026-03-14T21:34:10Z",
+  "location": "Erbil",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "United States",
+    "PMF/Popular Mobilization Forces"
+  ],
+  "summary": "Saraya Awliya al-Dam, an Iran-backed Iraqi militia operating under the Islamic Resistance in Iraq banner, claimed a drone strike on the US military base near Erbil International Airport in the Kurdistan Region of Iraq. The attack is part of a sustained escalation following the US-Israeli war on Iran that began in late February 2026; earlier strikes in the same campaign injured French military advisers at a nearby Peshmerga training base and killed civilians, with Erbil International Airport subsequently suspending all commercial flights until further notice.",
+  "primary_markets": [
+    "defense",
+    "airlines",
+    "oil"
+  ],
+  "secondary_markets": [
+    {
+      "name": "RTX (Raytheon Technologies)",
+      "ticker": "RTX",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "RTX holds active Pentagon contracts for Patriot, AMRAAM, and Tomahawk systems deployed for force protection at US bases in Iraq; escalation drives procurement demand."
+    },
+    {
+      "name": "Lockheed Martin",
+      "ticker": "LMT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Primary supplier of missile defense and C2 systems to CENTCOM; sustained militia strikes on US installations historically accelerate existing contract ramp-ups."
+    },
+    {
+      "name": "Turkish Airlines",
+      "ticker": "THYAO.IS",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Largest single foreign operator at Erbil International Airport; multiple flights already cancelled with airspace suspended, cutting a key Middle East route."
+    },
+    {
+      "name": "Leidos Holdings",
+      "ticker": "LDOS",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Top-ranked DoD contractor (FY24 list) with significant Iraq logistics, ISR, and base-operations contracts that expand under active-threat conditions."
+    },
+    {
+      "name": "Jet fuel (Kerosene)",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bearish",
+      "reason": "Erbil airspace closure and regional flight suspensions reduce near-term jet fuel demand from Kurdistan's busiest international gateway."
+    }
+  ],
+  "trade_position": "The most actionable second-order play is long L3Harris Technologies (LHX): sustained drone-swarm attacks on US bases in Iraq are accelerating urgent procurement of counter-UAS systems (Drone Defender, VAMPIRE), and LHX is the primary C-UAS supplier to CENTCOM with existing forward-deployed equipment in the Kurdistan Region. A continued militia campaign through Q2 2026 is a direct catalyst for emergency contract extensions.",
+  "confidence": "high",
+  "sources": [
+    "@StrataIntel"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-14T21:34:10+00:00",
+        "channel": "StrataIntel",
+        "text_en": "Drone strike reported on a US-linked target in Erbil, Iraq.\nExplosions heard as tensions continue to escalate across the region.",
+        "text_orig": "Drone strike reported on a US-linked target in Erbil, Iraq.\nExplosions heard as tensions continue to escalate across the region."
+      }
+    ],
+    "media_urls": []
+  },
+  "polymarket_trades": {
+    "primary": [
+      {
+        "rank": 1,
+        "market": "US x Iran ceasefire by March 31?",
+        "url": "https://polymarket.com/event/us-x-iran-ceasefire-by-march-31",
+        "trade": "BUY NO",
+        "current_price": 0.855,
+        "reasoning": "Iran-backed militia striking US bases in Erbil signals active escalation, making a ceasefire within weeks near-impossible and reinforcing the NO position already priced at 85.5%.",
+        "urgency": "immediate",
+        "volume_usd": 8499176
+      },
+      {
+        "rank": 2,
+        "market": "Will Crude Oil (CL) hit (HIGH) $140 by end of March?",
+        "url": "https://polymarket.com/event/will-crude-oil-cl-hit-high-140-by-end-of-march",
+        "trade": "BUY YES",
+        "current_price": 0.255,
+        "reasoning": "Drone strike on Erbil airport suspending commercial flights, combined with ongoing US-Iran conflict, threatens Strait of Hormuz transit and pushes oil supply risk premium sharply higher toward $140.",
+        "urgency": "immediate",
+        "volume_usd": 958991
+      },
+      {
+        "rank": 3,
+        "market": "US forces enter Iran by March 31?",
+        "url": "https://polymarket.com/event/us-forces-enter-iran-by-march-31",
+        "trade": "BUY YES",
+        "current_price": 0.415,
+        "reasoning": "A direct hit on a US military base by an Iran-backed militia raises the probability of US retaliation escalating to ground incursion or direct strikes inside Iran before month-end.",
+        "urgency": "immediate",
+        "volume_usd": 8758650
+      },
+      {
+        "rank": 4,
+        "market": "Trump announces end of military operations against Iran by June 30th?",
+        "url": "https://polymarket.com/event/trump-announces-end-of-military-operations-against-iran-by-june-30th",
+        "trade": "BUY NO",
+        "current_price": 0.25,
+        "reasoning": "Fresh Iranian proxy attacks on US bases extend the operational timeline and reduce the chance Trump can declare victory and end operations by June 30.",
+        "urgency": "short-term",
+        "volume_usd": 84105
+      },
+      {
+        "rank": 5,
+        "market": "Will there be between 10 and 20 average daily transits of the Strait of Hormuz on March 31?",
+        "url": "https://polymarket.com/event/will-there-be-between-10-and-20-average-daily-transits-of-the-strait-of-hormuz-on-march-31",
+        "trade": "BUY NO",
+        "current_price": 0.145,
+        "reasoning": "Escalating militia strikes and Erbil airport closure signal worsening regional security, likely deterring tanker traffic in the Strait of Hormuz well below the 10-20 transit band.",
+        "urgency": "short-term",
+        "volume_usd": 9171
+      }
+    ],
+    "secondary": [
+      {
+        "rank": 1,
+        "market": "Will 20 ships transit the Strait of Hormuz on any day in March?",
+        "url": "https://polymarket.com/event/will-20-ships-transit-the-strait-of-hormuz-on-any-day-in-march",
+        "trade": "BUY NO",
+        "current_price": 0.665,
+        "reasoning": "The Erbil strike and airport suspension raise shipping insurance costs and security risk, making a single-day 20-ship Hormuz transit less likely as operators reroute or delay.",
+        "urgency": "immediate",
+        "volume_usd": 99855
+      },
+      {
+        "rank": 2,
+        "market": "Will US crude oil reserves fall to 350M by May 1?",
+        "url": "https://polymarket.com/event/will-us-crude-oil-reserves-fall-to-350m-by-may-1",
+        "trade": "BUY YES",
+        "current_price": 0.535,
+        "reasoning": "Conflict-driven supply disruption from the Iraq-Kurdistan corridor and Hormuz pressure will force the US to draw down strategic reserves, accelerating the decline toward 350M barrels.",
+        "urgency": "short-term",
+        "volume_usd": 9978
+      },
+      {
+        "rank": 3,
+        "market": "Will the Iranian regime fall before 2027?",
+        "url": "https://polymarket.com/event/will-the-iranian-regime-fall-before-2027",
+        "trade": "BUY YES",
+        "current_price": 0.375,
+        "reasoning": "Sustained proxy offensive signaling Tehran's desperation combined with ongoing US-Israeli military pressure increases regime instability probability over the 2026 horizon.",
+        "urgency": "medium-term",
+        "volume_usd": 9788055
+      },
+      {
+        "rank": 4,
+        "market": "Kurds declare independence from Iran?",
+        "url": "https://polymarket.com/event/kurds-declare-independence-from-iran",
+        "trade": "BUY YES",
+        "current_price": 0.18,
+        "reasoning": "Iranian-backed militia strikes on Erbil — the heart of Kurdish political power — could paradoxically accelerate Kurdish separatist momentum as the KRG seeks US protection and leverage.",
+        "urgency": "medium-term",
+        "volume_usd": 89568
+      },
+      {
+        "rank": 5,
+        "market": "Will Crude Oil (CL) settle at $85-$90 in March?",
+        "url": "https://polymarket.com/event/will-crude-oil-cl-settle-at-85-90-in-march",
+        "trade": "BUY NO",
+        "current_price": 0.905,
+        "reasoning": "The Erbil strike and airport closure drive oil prices significantly above the $85-90 band; the $140 scenario becomes more plausible, making the $85-90 settlement range increasingly unlikely.",
+        "urgency": "immediate",
+        "volume_usd": 78151
+      },
+      {
+        "rank": 6,
+        "market": "Will Iran strike Dimona by March 31?",
+        "url": "https://polymarket.com/event/will-iran-strike-dimona-by-march-31",
+        "trade": "BUY YES",
+        "current_price": 0.08,
+        "reasoning": "Escalating proxy attacks on US bases reflect a broader Iranian offensive posture; retaliatory US strikes may prompt Iran to authorize a direct strike on Israel's nuclear facility at Dimona.",
+        "urgency": "short-term",
+        "volume_usd": 90038
+      },
+      {
+        "rank": 7,
+        "market": "US/Israel strike Yemen by March 31?",
+        "url": "https://polymarket.com/event/us-israel-strike-yemen-by-march-31",
+        "trade": "BUY YES",
+        "current_price": 0.535,
+        "reasoning": "The multi-front Iranian proxy campaign including the Erbil strike increases US pressure to neutralize all proxy nodes simultaneously, raising the probability of Yemen strikes within weeks.",
+        "urgency": "short-term",
+        "volume_usd": 84636
+      },
+      {
+        "rank": 8,
+        "market": "Will Israel strike 4 countries in 2026?",
+        "url": "https://polymarket.com/event/will-israel-strike-4-countries-in-2026",
+        "trade": "BUY YES",
+        "current_price": 0.3325,
+        "reasoning": "Iran-backed militia activation across Iraq, Yemen, and Lebanon simultaneously creates pressure on Israel to broaden its strike operations to multiple theaters, moving this market closer to YES.",
+        "urgency": "medium-term",
+        "volume_usd": 833000
+      },
+      {
+        "rank": 9,
+        "market": "US-Iran nuclear deal by June 30?",
+        "url": "https://polymarket.com/event/us-iran-nuclear-deal-by-june-30",
+        "trade": "BUY NO",
+        "current_price": 0.795,
+        "reasoning": "Active drone strikes on US military personnel by Iranian proxies destroy the diplomatic goodwill needed for nuclear negotiations, pushing a June deal to near-zero probability.",
+        "urgency": "immediate",
+        "volume_usd": 823578
+      },
+      {
+        "rank": 10,
+        "market": "Israel x Turkey military clash before 2027?",
+        "url": "https://polymarket.com/event/israel-x-turkey-military-clash-before-2027",
+        "trade": "BUY YES",
+        "current_price": 0.215,
+        "reasoning": "Regional escalation from Iranian proxy attacks destabilizes the northern Iraq-Syria corridor where Turkish and Israeli interests collide, increasing the probability of an inadvertent or deliberate Turkey-Israel military incident.",
+        "urgency": "medium-term",
+        "volume_usd": 76070
+      }
+    ]
+  }
+}

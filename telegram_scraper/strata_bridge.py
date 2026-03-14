@@ -1,0 +1,68 @@
+"""
+Strata TUI bridge — route log messages to the Strata left panel.
+
+Usage:
+    from strata_bridge import log
+    log("  @OSINTdefender  Some breaking news...")
+
+When Strata is running (HTTP server on STRATA_URL), messages appear in the left
+feed panel. When Strata is not running, messages fall back to stdout so batch
+mode and headless runs still work normally.
+"""
+from __future__ import annotations
+import json
+import os
+import urllib.request
+
+_STRATA_URL = os.getenv("STRATA_URL", "http://localhost:3001")
+
+
+def log(msg: str) -> None:
+    """Send a text message to the Strata left panel. Falls back to print if not running."""
+    try:
+        data = json.dumps({"msg": msg}).encode()
+        req  = urllib.request.Request(
+            f"{_STRATA_URL}/log", data=data,
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        urllib.request.urlopen(req, timeout=1)
+    except Exception:
+        # Strata not running — print to stdout (batch / headless mode)
+        print(msg)
+
+
+def log_telegram(
+    ts: str,
+    channel: str,
+    text: str,
+    media_path: str | None = None,
+    media_type: str | None = None,
+) -> None:
+    """Send a structured Telegram message to the Strata left panel.
+
+    ts         — ISO timestamp or HH:MM string
+    channel    — channel username (without @)
+    text       — full message text (first line shown by default, rest on expand)
+    media_path — relative path to downloaded media file (optional)
+    media_type — 'photo' | 'video' | None
+    """
+    try:
+        data = json.dumps({
+            "ts":         ts,
+            "channel":    channel,
+            "text":       text,
+            "media_path": media_path,
+            "media_type": media_type,
+        }).encode()
+        req = urllib.request.Request(
+            f"{_STRATA_URL}/telegram", data=data,
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        urllib.request.urlopen(req, timeout=1)
+    except Exception:
+        # Strata not running — fall back to plain log
+        snippet = (text or "").split("\n")[0][:100]
+        flag = f"[{media_type}] " if media_type else ""
+        print(f"  {ts} @{channel} {flag}{snippet}")

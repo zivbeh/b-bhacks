@@ -37,6 +37,7 @@ from scraper import (
 )
 from run import run_batch, run_watch
 from trade_executor import watch_and_execute
+import strata_bridge
 
 
 # ── helpers ────────────────────────────────────────────────────────────────────
@@ -165,49 +166,46 @@ Examples:
     else:
         channels = ALL_CHANNELS
 
-    divider()
-    print(f"  ME Conflict Intelligence Pipeline  |  LIVE MODE")
-    print(f"  Channels: {', '.join(channels)}")
-    print(f"  Trades: {'LIVE' if not dry_run else 'DRY RUN'}")
-    divider()
-    print()
-
     threads = []
     strata_proc = None
 
     if not args.no_strata:
         strata_proc = start_strata()
         if strata_proc:
-            time.sleep(1)  # let strata initialize before Python output begins
+            time.sleep(2)  # let strata initialize before threads start writing
+
+    strata_bridge.log(f"  STRATA  |  {'LIVE' if not dry_run else 'DRY RUN'}  |  {', '.join(channels)}")
 
     # Thread 1: Telegram scraper
-    print("  [1/3] Starting Telegram scraper...")
+    strata_bridge.log("  [1/3] Starting Telegram scraper...")
     threads.append(thread("scraper", run_scraper_thread, channels, args.backfill))
     time.sleep(2)  # let scraper connect before analyzer starts polling
 
     # Thread 2: Analyzer watch loop
-    print("  [2/3] Starting event analyzer...")
+    strata_bridge.log("  [2/3] Starting event analyzer...")
     threads.append(thread("analyzer", run_watch))
 
-    # Thread 3: Trade executor watch loop (delayed so polymarket prints don't overlap)
+    # Thread 3: Trade executor watch loop
     if not args.no_trade:
-        print(f"  [3/3] Starting trade executor ({'LIVE' if not dry_run else 'dry run'})...")
+        strata_bridge.log(f"  [3/3] Starting trade executor ({'LIVE' if not dry_run else 'dry run'})...")
         def delayed_executor():
             time.sleep(5)
             watch_and_execute(dry_run)
         threads.append(thread("executor", delayed_executor))
 
-    print("\n  All systems running. Press Ctrl+C to stop.\n")
+    strata_bridge.log("  All systems running.")
 
     try:
         while True:
-            # Restart any thread that died unexpectedly
-            for t in threads:
-                if not t.is_alive():
-                    print(f"  [!] thread '{t.name}' died — check logs above")
             time.sleep(30)
+            still_alive = []
+            for t in threads:
+                if t.is_alive():
+                    still_alive.append(t)
+                else:
+                    strata_bridge.log(f"  [!] thread '{t.name}' exited")
+            threads = still_alive  # stop re-logging the same dead thread
     except KeyboardInterrupt:
-        print("\n\n  Shutting down...")
         if strata_proc:
             strata_proc.terminate()
         sys.exit(0)

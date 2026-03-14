@@ -1,0 +1,227 @@
+{
+  "event_id": "e549f8de",
+  "headline": "IDF Strikes Houthi Military Bases in Yemen Amid Iran War",
+  "timestamp": "2026-03-14T21:15:04Z",
+  "location": "Sanaa",
+  "event_type": "Attack and Hit",
+  "involved": [
+    "Israel",
+    "Houthis"
+  ],
+  "summary": "The IDF struck multiple Houthi military bases in Yemen on March 14, 2026, consistent with the ongoing Israeli campaign against Houthi infrastructure that has targeted sites in the Sanaa and Al Jawf areas, Hodeidah port, and missile/command facilities. The strike occurs within the broader 2026 Iran war context, in which Houthis have vowed to resume Red Sea shipping attacks and threatened escalation in solidarity with Iran. No confirmed casualty figures for this specific strike have been independently verified at time of reporting.",
+  "primary_markets": [
+    "defense",
+    "shipping routes",
+    "insurance",
+    "oil"
+  ],
+  "secondary_markets": [
+    {
+      "name": "Elbit Systems",
+      "ticker": "ESLT",
+      "type": "company",
+      "signal": "bullish",
+      "reason": "Israel's largest defense contractor supplies 85% of IDF land equipment and drones; sustained air campaign in Yemen drives procurement and production surge."
+    },
+    {
+      "name": "A.P. Moller-Maersk",
+      "ticker": "MAERSK-B.CO",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Maersk only just resumed Red Sea transits in December 2025; renewed Houthi threats tied to the Iran war force renewed Cape of Good Hope diversions, adding 10+ days and cost per voyage."
+    },
+    {
+      "name": "Hapag-Lloyd",
+      "ticker": "HLAG.DE",
+      "type": "company",
+      "signal": "bearish",
+      "reason": "Hapag-Lloyd is among the top Red Sea operators now facing renewed routing uncertainty and war risk surcharges as Houthis escalate in concert with the Iran war."
+    },
+    {
+      "name": "War Risk Insurance Premium (Lloyd's)",
+      "ticker": null,
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "Marine war risk premiums for Red Sea/Bab-el-Mandeb transits are spiking again — already up from 0.3% to 0.7%+ of vessel value — benefiting specialist marine insurers and Lloyd's syndicates."
+    },
+    {
+      "name": "Brent Crude",
+      "ticker": "BZ=F",
+      "type": "commodity",
+      "signal": "bullish",
+      "reason": "IDF strikes on Houthi bases intensify the Iran war risk premium on oil; Red Sea/Hormuz disruption is already pushing prices higher and threatens tanker route viability."
+    }
+  ],
+  "trade_position": "Buy war-risk insurance proxies: go long on Beazley (BEZ.L) or Lancashire Holdings (LRE.L), specialist Lloyd's marine and political risk insurers — renewed Houthi Red Sea activity in the context of the Iran war will drive a rapid re-rating of war risk premiums and renewed demand for coverage, with premiums already spiking 130%+ from pre-escalation levels. The hidden catalyst is that shipping companies who briefly returned to Red Sea routes (Maersk, CMA CGM) are now forced back to Cape diversions, creating a second-order surge in voyage duration, fuel costs, and charter demand that inflates dry bulk and tanker day-rates.",
+  "confidence": "medium",
+  "sources": [
+    "@StrataIntel"
+  ],
+  "raw_input": {
+    "messages": [
+      {
+        "timestamp": "2026-03-14T21:15:04+00:00",
+        "channel": "StrataIntel",
+        "text_en": "IDF Strikes Houthi bases",
+        "text_orig": "IDF Strikes Houthi bases"
+      }
+    ],
+    "media_urls": []
+  },
+  "polymarket_trades": {
+    "primary": [
+      {
+        "rank": 1,
+        "market": "US/Israel strike Yemen by March 31?",
+        "url": "https://polymarket.com/event/us-israel-strike-yemen-by-march-31",
+        "trade": "BUY YES",
+        "current_price": 0.525,
+        "reasoning": "The IDF strike on March 14 already constitutes a confirmed hit on Houthi bases, making YES resolution near-certain for this market.",
+        "urgency": "immediate",
+        "volume_usd": 84597
+      },
+      {
+        "rank": 2,
+        "market": "US/Israel strike Yemen by March 14?",
+        "url": "https://polymarket.com/event/us-israel-strike-yemen-by-march-14",
+        "trade": "BUY YES",
+        "current_price": 0.0095,
+        "reasoning": "The IDF strike on Houthi military bases occurred on March 14, directly resolving this market YES — extreme mispricing at 0.95 cents.",
+        "urgency": "immediate",
+        "volume_usd": 93155
+      },
+      {
+        "rank": 3,
+        "market": "Will Crude Oil (CL) hit (HIGH) $140 by end of March?",
+        "url": "https://polymarket.com/event/will-crude-oil-cl-hit-high-140-by-end-of-march",
+        "trade": "BUY YES",
+        "current_price": 0.26,
+        "reasoning": "IDF strikes on Houthi infrastructure within the Iran war context significantly elevate the risk of Hormuz closure or broader regional escalation that would spike crude toward $140.",
+        "urgency": "immediate",
+        "volume_usd": 958860
+      },
+      {
+        "rank": 4,
+        "market": "Will Israel strike 4 countries in 2026?",
+        "url": "https://polymarket.com/event/will-israel-strike-4-countries-in-2026",
+        "trade": "BUY YES",
+        "current_price": 0.332,
+        "reasoning": "Yemen strikes confirm Israel has now hit at least Iran proxies across multiple theaters; each additional confirmed country strike (Gaza, Lebanon, Syria, Yemen) brings this closer to resolution YES.",
+        "urgency": "short-term",
+        "volume_usd": 833000
+      },
+      {
+        "rank": 5,
+        "market": "US x Iran ceasefire by March 31?",
+        "url": "https://polymarket.com/event/us-x-iran-ceasefire-by-march-31",
+        "trade": "BUY NO",
+        "current_price": 0.155,
+        "reasoning": "Active IDF strikes on Houthi bases signal the broader Iran-axis war is intensifying, not winding down, making a ceasefire within two weeks highly unlikely.",
+        "urgency": "immediate",
+        "volume_usd": 8495060
+      }
+    ],
+    "secondary": [
+      {
+        "rank": 1,
+        "market": "Will 20 ships transit the Strait of Hormuz on any day in March?",
+        "url": "https://polymarket.com/event/will-20-ships-transit-the-strait-of-hormuz-on-any-day-in-march",
+        "trade": "BUY NO",
+        "current_price": 0.335,
+        "reasoning": "Houthi vows to resume Red Sea attacks combined with IDF strikes on Hodeidah port infrastructure will suppress tanker confidence and reduce Hormuz transit volumes below threshold.",
+        "urgency": "short-term",
+        "volume_usd": 99713
+      },
+      {
+        "rank": 2,
+        "market": "Will 25-29 ships transit the Strait of Hormuz between March 10-16?",
+        "url": "https://polymarket.com/event/will-25-29-ships-transit-the-strait-of-hormuz-between-march-10-16",
+        "trade": "BUY NO",
+        "current_price": 0.105,
+        "reasoning": "Escalating regional hostilities following the March 14 Yemen strikes will deter commercial shipping in the Hormuz corridor this week, making the 25-29 band unlikely to be hit.",
+        "urgency": "immediate",
+        "volume_usd": 9811
+      },
+      {
+        "rank": 3,
+        "market": "Will US crude oil reserves fall to 350M by May 1?",
+        "url": "https://polymarket.com/event/will-us-crude-oil-reserves-fall-to-350m-by-may-1",
+        "trade": "BUY YES",
+        "current_price": 0.535,
+        "reasoning": "Supply disruption fears from Houthi Red Sea threats and possible Hormuz chokepoint risk will accelerate strategic reserve drawdowns and commercial inventory depletion.",
+        "urgency": "short-term",
+        "volume_usd": 9918
+      },
+      {
+        "rank": 4,
+        "market": "Will Crude Oil (CL) settle at $85-$90 in March?",
+        "url": "https://polymarket.com/event/will-crude-oil-cl-settle-at-85-90-in-march",
+        "trade": "BUY NO",
+        "current_price": 0.095,
+        "reasoning": "IDF-Houthi escalation within the Iran war context makes a benign $85-90 settlement range improbable — oil is likely to trade well above this band given geopolitical risk premium.",
+        "urgency": "short-term",
+        "volume_usd": 78151
+      },
+      {
+        "rank": 5,
+        "market": "Will Iran strike Dimona by March 31?",
+        "url": "https://polymarket.com/event/will-iran-strike-dimona-by-march-31",
+        "trade": "BUY YES",
+        "current_price": 0.08,
+        "reasoning": "IDF strikes on Houthi bases escalate Iran-axis tensions and increase the probability of Iranian retaliation targeting Israel's nuclear facility as a high-value symbolic counterstrike.",
+        "urgency": "short-term",
+        "volume_usd": 90038
+      },
+      {
+        "rank": 6,
+        "market": "Will the Iranian regime fall before 2027?",
+        "url": "https://polymarket.com/event/will-the-iranian-regime-fall-before-2027",
+        "trade": "BUY YES",
+        "current_price": 0.375,
+        "reasoning": "Systematic dismantling of Iran's proxy network — including Houthi military bases — degrades Iran's deterrence posture and internal legitimacy, accelerating regime fragility.",
+        "urgency": "medium-term",
+        "volume_usd": 9787940
+      },
+      {
+        "rank": 7,
+        "market": "Kurds declare independence from Iran?",
+        "url": "https://polymarket.com/event/kurds-declare-independence-from-iran",
+        "trade": "BUY YES",
+        "current_price": 0.18,
+        "reasoning": "Israeli-led degradation of Iran's military and proxy capacity creates a window of opportunity for Kurdish separatist movements to assert independence while Tehran is overstretched.",
+        "urgency": "medium-term",
+        "volume_usd": 89525
+      },
+      {
+        "rank": 8,
+        "market": "Israel and Saudi Arabia normalize relations before 2027?",
+        "url": "https://polymarket.com/event/israel-and-saudi-arabia-normalize-relations-before-2027",
+        "trade": "BUY YES",
+        "current_price": 0.185,
+        "reasoning": "Israeli strikes eliminating Houthi capability — a direct threat to Saudi Arabia — builds tacit Saudi-Israeli security alignment that could accelerate formal normalization talks.",
+        "urgency": "medium-term",
+        "volume_usd": 93756
+      },
+      {
+        "rank": 9,
+        "market": "Iran x Israel/US conflict ends by December 31?",
+        "url": "https://polymarket.com/event/iran-x-israel-us-conflict-ends-by-december-31",
+        "trade": "BUY NO",
+        "current_price": 0.835,
+        "reasoning": "Active IDF strikes expanding into Yemen theater suggests the conflict is broadening, not approaching conclusion — 0.835 YES is significantly overpriced given the multi-front escalation.",
+        "urgency": "short-term",
+        "volume_usd": 9498
+      },
+      {
+        "rank": 10,
+        "market": "Will any European country expel an Israeli ambassador by March 31?",
+        "url": "https://polymarket.com/event/will-any-european-country-expel-an-israeli-ambassador-by-march-31",
+        "trade": "BUY YES",
+        "current_price": 0.075,
+        "reasoning": "IDF strikes on Yemen — a non-Gaza theater with potential civilian infrastructure impact at Hodeidah port — will intensify European diplomatic pressure, raising the probability of an ambassador expulsion.",
+        "urgency": "short-term",
+        "volume_usd": 79509
+      }
+    ]
+  }
+}

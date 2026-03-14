@@ -19,6 +19,7 @@ from pathlib import Path
 
 import anthropic
 from dotenv import load_dotenv
+import strata_bridge
 
 load_dotenv()
 
@@ -209,7 +210,7 @@ def extract_json(text: str) -> list:
                 return json.loads(m.group(1))
             except json.JSONDecodeError:
                 pass
-    print(f"  [!] JSON parse failed:\n{text[:300]}")
+    strata_bridge.log(f"  [!] JSON parse failed:\n{text[:300]}")
     return []
 
 
@@ -289,11 +290,11 @@ def analyze_message_group(messages: list) -> list:
                 messages=loop_messages,
             )
         except anthropic.RateLimitError:
-            print("  [!] rate limited — waiting 60s...")
+            strata_bridge.log("  [!] rate limited — waiting 60s...")
             time.sleep(60)
             continue
         except anthropic.APIError as e:
-            print(f"  [!] API error: {e}")
+            strata_bridge.log(f"  [!] API error: {e}")
             return []
 
         if response.stop_reason == "end_turn":
@@ -309,7 +310,7 @@ def analyze_message_group(messages: list) -> list:
             continuations += 1
             continue
 
-        print(f"  [!] unexpected stop_reason: {response.stop_reason}")
+        strata_bridge.log(f"  [!] unexpected stop_reason: {response.stop_reason}")
         break
 
     return []

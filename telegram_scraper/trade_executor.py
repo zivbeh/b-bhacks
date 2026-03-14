@@ -25,6 +25,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
+import strata_bridge
 load_dotenv()
 
 PRIVATE_KEY  = os.getenv("POLY_PRIVATE_KEY", "")
@@ -35,7 +36,42 @@ CLOB_HOST    = "https://clob.polymarket.com"
 
 URGENCY_RANK = {"immediate": 0, "short-term": 1, "medium-term": 2}
 
-EVENTS_DIR = Path("events")
+EVENTS_DIR  = Path("events")
+TRADES_LOG  = Path("trades_log.json")
+
+
+def _load_trades_log() -> list:
+    if TRADES_LOG.exists():
+        try:
+            return json.loads(TRADES_LOG.read_text(encoding="utf-8"))
+        except Exception:
+            pass
+    return []
+
+
+def _append_trades_log(new_entries: list) -> None:
+    if not new_entries:
+        return
+    log = _load_trades_log()
+    log.extend(new_entries)
+    tmp = TRADES_LOG.with_suffix(".tmp.json")
+    tmp.write_text(json.dumps(log, indent=2, ensure_ascii=False), encoding="utf-8")
+    tmp.replace(TRADES_LOG)
+
+
+def _push_trades_to_strata(trades: list) -> None:
+    if not trades:
+        return
+    try:
+        import urllib.request as _ur
+        data = json.dumps(trades).encode()
+        req  = _ur.Request(
+            f"{os.getenv('STRATA_URL', 'http://localhost:3001')}/trades",
+            data=data, headers={"Content-Type": "application/json"}, method="POST",
+        )
+        _ur.urlopen(req, timeout=1)
+    except Exception:
+        pass
 
 
 # ── CLOB client setup ──────────────────────────────────────────────────────────
@@ -116,7 +152,6 @@ def execute_event_trades(
     trades_blob = event.get("polymarket_trades", {})
 
     if not trades_blob:
-        print(f"  [skip] {event_path.name} — no polymarket_trades")
         return []
 
     # Support old format (flat list) and new format (dict with primary/secondary)
@@ -134,15 +169,11 @@ def execute_event_trades(
     results  = []
 
     headline = event.get("headline", event_path.stem)
-    print(f"\n{'─'*70}")
-    print(f"  EVENT: {headline}")
-    print(f"  {'[DRY RUN] ' if dry_run else ''}Executing trades  (size: ${ORDER_SIZE} USDC each)")
-    print(f"{'─'*70}")
+    strata_bridge.log(f"  ── {'[DRY RUN] ' if dry_run else ''}TRADES: {headline[:60]}")
 
     for section, trade in all_trades:
         urgency = trade.get("urgency", "medium-term")
         if URGENCY_RANK.get(urgency, 99) > min_rank:
-            print(f"  [skip] #{trade.get('rank')} {section} — urgency={urgency} below threshold")
             continue
 
         market_q  = trade.get("market", "")
@@ -152,31 +183,36 @@ def execute_event_trades(
 
         token_id = find_token_id(market_q, trade_dir, poly_markets)
         if not token_id:
-            print(f"  [!] #{trade.get('rank')} {section} — token_id not found for: {market_q[:60]}")
+            strata_bridge.log(f"  [!] token not found: {market_q[:60]}")
             results.append({"section": section, "rank": trade.get("rank"), "status": "TOKEN_NOT_FOUND", "market": market_q})
             continue
 
         resp = place_order(client, token_id, price, ORDER_SIZE, dry_run)
 
         status = resp.get("status", "PLACED")
-        print(f"  [{section.upper()}] #{trade.get('rank')}  {trade_dir}  @{price:.0%}  ${ORDER_SIZE}")
-        print(f"    \"{market_q[:65]}\"")
-        print(f"    → {reason}")
-        print(f"    status: {status}")
+        strata_bridge.log(
+            f"  [{section.upper()}] #{trade.get('rank')} {trade_dir} @{price:.0%} "
+            f"${ORDER_SIZE} [{status}] {market_q[:50]}"
+        )
         if resp.get("error"):
-            print(f"    error:  {resp['error']}")
+            strata_bridge.log(f"    error: {resp['error']}")
 
-        results.append({
-            "section":  section,
-            "rank":     trade.get("rank"),
-            "market":   market_q,
-            "trade":    trade_dir,
-            "price":    price,
-            "size":     ORDER_SIZE,
-            "token_id": token_id,
-            "status":   status,
-            "error":    resp.get("error"),
-        })
+        from datetime import datetime, timezone
+        entry = {
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "event":     headline,
+            "section":   section,
+            "rank":      trade.get("rank"),
+            "market":    market_q,
+            "trade":     trade_dir,
+            "price":     price,
+            "size":      ORDER_SIZE,
+            "token_id":  token_id,
+            "status":    status,
+            "url":       trade.get("url", ""),
+            "error":     resp.get("error"),
+        }
+        results.append(entry)
 
     # Persist execution results back into the event file
     event.setdefault("executions", [])
@@ -185,7 +221,53 @@ def execute_event_trades(
     tmp.write_text(json.dumps(event, indent=2, ensure_ascii=False), encoding="utf-8")
     tmp.replace(event_path)
 
+    # Save to trades_log.json and push to strata
+    if results:
+        _append_trades_log(results)
+        _push_trades_to_strata(results)
+        # Record in portfolio (only trades that were actually placed or simulated)
+        _record_in_portfolio(results, event)
+
     return results
+
+
+def _record_in_portfolio(results: list[dict], event: dict) -> None:
+    """Open a portfolio position for each successfully placed (or dry-run) trade."""
+    try:
+        import portfolio as pf
+        portfolio = pf.load_portfolio()
+        event_id  = event.get("event_id", "unknown")
+        headline  = event.get("headline", "")
+        changed   = False
+        for entry in results:
+            if entry.get("status") not in ("PLACED", "DRY_RUN"):
+                continue
+            # Avoid duplicate positions for same market+direction
+            market_q  = entry.get("market", "")
+            direction = entry.get("trade", "").replace("BUY ", "").strip()
+            already   = any(
+                p["market"] == market_q and p["direction"] == direction and p["status"] == "open"
+                for p in portfolio["positions"]
+            )
+            if not already:
+                pf.open_position(
+                    portfolio,
+                    event_id        = event_id,
+                    event_headline  = headline,
+                    market          = market_q,
+                    trade           = entry.get("trade", "BUY YES"),
+                    entry_price     = float(entry.get("price", 0.5)),
+                    size_usdc       = float(entry.get("size", ORDER_SIZE)),
+                    url             = entry.get("url", ""),
+                    token_id        = entry.get("token_id", ""),
+                    entry_timestamp = entry.get("timestamp"),
+                    position_id     = f"{event_id}_{entry.get('section','p')}{entry.get('rank',0)}",
+                )
+                changed = True
+        if changed:
+            pf.save_portfolio(portfolio)
+    except Exception:
+        pass  # portfolio tracking is best-effort
 
 
 # ── watch mode ─────────────────────────────────────────────────────────────────
@@ -199,15 +281,27 @@ def watch_and_execute(dry_run: bool):
         try:
             get_client()
         except RuntimeError as e:
-            print(f"  [!] trade executor disabled: {e}")
+            strata_bridge.log(f"  [!] trade executor disabled: {e}")
             return
 
-    print(f"  Watching {EVENTS_DIR}/ for new events...")
-    print(f"  Mode: {'DRY RUN' if dry_run else 'LIVE'}  |  size: ${ORDER_SIZE} USDC  |  min urgency: {MIN_URGENCY}\n")
+    strata_bridge.log(f"  [EXEC] watching events/ | {'DRY RUN' if dry_run else 'LIVE'} | ${ORDER_SIZE} USDC | min: {MIN_URGENCY}")
+
+    # Push existing trades log to strata on startup
+    _push_trades_to_strata(_load_trades_log())
 
     poly_markets      = load_conflict_markets()
     poly_last_refresh = time.time()
-    executed          = {f.name for f in EVENTS_DIR.glob("*.json")}
+
+    # Only skip events that already have executions recorded.
+    # Events with polymarket_trades but no executions will be processed on startup.
+    executed: set[str] = set()
+    for f in EVENTS_DIR.glob("*.json"):
+        try:
+            ev = json.loads(f.read_text(encoding="utf-8"))
+            if ev.get("executions"):
+                executed.add(f.name)
+        except Exception:
+            pass
 
     while True:
         # Refresh market data every 10 min
@@ -218,7 +312,7 @@ def watch_and_execute(dry_run: bool):
         for f in sorted(EVENTS_DIR.glob("*.json")):
             if f.name not in executed:
                 executed.add(f.name)
-                time.sleep(1)  # let run.py finish writing the file
+                time.sleep(0.5)  # let run.py finish writing the file
                 execute_event_trades(f, poly_markets, dry_run=dry_run)
 
         time.sleep(5)
