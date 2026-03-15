@@ -2,7 +2,7 @@
 
 **Real-time conflict intelligence → market signals → automated trading**
 
-STRATA turns live conflict news (from Telegram channels) into structured events, maps them to Polymarket prediction markets, and can execute trades automatically. Everything appears in a single live terminal dashboard: incidents, a world map, AI trade signals, and execution history.
+STRATA turns live conflict news (from Telegram/News channels) into structured events, maps them to Polymarket prediction markets, and can execute trades automatically using the Polymarket API. Everything appears in a single live terminal dashboard: incidents, a world map, AI trade signals, and execution history.
 
 ---
 
