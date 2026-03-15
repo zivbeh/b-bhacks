@@ -66,3 +66,26 @@ def log_telegram(
         snippet = (text or "").split("\n")[0][:100]
         flag = f"[{media_type}] " if media_type else ""
         print(f"  {ts} @{channel} {flag}{snippet}")
+
+
+def push_pnl(stats: dict) -> None:
+    """Send portfolio P&L summary to Strata (right panel next to AI SIGNALS).
+
+    stats — dict from portfolio.compute_pnl(), e.g. total_pnl_usdc, cash_usdc, pnl_pct.
+    """
+    try:
+        data = json.dumps({
+            "total_pnl_usdc":  stats.get("total_pnl_usdc", 0),
+            "unrealized_usdc": stats.get("unrealized_usdc", 0),
+            "realized_usdc":   stats.get("realized_usdc", 0),
+            "cash_usdc":       stats.get("cash_usdc", 0),
+            "pnl_pct":         stats.get("pnl_pct", 0),
+        }).encode()
+        req = urllib.request.Request(
+            f"{_STRATA_URL}/pnl", data=data,
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        urllib.request.urlopen(req, timeout=1)
+    except Exception:
+        pass  # Strata not running — silent

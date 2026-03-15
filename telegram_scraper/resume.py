@@ -272,6 +272,15 @@ def run_resume(since: datetime, until: datetime | None, dry_run: bool,
     push_markets_to_strata(poly_markets)
     strata_bridge.log(f"  ✓ {len(poly_markets)} conflict markets")
 
+    # Push current P&L to Strata so it shows next to AI SIGNALS as sim runs
+    try:
+        import portfolio as pf
+        _port = pf.load_portfolio()
+        pf.sync_prices(_port, poly_markets)
+        strata_bridge.push_pnl(pf.compute_pnl(_port))
+    except Exception:
+        pass
+
     # ── Step 3: Analyze windows (skip already-processed, run parallel) ────────
     strata_bridge.log("  [3/4] Analyzing message windows...")
     windows = group_into_windows(messages)
@@ -387,6 +396,7 @@ def run_resume(since: datetime, until: datetime | None, dry_run: bool,
         pf.sync_prices(portfolio, poly_markets)
         pf.save_portfolio(portfolio)
         stats = pf.compute_pnl(portfolio)
+        strata_bridge.push_pnl(stats)
         strata_bridge.log("")
         strata_bridge.log(f"  PORTFOLIO  |  {stats['open_count']} open  |  "
                           f"invested: ${stats['total_invested']:.2f}  |  "

@@ -89,7 +89,10 @@ const telegramMsgs = [];  // [{ts, channel, text, mediaPath, mediaType, expanded
 const leftPanelRowMap      = {};   // terminal row → telegramMsgs index (rebuilt on each draw)
 const leftPanelAiEvMap     = {};   // terminal row → evIdx for AI event h1 rows (for collapse click)
 const leftPanelMediaRowMap = {};   // terminal row → telegramMsgs index for media rows (click to open)
-let   leftPanelScroll = 0;    // scroll offset for left panel (rows from bottom)
+let   leftPanelScroll = 0;    // scroll offset for AI events panel (rows from bottom)
+let   telegramScroll = 0;     // scroll offset for telegram sub-panel
+let   leftDividerFrac = 0.55; // fraction of left panel height for AI events (top)
+let   isDraggingDivider = false;
 
 // AI event collapse state
 let evCounter = 0;
@@ -113,6 +116,9 @@ let tradesPanelScroll = 0;      // scroll offset (rows) for bottom trades panel
 // Executed trades log (pushed from Python trade_executor.py)
 const executedTrades = [];  // [ { timestamp, event, trade, market, price, status, url } ]
 
+// Portfolio P&L (pushed from Python via POST /pnl when portfolio is synced)
+let portfolioPnl = null;   // { total_pnl_usdc, unrealized_usdc, realized_usdc, cash_usdc, pnl_pct } | null
+
 // Polymarket state
 const polyState = {
   markets:    [],   // [{id, question, category, yesPrice, noPrice, change}]
@@ -134,6 +140,7 @@ let simSpeed     = sinceMs !== null ? 1000 : 1;  // --since defaults to 1000× r
 let simStartReal = sinceMs !== null ? Date.now() : null;  // Date.now() when sim clock started
 let simStartMs   = sinceMs;   // event timestamp (ms) at sim start (null = not yet started)
 const simQueue   = [];      // [{ev, ts}] sorted ascending by ts (ms)
+const pendingEvents = [];   // events held until Polymarket data arrives (POST / when markets empty)
 
 function simNowMs() {
   if (simStartReal === null) return Date.now();
@@ -162,7 +169,7 @@ setInterval(() => {
 // ── Graceful exit ─────────────────────────────────────────────────────────────
 function cleanup() {
   if (process.stdin.isTTY && process.stdin.isRaw) process.stdin.setRawMode(false);
-  process.stdout.write('\x1B[?1000l\x1B[?1006l\x1B[r\x1B[?6l\x1B[0m\x1B[?25h\n');
+  process.stdout.write('\x1B[?1000l\x1B[?1002l\x1B[?1006l\x1B[r\x1B[?6l\x1B[0m\x1B[?25h\n');
   process.exit(0);
 }
 process.on('SIGINT',  cleanup);
@@ -239,6 +246,12 @@ function httpsGet(url) {
   });
 }
 
+// ── Left panel divider position ───────────────────────────────────────────────
+function getLeftDividerRow() {
+  const panelH = mapBottomLine - mapTopLine + 1;
+  return mapTopLine + Math.max(3, Math.min(panelH - 4, Math.floor(panelH * leftDividerFrac)));
+}
+
 // ── Border / chrome ───────────────────────────────────────────────────────────
 function drawBorders() {
   withAbsPos(() => {
@@ -276,12 +289,22 @@ function drawBorders() {
     out.push(mv(3, 1));
     out.push(`${C.dim}╠${seg(LEFT_W)}╬${seg(MAP_W)}╬${seg(RIGHT_W)}╣${C.reset}`);
 
-    // Content rows — vertical borders for 3-column layout
+    // Content rows — vertical borders for 3-column layout (with left-panel divider)
+    const _divRow = getLeftDividerRow();
     for (let r = mapTopLine; r <= mapBottomLine; r++) {
-      out.push(`${mv(r, 1)}${C.dim}║${C.reset}`);
-      out.push(`${mv(r, COL_MLB)}${C.dim}║${C.reset}`);
-      out.push(`${mv(r, COL_MRB)}${C.dim}║${C.reset}`);
-      out.push(`${mv(r, cols)}${C.dim}║${C.reset}`);
+      if (r === _divRow) {
+        const _title = ' TELEGRAM ';
+        const _pre = Math.floor((LEFT_W - _title.length) / 2);
+        const _post = LEFT_W - _pre - _title.length;
+        out.push(`${mv(r, 1)}${C.dim}╠${'═'.repeat(_pre)}${C.reset}${C.orange}${C.bold}${_title}${C.reset}${C.dim}${'═'.repeat(_post)}╣${C.reset}`);
+        out.push(`${mv(r, COL_MRB)}${C.dim}║${C.reset}`);
+        out.push(`${mv(r, cols)}${C.dim}║${C.reset}`);
+      } else {
+        out.push(`${mv(r, 1)}${C.dim}║${C.reset}`);
+        out.push(`${mv(r, COL_MLB)}${C.dim}║${C.reset}`);
+        out.push(`${mv(r, COL_MRB)}${C.dim}║${C.reset}`);
+        out.push(`${mv(r, cols)}${C.dim}║${C.reset}`);
+      }
     }
 
     // MID_SEP_ROW — close 3-column layout, open trades panel
@@ -341,6 +364,7 @@ function drawStatusBar() {
       `  ${C.dim}[ x ] exit${C.reset}` +
       `  ${speedColor}[ +/- ] speed: ${speedLbl}${C.reset}` +
       `  ${C.dim}[ z/Z ] zoom${C.reset}` +
+      `  ${C.dim}[ [/] ] resize${C.reset}` +
       simPart
     );
     const visLen = left.replace(/\x1B\[[^m]*m/g, '').length;
@@ -357,16 +381,10 @@ function drawStatusBar() {
 //
 // All other sys/ok/warn pipeline chatter is suppressed.
 
-function buildLeftPanelRows() {
-  // Returns [{t, text, tmIdx?}] — ordered oldest→newest, ready to render.
+function buildAiPanelRows() {
   const W    = LEFT_W;
   const rows = [];
 
-  const pushTm = (tmIdx, lines, type) => {
-    for (const l of lines) rows.push({t: type, text: l, tmIdx});
-  };
-
-  // ── AI event entries (feedLines: sep, meta, tag, h1, body, sys-filtered) ──
   const aiEntries = feedLines.filter(e => {
     const t = typeof e === 'string' ? 'sys' : e.t;
     if (t === 'sys') return /all systems running/i.test(typeof e === 'string' ? e : e.text);
@@ -381,35 +399,36 @@ function buildLeftPanelRows() {
       const txt = `${toggle} ${e.text}`.slice(0, W);
       rows.push({t:'h1', text:txt.padEnd(W), evIdx: e.evIdx, hasMedia});
     } else if (e.t === 'body') {
-      // Skip body lines when event is collapsed
       if (e.evIdx !== undefined && collapsedEvents.has(e.evIdx)) continue;
       rows.push({t:'body', text:'   ' + e.text});
     } else {
       rows.push(e);
     }
   }
+  return rows;
+}
 
-  // ── Telegram messages (interleaved, most recent at bottom) ────────────────
-  const tmSlice = telegramMsgs.slice(-40);  // keep last 40 messages
+function buildTelegramRows() {
+  const W    = LEFT_W;
+  const rows = [];
+
+  const tmSlice = telegramMsgs.slice(-100);
   for (let i = 0; i < tmSlice.length; i++) {
     const tm     = tmSlice[i];
-    const tmIdx  = telegramMsgs.length - tmSlice.length + i;  // real index
+    const tmIdx  = telegramMsgs.length - tmSlice.length + i;
     const lines  = (tm.text || '').split('\n').filter(Boolean);
-    const first  = (lines[0] || '').slice(0, W - 14);  // leave room for prefix
+    const first  = (lines[0] || '').slice(0, W - 14);
     const prefix = `${tm.ts || ''} @${tm.channel || ''}`;
     const toggle = tm.expanded ? '[-]' : '[+]';
     const head   = `${toggle} ${prefix.slice(0, 16).padEnd(16)} ${first}`;
 
-    // Header row
     rows.push({t: 'tg_head', text: head.slice(0, W), tmIdx});
 
     if (tm.expanded) {
-      // All lines of message body
       for (let li = 1; li < lines.length; li++) {
         for (const l of wrapText(lines[li], W - 4))
           rows.push({t: 'tg_body', text: '    ' + l, tmIdx});
       }
-      // Media indicator
       if (tm.mediaType) {
         const icon = tm.mediaType === 'video' ? '🎥' : '📷';
         const fn   = tm.mediaPath ? ` ${tm.mediaPath.split('/').pop()}` : '';
@@ -417,7 +436,6 @@ function buildLeftPanelRows() {
       }
     }
   }
-
   return rows;
 }
 
@@ -425,8 +443,9 @@ function drawLeftPanel() {
   withAbsPos(() => {
     const W     = LEFT_W;
     const xCol  = 2;
+    const divRow = getLeftDividerRow();
     const r0    = mapTopLine;
-    const r1    = mapBottomLine;
+    const r1    = divRow - 1;
     const blank = ' '.repeat(W);
 
     for (let r = r0; r <= r1; r++) {
@@ -435,7 +454,6 @@ function drawLeftPanel() {
 
     let r = r0;
 
-    // ── Pinned status bar (analysis progress) ─────────────────────────────────
     if (analysisStatus) {
       const statusText = analysisStatus.slice(0, W);
       process.stdout.write(
@@ -444,42 +462,24 @@ function drawLeftPanel() {
       r++;
     }
 
-    // ── Scrollable feed area ───────────────────────────────────────────────────
-    const feedArea  = r1 - r + 1;  // rows available after status bar
-    const allRows   = buildLeftPanelRows();
+    const feedArea  = r1 - r + 1;
+    const allRows   = buildAiPanelRows();
     const maxScroll = Math.max(0, allRows.length - feedArea);
     if (leftPanelScroll > maxScroll) leftPanelScroll = maxScroll;
     if (leftPanelScroll < 0) leftPanelScroll = 0;
 
-    // 0 = pinned to bottom (newest); positive = scrolled up into history
     const startIdx = Math.max(0, allRows.length - feedArea - leftPanelScroll);
     const view     = allRows.slice(startIdx, startIdx + feedArea);
 
-    // Clear old row maps
-    for (const k of Object.keys(leftPanelRowMap))      delete leftPanelRowMap[k];
-    for (const k of Object.keys(leftPanelAiEvMap))    delete leftPanelAiEvMap[k];
-    for (const k of Object.keys(leftPanelMediaRowMap)) delete leftPanelMediaRowMap[k];
+    for (const k of Object.keys(leftPanelAiEvMap)) delete leftPanelAiEvMap[k];
 
     for (const e of view) {
       if (r > r1) break;
       let rendered = '';
       switch (e.t) {
-        case 'tg_head':
-          // Orange for Telegram messages — leading [+]/[-] is the clickable toggle
-          rendered = `\x1B[38;5;214m${e.text.slice(0, W).padEnd(W)}${C.reset}`;
-          if (e.tmIdx !== undefined) leftPanelRowMap[r] = e.tmIdx;
-          break;
-        case 'tg_body':
-          rendered = `\x1B[38;5;172m${C.dim}${e.text.slice(0, W).padEnd(W)}${C.reset}`;
-          break;
-        case 'tg_media':
-          rendered = `\x1B[38;5;172m${e.text.slice(0, W).padEnd(W)}${C.reset}`;
-          if (e.tmIdx !== undefined) leftPanelMediaRowMap[r] = e.tmIdx;
-          break;
         case 'h1': {
-          // Color the leading [+]/[-] toggle green when event has media
           const raw  = e.text.slice(0, W).padEnd(W);
-          const tog  = raw.slice(0, 3);   // "[+]" or "[-]"
+          const tog  = raw.slice(0, 3);
           const rest = raw.slice(3);
           const togColored = e.hasMedia
             ? `${C.green}${C.bold}${tog}${C.reset}${C.bold}`
@@ -512,10 +512,66 @@ function drawLeftPanel() {
       r++;
     }
 
-    // ── Scroll indicator (bottom-right of left panel) ─────────────────────────
     if (allRows.length > feedArea) {
       const pct = leftPanelScroll === 0 ? 100
         : Math.round((1 - leftPanelScroll / maxScroll) * 100);
+      const ind = `${C.dim} ↕${pct}% ${C.reset}`;
+      process.stdout.write(`\x1B[${r1};${xCol + W - 7}H${ind}`);
+    }
+  });
+}
+
+function drawTelegramPanel() {
+  withAbsPos(() => {
+    const W     = LEFT_W;
+    const xCol  = 2;
+    const divRow = getLeftDividerRow();
+    const r0    = divRow + 1;
+    const r1    = mapBottomLine;
+    const blank = ' '.repeat(W);
+
+    for (let r = r0; r <= r1; r++) {
+      process.stdout.write(`\x1B[${r};${xCol}H${blank}`);
+    }
+
+    for (const k of Object.keys(leftPanelRowMap))      delete leftPanelRowMap[k];
+    for (const k of Object.keys(leftPanelMediaRowMap)) delete leftPanelMediaRowMap[k];
+
+    const feedArea = r1 - r0 + 1;
+    const allRows  = buildTelegramRows();
+    const maxScroll = Math.max(0, allRows.length - feedArea);
+    if (telegramScroll > maxScroll) telegramScroll = maxScroll;
+    if (telegramScroll < 0) telegramScroll = 0;
+
+    const startIdx = Math.max(0, allRows.length - feedArea - telegramScroll);
+    const view     = allRows.slice(startIdx, startIdx + feedArea);
+
+    let r = r0;
+    for (const e of view) {
+      if (r > r1) break;
+      let rendered = '';
+      switch (e.t) {
+        case 'tg_head':
+          rendered = `\x1B[38;5;214m${e.text.slice(0, W).padEnd(W)}${C.reset}`;
+          if (e.tmIdx !== undefined) leftPanelRowMap[r] = e.tmIdx;
+          break;
+        case 'tg_body':
+          rendered = `\x1B[38;5;172m${C.dim}${e.text.slice(0, W).padEnd(W)}${C.reset}`;
+          break;
+        case 'tg_media':
+          rendered = `\x1B[38;5;172m${e.text.slice(0, W).padEnd(W)}${C.reset}`;
+          if (e.tmIdx !== undefined) leftPanelMediaRowMap[r] = e.tmIdx;
+          break;
+        default:
+          rendered = `${C.dim}${e.text.slice(0, W).padEnd(W)}${C.reset}`;
+      }
+      process.stdout.write(`\x1B[${r};${xCol}H${rendered}`);
+      r++;
+    }
+
+    if (allRows.length > feedArea) {
+      const pct = telegramScroll === 0 ? 100
+        : Math.round((1 - telegramScroll / maxScroll) * 100);
       const ind = `${C.dim} ↕${pct}% ${C.reset}`;
       process.stdout.write(`\x1B[${r1};${xCol + W - 7}H${ind}`);
     }
@@ -584,6 +640,7 @@ function closeMediaPopup() {
   setTimeout(() => {
     drawBorders();
     drawLeftPanel();
+    drawTelegramPanel();
     drawRightPanel();
     drawTradesPanel();
     drawStatusBar();
@@ -627,8 +684,18 @@ function drawRightPanel() {
     put('─'.repeat(W), C.dim);
     r++;
 
+    // ── Current profit (from pipeline POST /pnl) ──────────────────────────────
+    if (portfolioPnl !== null) {
+      const total   = portfolioPnl.total_pnl_usdc ?? 0;
+      const cash    = portfolioPnl.cash_usdc ?? 0;
+      const pct     = portfolioPnl.pnl_pct ?? 0;
+      const pnlCol  = total >= 0 ? C.green : C.red;
+      const line    = ` P&L: ${pnlCol}$${total >= 0 ? '+' : ''}${total.toFixed(2)}${C.reset}${C.dim} (${pct >= 0 ? '+' : ''}${pct}%)${C.reset}  ${C.dim}Cash: $${cash.toFixed(0)}${C.reset}`;
+      put(line.slice(0, W), '');
+    }
+
     // ── AI Signal Trades with progress bars (sorted by urgency + confidence) ──
-    put(' AI SIGNALS', `${C.cyan}${C.bold}`);
+    put(' Polymarket SIGNALS', `${C.cyan}${C.bold}`);
     put('─'.repeat(W), C.dim);
 
     if (allSignalTrades.length === 0) {
@@ -704,7 +771,7 @@ function buildTradesPanelLines() {
     ];
 
     const hl    = latestClaudeTrades.headline.slice(0, innerW - 36);
-    const note  = `${C.dim}  (AI recommendations — not executed)`;
+    const note  = `${C.dim}`;
     push(`${C.cyan}${C.bold}  ▸ ${hl}${note}${C.reset}`);
 
     const R_W = 2, S_W = 3, D_W = 8, P_W = 5, U_W = 11;
@@ -744,9 +811,9 @@ function buildTradesPanelLines() {
     return lines;
   }
 
-  // ── Polymarket polling data (fallback) ────────────────────────────────────
+  // ── No data yet: show honest idle (pipeline pushes via POST /markets when ready) ─
   if (polyState.markets.length === 0) {
-    push(`${C.dim}  Fetching Polymarket data...${C.reset}`);
+    push(`${C.dim}  Waiting for pipeline — no market data yet.${C.reset}`);
     return lines;
   }
 
@@ -844,6 +911,8 @@ function drawTradesPanel() {
 }
 
 // ── Red dots on map ───────────────────────────────────────────────────────────
+const DOT_CHARS = ['\u2219', '\u25CF', '\u2B24'];  // ∙ ● ⬤ — ~10% visual size variation
+
 function dotColor(event_type) {
   const et = (event_type || '').toUpperCase();
   if (/DIPLOMATIC/.test(et)) return C.yellow;
@@ -853,13 +922,15 @@ function dotColor(event_type) {
 
 function drawDots() {
   withAbsPos(() => {
-    for (const { col, row, event_type } of incidents) {
-      // Strict integer bounds — exclude border rows/cols so dots never bleed outside map
+    for (const inc of incidents) {
+      const { col, row, event_type, colOffset = 0, rowOffset = 0, dotChar } = inc;
       if (!Number.isFinite(col) || !Number.isFinite(row)) continue;
-      const c = Math.round(col);
-      const r = Math.round(row);
+      const c = Math.round(col + colOffset);
+      const r = Math.round(row + rowOffset);
       if (c > COL_MLB + 1 && c < COL_MRB - 1 && r > mapTopLine && r < mapBottomLine) {
-        process.stdout.write(`\x1B[${r};${c}H${dotColor(event_type)}${C.bold}⬤${C.reset}`);
+        const char = dotChar || DOT_CHARS[0];
+        const color = dotColor(event_type);
+        process.stdout.write(`\x1B[${r};${c}H${color}${C.bold}${char}${C.reset}`);
       }
     }
   });
@@ -936,6 +1007,7 @@ function dismissPopup() {
   setImmediate(() => {
     drawBorders();
     drawLeftPanel();
+    drawTelegramPanel();
     drawRightPanel();
     drawTradesPanel();
     drawDots();
@@ -948,12 +1020,16 @@ function handleMapClick(cx, cy) {
   // If popup is open, any click dismisses it
   if (popup) { dismissPopup(); return; }
 
-  // Find nearest incident dot within 2-cell radius
+  // Find nearest incident dot within 2-cell radius (use drawn position including offset)
   let best = null, bestDist = 3;
+  const nowMs = Date.now();
   for (const inc of incidents) {
-    const d = Math.abs(inc.col - cx) + Math.abs(inc.row - cy);
-    if (d < bestDist && inc.col > COL_MLB && inc.col < COL_MRB &&
-        inc.row >= mapTopLine && inc.row <= mapBottomLine) {
+    const ageHours = inc.tsMs != null ? (nowMs - inc.tsMs) / (1000 * 60 * 60) : 0;
+    if (ageHours >= FADE_HOURS) continue;
+    const c = Math.round(inc.col + (inc.colOffset || 0));
+    const r = Math.round(inc.row + (inc.rowOffset || 0));
+    const d = Math.abs(c - cx) + Math.abs(r - cy);
+    if (d < bestDist && c > COL_MLB && c < COL_MRB && r >= mapTopLine && r <= mapBottomLine) {
       best = inc; bestDist = d;
     }
   }
@@ -1085,6 +1161,7 @@ const mapStream = new Transform({
       setImmediate(() => {
         drawBorders();
         drawLeftPanel();
+        drawTelegramPanel();
         drawRightPanel();
         drawTradesPanel();
         drawDots();
@@ -1179,6 +1256,20 @@ function handleKey(buf) {
   if (b[0] === 0x7A) { zoomMap(+1); return; }  // z
   if (b[0] === 0x5A) { zoomMap(-1); return; }  // Z
 
+  // [ / ] → resize left panel divider (telegram vs AI events)
+  if (b.length === 1 && b[0] === 0x5B) {
+    const panelH = mapBottomLine - mapTopLine + 1;
+    leftDividerFrac = Math.max(3 / panelH, leftDividerFrac - 1 / panelH);
+    drawBorders(); drawLeftPanel(); drawTelegramPanel();
+    return;
+  }
+  if (b.length === 1 && b[0] === 0x5D) {
+    const panelH = mapBottomLine - mapTopLine + 1;
+    leftDividerFrac = Math.min(1 - 4 / panelH, leftDividerFrac + 1 / panelH);
+    drawBorders(); drawLeftPanel(); drawTelegramPanel();
+    return;
+  }
+
   // Arrow keys → pan map
   if (ks === '\x1B[A') { panMap(+1,  0); return; }  // up
   if (ks === '\x1B[B') { panMap(-1,  0); return; }  // down
@@ -1194,46 +1285,67 @@ function handleKey(buf) {
     const my      = parseInt(mouseMatch[3], 10);
     const isPress = mouseMatch[4] === 'M';
 
+    const _dRow = getLeftDividerRow();
+
+    // Drag-to-resize left panel divider
+    if (isDraggingDivider) {
+      if (btn === 32 && isPress) {
+        const panelH = mapBottomLine - mapTopLine + 1;
+        const newRow = Math.max(mapTopLine + 3, Math.min(mapBottomLine - 3, my));
+        leftDividerFrac = (newRow - mapTopLine) / panelH;
+        drawBorders(); drawLeftPanel(); drawTelegramPanel();
+        return;
+      }
+      if (!isPress) { isDraggingDivider = false; return; }
+      return;
+    }
+
     // Route scroll based on where the cursor is hovering
-    const inBottomPanel = my >= TRADES_TITLE_ROW && my <= TRADES_CONTENT_END;
-    const inLeftPanel   = mx >= 2 && mx <= LEFT_W + 1 && my >= mapTopLine && my <= mapBottomLine;
+    const inBottomPanel   = my >= TRADES_TITLE_ROW && my <= TRADES_CONTENT_END;
+    const inAiPanel       = mx >= 2 && mx <= LEFT_W + 1 && my >= mapTopLine && my < _dRow;
+    const inTelegramPanel = mx >= 2 && mx <= LEFT_W + 1 && my > _dRow && my <= mapBottomLine;
+
     if (btn === 64) {  // scroll up
       if (inBottomPanel) { tradesPanelScroll = Math.max(0, tradesPanelScroll - 1); drawTradesPanel(); }
-      else if (inLeftPanel) { leftPanelScroll++; drawLeftPanel(); drawBorders(); }
+      else if (inAiPanel) { leftPanelScroll++; drawLeftPanel(); drawBorders(); }
+      else if (inTelegramPanel) { telegramScroll++; drawTelegramPanel(); drawBorders(); }
       else { zoomMap(+1); }
       return;
     }
     if (btn === 65) {  // scroll down
       if (inBottomPanel) { tradesPanelScroll++; drawTradesPanel(); }
-      else if (inLeftPanel) { leftPanelScroll = Math.max(0, leftPanelScroll - 1); drawLeftPanel(); drawBorders(); }
+      else if (inAiPanel) { leftPanelScroll = Math.max(0, leftPanelScroll - 1); drawLeftPanel(); drawBorders(); }
+      else if (inTelegramPanel) { telegramScroll = Math.max(0, telegramScroll - 1); drawTelegramPanel(); drawBorders(); }
       else { zoomMap(-1); }
       return;
     }
+
     if (btn === 0 && isPress) {
+      // Start drag on divider row
+      if (mx >= 1 && mx <= COL_MLB && my === _dRow) {
+        isDraggingDivider = true;
+        return;
+      }
+
       if (mx >= 2 && mx <= LEFT_W + 1) {
-        // AI event h1 click:
-        //   • if clicking the [+]/[-] toggle area (first 3 cols) → collapse/expand body
-        //   • if clicking the headline text with media → open media popup
+        // AI event h1 click (top panel)
         if (leftPanelAiEvMap[my] !== undefined) {
           const evIdx   = leftPanelAiEvMap[my];
-          const toggleX = 2 + 3;  // left panel starts at col 2; [+]/[-] is 3 chars
+          const toggleX = 2 + 3;
           if (mx <= toggleX) {
-            // Toggle collapse
             if (collapsedEvents.has(evIdx)) collapsedEvents.delete(evIdx);
             else collapsedEvents.add(evIdx);
             drawLeftPanel(); drawBorders();
           } else if (evMediaFiles[evIdx]?.length) {
-            // Open media popup
             openMediaPopup(evIdx);
           } else {
-            // No media — just toggle collapse on full click
             if (collapsedEvents.has(evIdx)) collapsedEvents.delete(evIdx);
             else collapsedEvents.add(evIdx);
             drawLeftPanel(); drawBorders();
           }
           return;
         }
-        // Telegram media row click → open media file
+        // Telegram media row click (bottom panel)
         if (leftPanelMediaRowMap[my] !== undefined) {
           const idx = leftPanelMediaRowMap[my];
           const tm  = telegramMsgs[idx];
@@ -1245,12 +1357,12 @@ function handleKey(buf) {
           }
           return;
         }
-        // Telegram message click → expand/collapse full text
+        // Telegram message click (bottom panel)
         if (leftPanelRowMap[my] !== undefined) {
           const idx = leftPanelRowMap[my];
           if (telegramMsgs[idx]) {
             telegramMsgs[idx].expanded = !telegramMsgs[idx].expanded;
-            drawLeftPanel(); drawBorders();
+            drawTelegramPanel(); drawBorders();
           }
           return;
         }
@@ -1266,8 +1378,8 @@ function claimStdin() {
   process.stdin.removeAllListeners('data');
   process.stdin.setRawMode(true);
   process.stdin.resume();
-  // Enable SGR mouse reporting for scroll events
-  process.stdout.write('\x1B[?1000h\x1B[?1006h');
+  // Enable SGR mouse reporting with button-event tracking (for drag-to-resize)
+  process.stdout.write('\x1B[?1000h\x1B[?1002h\x1B[?1006h');
   process.stdin.on('data', handleKey);
 }
 
@@ -1278,6 +1390,7 @@ mapscii.init().then(() => {
   setTimeout(() => {
     drawBorders();
     drawLeftPanel();
+    drawTelegramPanel();
     drawRightPanel();
     drawTradesPanel();
     drawStatusBar();
@@ -1380,7 +1493,8 @@ function processEvent(eventData) {
   if (Array.isArray(ev.involved)) ev.involved.forEach(c => countrySeen.add(c));
   lastEventInfo = ts ? `${locName} · ${ts}` : locName;
 
-  // Capture Claude's AI trade rankings if present
+  // Only show AI signals from real Polymarket trade rankings (polymarket_trades).
+  // Do not use analyzer secondary_markets (stocks/commodities) — those are not Polymarket.
   const pt = ev.polymarket_trades;
   if (pt && ((pt.primary && pt.primary.length) || (pt.secondary && pt.secondary.length))) {
     latestClaudeTrades = {
@@ -1389,7 +1503,6 @@ function processEvent(eventData) {
       secondary: pt.secondary || [],
     };
 
-    // Accumulate trades for the right-panel progress bars (deduplicate by market+trade)
     const newTrades = [
       ...(pt.primary   || []).map(t => ({ ...t, _pri: true,  _evHeadline: headline || locName })),
       ...(pt.secondary || []).map(t => ({ ...t, _pri: false, _evHeadline: headline || locName })),
@@ -1399,29 +1512,6 @@ function processEvent(eventData) {
       if (!seenTradeMarkets.has(key)) {
         seenTradeMarkets.add(key);
         allSignalTrades.push(t);
-      }
-    }
-  } else if (ev.secondary_markets && ev.secondary_markets.length) {
-    // Fallback: synthesize signals from old secondary_markets format
-    const synthSecondary = ev.secondary_markets.slice(0, 10).map((m, i) => ({
-      rank: i + 1,
-      market: m.name + (m.ticker ? ` (${m.ticker})` : ''),
-      trade: m.signal === 'bullish' ? 'BUY YES' : 'BUY NO',
-      current_price: null,
-      reasoning: m.reason || '',
-      urgency: 'short-term',
-      volume_usd: 0,
-    }));
-    latestClaudeTrades = {
-      headline:  headline || locName,
-      primary:   [],
-      secondary: synthSecondary,
-    };
-    for (const t of synthSecondary) {
-      const key = `${t.market}|${t.trade}`;
-      if (!seenTradeMarkets.has(key)) {
-        seenTradeMarkets.add(key);
-        allSignalTrades.push({ ...t, _pri: false, _evHeadline: headline || locName });
       }
     }
   }
@@ -1443,18 +1533,25 @@ function processEvent(eventData) {
 
   // Store full event data so dot can show popup on click
   const pmUrl = pt?.primary?.[0]?.url || pt?.secondary?.[0]?.url || '';
+  const tsMs = ev.timestamp ? new Date(ev.timestamp).getTime() : Date.now();
+  // ~10% size randomness: pick one of three dot characters
+  const dotChar = DOT_CHARS[Math.floor(Math.random() * DOT_CHARS.length)];
+  const colOffset = (Math.random() - 0.5) * 1.2;   // small offset ±0.6
+  const rowOffset = (Math.random() - 0.5) * 1.2;
   incidents.push({
     lat: coords.lat, lon: coords.lon, col: pos.col, row: pos.row,
+    colOffset, rowOffset, dotChar, tsMs,
     headline, summary, event_type: (ev.event_type || '').toUpperCase(),
     confidence: ev.confidence || '', location: locName, ts, pmUrl,
     evIdx,  // link back to media files + map position
   });
 
-  // Auto-scroll left panel to show newest event at the bottom
   leftPanelScroll = 0;
+  telegramScroll = 0;
 
   drawDots();
   drawLeftPanel();
+  drawTelegramPanel();
   drawRightPanel();
   drawTradesPanel();
   drawBorders();
@@ -1554,7 +1651,16 @@ function ingestMarkets(rawMarkets) {
   const order = { MILITARY: 0, ECONOMIC: 1, DIPLOMATIC: 2 };
   newMarkets.sort((a, b) => order[a.category] - order[b.category]);
   polyState.markets = newMarkets;
+
+  // Flush events that were held until market data was ready
+  if (pendingEvents.length > 0) {
+    for (const ev of pendingEvents) enqueueEvent(ev);
+    pendingEvents.length = 0;
+    tuiLog(`  Polymarket data loaded — processing ${simQueue.length} queued events.`);
+  }
+
   drawTradesPanel();
+  drawRightPanel();
   drawBorders();
 }
 
@@ -1574,6 +1680,21 @@ function ingestTrades(rawTrades) {
   if (executedTrades.length > 200) executedTrades.splice(0, executedTrades.length - 200);
   drawRightPanel();
   drawBorders();
+}
+
+// ── Portfolio P&L (pushed from Python when portfolio is synced) ───────────────
+function ingestPnl(data) {
+  if (data && typeof data === 'object') {
+    portfolioPnl = {
+      total_pnl_usdc:   data.total_pnl_usdc ?? 0,
+      unrealized_usdc:  data.unrealized_usdc ?? 0,
+      realized_usdc:    data.realized_usdc ?? 0,
+      cash_usdc:        data.cash_usdc ?? 0,
+      pnl_pct:          data.pnl_pct ?? 0,
+    };
+    drawRightPanel();
+    drawBorders();
+  }
 }
 
 // ── HTTP server ────────────────────────────────────────────────────────────────
@@ -1612,6 +1733,19 @@ http.createServer((req, res) => {
       return;
     }
 
+    // /pnl — receive portfolio P&L summary (total_pnl_usdc, cash_usdc, pnl_pct, etc.)
+    if (req.url === '/pnl') {
+      try {
+        const data = JSON.parse(body);
+        ingestPnl(data);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: true }));
+      } catch (e) {
+        res.writeHead(400); res.end('Bad JSON\n');
+      }
+      return;
+    }
+
     // /log — route a text message to the left feed panel
     if (req.url === '/log') {
       try {
@@ -1638,7 +1772,7 @@ http.createServer((req, res) => {
           expanded:  false,
         });
         while (telegramMsgs.length > 200) telegramMsgs.shift();
-        drawLeftPanel();
+        drawTelegramPanel();
         drawBorders();
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ ok: true, count: telegramMsgs.length }));
@@ -1649,9 +1783,21 @@ http.createServer((req, res) => {
     }
 
     // Default — process conflict events (route through sim queue)
+    // Do not enqueue until Polymarket data has been loaded; hold in pendingEvents.
     try {
       const data   = JSON.parse(body);
       const events = Array.isArray(data) ? data : [data];
+      if (polyState.markets.length === 0) {
+        for (const ev of events) pendingEvents.push(ev);
+        tuiLog(`  ${events.length} event(s) held — waiting for Polymarket data before processing.`);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({
+          held: events.length,
+          waiting: 'polymarket_data',
+          message: 'Events will process after POST /markets.',
+        }));
+        return;
+      }
       for (const ev of events) enqueueEvent(ev);
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ queued: events.length, pending: simQueue.length }));

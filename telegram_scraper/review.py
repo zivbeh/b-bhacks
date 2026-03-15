@@ -410,6 +410,8 @@ def main():
     # ── 3. Sync prices ─────────────────────────────────────────────────────────
     pf.sync_prices(portfolio, poly_markets)
     pf.save_portfolio(portfolio)
+    stats = pf.compute_pnl(portfolio)
+    strata_bridge.push_pnl(stats)
 
     # ── 4. Print P&L report ───────────────────────────────────────────────────
     print_pnl_report(portfolio)
