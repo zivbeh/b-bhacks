@@ -25,6 +25,8 @@ When you run the dashboard (`node strata.js`), you get:
 
 ![STRATA terminal dashboard](view.png)
 
+**Watch a demo:** [![Watch on YouTube](https://img.youtube.com/vi/HTOp1nyrzwI/maxresdefault.jpg)](https://www.youtube.com/watch?v=HTOp1nyrzwI)
+
 | Area | What’s there |
 |------|----------------|
 | **Left — Incident feed** | AI-summarized events (headline, type, location, confidence) and live Telegram messages. Expand/collapse with **[+]** / **[-]**; scroll to see more. |
