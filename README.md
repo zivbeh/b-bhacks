@@ -1,4 +1,4 @@
-# STRATA
+# STRATA - (1st Place Polymarket Track at B@B Hacks)
 
 **Real-time conflict intelligence → market signals → automated trading**
 
